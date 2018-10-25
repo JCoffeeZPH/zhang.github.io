@@ -1,420 +1,211 @@
+
+
+
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  
-  <title>ForMe</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Enjoy Coding">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ForMe">
-<meta property="og:url" content="http://jcoffeeph.top/index.html">
-<meta property="og:site_name" content="ForMe">
-<meta property="og:description" content="Enjoy Coding">
-<meta property="og:locale" content="zh-Hans">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ForMe">
-<meta name="twitter:description" content="Enjoy Coding">
-  
-    <link rel="alternate" href="/atom.xml" title="ForMe" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/pintuer.css">
-  <link rel="stylesheet" href="/css/style.css">
-  <script src="/js/jquery.js"></script>
-  <script src="/js/pintuer.js"></script>
-  
-
-</head>
-</html>
-
-  <body>
-    <div class="layout">
-      <div class="layout bg-gray bg-inverse hidden-l">
-  <div class="container height-big">
-    <span class="float-right">
-        <a href="#" class="win-homepage icon-home">设为首页</a>&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="#" class="win-favorite icon-star">加入收藏</a>
-    </span>
-    ForMe
-  </div>
-</div>
-<div class="container padding-big-top padding-big-bottom bg-white">
-  <div class="line">
-    <div class="xl12 xs2 xm2 xb1">
-      <button class="button icon-navicon float-right" data-target="#header-demo2">
-      </button>
-      <img src="/favicon.png" width="50" height="50">
-    </div>
-    <div class=" xl12 xs10 xm10 xb11 padding-top nav-navicon" id="header-demo2">
-      <div class="xs8 xm8 xb8">
-        <ul class="nav nav-menu nav-inline">
-          
-            <li>
-              <a href="/" class="text-big">
-                <strong>主页</strong>
-              </a>
-            </li>
-            
-            <li>
-              <a href="/archives" class="text-big">
-                <strong>归档</strong>
-              </a>
-            </li>
-            
-              <!-- 
-                      <li><a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a></li>
-                     -->
-        </ul>
-      </div>
-      <div class="xs4 xm4 xb3">
-        <form>
-          <div class="input-group padding-little-top">
-            <input type="text" class="input border-main" name="keywords" size="30" placeholder="关键词">
-            <span class="addbtn">
-              <button id="search_dialog" type="button" class="button bg-main dialogs" data-toggle="click" data-target="#mydialog" data-mask="1" data-width="50%">
-                搜索</button>
-            </span>
-          </div>  
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-        <div class="keypoint bg-green bg-inverse text-center">
-          <h1>
-            欢迎来到我的博客</h1>
-          <p>
-              嗨，我是姜帅杰 (codeteenager)，一名来自中国的 android/ios/web 开发者。正在修行，探求创意之源。</p>
-          <a class="button button-big bg-blue radius-rounded" href="http://www.github.com/codeteenager" target="_blank">
-            Github
-          </a>
-          <a class="button button-big bg-blue radius-rounded margin-left" href="http://www.jiangshuaijie.com" target="_blank">
-            个人简历
-          </a>
-        </div>
-        <div class="line-big">
-          <div class="xs9">
-            <section class="margin">
-              
-  
-    <article class="margin" itemscope="" itemprop="blogPost">
-  
-  <ul class="bread bg-green bg-inverse" style="margin-bottom:0px;border-radius:0px">
-    
-    <li><a href="/categories/Java/">Java</a></li>
-  </ul>
-  
-  <div class="panel" style="border-radius:0px">
-    
-      
-        <header class="panel-head">
-          
-  
-    <h3 itemprop="name">
-      <a href="/2018/10/25/多线程同步锁/">多线程同步锁</a>
-    </h3>
-  
-
-        </header>
-        
-          <div class="panel-body" itemprop="articleBody">
-            
-                      <div class="entry">
-                        <p>1.synchronized 关键字用于实现现成的同步，可以实现同步方法或者只对一部分代码进行同步，具体来说同步很消耗资源，<br>所以尽量减少同步的内容。<strong>注意</strong>：synchronized 关键字在继承时不能被子类所继承。<br>2.被 synchronized 关键字修饰的方法或者代码块，在特定的时间只能被某个线程所访问，即产生了同步锁。</p>
-<ol start="3">
-<li><strong>Java对象锁和类锁</strong>：<br> <strong>对象锁</strong>：用于对象实例方法或者一个对象实例上，但是类的对象实例可以有很多个，所以不同对象实例的对象锁是互<br> 不干扰的。<br> <strong>类锁</strong>：每个类都只有一个class对象，即每个类只一个类锁。<br>4.synchronized三个主要用法：<br> 非静态方法的同步<br> 静态方法的同步<br> 同步代码块<br>代码示例：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		Test t = <span class="keyword">new</span> Test();</span><br><span class="line">		Thread t1 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable()&#123;</span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">				t.co();</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125;);</span><br><span class="line"></span><br><span class="line">		Thread t2 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable()&#123;</span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">				<span class="comment">//t.co();</span></span><br><span class="line">				t.coo();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		t1.start();</span><br><span class="line">		t2.start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">coo</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span> count = <span class="number">5</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">			System.out.println(Thread.currentThread().getName() + <span class="string">" : "</span> + count--);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">co</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span> count = <span class="number">5</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">			System.out.println(Thread.currentThread().getName() + <span class="string">" : "</span> + count--);</span><br><span class="line">			<span class="keyword">try</span></span><br><span class="line">			&#123;</span><br><span class="line">				Thread.sleep(<span class="number">1500</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">catch</span> (InterruptedException e)</span><br><span class="line">			&#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>总结：通过以上简单实例发现，当多个线程开启时，一个线程不能去调用已经被同步锁锁定的对象，即是，若a.start();b.start();开启，若 a 被同步锁锁住，则 b<br>不能访问同步方法，但是可以访问非同步方法。<br><strong>如果某个线程得到了对象锁，但是另一个线程还是可以访问没有进行同步的方法或者代码。进行了同步的方法（加锁方法）和没有进行同步的方法（普通方法）是互不<br>影响的，一个线程进入了同步方法，得到了对象锁，其他线程还是可以访问那些没有同步的方法（普通方法）。当获取到与对象关联的内置锁时，并不能阻止其他线程<br>访问该对象，当某个线程获得对象的锁之后，只能阻止其他线程获得同一个锁</strong></p>
-
-                      </div>
-                      
-                      <!-- <div id="cyReward" class="text-center margin-top" role="cylabs" data-use="reward"></div> -->
-                        
-          </div>
-          <footer class="panel-foot clearfix">
-            
-              
-          </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article class="margin" itemscope="" itemprop="blogPost">
-  
-  <ul class="bread bg-green bg-inverse" style="margin-bottom:0px;border-radius:0px">
-    
-    <li><a href="/categories/Java/">Java</a></li>
-  </ul>
-  
-  <div class="panel" style="border-radius:0px">
-    
-      
-        <header class="panel-head">
-          
-  
-    <h3 itemprop="name">
-      <a href="/2018/10/25/Java/">Java简单示例</a>
-    </h3>
-  
-
-        </header>
-        
-          <div class="panel-body" itemprop="articleBody">
-            
-                      <div class="entry">
-                        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p><strong>Java打印数组</strong><br>java打印数组<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>&#123;</span><br><span class="line">	<span class="function">publix <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>&#123;<span class="number">5</span>,<span class="number">6</span>,<span class="number">9</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>&#125;;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=  <span class="number">0</span>; i &lt; a.length; i++)</span><br><span class="line">		System.out.println(a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.disqus_shortname){ %&gt;</p>
-<p><section id="comments"><br>  <div id="disqus_thread"><br>    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><br>  </div><br></section><br>&lt;% } %&gt;</p>
-
-                      </div>
-                      
-                      <!-- <div id="cyReward" class="text-center margin-top" role="cylabs" data-use="reward"></div> -->
-                        
-          </div>
-          <footer class="panel-foot clearfix">
-            
-              
-          </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-
-            </section>
-          </div>
-          <div class="xs3">
-            
-              <aside id="sidebar">
-  
-    
-  <div class="panel margin-right margin-top">
-    <div class="panel-head bg-main">Categories</div>
-    <div class="panel-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-
-  
-    
-  
-    
-  <div class="panel margin-right margin-top">
-    <div class="panel-head bg-main">Archives</div>
-    <div class="panel-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="panel margin-right margin-top">
-    <div class="panel-head bg-main">Recent Posts</div>
-    <div class="list-link" style="border-radius:0px;">
-        
-            <a href="/2018/10/25/多线程同步锁/">多线程同步锁</a>
-        
-            <a href="/2018/10/25/Java/">Java简单示例</a>
-        
-    </div>
-  </div>
-
-  
-</aside>
-                
-          </div>
-        </div>
-        <footer id="footer">
-  
-  <!-- <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 ForMe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div> -->
-  <div class="container-layout bg-gray bg-inverse padding-big-top padding-big-bottom margin-top">
-    <div class="table-responsive padding hidden-l">
-        <ul class="nav nav-sitemap">
-            <li><a href="#">友情链接</a>
-                <ul>
-                    <li><a href="https://developer.android.com/">Android Developer</a></li>
-                    <li><a href="https://www.kotlincn.net/">Kotlin中文网</a></li>
-                    <li><a href="https://developer.apple.com/">Apple Developer</a></li>
-                </ul>
-            </li>
-            <li><a href="#">微信公众号</a>
-                <img width="128" height="128" src="/qrcode.jpg" class="img-border border-blue radius-big">
-            </li>
-            <li><a href="#">联系方式</a> 
-                <ul>
-                    <li>QQ：1830702951</li>
-                    <li>微信：codeteenager</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-    <div class="text-center">
-        版权所有 © jiangshuaijie.com All Rights Reserved，京ICP备17065332号</div>
-</div>
-</footer>
-<script>
-    (function($) {
-        $(document).ready(function() {
-            // 隐藏禁用javascript（针对微信内置浏览器）的提示
-            $('.noscript').hide();
-            var $searchDialog = document.getElementById("search_dialog");
-            $searchDialog.addEventListener("click",function(){
-                // 搜索功能
-                var searchXml = "";
-                if (searchXml.length == 0) {
-                    searchXml = "search.xml";
-                }
-                var searchPath = "/" + searchXml;
-                initSearch(searchPath, 'search-input', 'search-result','search');
-            });
-            
-        });
-
-        // 初始化搜索与匹配函数
-        var initSearch = function(path, input_id, content_id,search_id) {
-            'use strict';
-            $.ajax({
-                url: path,
-                dataType: "xml",
-                success: function(xmlResponse) {
-                    // get the contents from search data
-                    var datas = $("entry", xmlResponse).map(function() {
-                        return {
-                            title: $("title", this).text(),
-                            content: $("content", this).text(),
-                            url: $("url", this).text()
-                        };
-                    }).get();
-                    var $input = document.getElementById(input_id);
-                    var $search = document.getElementById(search_id);
-                    var $resultContent = document.getElementById(content_id);
-                    $search.addEventListener('click', function() {
-                        var str = '<ul class=\"list-group\">';
-                        var keywords = $input.value.trim().toLowerCase().split(/[\s\-]+/);
-                        $resultContent.innerHTML = "";
-                        if ($input.value.trim().length <= 0) {
-                            return;
-                        }
-                        // perform local searching
-                        datas.forEach(function(data) {
-                            var isMatch = true;
-                            var content_index = [];
-                            var data_title = data.title.trim().toLowerCase();
-                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
-                            var data_url = data.url;
-                            var index_title = -1;
-                            var index_content = -1;
-                            var first_occur = -1;
-                            // only match artiles with not empty titles and contents
-                            if (data_title != '' && data_content != '') {
-                                keywords.forEach(function(keyword, i) {
-                                    index_title = data_title.indexOf(keyword);
-                                    index_content = data_content.indexOf(keyword);
-                                    if (index_title < 0 && index_content < 0) {
-                                        isMatch = false;
-                                    } else {
-                                        if (index_content < 0) {
-                                            index_content = 0;
-                                        }
-                                        if (i == 0) {
-                                            first_occur = index_content;
-                                        }
-                                    }
-                                });
-                            }
-                            // show search results
-                            if (isMatch) {
-                                keywords.forEach(function(keyword) {
-                                    var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class='text-main'>" + keyword + "</span>");
-                                });
-
-                                str += "<li><a href='" + data_url + "' class='text-main'>" + data_title + "</a>";
-                                var content = data.content.trim().replace(/<[^>]+>/g, "");
-                                if (first_occur >= 0) {
-                                    // cut out 100 characters
-                                    var start = first_occur - 20;
-                                    var end = first_occur + 80;
-                                    if (start < 0) {
-                                        start = 0;
-                                    }
-                                    if (start == 0) {
-                                        end = 100;
-                                    }
-                                    if (end > content.length) {
-                                        end = content.length;
-                                    }
-                                    var match_content = content.substring(start, end);
-                                    // highlight all keywords
-                                    keywords.forEach(function(keyword) {
-                                        var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class='text-main'>" + keyword + "</span>");
-                                    });
-
-                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
-                                }
-                                str += "</li>";
-                            }
-                        });
-                        str += "</ul>";
-                        $resultContent.innerHTML = str;
-                    });
-                }
-            });
-        }
-    })(jQuery);
-</script>
-
-<script type="text/javascript" charset="utf-8" src="https://changyan.itc.cn/js/lib/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cytsiKqIU"></script>
-<!-- JiaThis Button BEGIN -->
-<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0" charset="utf-8"></script>
-<!-- JiaThis Button END -->
-
-          <!-- <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">主页</a>
-  
-    <a href="/archives" class="mobile-nav-link">归档</a>
-  
-</nav>
-        
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,inital-scale=1,user-scalable=no">
+  <title>欲戴王冠，必承其重 [ ForMe ]</title>
+  <!-- bootstrapcss文件 -->
+ <!--  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+<!--   <link rel="stylesheet" href="/css/zhl.css">
  -->
-    </div>
-  </body>
+  
+    <!-- stylesheets list from config.yml -->
+    
+      <link rel="stylesheet" href="/css/fork-awesome.min.css">
+    
+      <link rel="stylesheet" href="/css/zhl.css">
+    
+  
+  
+</head></html>
+<body>
+<div class="container-fluid">
+  <div class="row">
+  <div id="wrap" class="col-md-12">
+    <div id="header">
+	<div id="header-left">
+	<h1 id="header-title"> 
+	<a href="/">
+		ForMe
+	</a>
+	</h1>
+	
+	<h2 id="header-subtitle">
+		<a href="/">欲戴王冠，必承其重</a>
+	</h2>
+		
+	</div>
+	<div id="header-right">
+		
+		
+		<a href="/" title="home"><i class="fa fa-home ">home</i></a>
+		
+		<a href="https://github.com/lizehongss/demo_show" title="demo"><i class="fa fa-code ">demo</i></a>
+		
+		<a href="/about" title="about"><i class="fa fa-user ">about</i></a>
+		
+		<a href="/" title="music"><i class="fa fa-music ">music</i></a>
+		
+		
+	</div>
+</div>
 
-  </html>
+  </div>
+  </div>
+  <div id="content" class="row">
+    <div id="content-left" class="col-md-4">
+      
+
+	
+	<div class="widget-wrap">
+		<h3 class="widget-title fa fa-th">分类</h3>
+		<div class="widget">
+		<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span></li></ul>
+		</div>
+	</div>
+
+
+	
+
+	
+	<div class="widget-wrap">
+		<h3 class="widget-title fa fa-archive">归档</h3>
+		<div class="widget">
+			<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li></ul>
+		</div>
+	</div>
+
+
+
+    </div>
+    <div id="content-right" class="col-md-8">
+    	<div class="right-content">
+
+<div class="right-post">
+<article class="index-article"> 
+<div class="article-meta">
+	<time datetime="2018-10-25T11:38:09.000Z">
+		2018-10-25
+	</time>
+</div>
+<div class="article-inner">
+	
+	<header class="article-header">
+		<h1 itemprop="name">
+		<a href="/2018/10/25/多线程同步锁/">
+		多线程同步锁
+		</a>
+		</h1>
+	</header>
+	
+	<div class="article-entry">
+		
+			
+			1.synchronized 关键字用于实现现成的同步，可以实现同步方法或者只对一部分代码进行同步，具体来说同步很消耗资源，所以尽量减少同步的内容。注意：synchronized 关键字在继承时...
+			
+			<p class="article-more-link">
+			<a href="/2018/10/25/多线程同步锁/#more">Read More</a>
+			</p>
+			
+			
+	</div>
+</div>
+	
+	<div class="article-category">
+		<a class="article-category-link" href="/categories/Java/">Java</a>
+	</div>
+
+</article>
+
+</div>
+
+<div class="right-post">
+<article class="index-article"> 
+<div class="article-meta">
+	<time datetime="2018-10-25T06:20:52.000Z">
+		2018-10-25
+	</time>
+</div>
+<div class="article-inner">
+	
+	<header class="article-header">
+		<h1 itemprop="name">
+		<a href="/2018/10/25/Java/">
+		Java简单示例
+		</a>
+		</h1>
+	</header>
+	
+	<div class="article-entry">
+		
+			
+			123456class Main&#123;	public static void main(String[] args)&#123;		System.out.println("Hello Wo...
+			
+			<p class="article-more-link">
+			<a href="/2018/10/25/Java/#more">Read More</a>
+			</p>
+			
+			
+	</div>
+</div>
+	
+	<div class="article-category">
+		<a class="article-category-link" href="/categories/Java/">Java</a>
+	</div>
+
+</article>
+
+</div>
+
+</div>
+
+
+
+
+
+    </div>
+  </div>
+  <div class="row">
+<div id="bottom" class="col-md-12"> 
+  <div class="bottom-nav">
+	
+	
+	<a href="https://github.com/lizehongss" class="fa fa-github fa-2x" target="_blank" title="Follow me"></a>
+	
+	
+</div>
+<div class="bottom-info">
+	&copy; 2018 ForMe<br>
+	Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	theme <a href="https://github.com/lizehongss/hexo-theme-zhl" target="_blank">zhl</a>
+</div>
+</div>
+</div>
+</div>
+<div id="tool">
+  <ul>
+    <li class="fa fa-angle-up top" id="top"></li>
+  </ul>
+</div>
+  <div class="bg_content">
+    <canvas id="canvas"></canvas>
+  </div>
+  
+  <!-- scripts list from theme config.yml -->
+  
+    <script src="/js/zhl.js"></script>
+  
+    <script src="/js/bj.js"></script>
+  
+
+<!-- jQ cdn  -->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<!-- bootstrap js cdn-->
+<!-- <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
+
+</body>
+</html>
