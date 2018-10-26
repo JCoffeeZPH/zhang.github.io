@@ -9,13 +9,14 @@
   <title>多线程同步锁 | ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1.synchronized 关键字用于实现现成的同步，可以实现同步方法或者只对一部分代码进行同步，具体来说同步很消耗资源，所以尽量减少同步的内容。注意：synchronized 关键字在继承时不能被子类所继承。2.被 synchronized 关键字修饰的方法或者代码块，在特定的时间只能被某个线程所访问，即产生了同步锁。  Java对象锁和类锁： 对象锁：用于对象实例方法或者一个对象实例上，但是">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="多线程同步锁">
 <meta property="og:url" content="http://jcoffeeph.top/2018/10/25/多线程同步锁/index.html">
 <meta property="og:site_name" content="ForMe">
 <meta property="og:description" content="1.synchronized 关键字用于实现现成的同步，可以实现同步方法或者只对一部分代码进行同步，具体来说同步很消耗资源，所以尽量减少同步的内容。注意：synchronized 关键字在继承时不能被子类所继承。2.被 synchronized 关键字修饰的方法或者代码块，在特定的时间只能被某个线程所访问，即产生了同步锁。  Java对象锁和类锁： 对象锁：用于对象实例方法或者一个对象实例上，但是">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-25T12:22:15.955Z">
+<meta property="og:updated_time" content="2018-10-26T04:56:43.963Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多线程同步锁">
 <meta name="twitter:description" content="1.synchronized 关键字用于实现现成的同步，可以实现同步方法或者只对一部分代码进行同步，具体来说同步很消耗资源，所以尽量减少同步的内容。注意：synchronized 关键字在继承时不能被子类所继承。2.被 synchronized 关键字修饰的方法或者代码块，在特定的时间只能被某个线程所访问，即产生了同步锁。  Java对象锁和类锁： 对象锁：用于对象实例方法或者一个对象实例上，但是">
@@ -172,7 +173,8 @@
       
         <p>1.synchronized 关键字用于实现现成的同步，可以实现同步方法或者只对一部分代码进行同步，具体来说同步很消耗资源，<br>所以尽量减少同步的内容。<strong>注意</strong>：synchronized 关键字在继承时不能被子类所继承。<br>2.被 synchronized 关键字修饰的方法或者代码块，在特定的时间只能被某个线程所访问，即产生了同步锁。</p>
 <ol start="3">
-<li><strong>Java对象锁和类锁</strong>：<br> <strong>对象锁</strong>：用于对象实例方法或者一个对象实例上，但是类的对象实例可以有很多个，所以不同对象实例的对象锁是互<br> 不干扰的。<br> <strong>类锁</strong>：每个类都只有一个class对象，即每个类只一个类锁。<br>4.synchronized三个主要用法：<br> 非静态方法的同步<br> 静态方法的同步<br> 同步代码块<br>代码示例：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		Test t = <span class="keyword">new</span> Test();</span><br><span class="line">		Thread t1 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable()&#123;</span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">				t.co();</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125;);</span><br><span class="line"></span><br><span class="line">		Thread t2 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable()&#123;</span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">				<span class="comment">//t.co();</span></span><br><span class="line">				t.coo();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		t1.start();</span><br><span class="line">		t2.start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">coo</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span> count = <span class="number">5</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">			System.out.println(Thread.currentThread().getName() + <span class="string">" : "</span> + count--);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">co</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span> count = <span class="number">5</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">			System.out.println(Thread.currentThread().getName() + <span class="string">" : "</span> + count--);</span><br><span class="line">			<span class="keyword">try</span></span><br><span class="line">			&#123;</span><br><span class="line">				Thread.sleep(<span class="number">1500</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">catch</span> (InterruptedException e)</span><br><span class="line">			&#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><strong>Java对象锁和类锁</strong>：<br> <strong>对象锁</strong>：用于对象实例方法或者一个对象实例上，但是类的对象实例可以有很多个，所以不同对象实例的对象锁是互<br> 不干扰的。<br> <strong>类锁</strong>：每个类都只有一个class对象，即每个类只一个类锁。<br>4.synchronized三个主要用法：<br> 非静态方法的同步<br> 静态方法的同步<br> 同步代码块 <a id="more"></a>
+代码示例：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		Test t = <span class="keyword">new</span> Test();</span><br><span class="line">		Thread t1 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable()&#123;</span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">				t.co();</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125;);</span><br><span class="line"></span><br><span class="line">		Thread t2 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable()&#123;</span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">				<span class="comment">//t.co();</span></span><br><span class="line">				t.coo();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		t1.start();</span><br><span class="line">		t2.start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">coo</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span> count = <span class="number">5</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">			System.out.println(Thread.currentThread().getName() + <span class="string">" : "</span> + count--);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">co</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span> count = <span class="number">5</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">			System.out.println(Thread.currentThread().getName() + <span class="string">" : "</span> + count--);</span><br><span class="line">			<span class="keyword">try</span></span><br><span class="line">			&#123;</span><br><span class="line">				Thread.sleep(<span class="number">1500</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">catch</span> (InterruptedException e)</span><br><span class="line">			&#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>总结：通过以上简单实例发现，当多个线程开启时，一个线程不能去调用已经被同步锁锁定的对象，即是，若a.start();b.start();开启，若 a 被同步锁锁住，则 b<br>不能访问同步方法，但是可以访问非同步方法。<br><strong>如果某个线程得到了对象锁，但是另一个线程还是可以访问没有进行同步的方法或者代码。进行了同步的方法（加锁方法）和没有进行同步的方法（普通方法）是互不<br>影响的，一个线程进入了同步方法，得到了对象锁，其他线程还是可以访问那些没有同步的方法（普通方法）。当获取到与对象关联的内置锁时，并不能阻止其他线程<br>访问该对象，当某个线程获得对象的锁之后，只能阻止其他线程获得同一个锁</strong></p>
@@ -184,6 +186,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
@@ -257,25 +270,6 @@
 </article>
 
   
-<nav id="article-nav">
-  
-    <a href="/2018/10/25/Hello-zhl/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Hello zhl
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2018/10/25/Java/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java简单示例</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -394,6 +388,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
