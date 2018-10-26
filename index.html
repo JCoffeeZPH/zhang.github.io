@@ -232,7 +232,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/25/多线程同步锁/">多线程同步锁</a>
+      <a class="article-title" href="/2018/10/25/多线程同步锁/">简单理解synchronized用法</a>
     </h1>
   
 
@@ -245,14 +245,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.synchronized 关键字用于实现现成的同步，可以实现同步方法或者只对一部分代码进行同步，具体来说同步很消耗资源，<br>所以尽量减少同步的内容。<strong>注意</strong>：synchronized 关键字在继承时不能被子类所继承。<br>2.被 synchronized 关键字修饰的方法或者代码块，在特定的时间只能被某个线程所访问，即产生了同步锁。</p>
-<ol start="3">
-<li><strong>Java对象锁和类锁</strong>：<br> <strong>对象锁</strong>：用于对象实例方法或者一个对象实例上，但是类的对象实例可以有很多个，所以不同对象实例的对象锁是互<br> 不干扰的。<br> <strong>类锁</strong>：每个类都只有一个class对象，即每个类只一个类锁。
+        <p>多线程的锁，其实本质上就是给一块内存空间的访问添加访问权限，因为Java中是没有办法直接对某一块内存进行操作的，又因为Java是面向对象的语言，一切皆对象，所以具体的表现就是某一个对象承担锁的功能，每一个对象都可以是一个锁。<br>
         
       
 
       
-    </li></ol></div>
+    </p></div>
     <div class="article-info article-info-index">
       
       
