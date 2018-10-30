@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://jcoffeeph.top">
-  <title>ForMe</title>
+  <title>java IO字符流与字节流简单使用示例 | ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Enjoy Coding">
-<meta name="keywords" content="Java 软件">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ForMe">
-<meta property="og:url" content="http://jcoffeeph.top/index.html">
+  <meta name="description" content="1.Reader   &amp;amp;&amp;amp; WriterReader12345678910111213141516171819202122232425262728293031323334java.lang.Object      |-- java.io.Reader//常用方法               |-- int read()  //读取单个字符               |--  in">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java IO字符流与字节流简单使用示例">
+<meta property="og:url" content="http://jcoffeeph.top/2018/10/30/java-IO字符流与字节流简单使用示例/index.html">
 <meta property="og:site_name" content="ForMe">
-<meta property="og:description" content="Enjoy Coding">
+<meta property="og:description" content="1.Reader   &amp;amp;&amp;amp; WriterReader12345678910111213141516171819202122232425262728293031323334java.lang.Object      |-- java.io.Reader//常用方法               |-- int read()  //读取单个字符               |--  in">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-30T14:21:05.380Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ForMe">
-<meta name="twitter:description" content="Enjoy Coding">
+<meta name="twitter:title" content="java IO字符流与字节流简单使用示例">
+<meta name="twitter:description" content="1.Reader   &amp;amp;&amp;amp; WriterReader12345678910111213141516171819202122232425262728293031323334java.lang.Object      |-- java.io.Reader//常用方法               |-- int read()  //读取单个字符               |--  in">
   
     <link rel="alternative" href="/atom.xml" title="ForMe" type="application/atom+xml">
   
@@ -158,16 +159,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-java-IO字符流与字节流简单使用示例" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+            <article id="post-java-IO字符流与字节流简单使用示例" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/30/java-IO字符流与字节流简单使用示例/">java IO字符流与字节流简单使用示例</a>
+    <h1 class="article-title" itemprop="name">
+      java IO字符流与字节流简单使用示例
     </h1>
   
 
@@ -180,93 +179,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <font size="5"><strong>1.Reader   &amp;&amp; Writer</strong></font><br><font size="5"><strong>Reader</strong></font><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object   </span><br><span class="line">   |-- java.io.Reader<span class="comment">//常用方法</span></span><br><span class="line">               |-- <span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span>  <span class="comment">//读取单个字符</span></span></span><br><span class="line"><span class="function">               |--  <span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">char</span>[] cbuf)</span>  <span class="comment">//将字符读入数组中</span></span></span><br><span class="line"><span class="function">               |-- <span class="keyword">abstract</span>  <span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">char</span>[] cbuf, <span class="keyword">int</span> off, <span class="keyword">int</span> len)</span>  <span class="comment">//将字符读入数组中的某一部分。</span></span></span><br><span class="line"><span class="function">               |--<span class="keyword">abstract</span>  <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span>  <span class="comment">//关流</span></span></span><br><span class="line"><span class="function">        |-- java.io.BufferedReader<span class="comment">//其方法大致和Reader相同不在列举，注意BufferedReader有ReadLine()方法</span></span></span><br><span class="line"><span class="function">            |-- java.io.LineNumberReader <span class="comment">//以下为其常用方法</span></span></span><br><span class="line"><span class="function">               |-- <span class="title">LineNumberReader</span><span class="params">(Reader in)</span> <span class="comment">//构造方法</span></span></span><br><span class="line"><span class="function">               |-- <span class="keyword">int</span> <span class="title">getLineNumber</span><span class="params">()</span> <span class="comment">//获取当前行号</span></span></span><br><span class="line"><span class="function">               |--  <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span>  <span class="comment">//读取单个字符</span></span></span><br><span class="line"><span class="function">               |--  <span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">char</span>[] cbuf, <span class="keyword">int</span> off, <span class="keyword">int</span> len)</span>  <span class="comment">//将字符读入数组中的某一部分。</span></span></span><br><span class="line"><span class="function">               |--  String <span class="title">readLine</span><span class="params">()</span> <span class="comment">//读取文本行。</span></span></span><br><span class="line"><span class="function">               |--  <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span>  <span class="comment">//关流</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">        |-- java.io.InputStreamReader<span class="comment">//继承自Reader，常用方法与Reader基本相同，注意构造方法参数，此类将字节流转换为字符流，是字节流通向字符流的桥梁</span></span></span><br><span class="line"><span class="function">               |-- <span class="title">InputStreamReader</span><span class="params">(InputStream in)</span> <span class="comment">//构造方法</span></span></span><br><span class="line"><span class="function">               |-- <span class="title">InputStreamReader</span><span class="params">(InputStream in, Charset cs)</span><span class="comment">//构造方法，创建使用给定字符集的 InputStreamReader。</span></span></span><br><span class="line"><span class="function">           |-- java.io.FileReader<span class="comment">//常用方法</span></span></span><br><span class="line"><span class="function">               |-- <span class="title">FileReader</span><span class="params">(File file)</span><span class="comment">//构造方法</span></span></span><br><span class="line"><span class="function">               |-- <span class="title">FileReader</span><span class="params">(String fileName)</span> <span class="comment">//构造方法</span></span></span><br><span class="line"><span class="function">        |-- java.io.CharArrayReader<span class="comment">//此类实现一个可用作字符输入流的字符缓冲区。 </span></span></span><br><span class="line"><span class="function">               |-- <span class="title">CharArrayReader</span><span class="params">(<span class="keyword">char</span>[] buf)</span> <span class="comment">//构造方法，根据指定的 char 数组创建一个 CharArrayReader。</span></span></span><br><span class="line"><span class="function">               |-- <span class="title">CharArrayReader</span><span class="params">(<span class="keyword">char</span>[] buf, <span class="keyword">int</span> offset, <span class="keyword">int</span> length)</span> <span class="comment">//构造方法，根据指定的 char 数组创建一个 CharArrayReader。</span></span></span><br><span class="line"><span class="function">        |-- java.io.PipedReader<span class="comment">//传送的字符输入流。</span></span></span><br><span class="line"><span class="function">               |-- <span class="title">PipedReader</span><span class="params">()</span> <span class="comment">//构造方法，创建尚未连接的 PipedReader。</span></span></span><br><span class="line"><span class="function">               |-- <span class="title">PipedReader</span><span class="params">(<span class="keyword">int</span> pipeSize)</span> <span class="comment">//创建一个尚未连接的 PipedReader，并对管道缓冲区使用指定的管道大小。</span></span></span><br><span class="line"><span class="function">               |-- <span class="title">PipedReader</span><span class="params">(PipedWriter src)</span> <span class="comment">//创建连接到传送 writer src 的 PipedReader。</span></span></span><br><span class="line"><span class="function">               |-- <span class="title">PipedReader</span><span class="params">(PipedWriter src, <span class="keyword">int</span> pipeSize)</span> <span class="comment">// 创建一个 PipedReader，使其连接到管道 writer src，并对管道缓冲区使用指定的管道大小。</span></span></span><br><span class="line"><span class="function">               |-- <span class="keyword">void</span> <span class="title">connect</span><span class="params">(PipedWriter src)</span>  <span class="comment">//使此传送 reader 连接到传送 writer src。</span></span></span><br><span class="line"><span class="function">        |-- java.io.FilterReader</span></span><br><span class="line"><span class="function">               |-- <span class="keyword">protected</span>  <span class="title">FilterReader</span><span class="params">(Reader in)</span>  <span class="comment">//创建一个新的 filtered reader，其余方法和Reader相似</span></span></span><br><span class="line"><span class="function">        |-- java.io.StringReader <span class="comment">//其源为一个字符串的字符流。与CharArrayReader相似</span></span></span><br><span class="line"><span class="function">               |-- <span class="title">StringReader</span><span class="params">(String s)</span> <span class="comment">//创建一个新字符串 reader。</span></span></span><br></pre></td></tr></table></figure><br><br><font size="5"><strong>$$</strong></font> 此例为复制文件：通过File创建一个空文件，并把之前已存在的文件进行读取，将内容复制到空文件中，实现复制文件，<br>
-        
-      
+        <font size="5"><strong>1.Reader   &amp;&amp; Writer</strong></font><br><font size="5"><strong>Reader</strong></font><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object   </span><br><span class="line">   |-- java.io.Reader<span class="comment">//常用方法</span></span><br><span class="line">               |-- <span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span>  <span class="comment">//读取单个字符</span></span></span><br><span class="line"><span class="function">               |--  <span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">char</span>[] cbuf)</span>  <span class="comment">//将字符读入数组中</span></span></span><br><span class="line"><span class="function">               |-- <span class="keyword">abstract</span>  <span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">char</span>[] cbuf, <span class="keyword">int</span> off, <span class="keyword">int</span> len)</span>  <span class="comment">//将字符读入数组中的某一部分。</span></span></span><br><span class="line"><span class="function">               |--<span class="keyword">abstract</span>  <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span>  <span class="comment">//关流</span></span></span><br><span class="line"><span class="function">        |-- java.io.BufferedReader<span class="comment">//其方法大致和Reader相同不在列举，注意BufferedReader有ReadLine()方法</span></span></span><br><span class="line"><span class="function">            |-- java.io.LineNumberReader <span class="comment">//以下为其常用方法</span></span></span><br><span class="line"><span class="function">               |-- <span class="title">LineNumberReader</span><span class="params">(Reader in)</span> <span class="comment">//构造方法</span></span></span><br><span class="line"><span class="function">               |-- <span class="keyword">int</span> <span class="title">getLineNumber</span><span class="params">()</span> <span class="comment">//获取当前行号</span></span></span><br><span class="line"><span class="function">               |--  <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span>  <span class="comment">//读取单个字符</span></span></span><br><span class="line"><span class="function">               |--  <span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">char</span>[] cbuf, <span class="keyword">int</span> off, <span class="keyword">int</span> len)</span>  <span class="comment">//将字符读入数组中的某一部分。</span></span></span><br><span class="line"><span class="function">               |--  String <span class="title">readLine</span><span class="params">()</span> <span class="comment">//读取文本行。</span></span></span><br><span class="line"><span class="function">               |--  <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span>  <span class="comment">//关流</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">        |-- java.io.InputStreamReader<span class="comment">//继承自Reader，常用方法与Reader基本相同，注意构造方法参数，此类将字节流转换为字符流，是字节流通向字符流的桥梁</span></span></span><br><span class="line"><span class="function">               |-- <span class="title">InputStreamReader</span><span class="params">(InputStream in)</span> <span class="comment">//构造方法</span></span></span><br><span class="line"><span class="function">               |-- <span class="title">InputStreamReader</span><span class="params">(InputStream in, Charset cs)</span><span class="comment">//构造方法，创建使用给定字符集的 InputStreamReader。</span></span></span><br><span class="line"><span class="function">           |-- java.io.FileReader<span class="comment">//常用方法</span></span></span><br><span class="line"><span class="function">               |-- <span class="title">FileReader</span><span class="params">(File file)</span><span class="comment">//构造方法</span></span></span><br><span class="line"><span class="function">               |-- <span class="title">FileReader</span><span class="params">(String fileName)</span> <span class="comment">//构造方法</span></span></span><br><span class="line"><span class="function">        |-- java.io.CharArrayReader<span class="comment">//此类实现一个可用作字符输入流的字符缓冲区。 </span></span></span><br><span class="line"><span class="function">               |-- <span class="title">CharArrayReader</span><span class="params">(<span class="keyword">char</span>[] buf)</span> <span class="comment">//构造方法，根据指定的 char 数组创建一个 CharArrayReader。</span></span></span><br><span class="line"><span class="function">               |-- <span class="title">CharArrayReader</span><span class="params">(<span class="keyword">char</span>[] buf, <span class="keyword">int</span> offset, <span class="keyword">int</span> length)</span> <span class="comment">//构造方法，根据指定的 char 数组创建一个 CharArrayReader。</span></span></span><br><span class="line"><span class="function">        |-- java.io.PipedReader<span class="comment">//传送的字符输入流。</span></span></span><br><span class="line"><span class="function">               |-- <span class="title">PipedReader</span><span class="params">()</span> <span class="comment">//构造方法，创建尚未连接的 PipedReader。</span></span></span><br><span class="line"><span class="function">               |-- <span class="title">PipedReader</span><span class="params">(<span class="keyword">int</span> pipeSize)</span> <span class="comment">//创建一个尚未连接的 PipedReader，并对管道缓冲区使用指定的管道大小。</span></span></span><br><span class="line"><span class="function">               |-- <span class="title">PipedReader</span><span class="params">(PipedWriter src)</span> <span class="comment">//创建连接到传送 writer src 的 PipedReader。</span></span></span><br><span class="line"><span class="function">               |-- <span class="title">PipedReader</span><span class="params">(PipedWriter src, <span class="keyword">int</span> pipeSize)</span> <span class="comment">// 创建一个 PipedReader，使其连接到管道 writer src，并对管道缓冲区使用指定的管道大小。</span></span></span><br><span class="line"><span class="function">               |-- <span class="keyword">void</span> <span class="title">connect</span><span class="params">(PipedWriter src)</span>  <span class="comment">//使此传送 reader 连接到传送 writer src。</span></span></span><br><span class="line"><span class="function">        |-- java.io.FilterReader</span></span><br><span class="line"><span class="function">               |-- <span class="keyword">protected</span>  <span class="title">FilterReader</span><span class="params">(Reader in)</span>  <span class="comment">//创建一个新的 filtered reader，其余方法和Reader相似</span></span></span><br><span class="line"><span class="function">        |-- java.io.StringReader <span class="comment">//其源为一个字符串的字符流。与CharArrayReader相似</span></span></span><br><span class="line"><span class="function">               |-- <span class="title">StringReader</span><span class="params">(String s)</span> <span class="comment">//创建一个新字符串 reader。</span></span></span><br></pre></td></tr></table></figure><br><br><font size="5"><strong>$$</strong></font> 此例为复制文件：通过File创建一个空文件，并把之前已存在的文件进行读取，将内容复制到空文件中，实现复制文件，<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.IO;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.BufferedReader;</span><br><span class="line"><span class="keyword">import</span> java.io.BufferedWriter;</span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.FileReader;</span><br><span class="line"><span class="keyword">import</span> java.io.FileWriter;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BufferedReaderTest02</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line">		File file = <span class="keyword">new</span> File(<span class="string">"E:\\Blog\\test.txt"</span>);</span><br><span class="line">		BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> FileReader(<span class="string">"E:\\Blog\\Copy01.txt"</span>));</span><br><span class="line">		BufferedWriter bw = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> FileWriter(file));<span class="comment">//使用 FileReader(String fileName) 构造方法</span></span><br><span class="line">		String line = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">while</span>((line = br.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">			bw.write(line);</span><br><span class="line">			bw.newLine();</span><br><span class="line">			bw.flush();</span><br><span class="line">		&#125;</span><br><span class="line">		bw.close();</span><br><span class="line">		br.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br><font size="5"><strong>$$</strong></font> 此例仍以复制文件为例：InputStreamReader 和 OutputStreamWriter方法的具体演示，注释掉的是另一种实现方法，并不是错误，得到的结果都是相同的，都会复制到指定文件中，注意：一旦操作文本涉及到具体的指定编码表时，必须使用转换流 。<br>本例解析：读取一个文件，将其转换为字符流进行操作，可以进行整行读取比较方便<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.IO;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.BufferedReader;</span><br><span class="line"><span class="keyword">import</span> java.io.BufferedWriter;</span><br><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStreamReader;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStreamWriter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InputStreamReaderTest01</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@SuppressWarnings</span>(<span class="string">"unused"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//		InputStreamReader in = new InputStreamReader(new FileInputStream("E:\\Blog\\Copy01.txt"));</span></span><br><span class="line"><span class="comment">//		OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream("E:\\Blog\\Copy04.txt"));</span></span><br><span class="line">		BufferedReader in = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> </span><br><span class="line">				InputStreamReader(<span class="keyword">new</span> FileInputStream(<span class="string">"E:\\Blog\\Copy01.txt"</span>)));</span><br><span class="line">		BufferedWriter out = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> </span><br><span class="line">				OutputStreamWriter(<span class="keyword">new</span> FileOutputStream(<span class="string">"E:\\Blog\\Copy06.txt"</span>)));</span><br><span class="line"><span class="comment">//		int len;</span></span><br><span class="line"><span class="comment">//		char[] ch = new char[1024];</span></span><br><span class="line"><span class="comment">//		</span></span><br><span class="line"><span class="comment">//		while((len = in.read(ch)) != -1) &#123;</span></span><br><span class="line"><span class="comment">//			out.write(ch,0,len);</span></span><br><span class="line"><span class="comment">//			out.flush();</span></span><br><span class="line"><span class="comment">//		&#125;</span></span><br><span class="line">		</span><br><span class="line">		String line = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">while</span>((line = in.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">			out.write(line);</span><br><span class="line">			out.newLine();</span><br><span class="line">			out.flush();</span><br><span class="line">		&#125;</span><br><span class="line">		out.close();</span><br><span class="line">		in.close();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br><font size="5"><strong>$$</strong></font> 此例为CharArrayReader 的基本操作，此类用的相对较少对应字节流中的 ByteArrayInputStream<br><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.IO;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.CharArrayReader;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CharArrayReaderTest01</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">char</span>[] ch = &#123;<span class="string">'a'</span>,<span class="string">'c'</span>,<span class="string">'e'</span>,<span class="string">'r'</span>,<span class="string">'v'</span>,<span class="string">'t'</span>,<span class="string">'s'</span>,<span class="string">'q'</span>,<span class="string">'p'</span>,<span class="string">'b'</span>&#125;;</span><br><span class="line">		CharArrayReader cr = <span class="keyword">new</span> CharArrayReader(ch);</span><br><span class="line">		System.out.println((<span class="keyword">char</span>)cr.read());</span><br><span class="line">		cr.skip(<span class="number">1</span>);<span class="comment">//跳过下标为 1 之前的元素</span></span><br><span class="line">		<span class="keyword">char</span>[] ch1 = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">5</span>];</span><br><span class="line">		cr.read(ch1, <span class="number">0</span>, <span class="number">4</span>);<span class="comment">//相当于复制0~4的元素ch1中</span></span><br><span class="line">		System.out.println(<span class="keyword">new</span> String(ch1));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**结果为</span></span><br><span class="line"><span class="comment">*  a</span></span><br><span class="line"><span class="comment">*  ervt</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure><br><br><font size="5"><strong>Writer</strong></font><br>与Reader相似，二者大多数都是对应存在的，相当于有输入必有输出<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object</span><br><span class="line">  |-- java.io.Writer <span class="comment">//常用方法</span></span><br><span class="line">              |-- <span class="function">Writer <span class="title">append</span><span class="params">(<span class="keyword">char</span> c)</span>  <span class="comment">//将指定字符添加到此 writer。</span></span></span><br><span class="line"><span class="function">              |-- <span class="keyword">abstract</span>  <span class="keyword">void</span> <span class="title">flush</span><span class="params">()</span>  <span class="comment">//刷新该流的缓冲。</span></span></span><br><span class="line"><span class="function">              |-- <span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">char</span>[] cbuf)</span>  <span class="comment">//写入字符数组。</span></span></span><br><span class="line"><span class="function">              |-- <span class="keyword">abstract</span>  <span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">char</span>[] cbuf, <span class="keyword">int</span> off, <span class="keyword">int</span> len)</span>  <span class="comment">//写入字符数组的某一部分</span></span></span><br><span class="line"><span class="function">              |-- <span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> c)</span>  <span class="comment">//写入单个字符。</span></span></span><br><span class="line"><span class="function">              |--  <span class="keyword">void</span> <span class="title">write</span><span class="params">(String str)</span> <span class="comment">//写入字符串。</span></span></span><br><span class="line"><span class="function">              |-- <span class="keyword">void</span> <span class="title">write</span><span class="params">(String str, <span class="keyword">int</span> off, <span class="keyword">int</span> len)</span>  <span class="comment">// 写入字符串的某一部分。</span></span></span><br><span class="line"><span class="function">      |-- java.io.BufferedWriter <span class="comment">//缓冲流，提高效率，方法看父类，注意构造函数要传进来一个 Writer out，存在 newLine方法写入一个行分隔符</span></span></span><br><span class="line"><span class="function">      |-- java.io.OutputStreamWriter <span class="comment">//字符流通向字节流的桥梁,将输出的字符流变为字节流</span></span></span><br><span class="line"><span class="function">                  |-- <span class="title">OutputStreamWriter</span><span class="params">(OutputStream out)</span> <span class="comment">//构造函数</span></span></span><br><span class="line"><span class="function">                  |-- String <span class="title">getEncoding</span><span class="params">()</span> <span class="comment">//返回此流使用的字符编码的名称。其余方法参看父类</span></span></span><br><span class="line"><span class="function">      |-- java.io.CharArrayWriter<span class="comment">//使用较少，不再列举其具体方法</span></span></span><br><span class="line"><span class="function">      |-- java.io.StringWriter<span class="comment">//不做实例，不列举方法</span></span></span><br><span class="line"><span class="function">      |-- java.io.FilterWriter</span></span><br><span class="line"><span class="function">                  |-- <span class="keyword">protected</span>  <span class="title">FilterWriter</span><span class="params">(Writer out)</span><span class="comment">// 创建一个新的 filtered writer，其余方法参看父类</span></span></span><br><span class="line"><span class="function">      |-- java.io.PipedWriter 传送的字符输出流。 </span></span><br><span class="line"><span class="function">                  |-- <span class="title">PipedWriter</span><span class="params">()</span> <span class="comment">//创建一个尚未连接到传送 reader 的传送 writer。</span></span></span><br><span class="line"><span class="function">                  |-- <span class="title">PipedWriter</span><span class="params">(PipedReader snk)</span> <span class="comment">//创建传送 writer，使其连接到指定的传送 reader。</span></span></span><br><span class="line"><span class="function">                  |-- <span class="keyword">void</span> <span class="title">connect</span><span class="params">(PipedReader snk)</span>  <span class="comment">//将此传送 writer 连接到接收方。</span></span></span><br><span class="line"><span class="function">      |-- java.io.PrintWriter<span class="comment">//向文本输出流打印对象的格式化表示形式</span></span></span><br><span class="line"><span class="function">                  |-- <span class="title">PrintWriter</span><span class="params">(File file)</span> <span class="comment">//使用指定文件创建不具有自动行刷新的新 PrintWriter。</span></span></span><br><span class="line"><span class="function">                  |-- <span class="title">PrintWriter</span><span class="params">(OutputStream out)</span><span class="comment">// 根据现有的 OutputStream 创建不带自动行刷新的新 PrintWriter。</span></span></span><br><span class="line"><span class="function">                  |-- <span class="title">PrintWriter</span><span class="params">(OutputStream out, <span class="keyword">boolean</span> autoFlush)</span><span class="comment">// 通过现有的 OutputStream 创建新的 PrintWriter。</span></span></span><br><span class="line"><span class="function">                  |-- <span class="title">PrintWriter</span><span class="params">(String fileName)</span><span class="comment">//创建具有指定文件名称且不带自动行刷新的新 PrintWriter</span></span></span><br><span class="line"><span class="function">                  |-- <span class="title">PrintWriter</span><span class="params">(Writer out)</span> <span class="comment">//创建不带自动行刷新的新 PrintWriter。</span></span></span><br><span class="line"><span class="function">                  |-- <span class="title">PrintWriter</span><span class="params">(Writer out, <span class="keyword">boolean</span> autoFlush)</span><span class="comment">// 创建新 PrintWriter。</span></span></span><br><span class="line"><span class="function">                  |--  <span class="keyword">void</span> <span class="title">println</span><span class="params">(<span class="keyword">int</span> x)</span> <span class="comment">// 打印整数，然后终止该行。</span></span></span><br><span class="line"><span class="function">                  |-- <span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> i)</span>  <span class="comment">//打印整数。</span></span></span><br></pre></td></tr></table></figure><br><br><font size="5"> <strong>$$</strong></font> CharArrayWriter 简单示例<br><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.IO;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.CharArrayWriter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CharArrayWriterTest01</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">char</span>[] ch = &#123;<span class="string">'a'</span>,<span class="string">'c'</span>,<span class="string">'e'</span>,<span class="string">'r'</span>,<span class="string">'v'</span>,<span class="string">'t'</span>,<span class="string">'s'</span>,<span class="string">'q'</span>,<span class="string">'p'</span>,<span class="string">'b'</span>&#125;;</span><br><span class="line">		CharArrayWriter cw = <span class="keyword">new</span> CharArrayWriter();</span><br><span class="line">		cw.write(ch, <span class="number">0</span>, <span class="number">6</span>);</span><br><span class="line">		System.out.println(cw.size());</span><br><span class="line">		System.out.println(cw.toString());</span><br><span class="line">		<span class="keyword">char</span>[] ch1 = cw.toCharArray();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">char</span> c : ch1)</span><br><span class="line">			System.out.print(c + <span class="string">" "</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 结果为</span></span><br><span class="line"><span class="comment"> * 6</span></span><br><span class="line"><span class="comment"> * acervt</span></span><br><span class="line"><span class="comment"> * a c e r v t</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * */</span></span><br></pre></td></tr></table></figure><br><br><font size="5"><strong>$$</strong></font>PrintWriter 示例<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.IO;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PrintWriterTest01</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">char</span>[] ch = &#123;<span class="string">'a'</span>,<span class="string">'c'</span>,<span class="string">'e'</span>,<span class="string">'r'</span>,<span class="string">'v'</span>,<span class="string">'t'</span>,<span class="string">'s'</span>,<span class="string">'q'</span>,<span class="string">'p'</span>,<span class="string">'b'</span>&#125;;</span><br><span class="line">		PrintWriter po;</span><br><span class="line">		String s = <span class="string">"abe"</span>;</span><br><span class="line">		String ss = <span class="string">"kl阿斯顿发"</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			po = <span class="keyword">new</span> PrintWriter(<span class="keyword">new</span> FileOutputStream(<span class="string">"E:\\Blog\\test02.txt"</span>));</span><br><span class="line">			po.write(ch);</span><br><span class="line">			po.println(s);<span class="comment">//打印到E:\\Blog\\test02.txt中</span></span><br><span class="line">			po.print(ss);</span><br><span class="line">			po.flush();</span><br><span class="line">			po.close();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br><font size="5"><strong>2.InputStream与OutputStream</strong></font><br><font size="5"><strong>InputStream</strong></font><br>这里只介绍几种比较常用的类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object</span><br><span class="line">        |-- java.io.InputStream</span><br><span class="line">                    |-- <span class="function"><span class="keyword">int</span> <span class="title">available</span><span class="params">()</span> <span class="comment">// 返回此输入流下一个方法调用可以不受阻塞地从此输入流读取（或跳过）的估计字节数。</span></span></span><br><span class="line"><span class="function">                    |--  <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span> <span class="comment">//关流</span></span></span><br><span class="line"><span class="function">                    |--  <span class="keyword">abstract</span>  <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> <span class="comment">//从输入流中读取数据的下一个字节。</span></span></span><br><span class="line"><span class="function">                    |-- <span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">byte</span>[] b)</span> <span class="comment">//从输入流中读取一定数量的字节，并将其存储在缓冲区数组 b 中</span></span></span><br><span class="line"><span class="function">                    |--  <span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">byte</span>[] b, <span class="keyword">int</span> off, <span class="keyword">int</span> len)</span>  <span class="comment">//将输入流中最多 len 个数据字节读入 byte 数组。</span></span></span><br><span class="line"><span class="function">             |-- java.io.FileInputStream</span></span><br><span class="line"><span class="function">                    |-- <span class="title">FileInputStream</span><span class="params">(File file)</span> </span></span><br><span class="line"><span class="function">                    |-- <span class="title">FileInputStream</span><span class="params">(String name)</span> </span></span><br><span class="line"><span class="function">                    |-- <span class="keyword">protected</span>  <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span>  <span class="comment">//确保在不再引用文件输入流时调用其 close 方法。</span></span></span><br><span class="line"><span class="function">             |-- java.io.ByteArrayInputStream <span class="comment">//与CharArrayReader相似</span></span></span><br><span class="line"><span class="function">                    |-- <span class="title">ByteArrayInputStream</span><span class="params">(<span class="keyword">byte</span>[] buf)</span></span></span><br><span class="line"><span class="function">                    |-- <span class="title">ByteArrayInputStream</span><span class="params">(<span class="keyword">byte</span>[] buf, <span class="keyword">int</span> offset, <span class="keyword">int</span> length)</span> </span></span><br><span class="line"><span class="function">             |-- java.io.FilterInputStream</span></span><br><span class="line"><span class="function">                 |-- java.io.BufferedInputStream<span class="comment">//缓冲区，提高效率</span></span></span><br><span class="line"><span class="function">                    |-- <span class="title">BufferedInputStream</span><span class="params">(InputStream in)</span> <span class="comment">//构造函数</span></span></span><br><span class="line"><span class="function">                 |-- java.io.DataInputStream</span></span><br><span class="line"><span class="function">                    |-- <span class="title">DataInputStream</span><span class="params">(InputStream in)</span> </span></span><br><span class="line"><span class="function">             |-- java.io.ObjectInputStream</span></span><br><span class="line"><span class="function">                    |-- Object <span class="title">readObject</span><span class="params">()</span>  <span class="comment">//从 ObjectInputStream 读取对象。</span></span></span><br><span class="line"><span class="function">             |-- java.io.PipedInputStream <span class="comment">//管道输入流应该连接到管道输出流；管道输入流提供要写入管道输出流的所有数据字节</span></span></span><br><span class="line"><span class="function">                    |-- <span class="title">PipedInputStream</span><span class="params">()</span> <span class="comment">//创建尚未连接的 PipedInputStream。</span></span></span><br><span class="line"><span class="function">                    |-- <span class="title">PipedInputStream</span><span class="params">(<span class="keyword">int</span> pipeSize)</span> <span class="comment">//创建一个尚未连接的 PipedInputStream，并对管道缓冲区使用指定的管道大小。</span></span></span><br><span class="line"><span class="function">                    |-- <span class="title">PipedInputStream</span><span class="params">(PipedOutputStream src)</span> <span class="comment">//创建 PipedInputStream，使其连接到管道输出流 src。</span></span></span><br><span class="line"><span class="function">                    |-- <span class="title">PipedInputStream</span><span class="params">(PipedOutputStream src, <span class="keyword">int</span> pipeSize)</span> <span class="comment">//创建一个 PipedInputStream，使其连接到管道输出流 src，并对管道缓冲区使用指定的管道大小。</span></span></span><br><span class="line"><span class="function">                    |-- <span class="keyword">void</span> <span class="title">connect</span><span class="params">(PipedOutputStream src)</span>  <span class="comment">//使此管道输入流连接到管道输出流 src。</span></span></span><br></pre></td></tr></table></figure><br><br><font size="5"><strong>$$</strong></font> ObjectInputStream与ObjectOutputStream用法简单示例，<font color="#dd0000">注意：ObjectInputStream writerObject对象的时候，不能直接添加，需要将此类实现序列化serializable。</font>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.IO;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.ObjectInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.ObjectOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.Serializable;</span><br><span class="line"><span class="keyword">import</span> java.util.HashSet;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ObjectStreamTest01</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException, ClassNotFoundException </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line">		Set&lt;Worker&gt; list = <span class="keyword">new</span> HashSet&lt;Worker&gt;();</span><br><span class="line">		list.add(<span class="keyword">new</span> Worker(<span class="string">"lisi01"</span>,<span class="number">10000</span>));</span><br><span class="line">		list.add(<span class="keyword">new</span> Worker(<span class="string">"lisi02"</span>,<span class="number">10000</span>));</span><br><span class="line">		list.add(<span class="keyword">new</span> Worker(<span class="string">"lisi02"</span>,<span class="number">15000</span>));</span><br><span class="line">		list.add(<span class="keyword">new</span> Worker(<span class="string">"lisi01"</span>,<span class="number">10000</span>));</span><br><span class="line">		ObjectOutputStream out = <span class="keyword">new</span> ObjectOutputStream(<span class="keyword">new</span> FileOutputStream(<span class="string">"E:\\Blog\\test03.txt"</span>));</span><br><span class="line">		out.writeObject(list);</span><br><span class="line">		ObjectInputStream in = <span class="keyword">new</span> ObjectInputStream(<span class="keyword">new</span> FileInputStream(<span class="string">"E:\\Blog\\test03.txt"</span>));</span><br><span class="line">		<span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</span><br><span class="line">		Set&lt;Worker&gt; ww = (Set&lt;Worker&gt;)in.readObject();</span><br><span class="line">		<span class="keyword">for</span>(Worker w : ww) </span><br><span class="line">			System.out.println(w.getId() + <span class="string">" :: "</span> + w.getSalary());</span><br><span class="line">		out.close();</span><br><span class="line">		in.close();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Worker</span> <span class="keyword">implements</span> <span class="title">Serializable</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	String id;</span><br><span class="line">	<span class="keyword">int</span> salary;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Worker</span><span class="params">(String id, <span class="keyword">int</span> salary)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.id = id;</span><br><span class="line">		<span class="keyword">this</span>.salary = salary;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> id;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(String id)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.id = id;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSalary</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> salary;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setSalary</span><span class="params">(<span class="keyword">int</span> salary)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.salary = salary;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.id.hashCode() + salary*<span class="number">37</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(obj <span class="keyword">instanceof</span> Worker) &#123;</span><br><span class="line">			Worker w = (Worker)obj;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">this</span>.id.equals(w.id) &amp;&amp; <span class="keyword">this</span>.salary == w.salary;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<font size="5"><strong>OutputStream</strong></font>
 
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JavaSE//" class="article-tag-list-link color2">JavaSE</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object</span><br><span class="line">        |--  java.io.OutputStream</span><br><span class="line">                     |-- <span class="function"><span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">byte</span>[] b)</span>  <span class="comment">// 将 b.length 个字节从指定的 byte 数组写入此输出流</span></span></span><br><span class="line"><span class="function">                     |--  <span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">byte</span>[] b, <span class="keyword">int</span> off, <span class="keyword">int</span> len)</span>  <span class="comment">//将指定 byte 数组中从偏移量 off 开始的 len 个字节写入此输出流。</span></span></span><br><span class="line"><span class="function">                     |-- <span class="keyword">abstract</span>  <span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> b)</span>  <span class="comment">//将指定的字节写入此输出流。</span></span></span><br><span class="line"><span class="function">             |-- java.io.ByteArrayOutputStream <span class="comment">//此类实现了一个输出流，其中的数据被写入一个 byte 数组,和CharArrayWriter 相似</span></span></span><br><span class="line"><span class="function">             |-- java.io.FileOutputStream</span></span><br><span class="line"><span class="function">                     |-- <span class="title">FileOutputStream</span><span class="params">(File file)</span> </span></span><br><span class="line"><span class="function">                     |-- <span class="title">FileOutputStream</span><span class="params">(String name)</span> </span></span><br><span class="line"><span class="function">                     |-- <span class="title">FileOutputStream</span><span class="params">(String name, <span class="keyword">boolean</span> append)</span> </span></span><br><span class="line"><span class="function">                     |-- <span class="title">FileOutputStream</span><span class="params">(File file, <span class="keyword">boolean</span> append)</span> </span></span><br><span class="line"><span class="function">             |-- java.io.FilterOutputStream</span></span><br><span class="line"><span class="function">                     |-- <span class="title">FilterOutputStream</span><span class="params">(OutputStream out)</span> <span class="comment">//构造方法</span></span></span><br><span class="line"><span class="function">                  |-- java.io.BufferedOutputStream</span></span><br><span class="line"><span class="function">                     |-- <span class="title">BufferedOutputStream</span><span class="params">(OutputStream out)</span> <span class="comment">//构造方法</span></span></span><br><span class="line"><span class="function">                  |-- java.io.DataOutputStream<span class="comment">//数据输出流允许应用程序以适当方式将基本 Java 数据类型写入输出流中。然后，应用程序可以使用数据输入流将数据读入。 </span></span></span><br><span class="line"><span class="function">                     |-- <span class="title">DataOutputStream</span><span class="params">(OutputStream out)</span> <span class="comment">//构造方法</span></span></span><br><span class="line"><span class="function">                  |-- java.io.PrintStream</span></span><br><span class="line"><span class="function">                     |-- <span class="title">PrintStream</span><span class="params">(File file)</span> <span class="comment">//创建具有指定文件且不带自动行刷新的新打印流。</span></span></span><br><span class="line"><span class="function">                     |-- <span class="title">PrintStream</span><span class="params">(File file, String csn)</span> <span class="comment">//创建具有指定文件名称和字符集且不带自动行刷新的新打印流。</span></span></span><br><span class="line"><span class="function">                     |-- <span class="title">PrintStream</span><span class="params">(OutputStream out)</span> <span class="comment">//创建新的打印流。</span></span></span><br><span class="line"><span class="function">                     |-- <span class="title">PrintStream</span><span class="params">(OutputStream out, <span class="keyword">boolean</span> autoFlush, String encoding)</span> </span></span><br><span class="line"><span class="function">                     |-- <span class="title">PrintStream</span><span class="params">(String fileName)</span> <span class="comment">// 创建具有指定文件名称且不带自动行刷新的新打印流。</span></span></span><br><span class="line"><span class="function">                     |-- <span class="title">PrintStream</span><span class="params">(String fileName, String csn)</span> <span class="comment">//创建具有指定文件名称和字符集且不带自动行刷新的新打印流</span></span></span><br><span class="line"><span class="function">             |-- java.io.ObjectOutputStream</span></span><br><span class="line"><span class="function">                     |-- <span class="title">ObjectOutputStream</span><span class="params">()</span> <span class="comment">//构造方法</span></span></span><br><span class="line"><span class="function">                     |-- <span class="title">ObjectOutputStream</span><span class="params">(OutputStream out)</span> <span class="comment">//构造方法</span></span></span><br><span class="line"><span class="function">                     |-- <span class="keyword">void</span> <span class="title">writeObject</span><span class="params">(Object obj)</span>  <span class="comment">//将指定的对象写入 ObjectOutputStream。</span></span></span><br><span class="line"><span class="function">             |-- java.io.PipedOutputStream <span class="comment">//可以将管道输出流连接到管道输入流来创建通信管道。管道输出流是管道的发送端</span></span></span><br><span class="line"><span class="function">                    |-- <span class="keyword">void</span> <span class="title">connect</span><span class="params">(PipedInputStream snk)</span>  <span class="comment">//将此管道输出流连接到接收者。</span></span></span><br></pre></td></tr></table></figure>
+<p><font size="5"><strong>$$</strong></font>  最后实现图片的复制<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.IO;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.BufferedInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.BufferedOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PicCopyTest01</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line">		BufferedInputStream in = <span class="keyword">new</span> BufferedInputStream(<span class="keyword">new</span> FileInputStream(<span class="string">"G:\\图片\\bg.jpg"</span>));</span><br><span class="line">		BufferedOutputStream out = <span class="keyword">new</span> BufferedOutputStream(<span class="keyword">new</span> FileOutputStream(<span class="string">"E:\\Blog\\Pic02.jpg"</span>));</span><br><span class="line">		<span class="meta">@SuppressWarnings</span>(<span class="string">"unused"</span>)</span><br><span class="line">		<span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">byte</span>[] bt = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">		<span class="keyword">while</span>((len = in.read(bt)) !=- <span class="number">1</span>) &#123;</span><br><span class="line">			out.write(bt);</span><br><span class="line">			out.flush();</span><br><span class="line">		&#125;</span><br><span class="line">		in.close();</span><br><span class="line">		out.close();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>PS：</strong>PipedInputStream、PipedOutputStream、PipedReader、PipedWriter、ObjectInputStream、ObjectOutputStream先不做解释</p>
 
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/30/java-IO字符流与字节流简单使用示例/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-java实现Set接口的HashSet、TreeSet用法简析" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/29/java实现Set接口的HashSet、TreeSet用法简析/">java实现Set接口的HashSet、TreeSet用法简析</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/29/java实现Set接口的HashSet、TreeSet用法简析/" class="archive-article-date">
-  	<time datetime="2018-10-29T13:27:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>实现了Set接口的HashSet、TreeSet、LinkedHashSet存储元素均是无序的，即存入和取出的顺序不一定相同，且这三者都不允许其中有重复元素</strong><br><strong>1.HashSet：</strong>其继承关系如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object</span><br><span class="line">  |-- java.util.AbstractCollection&lt;E&gt;</span><br><span class="line">      |-- java.util.AbstractSet&lt;E&gt;</span><br><span class="line">          |-- java.util.HashSet&lt;E&gt;</span><br></pre></td></tr></table></figure></p>
-        
       
 
       
@@ -299,16 +220,24 @@
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/29/java实现Set接口的HashSet、TreeSet用法简析/">展开全文 >></a>
-        </p>
-      
 
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/10/29/java实现Set接口的HashSet、TreeSet用法简析/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java实现Set接口的HashSet、TreeSet用法简析</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -328,434 +257,14 @@
 
 
 
-
   
-    <article id="post-java实现链表的简单操作" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/29/java实现链表的简单操作/">java实现链表的简单操作</a>
-    </h1>
   
 
-        
-        <a href="/2018/10/29/java实现链表的简单操作/" class="archive-article-date">
-  	<time datetime="2018-10-29T10:56:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>1.单链表：</strong> 链接表首先要建立指针域和数据域，并用本节点的指针域指向下一个节点，对于链表的特点这里不做详细解释，单链表实现较为简单，如下所示<br>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/java实现数据结构//" class="article-tag-list-link color1">java实现数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/29/java实现链表的简单操作/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-java实现顺序表" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/29/java实现顺序表/">java实现顺序表</a>
-    </h1>
   
 
-        
-        <a href="/2018/10/29/java实现顺序表/" class="archive-article-date">
-  	<time datetime="2018-10-29T04:49:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>java中的ArrayList底层实现的数据结构是数组，和顺序表很相似，在此简单实现顺序表，算法思路较为简单，各个函数的功能已注释上面，不做详细的解释<br>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/java实现数据结构//" class="article-tag-list-link color1">java实现数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/29/java实现顺序表/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ArrayList和LinkedList用法简析" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/27/ArrayList和LinkedList用法简析/">ArrayList和LinkedList用法简析</a>
-    </h1>
   
 
-        
-        <a href="/2018/10/27/ArrayList和LinkedList用法简析/" class="archive-article-date">
-  	<time datetime="2018-10-27T10:43:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>1.ArrayList</strong> 相当于动态一维数组，其在内存中是连续的，其继承关系和实现的接口如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object</span><br><span class="line">  |-- java.util.AbstractCollection&lt;E&gt;</span><br><span class="line">      |-- java.util.AbstractList&lt;E&gt;</span><br><span class="line">          |-- java.util.ArrayList&lt;E&gt;</span><br><span class="line"> 所有已实现的接口： </span><br><span class="line">Serializable, Cloneable, Iterable&lt;E&gt;, Collection&lt;E&gt;, List&lt;E&gt;, RandomAccess</span><br></pre></td></tr></table></figure></p>
-<p>ArrayList 继承及依赖关系<br><a href="https://imgchr.com/i/igPydS" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2018/10/28/igPydS.jpg" alt="igPydS.jpg"></a><br><strong>a.</strong> 其子类用到的相对较少不做陈述。此外ArrayList 线程非同步，线程不安全，而vector是线程安全的，vector 和ArrayList 基本相似不再赘述，ArrayList 各个方法实例较为简单不再重复。ArrayList 实现了RandmoAccess接口，即提供了随机访问功能<br><strong>b.</strong> RandmoAccess是java中用来被List实现，为List提供快速访问功能的。在ArrayList中，我们即可以通过元素的序号快速获取元素对象；也就是快速随机访问。<br>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JavaSE//" class="article-tag-list-link color2">JavaSE</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/27/ArrayList和LinkedList用法简析/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-二叉树和哈夫曼树的简单实现" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/26/二叉树和哈夫曼树的简单实现/">二叉树和哈夫曼树的简单实现</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/26/二叉树和哈夫曼树的简单实现/" class="archive-article-date">
-  	<time datetime="2018-10-26T05:53:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>二叉树的性质及定义不再做重复。<br>1.二叉树的基本操作包括创建、前序输出、中序输出、后序输出、删除二叉树、叶子结点个数、叶子节点的值、交换左右子树，实现都相对简单，注意理解递归。<br>具体实现代码如下：<br>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/C语言实现数据结构//" class="article-tag-list-link color5">C语言实现数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/26/二叉树和哈夫曼树的简单实现/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-简单理解synchronized用法" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/25/简单理解synchronized用法/">简单理解synchronized用法</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/25/简单理解synchronized用法/" class="archive-article-date">
-  	<time datetime="2018-10-25T11:38:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>使用同步的原因：</strong> java允许多线程并发控制，当多个线程同时操作一个可共享的资源变量时（如数据的增删改查） 将会导致数据不准确，相互之间产生冲突，因此加入同步锁以避免在该线程没有完成操作之前，被其他线程的调用，从而保证了该变量的唯一性和准确性。<br>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JavaSE//" class="article-tag-list-link color2">JavaSE</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/25/简单理解synchronized用法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -781,8 +290,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
