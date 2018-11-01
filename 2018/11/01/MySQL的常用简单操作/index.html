@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://jcoffeeph.top">
-  <title>Archives | ForMe</title>
+  <title>MySQL的常用简单操作 | ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Enjoy Coding">
-<meta name="keywords" content="Java 软件">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ForMe">
-<meta property="og:url" content="http://jcoffeeph.top/archives/index.html">
+  <meta name="description" content="写在前面   不要轻易删除数据库文件，否则卸载重装很麻烦 mysql的安装、初始化以及环境变量配置等不再重复，本文用以记录对mysql的常用操作。 1 . 连接数据库，开启cmd进入命令行下，在进入到数据库安装的目录的bin目录下，输入mysql -uroot -p 回车，输入密码，再回车即可连接到数据库。  查看都有哪些数据库，输入命令1show databases;   显示出数据库都有哪些，">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL的常用简单操作">
+<meta property="og:url" content="http://jcoffeeph.top/2018/11/01/MySQL的常用简单操作/index.html">
 <meta property="og:site_name" content="ForMe">
-<meta property="og:description" content="Enjoy Coding">
+<meta property="og:description" content="写在前面   不要轻易删除数据库文件，否则卸载重装很麻烦 mysql的安装、初始化以及环境变量配置等不再重复，本文用以记录对mysql的常用操作。 1 . 连接数据库，开启cmd进入命令行下，在进入到数据库安装的目录的bin目录下，输入mysql -uroot -p 回车，输入密码，再回车即可连接到数据库。  查看都有哪些数据库，输入命令1show databases;   显示出数据库都有哪些，">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-01T11:35:53.469Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ForMe">
-<meta name="twitter:description" content="Enjoy Coding">
+<meta name="twitter:title" content="MySQL的常用简单操作">
+<meta name="twitter:description" content="写在前面   不要轻易删除数据库文件，否则卸载重装很麻烦 mysql的安装、初始化以及环境变量配置等不再重复，本文用以记录对mysql的常用操作。 1 . 连接数据库，开启cmd进入命令行下，在进入到数据库安装的目录的bin目录下，输入mysql -uroot -p 回车，输入密码，再回车即可连接到数据库。  查看都有哪些数据库，输入命令1show databases;   显示出数据库都有哪些，">
   
     <link rel="alternative" href="/atom.xml" title="ForMe" type="application/atom+xml">
   
@@ -158,36 +159,62 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-MySQL的常用简单操作" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      MySQL的常用简单操作
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/MySQL的常用简单操作/" class="archive-article-date">
+
+        
+        <a href="/2018/11/01/MySQL的常用简单操作/" class="archive-article-date">
   	<time datetime="2018-11-01T11:33:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/MySQL的常用简单操作/">MySQL的常用简单操作</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><font size="5">写在前面  </font> <font color="#DC143C"><strong>不要轻易删除数据库文件，否则卸载重装很麻烦</strong> </font><br>mysql的安装、初始化以及环境变量配置等不再重复，本文用以记录对mysql的常用操作。<br> 1 . 连接数据库，开启cmd进入命令行下，在进入到数据库安装的目录的bin目录下，输入<code>mysql -uroot -p</code> 回车，输入密码，再回车即可连接到数据库。</p>
+<ol start="2">
+<li>查看都有哪些数据库，输入命令<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>显示出数据库都有哪些，第一次使用的时候只有如下四个<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show databases;</span><br><span class="line">+--------------------+</span><br><span class="line">| Database           |</span><br><span class="line">+--------------------+</span><br><span class="line">| information_schema |</span><br><span class="line">| mysql              |</span><br><span class="line">| performance_schema |</span><br><span class="line">| sys                |</span><br><span class="line">+--------------------+</span><br><span class="line"><span class="number">4</span> <span class="function">rows in <span class="title">set</span> <span class="params">(<span class="number">0.00</span> sec)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>3.创建数据库。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database 数据库名字;</span><br></pre></td></tr></table></figure>
+<p>注意：创建数据库时，数据库名字你不带分号。再次执行<code>show databases</code>会显示出刚创建的数据库。<a id="more"></a></p>
+<ol start="4">
+<li>删除数据库。执行 <code>drop database 数据库名称</code> 即可删除此数据库。</li>
+<li>选择数据库。即进入到特定的某个数据库里面进行操作，只有进入到了数据库中才能完成数据库中表的创建删除等操作。执行<code>use 数据库名称</code> 即可。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; use test01;</span><br><span class="line">Database changed</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>6.对数据库进行操作，数据库是由许多表组成的，所以对数据库的操作可以认为是对表的操作。<br>创建数据表。创建数据表需要：表明、表字段名、定义每个表字段，<br>如果你不想字段为 null 可以设置字段的属性为not null， 在操作数据库时如果输入该字段的数据为null ，就会报错。<br>auto_increment定义列为自增的属性，一般用于主键，数值会自动加1。<br>primary key 关键字用于定义列为主键<br>engine 设置存储引擎，charset 设置编码。示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create table t1</span><br><span class="line">    -&gt; (t1_id <span class="keyword">int</span> not <span class="keyword">null</span> auto_increment,</span><br><span class="line">    -&gt; <span class="function">t1_name <span class="title">varchar</span><span class="params">(<span class="number">40</span>)</span> not <span class="keyword">null</span>,</span></span><br><span class="line"><span class="function">    -&gt; t1_author <span class="title">varchar</span><span class="params">(<span class="number">40</span>)</span> not <span class="keyword">null</span>,</span></span><br><span class="line"><span class="function">    -&gt; t1_price <span class="keyword">int</span> not <span class="keyword">null</span>,</span></span><br><span class="line"><span class="function">    -&gt; primary <span class="title">key</span> <span class="params">(t1_id)</span></span></span><br><span class="line"><span class="function">    -&gt; )engine</span>=innodb <span class="keyword">default</span> charset=utf8;</span><br><span class="line">Query OK, <span class="number">0</span> <span class="function">rows <span class="title">affected</span> <span class="params">(<span class="number">2.43</span> sec)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">mysql&gt; show tables</span>;</span><br><span class="line">+------------------+</span><br><span class="line">| Tables_in_test02 |</span><br><span class="line">+------------------+</span><br><span class="line">| t1               |</span><br><span class="line">+------------------+</span><br><span class="line"><span class="number">1</span> <span class="function">row in <span class="title">set</span> <span class="params">(<span class="number">0.00</span> sec)</span></span></span><br></pre></td></tr></table></figure>
+<p>以上实现了创建一个数据表，并验证是否创建成功。<br>7.删除数据表，和删除数据库语法相似。输入<code>drop table 数据表名</code> 即可。<br>8.往数据表插入数据.现在数据表已经创建好了但里面还没有数据，向数据表中插入数据方法很简单：<font color="#DC143C">（<strong>注意：如果数据是字符型，必须使用单引号或者引号，如：”value”。</strong>）</font><br>向数据表中添加数据可以一行一行添加，如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; insert into t1</span><br><span class="line">    -&gt; (t1_name,t1_author,t1_price)</span><br><span class="line">    -&gt; values</span><br><span class="line">    -&gt; (<span class="string">"西游记"</span>,<span class="string">"吴承恩"</span>,<span class="number">75</span>);</span><br><span class="line">Query OK, <span class="number">1</span> <span class="function">row <span class="title">affected</span> <span class="params">(<span class="number">2.24</span> sec)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>多行数据一次性添加，如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; insert into t1</span><br><span class="line">    -&gt; (t1_name,t1_author,t1_price)</span><br><span class="line">    -&gt; values</span><br><span class="line">    -&gt; (<span class="string">"水浒传"</span>,<span class="string">"施耐庵"</span>,<span class="number">78</span>),</span><br><span class="line">    -&gt; (<span class="string">"三国演义"</span>,<span class="string">"罗贯中"</span>,<span class="number">80</span>),</span><br><span class="line">    -&gt; (<span class="string">"红楼梦"</span>,<span class="string">"曹雪芹"</span>,<span class="number">85</span>);</span><br><span class="line">Query OK, <span class="number">3</span> <span class="function">rows <span class="title">affected</span> <span class="params">(<span class="number">2.17</span> sec)</span></span></span><br><span class="line"><span class="function">Records: 3  Duplicates: 0  Warnings: 0</span></span><br></pre></td></tr></table></figure></p>
+<p>9.查询数据表。对于以上的向数据表中插入数据如何得知成功与否呢，执行<code>select * from 数据表名称</code>即可，对于之前的插入操作验证如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from t1;</span><br><span class="line">+-------+--------------+-----------+----------+</span><br><span class="line">| t1_id | t1_name      | t1_author | t1_price |</span><br><span class="line">+-------+--------------+-----------+----------+</span><br><span class="line">|     <span class="number">1</span> | 西游记       | 吴承恩    |       <span class="number">75</span> |</span><br><span class="line">|     <span class="number">2</span> | 水浒传       | 施耐庵    |       <span class="number">78</span> |</span><br><span class="line">|     <span class="number">3</span> | 三国演义     | 罗贯中    |       <span class="number">80</span> |</span><br><span class="line">|     <span class="number">4</span> | 红楼梦       | 曹雪芹    |       <span class="number">85</span> |</span><br><span class="line">+-------+--------------+-----------+----------+</span><br></pre></td></tr></table></figure></p>
+<p>10.更新数据。也即是把表中的数据更改，比如书的价格改变了就需要变动price<br>所以只需执行 类似<code>update t1set t1_price=82 where t1_name=&#39;红楼梦&#39; ;</code>步骤即可，结果如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; update t1 set t1_price=<span class="number">82</span> where t1_name=<span class="string">'红楼梦'</span>;</span><br><span class="line">Query OK, <span class="number">1</span> <span class="function">row <span class="title">affected</span> <span class="params">(<span class="number">2.20</span> sec)</span></span></span><br><span class="line"><span class="function">Rows matched: 1  Changed: 1  Warnings:</span></span><br><span class="line"><span class="function">mysql&gt; select * from t1</span>;</span><br><span class="line">+-------+--------------+-----------+----------+</span><br><span class="line">| t1_id | t1_name      | t1_author | t1_price |</span><br><span class="line">+-------+--------------+-----------+----------+</span><br><span class="line">|     <span class="number">1</span> | 西游记       | 吴承恩    |       <span class="number">75</span> |</span><br><span class="line">|     <span class="number">2</span> | 水浒传       | 施耐庵    |       <span class="number">78</span> |</span><br><span class="line">|     <span class="number">3</span> | 三国演义     | 罗贯中    |       <span class="number">80</span> |</span><br><span class="line">|     <span class="number">4</span> | 红楼梦       | 曹雪芹    |       <span class="number">82</span> |</span><br><span class="line">+-------+--------------+-----------+----------+</span><br></pre></td></tr></table></figure>
+<p>11.删除数据表中的指定数据：<code>delete from t1 where t1_id=1;</code>重新查询一下就会发现 t1_id=1 的那一行被删除。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; delete from t1 where t1_id=<span class="number">1</span>;</span><br><span class="line">Query OK, <span class="number">1</span> <span class="function">row <span class="title">affected</span> <span class="params">(<span class="number">2.23</span> sec)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">mysql&gt; select * from t1</span>;</span><br><span class="line">+-------+--------------+-----------+----------+</span><br><span class="line">| t1_id | t1_name      | t1_author | t1_price |</span><br><span class="line">+-------+--------------+-----------+----------+</span><br><span class="line">|     <span class="number">2</span> | 水浒传       | 施耐庵    |       <span class="number">78</span> |</span><br><span class="line">|     <span class="number">3</span> | 三国演义     | 罗贯中    |       <span class="number">80</span> |</span><br><span class="line">|     <span class="number">4</span> | 红楼梦       | 曹雪芹    |       <span class="number">82</span> |</span><br><span class="line">+-------+--------------+-----------+----------+</span><br><span class="line"><span class="number">3</span> <span class="function">rows in <span class="title">set</span> <span class="params">(<span class="number">0.00</span> sec)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>12.like 用法：向 t1 表中加入几个数据，可以使用like子句代替等号 =，like 通常与 % 一同使用，类似于一个元字符的搜索。<br>示例：<code>select * from t1 where t1_author like (&#39;%xml&#39;);</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * <span class="function">from t1 where t1_author <span class="title">like</span><span class="params">(<span class="string">'%.xml'</span>)</span></span>;</span><br><span class="line">+-------+---------+-----------+----------+</span><br><span class="line">| t1_id | t1_name | t1_author | t1_price |</span><br><span class="line">+-------+---------+-----------+----------+</span><br><span class="line">|     <span class="number">5</span> | <span class="number">1</span>.name  | <span class="number">1</span>.xml     |      <span class="number">100</span> |</span><br><span class="line">|     <span class="number">6</span> | <span class="number">3</span>.name  | <span class="number">3</span>.xml     |      <span class="number">300</span> |</span><br><span class="line">|     <span class="number">7</span> | <span class="number">2</span>.name  | <span class="number">2</span>.xml     |      <span class="number">200</span> |</span><br><span class="line">+-------+---------+-----------+----------+</span><br><span class="line"><span class="number">3</span> <span class="function">rows in <span class="title">set</span> <span class="params">(<span class="number">0.00</span> sec)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>13.order by 可以用来排序。例如：t1_price 按升序排列：<code>select * from t1 order by t1_price asc;</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from t1 order by t1_price asc;</span><br><span class="line">+-------+--------------+-----------+----------+</span><br><span class="line">| t1_id | t1_name      | t1_author | t1_price |</span><br><span class="line">+-------+--------------+-----------+----------+</span><br><span class="line">|     <span class="number">2</span> | 水浒传       | 施耐庵    |       <span class="number">78</span> |</span><br><span class="line">|     <span class="number">3</span> | 三国演义     | 罗贯中    |       <span class="number">80</span> |</span><br><span class="line">|     <span class="number">4</span> | 红楼梦       | 曹雪芹    |       <span class="number">82</span> |</span><br><span class="line">|     <span class="number">5</span> | <span class="number">1</span>.name       | <span class="number">1</span>.xml     |      <span class="number">100</span> |</span><br><span class="line">|     <span class="number">7</span> | <span class="number">2</span>.name       | <span class="number">2</span>.xml     |      <span class="number">200</span> |</span><br><span class="line">|     <span class="number">6</span> | <span class="number">3</span>.name       | <span class="number">3</span>.xml     |      <span class="number">300</span> |</span><br><span class="line">+-------+--------------+-----------+----------+</span><br><span class="line"><span class="number">6</span> <span class="function">rows in <span class="title">set</span> <span class="params">(<span class="number">0.00</span> sec)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>按t1_id降序排列，如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from t1 order by t1_id desc;</span><br><span class="line">+-------+--------------+-----------+----------+</span><br><span class="line">| t1_id | t1_name      | t1_author | t1_price |</span><br><span class="line">+-------+--------------+-----------+----------+</span><br><span class="line">|     <span class="number">7</span> | <span class="number">2</span>.name       | <span class="number">2</span>.xml     |      <span class="number">200</span> |</span><br><span class="line">|     <span class="number">6</span> | <span class="number">3</span>.name       | <span class="number">3</span>.xml     |      <span class="number">300</span> |</span><br><span class="line">|     <span class="number">5</span> | <span class="number">1</span>.name       | <span class="number">1</span>.xml     |      <span class="number">100</span> |</span><br><span class="line">|     <span class="number">4</span> | 红楼梦       | 曹雪芹    |       <span class="number">82</span> |</span><br><span class="line">|     <span class="number">3</span> | 三国演义     | 罗贯中    |       <span class="number">80</span> |</span><br><span class="line">|     <span class="number">2</span> | 水浒传       | 施耐庵    |       <span class="number">78</span> |</span><br><span class="line">+-------+--------------+-----------+----------+</span><br><span class="line"><span class="number">6</span> <span class="function">rows in <span class="title">set</span> <span class="params">(<span class="number">0.00</span> sec)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>14.改变数据表名：一般不会更改，如果要改，则执行<code>alter table t1 rename t11;</code>即可<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; alter table t1 rename t11;</span><br><span class="line">Query OK, <span class="number">0</span> <span class="function">rows <span class="title">affected</span> <span class="params">(<span class="number">2.38</span> sec)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">mysql&gt; show tables</span>;</span><br><span class="line">+------------------+</span><br><span class="line">| Tables_in_test02 |</span><br><span class="line">+------------------+</span><br><span class="line">| t11              |</span><br><span class="line">+------------------+</span><br><span class="line"><span class="number">1</span> <span class="function">row in <span class="title">set</span> <span class="params">(<span class="number">0.00</span> sec)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>15.添加列表。执行<code>alter table t2 add column t1_time varchar(15);</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; <span class="function">alter table t11 add column t1_time <span class="title">varchar</span><span class="params">(<span class="number">50</span>)</span></span>;</span><br><span class="line">Query OK, <span class="number">0</span> <span class="function">rows <span class="title">affected</span> <span class="params">(<span class="number">2.71</span> sec)</span></span></span><br><span class="line"><span class="function">Records: 0  Duplicates: 0  Warnings: 0</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">mysql&gt; select * from t11</span>;</span><br><span class="line">+-------+--------------+-----------+----------+---------+</span><br><span class="line">| t1_id | t1_name      | t1_author | t1_price | t1_time |</span><br><span class="line">+-------+--------------+-----------+----------+---------+</span><br><span class="line">|     <span class="number">2</span> | 水浒传       | 施耐庵    |       <span class="number">78</span> | NULL    |</span><br><span class="line">|     <span class="number">3</span> | 三国演义     | 罗贯中    |       <span class="number">80</span> | NULL    |</span><br><span class="line">|     <span class="number">4</span> | 红楼梦       | 曹雪芹    |       <span class="number">82</span> | NULL    |</span><br><span class="line">|     <span class="number">5</span> | <span class="number">1</span>.name       | <span class="number">1</span>.xml     |      <span class="number">100</span> | NULL    |</span><br><span class="line">|     <span class="number">6</span> | <span class="number">3</span>.name       | <span class="number">3</span>.xml     |      <span class="number">300</span> | NULL    |</span><br><span class="line">|     <span class="number">7</span> | <span class="number">2</span>.name       | <span class="number">2</span>.xml     |      <span class="number">200</span> | NULL    |</span><br><span class="line">+-------+--------------+-----------+----------+---------+</span><br><span class="line"><span class="number">6</span> <span class="function">rows in <span class="title">set</span> <span class="params">(<span class="number">0.00</span> sec)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">mysql&gt; update t11 set t1_time</span>=<span class="string">"这本书是2015年出版的"</span> where t1_name=<span class="string">'三国演义'</span>;</span><br><span class="line">Query OK, <span class="number">1</span> <span class="function">row <span class="title">affected</span> <span class="params">(<span class="number">2.19</span> sec)</span></span></span><br><span class="line"><span class="function">Rows matched: 1  Changed: 1  Warnings: 0</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">mysql&gt; select * from t11</span>;</span><br><span class="line">+-------+--------------+-----------+----------+------------------------------+</span><br><span class="line">| t1_id | t1_name      | t1_author | t1_price | t1_time                      |</span><br><span class="line">+-------+--------------+-----------+----------+------------------------------+</span><br><span class="line">|     <span class="number">2</span> | 水浒传       | 施耐庵    |       <span class="number">78</span> | NULL                         |</span><br><span class="line">|     <span class="number">3</span> | 三国演义     | 罗贯中    |       <span class="number">80</span> | 这本书是<span class="number">2015</span>年出版的         |</span><br><span class="line">|     <span class="number">4</span> | 红楼梦       | 曹雪芹    |       <span class="number">82</span> | NULL                         |</span><br><span class="line">|     <span class="number">5</span> | <span class="number">1</span>.name       | <span class="number">1</span>.xml     |      <span class="number">100</span> | NULL                         |</span><br><span class="line">|     <span class="number">6</span> | <span class="number">3</span>.name       | <span class="number">3</span>.xml     |      <span class="number">300</span> | NULL                         |</span><br><span class="line">|     <span class="number">7</span> | <span class="number">2</span>.name       | <span class="number">2</span>.xml     |      <span class="number">200</span> | NULL                         |</span><br><span class="line">+-------+--------------+-----------+----------+------------------------------+</span><br><span class="line"><span class="number">6</span> <span class="function">rows in <span class="title">set</span> <span class="params">(<span class="number">0.00</span> sec)</span></span></span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -199,7 +226,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -212,360 +239,53 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/java-IO字符流与字节流简单使用示例/" class="archive-article-date">
-  	<time datetime="2018-10-30T14:16:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/10/30/java-IO字符流与字节流简单使用示例/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java IO字符流与字节流简单使用示例</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/java-IO字符流与字节流简单使用示例/">java IO字符流与字节流简单使用示例</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JavaSE//" class="article-tag-list-link color2">JavaSE</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/29/java实现Set接口的HashSet、TreeSet用法简析/" class="archive-article-date">
-  	<time datetime="2018-10-29T13:27:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/29/java实现Set接口的HashSet、TreeSet用法简析/">java实现Set接口的HashSet、TreeSet用法简析</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JavaSE//" class="article-tag-list-link color2">JavaSE</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/29/java实现链表的简单操作/" class="archive-article-date">
-  	<time datetime="2018-10-29T10:56:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/29/java实现链表的简单操作/">java实现链表的简单操作</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/java实现数据结构//" class="article-tag-list-link color1">java实现数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/29/java实现顺序表/" class="archive-article-date">
-  	<time datetime="2018-10-29T04:49:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/29/java实现顺序表/">java实现顺序表</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/java实现数据结构//" class="article-tag-list-link color1">java实现数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/27/ArrayList和LinkedList用法简析/" class="archive-article-date">
-  	<time datetime="2018-10-27T10:43:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/27/ArrayList和LinkedList用法简析/">ArrayList和LinkedList用法简析</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JavaSE//" class="article-tag-list-link color2">JavaSE</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/26/二叉树和哈夫曼树的简单实现/" class="archive-article-date">
-  	<time datetime="2018-10-26T05:53:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/26/二叉树和哈夫曼树的简单实现/">二叉树和哈夫曼树的简单实现</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/C语言实现数据结构//" class="article-tag-list-link color5">C语言实现数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/25/简单理解synchronized用法/" class="archive-article-date">
-  	<time datetime="2018-10-25T11:38:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/25/简单理解synchronized用法/">简单理解synchronized用法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JavaSE//" class="article-tag-list-link color2">JavaSE</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -591,8 +311,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
