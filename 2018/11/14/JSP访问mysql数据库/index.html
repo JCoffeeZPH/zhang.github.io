@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://jcoffeeph.top">
-  <title>ForMe</title>
+  <title>JSP访问mysql数据库 | ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Enjoy Coding">
-<meta name="keywords" content="Java 软件">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ForMe">
-<meta property="og:url" content="http://jcoffeeph.top/page/2/index.html">
+  <meta name="description" content="在jsp中当创建登录表单时，可以与数据库中的一些已经存在的信息进行对比，进而判断是否存在已有用户，本篇只实现简要介绍jsp访问数据库，只实现查询功能，其余功能类似。使用IDEA编译器，首先配置文件：首先在web文件夹下创建lib目录(右键项目，New -&amp;gt; Directory -&amp;gt;创建文件夹即可)，把mysql驱动器复制到lib目录下，然后File -&amp;gt; Project Stru">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSP访问mysql数据库">
+<meta property="og:url" content="http://jcoffeeph.top/2018/11/14/JSP访问mysql数据库/index.html">
 <meta property="og:site_name" content="ForMe">
-<meta property="og:description" content="Enjoy Coding">
+<meta property="og:description" content="在jsp中当创建登录表单时，可以与数据库中的一些已经存在的信息进行对比，进而判断是否存在已有用户，本篇只实现简要介绍jsp访问数据库，只实现查询功能，其余功能类似。使用IDEA编译器，首先配置文件：首先在web文件夹下创建lib目录(右键项目，New -&amp;gt; Directory -&amp;gt;创建文件夹即可)，把mysql驱动器复制到lib目录下，然后File -&amp;gt; Project Stru">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-14T11:56:17.918Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ForMe">
-<meta name="twitter:description" content="Enjoy Coding">
+<meta name="twitter:title" content="JSP访问mysql数据库">
+<meta name="twitter:description" content="在jsp中当创建登录表单时，可以与数据库中的一些已经存在的信息进行对比，进而判断是否存在已有用户，本篇只实现简要介绍jsp访问数据库，只实现查询功能，其余功能类似。使用IDEA编译器，首先配置文件：首先在web文件夹下创建lib目录(右键项目，New -&amp;gt; Directory -&amp;gt;创建文件夹即可)，把mysql驱动器复制到lib目录下，然后File -&amp;gt; Project Stru">
   
     <link rel="alternative" href="/atom.xml" title="ForMe" type="application/atom+xml">
   
@@ -158,119 +159,33 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-二叉树和哈夫曼树的简单实现" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+            <article id="post-JSP访问mysql数据库" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/26/二叉树和哈夫曼树的简单实现/">二叉树和哈夫曼树的简单实现</a>
+    <h1 class="article-title" itemprop="name">
+      JSP访问mysql数据库
     </h1>
   
 
         
-        <a href="/2018/10/26/二叉树和哈夫曼树的简单实现/" class="archive-article-date">
-  	<time datetime="2018-10-26T05:53:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-26</time>
+        <a href="/2018/11/14/JSP访问mysql数据库/" class="archive-article-date">
+  	<time datetime="2018-11-14T11:55:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>二叉树的性质及定义不再做重复。<br>1.二叉树的基本操作包括创建、前序输出、中序输出、后序输出、删除二叉树、叶子结点个数、叶子节点的值、交换左右子树，实现都相对简单，注意理解递归。<br>具体实现代码如下：<br>
-        
+        <p>在jsp中当创建登录表单时，可以与数据库中的一些已经存在的信息进行对比，进而判断是否存在已有用户，本篇只实现简要介绍jsp访问数据库，只实现查询功能，其余功能类似。使用IDEA编译器，首先配置文件：首先在web文件夹下创建lib目录(右键项目，New -&gt; Directory -&gt;创建文件夹即可)，把mysql驱动器复制到lib目录下，然后<code>File -&gt; Project Structure -&gt; Modules  -&gt; Dependencies -&gt; JARS or Director... -&gt; web目录下自己手动所创建的 lib目录 -&gt; OK</code><br><a id="more"></a><br>下面是完整的代码：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">"java.sql.*"</span> %&gt;&lt;%--</span><br><span class="line">  Created by IntelliJ IDEA.</span><br><span class="line">  User: ForMe</span><br><span class="line">  Date: <span class="number">2018</span>/<span class="number">11</span>/<span class="number">14</span></span><br><span class="line">  Time: <span class="number">19</span>:<span class="number">07</span></span><br><span class="line">  To change <span class="keyword">this</span> template use File | Settings | File Templates.</span><br><span class="line">--%&gt;</span><br><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;JDBCTest2&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1&gt;这是用于测试JSP中JDBC连接到实例&lt;/h1&gt;</span><br><span class="line">&lt;hr&gt;</span><br><span class="line">&lt;table&gt;</span><br><span class="line">&lt;%</span><br><span class="line">    request.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">    <span class="keyword">final</span> String Driver = <span class="string">"com.mysql.jdbc.Driver"</span>;</span><br><span class="line">    <span class="keyword">final</span> String URL = <span class="string">"jdbc:mysql://localhost:3306/test01"</span>;</span><br><span class="line">    <span class="keyword">final</span> String USER = <span class="string">"root"</span>;</span><br><span class="line">    <span class="keyword">final</span> String PASS = <span class="string">"ForMe=520"</span>;</span><br><span class="line">    <span class="keyword">final</span> String sql = <span class="string">"select * from websites"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        Class.forName(Driver);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        Connection conn = DriverManager.getConnection(URL,USER,PASS);</span><br><span class="line">        PreparedStatement psttm = (PreparedStatement)conn.prepareStatement(sql);</span><br><span class="line">        ResultSet rs = psttm.executeQuery();</span><br><span class="line">        <span class="keyword">while</span>(rs.next())&#123;</span><br><span class="line"></span><br><span class="line">        %&gt;</span><br><span class="line">&lt;tr&gt;</span><br><span class="line">    &lt;td&gt;</span><br><span class="line">        &lt;%</span><br><span class="line">            out.println(rs.getInt(<span class="string">"id"</span>));</span><br><span class="line">        %&gt;</span><br><span class="line">    &lt;/td&gt;</span><br><span class="line">    &lt;td&gt;</span><br><span class="line">        &lt;%</span><br><span class="line">            out.println(rs.getString(<span class="string">"name"</span>));</span><br><span class="line">        %&gt;</span><br><span class="line">    &lt;/td&gt;</span><br><span class="line">    &lt;td&gt;</span><br><span class="line">        &lt;%</span><br><span class="line">            out.println(rs.getString(<span class="string">"url"</span>));</span><br><span class="line">        %&gt;</span><br><span class="line">    &lt;/td&gt;</span><br><span class="line">    &lt;td&gt;</span><br><span class="line">        &lt;%</span><br><span class="line">            out.println(rs.getString(<span class="string">"alexa"</span>));</span><br><span class="line">        %&gt;</span><br><span class="line">    &lt;/td&gt;</span><br><span class="line">    &lt;td&gt;</span><br><span class="line">        &lt;%</span><br><span class="line">            out.println(rs.getString(<span class="string">"country"</span>));</span><br><span class="line">        %&gt;</span><br><span class="line">    &lt;/td&gt;</span><br><span class="line">&lt;/tr&gt;</span><br><span class="line">&lt;%</span><br><span class="line">        &#125;</span><br><span class="line">        rs.close();</span><br><span class="line">        psttm.close();</span><br><span class="line">        conn.close();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">%&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
       
 
       
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/C语言实现数据结构//" class="article-tag-list-link color5">C语言实现数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/26/二叉树和哈夫曼树的简单实现/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
     </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-简单理解synchronized用法" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/25/简单理解synchronized用法/">简单理解synchronized用法</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/25/简单理解synchronized用法/" class="archive-article-date">
-  	<time datetime="2018-10-25T11:38:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>使用同步的原因：</strong> java允许多线程并发控制，当多个线程同时操作一个可共享的资源变量时（如数据的增删改查） 将会导致数据不准确，相互之间产生冲突，因此加入同步锁以避免在该线程没有完成操作之前，被其他线程的调用，从而保证了该变量的唯一性和准确性。<br>
-        
-      
-
-      
-    </p></div>
     <div class="article-info article-info-index">
       
       
@@ -291,7 +206,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/JavaSE//" class="article-tag-list-link color2">JavaSE</a>
+        			<a href="/categories/JavaEE//" class="article-tag-list-link color2">JavaEE</a>
         		</li>
       		
 		</ul>
@@ -299,16 +214,24 @@
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/25/简单理解synchronized用法/">展开全文 >></a>
-        </p>
-      
 
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/07/散列表简析/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">散列表及HashMap简析</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -328,12 +251,14 @@
 
 
 
+  
+  
+  
 
   
+
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
+
   
 
 
@@ -359,8 +284,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
