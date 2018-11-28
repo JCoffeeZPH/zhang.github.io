@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://jcoffeeph.top">
-  <title>Category: JavaWeb | ForMe</title>
+  <title>Javaweb之HttpServletResponse对象与HttpServletRequest对象 | ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Enjoy Coding">
-<meta name="keywords" content="Java 软件">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ForMe">
-<meta property="og:url" content="http://jcoffeeph.top/categories/JavaWeb/index.html">
+  <meta name="description" content="每次当web服务器接收来自客户端的http请求时，会创建两个对象，一个是代表请求的request对象，一个是代表响应的response对象。 一、HttpServletResponse对象HttpServletResponse对象代表服务器的响应。这个对象中封装了向客户端发送数据、发送响应头，发送响应状态码的方法。">
+<meta name="keywords" content="response&amp;&amp;request">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javaweb之HttpServletResponse对象与HttpServletRequest对象">
+<meta property="og:url" content="http://jcoffeeph.top/2018/11/28/Javaweb之HttpServletResponse对象与HttpServletRequest对象/index.html">
 <meta property="og:site_name" content="ForMe">
-<meta property="og:description" content="Enjoy Coding">
+<meta property="og:description" content="每次当web服务器接收来自客户端的http请求时，会创建两个对象，一个是代表请求的request对象，一个是代表响应的response对象。 一、HttpServletResponse对象HttpServletResponse对象代表服务器的响应。这个对象中封装了向客户端发送数据、发送响应头，发送响应状态码的方法。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://s1.ax1x.com/2018/11/28/FZeuZD.png">
+<meta property="og:updated_time" content="2018-11-28T15:07:14.983Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ForMe">
-<meta name="twitter:description" content="Enjoy Coding">
+<meta name="twitter:title" content="Javaweb之HttpServletResponse对象与HttpServletRequest对象">
+<meta name="twitter:description" content="每次当web服务器接收来自客户端的http请求时，会创建两个对象，一个是代表请求的request对象，一个是代表响应的response对象。 一、HttpServletResponse对象HttpServletResponse对象代表服务器的响应。这个对象中封装了向客户端发送数据、发送响应头，发送响应状态码的方法。">
+<meta name="twitter:image" content="https://s1.ax1x.com/2018/11/28/FZeuZD.png">
   
     <link rel="alternative" href="/atom.xml" title="ForMe" type="application/atom+xml">
   
@@ -158,36 +161,44 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Javaweb之HttpServletResponse对象与HttpServletRequest对象" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/28/Javaweb之HttpServletResponse对象与HttpServletRequest对象/" class="archive-article-date">
-  	<time datetime="2018-11-28T15:05:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-28</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/28/Javaweb之HttpServletResponse对象与HttpServletRequest对象/">Javaweb之HttpServletResponse对象与HttpServletRequest对象</a>
+    <h1 class="article-title" itemprop="name">
+      Javaweb之HttpServletResponse对象与HttpServletRequest对象
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/11/28/Javaweb之HttpServletResponse对象与HttpServletRequest对象/" class="archive-article-date">
+  	<time datetime="2018-11-28T15:05:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>每次当web服务器接收来自客户端的http请求时，会创建两个对象，一个是代表请求的request对象，一个是代表响应的response对象。</p>
+<p><font color="#dc123" size="5">一、HttpServletResponse对象</font><br>HttpServletResponse对象代表服务器的响应。这个对象中封装了向客户端发送数据、发送响应头，发送响应状态码的方法。<br><a id="more"></a><br>常用方法有：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//增加一个Cookie到响应中。这个方法可以被多次调用，用于设置多个Cookie。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">addCookie</span><span class="params">(Cookie paramCookie)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//判断以name为名字的响应报头是否已经设置。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">boolean</span> <span class="title">containsHeader</span><span class="params">(String name)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//使用Session ID对指定的url进行编码。如果该url不需要编码，则返回未改变的url。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> String <span class="title">encodeURL</span><span class="params">(String paramString)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//使用Session ID对用于重定向的url进行编码，以便用于sendRedirect()方法中。如果该url不需要编码，则返回未改变的url。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> String <span class="title">encodeRedirectURL</span><span class="params">(String paramString)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//使用指定的状态代码发送一个错误响应到客户端。服务器默认会创建一个包含了指定消息的服务器端错误页面作为响应，</span></span><br><span class="line">    <span class="comment">//设置内容类型为“text/html”。如果Web应用程序已经声明了对应于指定状态代码的错误页面，则服务器会将这个页面发送给客户端，而不理会参数msg指定的错误消息。</span></span><br><span class="line">    <span class="comment">//如果响应已经被提交，这个方法将抛出IllegalStateException异常。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">sendError</span><span class="params">(<span class="keyword">int</span> paramInt, String msg)</span> <span class="keyword">throws</span> IOException</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//使用参数sc表示的状态代码发送一个错误响应到客户端，同时清除缓存。如果响应已经被提交，这个方法将抛出IllegalStateException异常。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">sendError</span><span class="params">(<span class="keyword">int</span> sc)</span> <span class="keyword">throws</span> IOException</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//发送一个临时的重定向响应到客户端，让客户端访问新的URL。如果指定的位置是相对URL，Servlet容器在发送响应到客户端之前，必须将相对URL转换为绝对URL。</span></span><br><span class="line">    <span class="comment">//如果响应已经被提交，这个方法将抛出IllegalStateException异常。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">sendRedirect</span><span class="params">(String paramString)</span> <span class="keyword">throws</span> IOException</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//用给出的name和value，设置一个响应报头。如果这个报头已经被设置，新的值将覆盖先前的值。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">setHeader</span><span class="params">(String paramString1, String paramString2)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//用给出的name和value，增加一个响应报头到响应中。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">addHeader</span><span class="params">(String name, String value)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//为响应设置状态代码。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">setStatus</span><span class="params">(<span class="keyword">int</span> paramInt)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p><strong>关于response的一些细节问题：</strong><br>getOutputStream和getWriter方法分别用于得到输出二进制数据、输出文本数据的ServletOuputStream、Printwriter对象。<br>　　getOutputStream和getWriter这两个方法互相排斥，调用了其中的任何一个方法后，就不能再调用另一方法。<br>　　Servlet程序向ServletOutputStream或PrintWriter对象中写入的数据将被Servlet引擎从response里面获取，Servlet引擎将这些数据当作响应消息的正文，然后再与响应状态行和各响应头组合后输出到客户端。<br>　　Serlvet的service方法结束后，Servlet引擎将检查getWriter或getOutputStream方法返回的输出流对象是否已经调用过close方法，如果没有，Servlet引擎将调用close方法关闭该输出流对象。</p>
+<p><font color="#DC123" size="5">二、HttpServletRequest对象</font><br>HttpServletRequest对象代表客户端的请求，当客户端通过HTTP协议访问服务器时，HTTP请求头中的所有信息都封装在这个对象中，通过这个对象提供的方法，可以获得客户端请求的所有信息。<br>request对象常用方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、通过request常用方法获得客户机信息</span><br><span class="line">getRequestURL 方法返回客户端发出请求时的完整URL。</span><br><span class="line">getRequestURI 方法返回请求行中的资源名部分。</span><br><span class="line">getQueryString 方法返回请求行中的参数部分。</span><br><span class="line">getRemoteAddr 方法返回发出请求的客户机的IP地址</span><br><span class="line">getRemoteHost 方法返回发出请求的客户机的完整主机名</span><br><span class="line">getRemotePort 方法返回客户机所使用的网络端口号</span><br><span class="line">getLocalAddr 方法返回WEB服务器的IP地址。</span><br><span class="line">getLocalName 方法返回WEB服务器的主机名</span><br><span class="line">getMethod 得到客户机请求方式</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>、通过request常用方法获得客户机请求头信息</span><br><span class="line">	getHeader(string name) 方法:String </span><br><span class="line">　　getHeaders(String name) 方法:Enumeration </span><br><span class="line">　　getHeaderNames() 方法</span><br><span class="line"><span class="number">3</span>、获得客户机请求参数(客户端提交的数据)</span><br><span class="line">    getParameter(String)方法(常用)</span><br><span class="line">    getParameterValues(String name)方法(常用)</span><br><span class="line">    getParameterNames()方法(不常用)</span><br><span class="line">    getParameterMap()方法(编写框架时常用)</span><br></pre></td></tr></table></figure>
+<p><strong>request接收表单提交中文参数乱码问题</strong><br>1、post方式提交，之所以会产生乱码，就是因为服务器和客户端沟通的编码不一致造成的，因此解决的办法是：仅需在服务器代码加上 <code>request.setCharacterEncoding(&quot;UTF-8&quot;);</code>即可<br>2、get方式提交<br>对于以get方式传输的中文数据，通过request.setCharacterEncoding(“UTF-8”);这种方式是解决不了中文乱码问题，默认的还是使用ISO8859-1这个字符编码来接收数据，客户端以UTF-8的编码传输数据到服务器端，而服务器端的request对象使用的是ISO8859-1这个字符编码来接收数据，服务器和客户端沟通的编码不一致因此才会产生中文乱码的。解决办法：在接收到数据后，先获取request对象以ISO8859-1字符编码接收到的原始数据的字节数组，然后通过字节数组以指定的编码构建字符串，解决乱码问题。如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String name = request.getParameter(<span class="string">"name"</span>);<span class="comment">//接收数据</span></span><br><span class="line">        name =<span class="keyword">new</span> String(name.getBytes(<span class="string">"ISO8859-1"</span>), <span class="string">"UTF-8"</span>) ;<span class="comment">//获取request对象以ISO8859-1字符编码接收到的原始数据的字节数组，然后通过字节数组以指定的编码构建字符串，解决乱码问题</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>以超链接形式传递中文参数的乱码问题</strong><br>点击超链接，数据是以get的方式传输到服务器的，所以接收中文数据时也会产生中文乱码问题，而解决中文乱码问题的方式与上述的以get方式提交表单中文数据乱码处理问题的方式一致，如下所示：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String name = request.getParameter(<span class="string">"name"</span>);</span><br><span class="line">name =<span class="keyword">new</span> String(name.getBytes(<span class="string">"ISO8859-1"</span>), <span class="string">"UTF-8"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>另外，需要提的一点就是URL地址后面如果跟了中文数据，那么中文参数最好使用URL编码进行处理，如下所示：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href="$&#123;pageContext.request.contextPath&#125;/servlet/RequestDemo05?userName=gacl&amp;name=&lt;%=URLEncoder.encode("张三", "UTF-8")%&gt;"&gt;点击&lt;/a&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>提交中文数据乱码问题总结</strong></p>
+<p><img src="https://s1.ax1x.com/2018/11/28/FZeuZD.png" alt="FZeuZD.png"><a href="https://imgchr.com/i/FZeuZD" target="_blank" rel="noopener"></a><br><strong>重定向与转发</strong><br>一个web资源收到客户端请求后，通知服务器去调用另外一个web资源进行处理，称之为请求转发<br>一个web资源收到客户端请求后，通知浏览器去访问另外一个web资源进行处理，称之为请求重定向</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -199,7 +210,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -212,17 +223,53 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/11/28/Javaweb之servlet-一-基础知识/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Javaweb之servlet (一)---基础知识</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -248,10 +295,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
 		root: "/",
@@ -453,42 +500,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
                 <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
 
                 <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-  </div>
-</body>
-</html>tton--fs" title="Toggle fullscreen"></button>
 
                 <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
 
