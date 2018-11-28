@@ -6,20 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://jcoffeeph.top">
-  <title>简单理解synchronized用法 | ForMe</title>
+  <title>Javaweb之HTTP协议 | ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用同步的原因： java允许多线程并发控制，当多个线程同时操作一个可共享的资源变量时（如数据的增删改查） 将会导致数据不准确，相互之间产生冲突，因此加入同步锁以避免在该线程没有完成操作之前，被其他线程的调用，从而保证了该变量的唯一性和准确性。">
-<meta name="keywords" content="Java">
+  <meta name="description" content="一、什么是HTTP协议HTTP是hypertext transfer protocol（超文本传输协议）的简写，它是TCP/IP协议的一个应用层协议，用于定义WEB浏览器与WEB服务器之间交换数据的过程。客户端连上web服务器后，若想获得web服务器中的某个web资源，需遵守一定的通讯格式，HTTP协议用于定义客户端与web服务器通迅的格式。二、HTTP协议的版本HTTP协议的版本：HTTP/1.">
+<meta name="keywords" content="Javaweb">
 <meta property="og:type" content="article">
-<meta property="og:title" content="简单理解synchronized用法">
-<meta property="og:url" content="http://jcoffeeph.top/2018/10/25/简单理解synchronized用法/index.html">
+<meta property="og:title" content="Javaweb之HTTP协议">
+<meta property="og:url" content="http://jcoffeeph.top/2018/11/28/Javaweb之HTTP协议/index.html">
 <meta property="og:site_name" content="ForMe">
-<meta property="og:description" content="使用同步的原因： java允许多线程并发控制，当多个线程同时操作一个可共享的资源变量时（如数据的增删改查） 将会导致数据不准确，相互之间产生冲突，因此加入同步锁以避免在该线程没有完成操作之前，被其他线程的调用，从而保证了该变量的唯一性和准确性。">
+<meta property="og:description" content="一、什么是HTTP协议HTTP是hypertext transfer protocol（超文本传输协议）的简写，它是TCP/IP协议的一个应用层协议，用于定义WEB浏览器与WEB服务器之间交换数据的过程。客户端连上web服务器后，若想获得web服务器中的某个web资源，需遵守一定的通讯格式，HTTP协议用于定义客户端与web服务器通迅的格式。二、HTTP协议的版本HTTP协议的版本：HTTP/1.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-28T03:12:06.379Z">
+<meta property="og:image" content="https://s1.ax1x.com/2018/11/28/FVgLp4.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/11/28/FV2l9g.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/11/28/FV20CF.png">
+<meta property="og:updated_time" content="2018-11-28T08:27:03.453Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="简单理解synchronized用法">
-<meta name="twitter:description" content="使用同步的原因： java允许多线程并发控制，当多个线程同时操作一个可共享的资源变量时（如数据的增删改查） 将会导致数据不准确，相互之间产生冲突，因此加入同步锁以避免在该线程没有完成操作之前，被其他线程的调用，从而保证了该变量的唯一性和准确性。">
+<meta name="twitter:title" content="Javaweb之HTTP协议">
+<meta name="twitter:description" content="一、什么是HTTP协议HTTP是hypertext transfer protocol（超文本传输协议）的简写，它是TCP/IP协议的一个应用层协议，用于定义WEB浏览器与WEB服务器之间交换数据的过程。客户端连上web服务器后，若想获得web服务器中的某个web资源，需遵守一定的通讯格式，HTTP协议用于定义客户端与web服务器通迅的格式。二、HTTP协议的版本HTTP协议的版本：HTTP/1.">
+<meta name="twitter:image" content="https://s1.ax1x.com/2018/11/28/FVgLp4.png">
   
     <link rel="alternative" href="/atom.xml" title="ForMe" type="application/atom+xml">
   
@@ -159,34 +163,39 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-简单理解synchronized用法" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-Javaweb之HTTP协议" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      简单理解synchronized用法
+      Javaweb之HTTP协议
     </h1>
   
 
         
-        <a href="/2018/10/25/简单理解synchronized用法/" class="archive-article-date">
-  	<time datetime="2018-10-25T11:38:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-25</time>
+        <a href="/2018/11/28/Javaweb之HTTP协议/" class="archive-article-date">
+  	<time datetime="2018-11-28T08:24:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>使用同步的原因：</strong> java允许多线程并发控制，当多个线程同时操作一个可共享的资源变量时（如数据的增删改查） 将会导致数据不准确，相互之间产生冲突，因此加入同步锁以避免在该线程没有完成操作之前，被其他线程的调用，从而保证了该变量的唯一性和准确性。<br><a id="more"></a><br>关于java使用多线程的原因：  <a href="https://blog.csdn.net/qq_35114086/article/details/52621841" target="_blank" rel="noopener">请参阅此文章</a><br>多线程的锁，其实本质上就是给一块内存空间的访问添加访问权限，因为Java中是没有办法直接对某一块内存进行操作的，又因为Java是面向对象的语言，一切皆对象，所以具体的表现就是某一个对象承担锁的功能，每一个对象都可以是一个锁。<br>内置锁，使用方式就是使用 synchronized 关键字，synchronized 方法或者 synchronized 代码块。<strong>Java中具有通过synchronized实现的内置锁，ReentrantLock实现的显示锁，内置锁获得锁和释放锁是隐式的，进入synchronized修饰的代码就获得锁，走出相应的代码就释放锁</strong><br>1.synchronized 关键字用于实现线程的同步，可以实现同步方法或者只对一部分代码进行同步，具体来说同步很消耗资源，所以尽量减少同步的内容。<strong>注意</strong>：synchronized 关键字在继承时不能被子类所继承，但子类调用父类方法时，相应的代码块也是同步的。<br>2.被 synchronized 关键字修饰的方法或者代码块，在特定的时间只能被某个线程所访问，即产生了同步锁。<strong>当多个并发线程访问同一个对象中的synchronized(this)同步代码块时，一段时间内只能有一个线程得到执行。其他线程必须等待当前线程执行完这个代码块以后才能执行该代码块。然而，当一个线程访问对象的一个synchronized(this)同步代码块时，另一个线程仍然可以访问该object中的非synchronized(this)同步代码块.当一个线程访问对象的一个synchronized(this)同步代码块时，其他线程对象中所有其它synchronized(this)同步代码块的访问将被阻塞.</strong><br>synchronized可修饰 静态方法、非静态方法、代码块。<br><strong>synchronized 不管是修饰什么锁定的都是对象，不是代码块或者方法。</strong><br>3.<strong>对象锁和类锁<br>synchronized修饰非静态方法，实际上是对调用该方法的对象加锁，俗称“对象锁”；synchronized修饰静态方法，实际上是对该类对象加锁，俗称“类锁”。</strong><br>a.<strong>同步代码块</strong><br>特别的：对象此线程被锁，另一个线程可执行其非同步代码块</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Mian</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		Test t = <span class="keyword">new</span> Test();</span><br><span class="line">		Thread t1 = <span class="keyword">new</span> Thread(t,<span class="string">"A"</span>);</span><br><span class="line">		Thread t2 = <span class="keyword">new</span> Thread(t,<span class="string">"B"</span>);</span><br><span class="line"></span><br><span class="line">		t1.start();</span><br><span class="line">		t2.start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> ss = <span class="number">0</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">synchronized</span>(<span class="keyword">this</span>)&#123;<span class="comment">//this可换成特定对象，按需设置</span></span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">				System.out.println(Thread.currentThread().getName() + <span class="string">"---"</span> + ss++);</span><br><span class="line">				<span class="keyword">try</span></span><br><span class="line">				&#123;</span><br><span class="line">					Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">catch</span> (InterruptedException e)</span><br><span class="line">				&#123;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sub</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">			System.out.println(Thread.currentThread().getName() + <span class="string">"---"</span> + ss);</span><br><span class="line">			<span class="keyword">try</span></span><br><span class="line">			&#123;</span><br><span class="line">				Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">catch</span> (InterruptedException e)</span><br><span class="line">			&#123;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(Thread.currentThread().getName().equals(<span class="string">"A"</span>))</span><br><span class="line">			add();</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			sub();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">B---<span class="number">0</span></span><br><span class="line">A---<span class="number">0</span></span><br><span class="line">A---<span class="number">1</span></span><br><span class="line">B---<span class="number">2</span></span><br><span class="line">A---<span class="number">2</span></span><br><span class="line">B---<span class="number">3</span></span><br><span class="line">A---<span class="number">3</span></span><br><span class="line">B---<span class="number">4</span></span><br><span class="line">A---<span class="number">4</span></span><br><span class="line">B---<span class="number">5</span></span><br></pre></td></tr></table></figure></p>
-<p>总结：<br>1.synchornized修饰方法和代码块实现的功能相同，都是实现同步，具体使用同步方法还是同步代码块要实际问题实际分析要首先分析好需要同步的内容。这里不做演示。<br>2.如果synchronized修饰了静态方法，即使是实例对象变了也无所谓，因为此时使用的是类锁，而一个类只有一个class对象<br>简单示例</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		Test t = <span class="keyword">new</span> Test();</span><br><span class="line">		Test tt = <span class="keyword">new</span> Test();</span><br><span class="line">		Thread t1 = <span class="keyword">new</span> Thread(t);</span><br><span class="line">		Thread t2 = <span class="keyword">new</span> Thread(tt);</span><br><span class="line">		t1.start();</span><br><span class="line">		t2.start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">printt</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">			<span class="comment">//synchronized(this)&#123;</span></span><br><span class="line">			System.out.println(Thread.currentThread().getName() + <span class="string">"---"</span> + i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">		printt();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Thread-<span class="number">1</span>---<span class="number">0</span></span><br><span class="line">Thread-<span class="number">1</span>---<span class="number">1</span></span><br><span class="line">Thread-<span class="number">1</span>---<span class="number">2</span></span><br><span class="line">Thread-<span class="number">1</span>---<span class="number">3</span></span><br><span class="line">Thread-<span class="number">1</span>---<span class="number">4</span></span><br><span class="line">Thread-<span class="number">0</span>---<span class="number">0</span></span><br><span class="line">Thread-<span class="number">0</span>---<span class="number">1</span></span><br><span class="line">Thread-<span class="number">0</span>---<span class="number">2</span></span><br><span class="line">Thread-<span class="number">0</span>---<span class="number">3</span></span><br><span class="line">Thread-<span class="number">0</span>---<span class="number">4</span></span><br></pre></td></tr></table></figure>
-<p><strong>提醒：</strong> 若不清晰可看此篇文章   <a href="http://www.importnew.com/21866.html" target="_blank" rel="noopener">Java关于synchronized的用法</a></p>
+        <p><strong>一、什么是HTTP协议</strong><br>HTTP是hypertext transfer protocol（超文本传输协议）的简写，它是TCP/IP协议的一个应用层协议，用于定义WEB浏览器与WEB服务器之间交换数据的过程。客户端连上web服务器后，若想获得web服务器中的某个web资源，需遵守一定的通讯格式，HTTP协议用于定义客户端与web服务器通迅的格式。<br><strong>二、HTTP协议的版本</strong><br>HTTP协议的版本：HTTP/1.0、HTTP/1.1，二者的区别为:<br>在HTTP1.0协议中，客户端与web服务器建立连接后，只能获得一个web资源。<br>在HTTP1.1协议，允许客户端与web服务器建立连接后，在一个连接上获取多个web资源。<br><strong>三、HTTP请求</strong><br><strong>3.1、HTTP请求包括的内容</strong><br>客户端连上服务器后，向服务器请求某个web资源，称之为客户端向服务器发送了一个HTTP请求。一个完整的HTTP请求包括如下内容：一个请求行、若干消息头、以及实体内容，具体例子如下：<br><img src="https://s1.ax1x.com/2018/11/28/FVgLp4.png" alt="FVgLp4.png"><a href="https://imgchr.com/i/FVgLp4" target="_blank" rel="noopener"></a><br><strong>3.2、请求行</strong><br><a id="more"></a><br>如上图所示，GET为请求行的请求方式，请求方式有POST、GET、HEAD、OPTIONS、DELETE、TRACE、PUT，常用的有POST和GET。在默认情况下，浏览器向服务器发送的是GET请求。<br>GET方式的特点：在URL地址后附带的参数是有限制的，其数据容量通常不能超过1K。<br>如果请求方式为POST方式，则可以在请求的实体内容中向服务器发送数据，Post方式的特点：传送的数据量无限制。<br><strong>3.3、消息头</strong><br>HTTP请求中的常用消息头<br>　　accept:浏览器通过这个头告诉服务器，它所支持的数据类型<br>　　Accept-Charset: 浏览器通过这个头告诉服务器，它支持哪种字符集<br>　　Accept-Encoding：浏览器通过这个头告诉服务器，支持的压缩格式<br>　　Accept-Language：浏览器通过这个头告诉服务器，它的语言环境<br>　　Host：浏览器通过这个头告诉服务器，想访问哪台主机<br>　　If-Modified-Since: 浏览器通过这个头告诉服务器，缓存数据的时间<br>　　Referer：浏览器通过这个头告诉服务器，客户机是哪个页面来的  防盗链<br>　　Connection：浏览器通过这个头告诉服务器，请求完后是断开链接还是何持链接<br><strong>四、HTTP相应</strong><br>   如图为一个HTTP响应<br><a href="https://imgchr.com/i/FV2l9g" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2018/11/28/FV2l9g.png" alt="FV2l9g.png"></a><br><strong>5.1、状态行</strong><br> 状态行格式： HTTP版本号　状态码　原因叙述<crlf><br> 状态码用于表示服务器对请求的处理结果，它是一个三位的十进制数。响应状态码分为5类，如下所示：<br><img src="https://s1.ax1x.com/2018/11/28/FV20CF.png" alt="FV20CF.png"><a href="https://imgchr.com/i/FV20CF" target="_blank" rel="noopener"></a><br><strong>5.2、常用响应头</strong><br>HTTP响应中的常用响应头(消息头)<br>　　Location: 服务器通过这个头，来告诉浏览器跳到哪里<br>　　Server：服务器通过这个头，告诉浏览器服务器的型号<br>　　Content-Encoding：服务器通过这个头，告诉浏览器，数据的压缩格式<br>　　Content-Length: 服务器通过这个头，告诉浏览器回送数据的长度<br>　　Content-Language: 服务器通过这个头，告诉浏览器语言环境<br>　　Content-Type：服务器通过这个头，告诉浏览器回送数据的类型<br>　　Refresh：服务器通过这个头，告诉浏览器定时刷新<br>　　Content-Disposition: 服务器通过这个头，告诉浏览器以下载方式打数据<br>　　Transfer-Encoding：服务器通过这个头，告诉浏览器数据是以分块方式回送的<br>　　Expires: -1  控制浏览器不要缓存<br>　　Cache-Control: no-cache<br>　　Pragma: no-cache<br><strong>五、HTTP工作原理</strong><br>HTTP协议定义Web客户端如何从Web服务器请求Web页面，以及服务器如何把Web页面传送给客户端。HTTP协议采用了请求/响应模型。客户端向服务器发送一个请求报文，请求报文包含请求的方法、URL、协议版本、请求头部和请求数据。服务器以一个状态行作为响应，响应的内容包括协议的版本、成功或者错误代码、服务器信息、响应头部和响应数据。<br>以下是 HTTP 请求/响应的步骤：<br><strong>1、客户端连接到Web服务器</strong><br>一个HTTP客户端，通常是浏览器，与Web服务器的HTTP端口（默认为80）建立一个TCP套接字连接。例如，<code>http://www.oakcms.cn</code>。<br><strong>2、发送HTTP请求</strong><br>通过TCP套接字，客户端向Web服务器发送一个文本的请求报文，一个请求报文由请求行、请求头部、空行和请求数据4部分组成。<br><strong>3、服务器接受请求并返回HTTP响应</strong><br>Web服务器解析请求，定位请求资源。服务器将资源复本写到TCP套接字，由客户端读取。一个响应由状态行、响应头部、空行和响应数据4部分组成。<br><strong>4、释放连接TCP连接</strong><br>若connection 模式为close，则服务器主动关闭TCP连接，客户端被动关闭连接，释放TCP连接;若connection 模式为keepalive，则该连接会保持一段时间，在该时间内可以继续接收请求;<br><strong>5、客户端浏览器解析HTML内容</strong><br>客户端浏览器首先解析状态行，查看表明请求是否成功的状态代码。然后解析每一个响应头，响应头告知以下为若干字节的HTML文档和文档的字符集。客户端浏览器读取响应数据HTML，根据HTML的语法对其进行格式化，并在浏览器窗口中显示。<br>例如：在浏览器地址栏键入URL，按下回车之后会经历以下流程：<br>1、浏览器向 DNS 服务器请求解析该 URL 中的域名所对应的 IP 地址;<br>2、解析出 IP 地址后，根据该 IP 地址和默认端口 80，和服务器建立TCP连接;<br>3、浏览器发出读取文件(URL 中域名后面部分对应的文件)的HTTP 请求，该请求报文作为 TCP 三次握手的第三个报文的数据发送给服务器;<br>4、服务器对浏览器请求作出响应，并把对应的 html 文本发送给浏览器;<br>5、释放 TCP连接;<br>6、浏览器将该 html 文本并显示内容。　<br><strong>六、URL、URI</strong><br>HTTP使用统一资源标识符（Uniform Resource Identifiers, URI）来传输数据和建立连接。URL是一种特殊类型的URI，包含了用于查找某个资源的足够的信息</crlf></p>
+<p>URL,全称是UniformResourceLocator, 中文叫统一资源定位符,是互联网上用来标识某一处资源的地址。以下面这个URL为例，介绍下普通URL的各部分组成：</p>
+<pre><code>http://www.aspxfans.com:8080/news/index.asp?boardID=5&amp;ID=24618&amp;page=1#name
+</code></pre><p>从上面的URL可以看出，一个完整的URL包括以下几部分：<br>1.协议部分：该URL的协议部分为“http：”，这代表网页使用的是HTTP协议。在Internet中可以使用多种协议，如HTTP，FTP等等本例中使用的是HTTP协议。在”HTTP”后面的“//”为分隔符</p>
+<p>2.域名部分：该URL的域名部分为<code>“www.aspxfans.com”</code>。一个URL中，也可以使用IP地址作为域名使用</p>
+<p>3.端口部分：跟在域名后面的是端口，域名和端口之间使用“:”作为分隔符。端口不是一个URL必须的部分，如果省略端口部分，将采用默认端口</p>
+<p>4.虚拟目录部分：从域名后的第一个“/”开始到最后一个“/”为止，是虚拟目录部分。虚拟目录也不是一个URL必须的部分。本例中的虚拟目录是“/news/”</p>
+<p>5.文件名部分：从域名后的最后一个“/”开始到“？”为止，是文件名部分，如果没有“?”,则是从域名后的最后一个“/”开始到“#”为止，是文件部分，如果没有“？”和“#”，那么从域名后的最后一个“/”开始到结束，都是文件名部分。本例中的文件名是“index.asp”。文件名部分也不是一个URL必须的部分，如果省略该部分，则使用默认的文件名</p>
+<p>6.锚部分：从“#”开始到最后，都是锚部分。本例中的锚部分是“name”。锚部分也不是一个URL必须的部分</p>
+<p>7.参数部分：从“？”开始到“#”为止之间的部分为参数部分，又称搜索部分、查询部分。本例中的参数部分为“boardID=5&amp;ID=24618&amp;page=1”。参数可以允许有多个参数，参数与参数之间用“&amp;”作为分隔符。<br><strong>URL与URI的区别</strong><br>URI，是uniform resource identifier，统一资源标识符，用来唯一的标识一个资源。<br>Web上可用的每种资源如HTML文档、图像、视频片段、程序等都是一个来URI来定位的<br>URI一般由三部组成：<br>①访问资源的命名机制<br>②存放资源的主机名<br>③资源自身的名称，由路径表示，着重强调于资源。</p>
+<p>URL是uniform resource locator，统一资源定位器，它是一种具体的URI，即URL可以用来标识一个资源，而且还指明了如何locate这个资源。<br>URL是Internet上用来描述信息资源的字符串，主要用在各种WWW客户程序和服务器程序上，特别是著名的Mosaic。<br>采用URL可以用一种统一的格式来描述各种信息资源，包括文件、服务器的地址和目录等。URL一般由三部组成：<br>①协议(或称为服务方式)<br>②存有该资源的主机IP地址(有时也包括端口号)<br>③主机资源的具体地址。如目录和文件名等</p>
+<p>URN，uniform resource name，统一资源命名，是通过名字来标识资源，比如mailto:<a href="mailto:java-net@java.sun.com" target="_blank" rel="noopener">java-net@java.sun.com</a>。<br>URI是以一种抽象的，高层次概念定义统一资源标识，而URL和URN则是具体的资源标识的方式。URL和URN都是一种URI。笼统地说，每个 URL 都是 URI，但不一定每个 URI 都是 URL。这是因为 URI 还包括一个子类，即统一资源名称 (URN)，它命名资源但不指定如何定位资源。上面的 mailto、news 和 isbn URI 都是 URN 的示例。</p>
+<p>在Java的URI中，一个URI实例可以代表绝对的，也可以是相对的，只要它符合URI的语法规则。而URL类则不仅符合语义，还包含了定位该资源的信息，因此它不能是相对的。<br>在Java类库中，URI类不包含任何访问资源的方法，它唯一的作用就是解析。<br>相反的是，URL类可以打开一个到达资源的流。</p>
 
       
 
@@ -200,7 +209,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Javaweb</a>
         		</li>
       		
 		</ul>
@@ -212,7 +221,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/JavaSE//" class="article-tag-list-link color2">JavaSE</a>
+        			<a href="/categories/HTTP协议//" class="article-tag-list-link color2">HTTP协议</a>
         		</li>
       		
 		</ul>
@@ -230,15 +239,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/10/26/二叉树和哈夫曼树的简单实现/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          二叉树和哈夫曼树的简单实现
-        
-      </div>
-    </a>
   
+    <a href="/2018/11/23/git常用操作及分支/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git常用操作及分支</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
