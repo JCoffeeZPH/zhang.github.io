@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://jcoffeeph.top">
-  <title>java实现链表的简单操作 | ForMe</title>
+  <title>Tag: cookie与session | ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.单链表： 链接表首先要建立指针域和数据域，并用本节点的指针域指向下一个节点，对于链表的特点这里不做详细解释，单链表实现较为简单，如下所示">
-<meta name="keywords" content="Java">
-<meta property="og:type" content="article">
-<meta property="og:title" content="java实现链表的简单操作">
-<meta property="og:url" content="http://jcoffeeph.top/2018/10/29/java实现链表的简单操作/index.html">
+  <meta name="description" content="Enjoy Coding">
+<meta name="keywords" content="Java 软件">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ForMe">
+<meta property="og:url" content="http://jcoffeeph.top/tags/cookie与session/index.html">
 <meta property="og:site_name" content="ForMe">
-<meta property="og:description" content="1.单链表： 链接表首先要建立指针域和数据域，并用本节点的指针域指向下一个节点，对于链表的特点这里不做详细解释，单链表实现较为简单，如下所示">
+<meta property="og:description" content="Enjoy Coding">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-29T10:58:31.446Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java实现链表的简单操作">
-<meta name="twitter:description" content="1.单链表： 链接表首先要建立指针域和数据域，并用本节点的指针域指向下一个节点，对于链表的特点这里不做详细解释，单链表实现较为简单，如下所示">
+<meta name="twitter:title" content="ForMe">
+<meta name="twitter:description" content="Enjoy Coding">
   
     <link rel="alternative" href="/atom.xml" title="ForMe" type="application/atom+xml">
   
@@ -159,120 +158,71 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-java实现链表的简单操作" class="article article-type-post " itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      java实现链表的简单操作
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/11/29/Javaweb之cookie与session/" class="archive-article-date">
+  	<time datetime="2018-11-29T12:46:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-29</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/11/29/Javaweb之cookie与session/">Javaweb之cookie与session</a>
     </h1>
   
 
-        
-        <a href="/2018/10/29/java实现链表的简单操作/" class="archive-article-date">
-  	<time datetime="2018-10-29T10:56:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>1.单链表：</strong> 链接表首先要建立指针域和数据域，并用本节点的指针域指向下一个节点，对于链表的特点这里不做详细解释，单链表实现较为简单，如下所示<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.DataStructure;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingleLink</span> </span>&#123;<span class="comment">//此实现带头节点的实现方式，即 head 只是一个头指针</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> Noded head = <span class="keyword">new</span> Noded();</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Noded</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span> data;</span><br><span class="line">		Noded next;</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="title">Noded</span><span class="params">(<span class="keyword">int</span> data)</span> </span>&#123;</span><br><span class="line">			<span class="keyword">this</span>.data = data;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="title">Noded</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addHead</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;<span class="comment">//头插法</span></span><br><span class="line">		Noded node = <span class="keyword">new</span> Noded(x);</span><br><span class="line">		node.next = head.next;</span><br><span class="line">		head.next = node;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addTail</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;<span class="comment">//尾插，先遍历到当前节点，再添加</span></span><br><span class="line">		Noded node = <span class="keyword">new</span> Noded(x);</span><br><span class="line">		Noded cur = head;</span><br><span class="line">		<span class="keyword">while</span>(cur.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">			cur = cur.next;</span><br><span class="line">		&#125;</span><br><span class="line">		cur.next = node;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(Noded head)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(head != <span class="keyword">null</span>) &#123;</span><br><span class="line">			Noded cur =head.next;</span><br><span class="line">			<span class="keyword">while</span>(cur != <span class="keyword">null</span>) &#123;</span><br><span class="line">				System.out.print(cur.data + <span class="string">" "</span>);</span><br><span class="line">				cur = cur.next;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getLength</span><span class="params">(Noded head)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(head == <span class="keyword">null</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			Noded cur = head.next;</span><br><span class="line">			<span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">while</span>(cur != <span class="keyword">null</span>) &#123;</span><br><span class="line">				len++;</span><br><span class="line">				cur = cur.next;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span> len;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//在下标为 i 的位置插入元素 x ,插入时链表下标是从 0 开始的，下标最大值为长度减 1</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(Noded head,<span class="keyword">int</span> i, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(i &lt; -<span class="number">1</span> || i &gt; <span class="keyword">this</span>.getLength(<span class="keyword">this</span>.head)) &#123;</span><br><span class="line">			System.out.println(<span class="string">"插入失败！"</span>);</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">			</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			Noded cur = head;</span><br><span class="line">			Noded node = <span class="keyword">new</span> Noded(x);</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</span><br><span class="line">				cur = cur.next;</span><br><span class="line">			&#125;</span><br><span class="line">			node.next = cur.next;</span><br><span class="line">			cur.next = node;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">remove</span><span class="params">(Noded head,<span class="keyword">int</span> i)</span> </span>&#123;<span class="comment">//删除下标为 i 的节点</span></span><br><span class="line">		<span class="keyword">if</span>(head == <span class="keyword">null</span> || i &lt; <span class="number">0</span> || i &gt; <span class="keyword">this</span>.getLength(<span class="keyword">this</span>.head) - <span class="number">1</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">"不存在此链表或者下标越界！"</span>);</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			Noded cur = head;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</span><br><span class="line">				cur =cur.next;</span><br><span class="line">			&#125;</span><br><span class="line">			cur.next = cur.next.next;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		SingleLink s = <span class="keyword">new</span> SingleLink();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">7</span>; i++)</span><br><span class="line">			s.addHead(i);</span><br><span class="line">		s.print(s.head);</span><br><span class="line">		System.out.println();</span><br><span class="line">		System.out.println(s.getLength(s.head));</span><br><span class="line">		s.insert(s.head, <span class="number">7</span>, <span class="number">50</span>);</span><br><span class="line">		s.print(s.head);</span><br><span class="line">		System.out.println();</span><br><span class="line">		s.remove(s.head, <span class="number">7</span>);</span><br><span class="line">		s.print(s.head);</span><br><span class="line">		System.out.println();</span><br><span class="line">		</span><br><span class="line">		SingleLink ss = <span class="keyword">new</span> SingleLink();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</span><br><span class="line">			ss.addTail(i);</span><br><span class="line">		ss.print(ss.head);</span><br><span class="line">		System.out.println();</span><br><span class="line">		System.out.println(ss.getLength(ss.head));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>2.双端链表：</strong>此实现不带头结点，保留着最后一个节点的引用。相对于单链表尾插法时比较容易实现<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.DataStructure;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DoucleHeadLink</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> Noded head;</span><br><span class="line">	<span class="keyword">private</span> Noded tail;</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Noded</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> data;</span><br><span class="line">		Noded next;</span><br><span class="line">		Noded(<span class="keyword">int</span> data)&#123;</span><br><span class="line">			<span class="keyword">this</span>.data = data;</span><br><span class="line">		&#125;</span><br><span class="line">		Noded()&#123;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addHead</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">		Noded node = <span class="keyword">new</span> Noded(x);</span><br><span class="line">		<span class="keyword">if</span>(head == <span class="keyword">null</span>) &#123;</span><br><span class="line">			head = node;</span><br><span class="line">			tail = node;</span><br><span class="line">		&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">			node.next = head;</span><br><span class="line">			head = node;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addTail</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">		Noded node = <span class="keyword">new</span> Noded(x);</span><br><span class="line">		<span class="keyword">if</span>(head == <span class="keyword">null</span>) &#123;</span><br><span class="line">			head = node;</span><br><span class="line">			tail = node;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			tail.next = node;</span><br><span class="line">			tail = node;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(Noded head)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(head != <span class="keyword">null</span>) &#123;</span><br><span class="line">			Noded cur = head;</span><br><span class="line">			<span class="keyword">while</span>(cur != <span class="keyword">null</span>) &#123;</span><br><span class="line">				System.out.print(cur.data + <span class="string">" "</span>);</span><br><span class="line">				cur = cur.next;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line">		DoucleHeadLink s = <span class="keyword">new</span> DoucleHeadLink();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i  &lt; <span class="number">5</span>; i++)</span><br><span class="line">			s.addHead(i);</span><br><span class="line">		s.print(s.head);</span><br><span class="line">		System.out.println();</span><br><span class="line">		</span><br><span class="line">		DoucleHeadLink ss = <span class="keyword">new</span> DoucleHeadLink();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">7</span>; i++)</span><br><span class="line">			ss.addHead(i);</span><br><span class="line">		ss.print(ss.head);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>结果</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span> <span class="number">3</span> <span class="number">2</span> <span class="number">1</span> <span class="number">0</span> </span><br><span class="line"><span class="number">6</span> <span class="number">5</span> <span class="number">4</span> <span class="number">3</span> <span class="number">2</span> <span class="number">1</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
-<p><strong>3.双向链表：</strong>双向链表的实现和单链表非常相近，只是多了一个前驱指针，<br>注意查找第 i 个元素的时候可以先判断其大小与mid相比大小如何，分情况处理减少时间开销<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.DataStructure;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DoubleLink01</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> Noded head;</span><br><span class="line">	<span class="keyword">private</span> Noded tail;</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Noded</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span> data;</span><br><span class="line">		Noded next;</span><br><span class="line">		Noded pre;</span><br><span class="line">		Noded(<span class="keyword">int</span> data)&#123;</span><br><span class="line">			<span class="keyword">this</span>.data = data;</span><br><span class="line">		&#125;</span><br><span class="line">		Noded()&#123;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addTail</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">		Noded node = <span class="keyword">new</span> Noded(x);</span><br><span class="line">		<span class="keyword">if</span>(head == <span class="keyword">null</span>) &#123;</span><br><span class="line">			head = node;</span><br><span class="line">			tail = node;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			Noded tem = tail;</span><br><span class="line">			tem.next = node;</span><br><span class="line">			node.pre = tem;</span><br><span class="line">			tail = node;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(Noded head)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(head == <span class="keyword">null</span>)</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			Noded cur = head;</span><br><span class="line">			<span class="keyword">while</span>(cur != <span class="keyword">null</span>) &#123;</span><br><span class="line">				System.out.print(cur.data + <span class="string">" "</span>);</span><br><span class="line">				cur = cur.next;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">getLength</span><span class="params">(Noded head)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span>(head == <span class="keyword">null</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			Noded cur = head;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">while</span>(cur != <span class="keyword">null</span>) &#123;</span><br><span class="line">				len++;</span><br><span class="line">				cur = cur.next;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> len;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">search</span><span class="params">(Noded head,<span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(i &lt; <span class="number">0</span> || i &gt; <span class="keyword">this</span>.getLength(<span class="keyword">this</span>.head) - <span class="number">1</span>)</span><br><span class="line">			<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> mid = <span class="keyword">this</span>.getLength(<span class="keyword">this</span>.head);</span><br><span class="line">		<span class="keyword">if</span>(i &lt;= mid) &#123;</span><br><span class="line">			Noded cur = head;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</span><br><span class="line">				cur = cur.next;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span> cur.data;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			Noded cur = tail;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="keyword">this</span>.getLength(<span class="keyword">this</span>.head) - <span class="number">1</span>; j &gt; i; j--)</span><br><span class="line">				cur = cur.pre;</span><br><span class="line">			<span class="keyword">return</span> cur.data;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * 插入、删除等操作和双端链表相似不再做重复</span></span><br><span class="line"><span class="comment">	 * */</span></span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line">		DoubleLink01 s = <span class="keyword">new</span> DoubleLink01();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">7</span>; i++)</span><br><span class="line">			s.addTail(i);</span><br><span class="line">		s.print(s.head);</span><br><span class="line">		System.out.println(s.getLength(s.head));</span><br><span class="line">		System.out.println(s.search(s.head, <span class="number">6</span>));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>结果<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> </span><br><span class="line"><span class="number">7</span></span><br><span class="line"><span class="number">6</span></span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">cookie与session</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/java实现数据结构//" class="article-tag-list-link color1">java实现数据结构</a>
+        			<a href="/categories/Javaweb//" class="article-tag-list-link color3">Javaweb</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/10/29/java实现Set接口的HashSet、TreeSet用法简析/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          java实现Set接口的HashSet、TreeSet用法简析
-        
-      </div>
-    </a>
   
   
-    <a href="/2018/10/29/java实现顺序表/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">java实现顺序表</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -298,9 +248,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
