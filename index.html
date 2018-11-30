@@ -173,16 +173,14 @@
 
         
         <a href="/2018/11/30/jsp基本语法及内置对象的简单介绍/" class="archive-article-date">
-  	<time datetime="2018-11-30T04:41:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-30</time>
+  	<time datetime="2018-11-30T12:11:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>JSP全称Java Server Pages，是一种动态网页开发技术。</p>
-<p><font size="5" color="#DC143C"> jsp生命周期：</font><br><strong>1.编译阶段：</strong><br>当浏览器请求JSP页面时，JSP引擎会首先去检查是否需要编译这个文件。如果这个文件没有被编译过，或者在上次编译后被更改过，则编译这个JSP文件。编译jsp文件的过程是把它转换成servlet进行编译的<br><strong>2.初始化阶段：</strong><br>执行服务前调用 jspInit()方法初始化，可以复写以实现自己想要的功能。<br><strong>3.执行阶段：</strong><br>完成初始化后，JSP引擎将会调用 _jspService()方法。这一阶段描述了JSP生命周期中一切与请求相关的交互行为，直到被销毁。<br><strong>4.销毁阶段：</strong><br>调用与JSP对应的servlet实例的销毁方法，然后销毁servlet实例</p>
-<p><font size="5" color="#DC143C"> jsp基本语法：</font><br><strong>1.注释：</strong><br>第一种：&lt;%– 注释 –%&gt;    JSP注释，注释内容不会被发送至浏览器甚至不会被编译<br>第二种：&lt; !– 注释 –&gt;    HTML注释，通过浏览器查看网页源代码时可以看见注释内容<br><strong>2.声明：</strong><br>在jsp中声明格式：&lt;%!   声明的变量、函数等 %&gt;<br>
+        <p>jsp即Java Server Pages，同servlet一样，都适用于开发动态web资源的技术，它和HTML很相似，但是HTML是静态的，而jsp中可以嵌套java代码，为用户提供动态数据。<br>浏览器向服务器发送一个请求，不管访问什么资源，其本质都是在访问servlet，所以，当访问一个jsp页面时，其实就是在访问一个servlet，jsp文件会被翻译成一个servlet类。<br>
         
       
 
@@ -196,7 +194,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jsp</a>
         		</li>
       		
 		</ul>
@@ -1187,11 +1185,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">cookie与session</a>
+                <a href="javascript:void(0)" class="js-tag color5">Servlet基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Servlet基础</a>
+                <a href="javascript:void(0)" class="js-tag color5">cookie与session</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1200,6 +1198,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
             
             <div class="clearfix"></div>
