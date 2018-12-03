@@ -6,12 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://jcoffeeph.top">
-  <title>jsp之JSTL | ForMe</title>
+  <title>jsp之JSTL与EL表达式 | ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="JSP标准标签库（JSTL）是一个JSP标签集合，它封装了JSP应用的通用核心功能。根据JSTL标签所提供的功能，可以将其分为5个类别： 核心标签格式化标签SQL 标签XML 标签JSTL 函数">
 <meta name="keywords" content="JSTL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jsp之JSTL">
+<meta property="og:title" content="jsp之JSTL与EL表达式">
 <meta property="og:url" content="http://jcoffeeph.top/2018/12/03/jsp之JSTL/index.html">
 <meta property="og:site_name" content="ForMe">
 <meta property="og:description" content="JSP标准标签库（JSTL）是一个JSP标签集合，它封装了JSP应用的通用核心功能。根据JSTL标签所提供的功能，可以将其分为5个类别： 核心标签格式化标签SQL 标签XML 标签JSTL 函数">
@@ -25,9 +25,9 @@
 <meta property="og:image" content="https://s1.ax1x.com/2018/12/03/FMaJJg.png">
 <meta property="og:image" content="https://s1.ax1x.com/2018/12/03/FMdEmq.png">
 <meta property="og:image" content="https://s1.ax1x.com/2018/12/03/FMwCE6.png">
-<meta property="og:updated_time" content="2018-12-03T12:45:09.173Z">
+<meta property="og:updated_time" content="2018-12-03T14:13:38.946Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jsp之JSTL">
+<meta name="twitter:title" content="jsp之JSTL与EL表达式">
 <meta name="twitter:description" content="JSP标准标签库（JSTL）是一个JSP标签集合，它封装了JSP应用的通用核心功能。根据JSTL标签所提供的功能，可以将其分为5个类别： 核心标签格式化标签SQL 标签XML 标签JSTL 函数">
 <meta name="twitter:image" content="https://s1.ax1x.com/2018/12/03/FMQSF1.png">
   
@@ -176,7 +176,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      jsp之JSTL
+      jsp之JSTL与EL表达式
     </h1>
   
 
@@ -294,6 +294,137 @@
 <p><font color="#dc123" size="4">11、&lt;c:redirect&gt;标签</font><br>该标签用来实现请求的重定向。同时可以配合使用&lt;c:param&gt;标签在url中加入指定的参数<br>【语法1】：<br>&lt;c:redirect url=”url” [context=”context”]/&gt;<br>【语法2】：<br>&lt;c:redirect url=”url”[context=”context”]&gt;<br>    &lt;c:param name=”name1” value=”value1”&gt;<br>&lt;/c:redirect&gt;<br>【参数说明】：<br>（1）url指定重定向页面的地址，可以是一个string类型的绝对地址或相对地址。<br>（2）context用于导入其他web应用中的页面。<br>示例：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">"java.util.ArrayList"</span> %&gt;</span><br><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">"java.util.List"</span> %&gt;&lt;%--</span><br><span class="line">  Created by IntelliJ IDEA.</span><br><span class="line">  User: Administrator</span><br><span class="line">  Date: <span class="number">2018</span>/<span class="number">12</span>/<span class="number">3</span></span><br><span class="line">  Time: <span class="number">17</span>:<span class="number">42</span></span><br><span class="line">  To change <span class="keyword">this</span> template use File | Settings | File Templates.</span><br><span class="line">--%&gt;</span><br><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br><span class="line">&lt;%<span class="meta">@taglib</span> prefix=<span class="string">"c"</span> uri=<span class="string">"http://java.sun.com/jsp/jstl/core"</span> %&gt;</span><br><span class="line">&lt;%--&lt;jsp:useBean id=<span class="string">"person"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.jstl.Person"</span>/&gt;--%&gt;</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;Jstl_c:outTest&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;c:redirect url=<span class="string">"https://www.baidu.com"</span>&gt;</span><br><span class="line">    &lt;c:param name="For"&gt;me&lt;/c:param&gt;</span><br><span class="line">    &lt;c:param name="pass"&gt;123456789&lt;/c:param&gt;</span><br><span class="line">&lt;/c:redirect&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
 <p>结果会定向到百度首页，注意URL：<code>https://www.baidu.com/?For=me&amp;pass=123456789</code>正是自己设定的参数。</p>
 <p><font color="#dc123" size="4">12、&lt;c:param&gt;标签</font><br>不做赘述</p>
+<p><font color="#dc123" size="5">EL表达式</font><br>EL 全名为Expression Language，EL表达式主要用于替换JSP页面中的脚本表达式，以从各种类型的web域 中检索java对象、获取数据。(某个web域 中的对象，访问javabean的属性、访问list集合、访问map集合、访问数组)，EL表达式允许用户开发自定义EL函数，以在JSP页面中通过EL表达式调用Java类的方法。<strong>EL表达式语句在执行时，会调用pageContext.findAttribute方法，用标识符为关键字，分别从page、request、session、application四个域中查找相应的对象，找到则返回相应对象，找不到则返回”” （注意，不是null，而是空字符串）。</strong></p>
+<p>EL表达式语言中定义了11个隐含对象，使用这些隐含对象可以很方便地获取web开发中的一些常见对象，并读取这些对象的数据。<br>语法：${隐式对象名称}：获得对象的引用</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pageContext</td>
+<td>对应于JSP页面中的pageContext对象（注意：取的是pageContext对象。）</td>
+</tr>
+<tr>
+<td>pageScope</td>
+<td>代表page域中用于保存属性的Map对象</td>
+</tr>
+<tr>
+<td>requestScope</td>
+<td>代表request域中用于保存属性的Map对象</td>
+</tr>
+<tr>
+<td>sessionScope</td>
+<td>代表session域中用于保存属性的Map对象</td>
+</tr>
+<tr>
+<td>applicationScope</td>
+<td>代表application域中用于保存属性的Map对象</td>
+</tr>
+<tr>
+<td>param</td>
+<td>表示一个保存了所有请求参数的Map对象</td>
+</tr>
+<tr>
+<td>paramValues</td>
+<td>表示一个保存了所有请求参数的Map对象，它对于某个请求参数，返回的是一个string[]</td>
+</tr>
+<tr>
+<td>header</td>
+<td>表示一个保存了所有http请求头字段的Map对象，注意：如果头里面有“-” ，例Accept-Encoding，则要header[“Accept-Encoding”]</td>
+</tr>
+<tr>
+<td>headerValues</td>
+<td>表示一个保存了所有http请求头字段的Map对象，它对于某个请求参数，返回的是一个string[]数组。注意：如果头里面有“-” ，例Accept-Encoding，则要headerValues[“Accept-Encoding”]</td>
+</tr>
+<tr>
+<td>cookie</td>
+<td>表示一个保存了所有cookie的Map对象</td>
+</tr>
+<tr>
+<td>initParam</td>
+<td>表示一个保存了所有web应用初始化参数的map对象</td>
+</tr>
+</tbody>
+</table>
+<p><strong>常用EL函数</strong><br>引入&lt;%@ taglib prefix=”fn” uri=”<a href="http://java.sun.com/jsp/jstl/functions&quot;" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/functions&quot;</a> %&gt;</p>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>函数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fn:contains</td>
+<td>判断字符串是否包含另外一个字符串</td>
+</tr>
+<tr>
+<td>fn:containsIgnoreCase</td>
+<td>判断字符串是否包含另外一个字符串(大小写无关)</td>
+</tr>
+<tr>
+<td>fn:endsWith</td>
+<td>判断字符串是否以另外字符串结束</td>
+</tr>
+<tr>
+<td>fn:escapeXml</td>
+<td>把一些字符转成XML表示，例如&lt;字符应该转为&lt;</td>
+</tr>
+<tr>
+<td>fn:indexOf</td>
+<td>子字符串在母字符串中出现的位置</td>
+</tr>
+<tr>
+<td>fn:join</td>
+<td>将数组中的数据联合成一个新字符串，并使用指定字符格开</td>
+</tr>
+<tr>
+<td>fn:length</td>
+<td>获取字符串的长度，或者数组的大小</td>
+</tr>
+<tr>
+<td>fn:replace</td>
+<td>替换字符串中指定的字符</td>
+</tr>
+<tr>
+<td>fn:split</td>
+<td>把字符串按照指定字符切分</td>
+</tr>
+<tr>
+<td>fn:startsWith</td>
+<td>判断字符串是否以某个子串开始</td>
+</tr>
+<tr>
+<td>fn:substring</td>
+<td>获取子串</td>
+</tr>
+<tr>
+<td>fn:substringAfter</td>
+<td>获取从某个字符所在位置开始的子串</td>
+</tr>
+<tr>
+<td>fn:substringBefore</td>
+<td>获取从开始到某个字符所在位置的子串</td>
+</tr>
+<tr>
+<td>fn:toLowerCase</td>
+<td>转为小写</td>
+</tr>
+<tr>
+<td>fn:toUpperCase</td>
+<td>转为大写字符</td>
+</tr>
+<tr>
+<td>fn:trim</td>
+<td>去除字符串前后的空格</td>
+</tr>
+</tbody>
+</table>
 
       
 
@@ -472,6 +603,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HTTP协议</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">request和response</a>
               </li>
              
@@ -480,7 +615,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HTTP协议</a>
+                <a href="javascript:void(0)" class="js-tag color5">Servlet基础</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -488,11 +623,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Servlet基础</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jsp+servlet+mysql实现简单登录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -504,23 +647,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jsp+servlet+mysql实现简单登录</a>
+                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
             
             <div class="clearfix"></div>
