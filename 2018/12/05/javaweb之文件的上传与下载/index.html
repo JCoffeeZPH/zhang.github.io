@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://jcoffeeph.top">
-  <title>Category: Javaweb | ForMe</title>
+  <title>javaweb之文件的上传与下载 | ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Enjoy Coding">
-<meta name="keywords" content="Java 软件">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ForMe">
-<meta property="og:url" content="http://jcoffeeph.top/categories/Javaweb/index.html">
+  <meta name="description" content="首先要引入jar包：上面两个jar包四用来上传文件是使用的，下面的是用于jstl标签库。">
+<meta name="keywords" content="servlet和jsp,文件上传与下载">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javaweb之文件的上传与下载">
+<meta property="og:url" content="http://jcoffeeph.top/2018/12/05/javaweb之文件的上传与下载/index.html">
 <meta property="og:site_name" content="ForMe">
-<meta property="og:description" content="Enjoy Coding">
+<meta property="og:description" content="首先要引入jar包：上面两个jar包四用来上传文件是使用的，下面的是用于jstl标签库。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://s1.ax1x.com/2018/12/05/FlJch4.png">
+<meta property="og:updated_time" content="2018-12-05T08:58:33.353Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ForMe">
-<meta name="twitter:description" content="Enjoy Coding">
+<meta name="twitter:title" content="javaweb之文件的上传与下载">
+<meta name="twitter:description" content="首先要引入jar包：上面两个jar包四用来上传文件是使用的，下面的是用于jstl标签库。">
+<meta name="twitter:image" content="https://s1.ax1x.com/2018/12/05/FlJch4.png">
   
     <link rel="alternative" href="/atom.xml" title="ForMe" type="application/atom+xml">
   
@@ -158,36 +161,46 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-javaweb之文件的上传与下载" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/05/javaweb之文件的上传与下载/" class="archive-article-date">
-  	<time datetime="2018-12-05T08:56:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/05/javaweb之文件的上传与下载/">javaweb之文件的上传与下载</a>
+    <h1 class="article-title" itemprop="name">
+      javaweb之文件的上传与下载
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/12/05/javaweb之文件的上传与下载/" class="archive-article-date">
+  	<time datetime="2018-12-05T08:56:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>首先要引入jar包：<br><a href="https://imgchr.com/i/FlJch4" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2018/12/05/FlJch4.png" alt="FlJch4.png"></a><br>上面两个jar包四用来上传文件是使用的，下面的是用于jstl标签库。<br><a id="more"></a></p>
+<p><font color="#dc123" size="5">一、文件上传</font><br>上传文件所用的页面：Upload.jsp<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--</span><br><span class="line">  Created by IntelliJ IDEA.</span><br><span class="line">  User: Administrator</span><br><span class="line">  Date: <span class="number">2018</span>/<span class="number">12</span>/<span class="number">5</span></span><br><span class="line">  Time: <span class="number">12</span>:<span class="number">46</span></span><br><span class="line">  To change <span class="keyword">this</span> template use File | Settings | File Templates.</span><br><span class="line">--%&gt;</span><br><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;上传页面&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=<span class="string">"$&#123;pageContext.request.contextPath&#125;/UploadServlet"</span> enctype=<span class="string">"multipart/form-data"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">    上传者：&lt;input type=<span class="string">"text"</span> name=<span class="string">"username"</span> /&gt;&lt;br&gt;</span><br><span class="line">    上传文件<span class="number">1</span>：&lt;input type=<span class="string">"file"</span> name=<span class="string">"file1"</span> /&gt;&lt;br&gt;</span><br><span class="line">    上传文件<span class="number">2</span>：&lt;input type=<span class="string">"file"</span> name=<span class="string">"file2"</span>/&gt;&lt;br&gt;</span><br><span class="line">    &lt;input type=<span class="string">"submit"</span> value=<span class="string">"上传"</span>/&gt;&lt;br&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>处理上传文件页面提交的servlet类：UploadServlet<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.commons.fileupload.FileItem;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.fileupload.FileUploadException;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.fileupload.ProgressListener;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.fileupload.disk.DiskFileItemFactory;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.fileupload.servlet.ServletFileUpload;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.UUID;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by ForMe</span></span><br><span class="line"><span class="comment"> * $&#123;PACKAGE_NAME&#125;</span></span><br><span class="line"><span class="comment"> * 2018/12/5</span></span><br><span class="line"><span class="comment"> * 12:47</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@WebServlet</span>(name = <span class="string">"UploadServlet"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UploadServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        doGet(request,response);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        String uploadpath = <span class="keyword">this</span>.getServletContext().getRealPath(<span class="string">"/WEB-INF/upload"</span>);<span class="comment">//上传文件的保存目录</span></span><br><span class="line">        String viruploadpath = <span class="keyword">this</span>.getServletContext().getRealPath(<span class="string">"/WEB-INF/temp"</span>);<span class="comment">//上传文件时生成的临时文件的目录</span></span><br><span class="line">        File file = <span class="keyword">new</span> File(viruploadpath);</span><br><span class="line">        <span class="keyword">if</span>(!file.exists())</span><br><span class="line">            file.mkdir();</span><br><span class="line">        String message = <span class="string">""</span>;</span><br><span class="line">        DiskFileItemFactory diskFileItemFactory = <span class="keyword">new</span> DiskFileItemFactory();<span class="comment">//创建工厂</span></span><br><span class="line">        diskFileItemFactory.setSizeThreshold(<span class="number">1024</span>*<span class="number">100</span>);<span class="comment">//缓冲区大小</span></span><br><span class="line">        diskFileItemFactory.setRepository(file);<span class="comment">//临时文件保存目录</span></span><br><span class="line">        ServletFileUpload servletFileUpload = <span class="keyword">new</span> ServletFileUpload(diskFileItemFactory);<span class="comment">//开始解析</span></span><br><span class="line">        servletFileUpload.setProgressListener(<span class="keyword">new</span> ProgressListener() &#123;<span class="comment">//监听</span></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">long</span> l, <span class="keyword">long</span> l1, <span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"文件大小为："</span> + l1 + <span class="string">" 已经上传了："</span> + l);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        servletFileUpload.setHeaderEncoding(<span class="string">"UTF-8"</span>);<span class="comment">//防止中文乱码</span></span><br><span class="line">        <span class="keyword">if</span>(!ServletFileUpload.isMultipartContent(request))<span class="comment">//判断提交的是否是表单</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        servletFileUpload.setFileSizeMax(<span class="number">1024</span>*<span class="number">1024</span>);<span class="comment">//单个文件上传所允许的最大大小</span></span><br><span class="line">        servletFileUpload.setSizeMax(<span class="number">1024</span>*<span class="number">1024</span>*<span class="number">10</span>);<span class="comment">//总共上传文件最大大小</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            List&lt;FileItem&gt; list = servletFileUpload.parseRequest(request);<span class="comment">//开始解析上传数据</span></span><br><span class="line">            <span class="keyword">for</span>(FileItem fileItem : list)&#123;</span><br><span class="line">                <span class="keyword">if</span>(fileItem.isFormField())&#123;<span class="comment">//普通输入项数据</span></span><br><span class="line">                    String name = fileItem.getFieldName();</span><br><span class="line">                    String value = fileItem.getString(<span class="string">"UTF-8"</span>);</span><br><span class="line">                    System.out.println(name + <span class="string">"="</span> + value);</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;<span class="comment">//上传的是文件</span></span><br><span class="line">                    String filename = fileItem.getName();</span><br><span class="line">                    System.out.println(filename);</span><br><span class="line">                    <span class="keyword">if</span>(filename == <span class="keyword">null</span> || filename.trim().equals(<span class="string">""</span>))</span><br><span class="line">                        <span class="keyword">continue</span>;</span><br><span class="line">                    filename = filename.substring(filename.lastIndexOf(<span class="string">"\\"</span>) + <span class="number">1</span>);</span><br><span class="line">                    String Extfilename = filename.substring(filename.lastIndexOf(<span class="string">"."</span>) + <span class="number">1</span>);<span class="comment">//得到文件扩展名</span></span><br><span class="line">                    String getSavepath = makefilepath(filename);<span class="comment">//上传文件名</span></span><br><span class="line">                    String getSavedir = makefileDir(getSavepath,viruploadpath);<span class="comment">//得到上传文件目录</span></span><br><span class="line">                    System.out.println(<span class="string">"上传文件扩展名为："</span> + Extfilename);</span><br><span class="line">                    InputStream inputStream = fileItem.getInputStream();</span><br><span class="line">                    FileOutputStream fileOutputStream = <span class="keyword">new</span> FileOutputStream(getSavedir + <span class="string">"\\"</span> + getSavepath);</span><br><span class="line">                    <span class="keyword">byte</span>[] bytes = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">                    <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">while</span> ((len = inputStream.read(bytes)) != -<span class="number">1</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        fileOutputStream.write(bytes,<span class="number">0</span>,len);</span><br><span class="line">                    &#125;</span><br><span class="line">                    inputStream.close();</span><br><span class="line">                    fileOutputStream.close();</span><br><span class="line">                    message = <span class="string">"上传成功"</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            request.setAttribute(<span class="string">"message"</span>,message);</span><br><span class="line">            request.getRequestDispatcher(<span class="string">"message.jsp"</span>).forward(request,response);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileUploadException e) &#123;</span><br><span class="line">            message = <span class="string">"上传失败"</span>;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">makefilepath</span><span class="params">(String filename)</span></span>&#123;<span class="comment">//得到上传文件的唯一名称</span></span><br><span class="line">        <span class="keyword">return</span> UUID.randomUUID().toString() + <span class="string">"_"</span> + filename;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">makefileDir</span><span class="params">(String getSavepath,String viruploadpath)</span></span>&#123;<span class="comment">//上传文件的目录，hash</span></span><br><span class="line">        <span class="keyword">int</span> hashcode = getSavepath.hashCode();</span><br><span class="line">        <span class="keyword">int</span> dir1 = hashcode&amp;<span class="number">0xf</span>;</span><br><span class="line">        <span class="keyword">int</span> dir2 = (hashcode&amp;<span class="number">0xf0</span>)&gt;&gt;<span class="number">4</span>;</span><br><span class="line">        String dir = viruploadpath + <span class="string">"\\"</span> + dir1 + <span class="string">"\\"</span> + dir2;</span><br><span class="line">        File file = <span class="keyword">new</span> File(dir);</span><br><span class="line">        <span class="keyword">if</span>(!file.exists())</span><br><span class="line">            file.mkdirs();</span><br><span class="line">        <span class="keyword">return</span> dir;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上传或者下载文件情况的页面：message.jsp<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--</span><br><span class="line">  Created by IntelliJ IDEA.</span><br><span class="line">  User: Administrator</span><br><span class="line">  Date: <span class="number">2018</span>/<span class="number">12</span>/<span class="number">5</span></span><br><span class="line">  Time: <span class="number">13</span>:<span class="number">13</span></span><br><span class="line">  To change <span class="keyword">this</span> template use File | Settings | File Templates.</span><br><span class="line">--%&gt;</span><br><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;上传及下载情况页面&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">$&#123;message&#125;&lt;hr&gt;</span><br><span class="line">&lt;a href="/Upload.jsp"&gt;上传&lt;/a&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;a href="/ListFileServlet"&gt;下载&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>接着在web.xml文件中配置之后就可以实现文件的上传了。</p>
+<p><font color="#dc123" size="5">二、文件下载</font><br>首先要实现一个列出所有文件的servlet：ListFileServlet<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by ForMe</span></span><br><span class="line"><span class="comment"> * $&#123;PACKAGE_NAME&#125;</span></span><br><span class="line"><span class="comment"> * 2018/12/5</span></span><br><span class="line"><span class="comment"> * 13:20</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@WebServlet</span>(name = <span class="string">"ListFileServlet"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListFileServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        doGet(request,response);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        String path = <span class="keyword">this</span>.getServletContext().getRealPath(<span class="string">"/WEB-INF/temp"</span>);</span><br><span class="line">        Map&lt;String,String&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        listFile(<span class="keyword">new</span> File(path),map);</span><br><span class="line">        request.setAttribute(<span class="string">"map"</span>,map);</span><br><span class="line">        request.getRequestDispatcher(<span class="string">"/Download.jsp"</span>).forward(request,response);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">listFile</span><span class="params">(File file, Map&lt;String,String&gt; map)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!file.isFile())&#123;</span><br><span class="line">            File[] files = file.listFiles();</span><br><span class="line">            <span class="keyword">for</span>(File file1 : files)</span><br><span class="line">                listFile(file1,map);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            String path = file.getName().substring(file.getName().indexOf(<span class="string">"_"</span>) + <span class="number">1</span>);</span><br><span class="line">            map.put(file.getName(),path);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>接着是实现输出所含有文件的页面：Download.jsp</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--</span><br><span class="line">  Created by IntelliJ IDEA.</span><br><span class="line">  User: Administrator</span><br><span class="line">  Date: <span class="number">2018</span>/<span class="number">12</span>/<span class="number">5</span></span><br><span class="line">  Time: <span class="number">13</span>:<span class="number">26</span></span><br><span class="line">  To change <span class="keyword">this</span> template use File | Settings | File Templates.</span><br><span class="line">--%&gt;</span><br><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br><span class="line">&lt;%<span class="meta">@taglib</span> prefix=<span class="string">"c"</span> uri=<span class="string">"http://java.sun.com/jsp/jstl/core"</span> %&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;下载页面&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;c:forEach <span class="keyword">var</span>=<span class="string">"me"</span> items=<span class="string">"$&#123;map&#125;"</span>&gt;</span><br><span class="line">    &lt;c:url <span class="keyword">var</span>=<span class="string">"downurl"</span> value=<span class="string">"/DownloadServlet"</span>&gt;</span><br><span class="line">        &lt;c:param name="filename" value="$&#123;me.key&#125;"&gt;&lt;/c:param&gt;</span><br><span class="line">    &lt;/c:url&gt;</span><br><span class="line">    $&#123;me.value&#125;&lt;br&gt;&lt;a href="$&#123;downurl&#125;"&gt;下载&lt;/a&gt;&lt;hr&gt;</span><br><span class="line">&lt;/c:forEach&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>最后是处理Download.jsp文件的servlet：DownloadServlet</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.commons.fileupload.FileItem;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.net.URLEncoder;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by ForMe</span></span><br><span class="line"><span class="comment"> * $&#123;PACKAGE_NAME&#125;</span></span><br><span class="line"><span class="comment"> * 2018/12/5</span></span><br><span class="line"><span class="comment"> * 13:30</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@WebServlet</span>(name = <span class="string">"DownloadServlet"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DownloadServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        doGet(request,response);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        String filename = request.getParameter(<span class="string">"filename"</span>);<span class="comment">//下载页面的文件名</span></span><br><span class="line">        filename = <span class="keyword">new</span> String(filename.getBytes(<span class="string">"ISO8859-1"</span>),<span class="string">"UTF-8"</span>);</span><br><span class="line">        String filepath = <span class="keyword">this</span>.getServletContext().getRealPath(<span class="string">"/WEB-INF/temp"</span>);</span><br><span class="line">        String path = makefileDir(filename,filepath);<span class="comment">//与上传文件相反的操作，得出文件的目录</span></span><br><span class="line">        File file = <span class="keyword">new</span> File(path);</span><br><span class="line">        <span class="keyword">if</span>(!file.exists())&#123;</span><br><span class="line">            request.setAttribute(<span class="string">"message"</span>,<span class="string">"您要找的资源已经不存在"</span>);</span><br><span class="line">            request.getRequestDispatcher(<span class="string">"/message.jsp"</span>).forward(request,response);</span><br><span class="line">        &#125;</span><br><span class="line">        String realname = filename.substring(filename.indexOf(<span class="string">"_"</span>) + <span class="number">1</span>);</span><br><span class="line">        response.setHeader(<span class="string">"content-disposition"</span>, <span class="string">"attachment;filename="</span> + URLEncoder.encode(realname, <span class="string">"UTF-8"</span>));</span><br><span class="line">        FileInputStream fileInputStream = <span class="keyword">new</span> FileInputStream(path + <span class="string">"\\"</span> + filename);<span class="comment">//读取下载文件</span></span><br><span class="line">        OutputStream outputStream = response.getOutputStream();</span><br><span class="line">        <span class="keyword">byte</span>[] bytes = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">        <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> ((len=fileInputStream.read(bytes)) != -<span class="number">1</span>)&#123;</span><br><span class="line">            outputStream.write(bytes,<span class="number">0</span>,len);</span><br><span class="line">        &#125;</span><br><span class="line">        fileInputStream.close();</span><br><span class="line">        outputStream.close();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">makefileDir</span><span class="params">(String getSavepath,String viruploadpath)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> hashcode = getSavepath.hashCode();</span><br><span class="line">        <span class="keyword">int</span> dir1 = hashcode&amp;<span class="number">0xf</span>;</span><br><span class="line">        <span class="keyword">int</span> dir2 = (hashcode&amp;<span class="number">0xf0</span>)&gt;&gt;<span class="number">4</span>;</span><br><span class="line">        String dir = viruploadpath + <span class="string">"\\"</span> + dir1 + <span class="string">"\\"</span> + dir2;</span><br><span class="line">        File file = <span class="keyword">new</span> File(dir);</span><br><span class="line">        <span class="keyword">if</span>(!file.exists())</span><br><span class="line">            file.mkdirs();</span><br><span class="line">        <span class="keyword">return</span> dir;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后贴上web.xml配置文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">&lt;web-app xmlns=<span class="string">"http://xmlns.jcp.org/xml/ns/javaee"</span></span><br><span class="line">         xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">         xsi:schemaLocation=<span class="string">"http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"</span></span><br><span class="line">         version=<span class="string">"4.0"</span>&gt;</span><br><span class="line">    &lt;servlet&gt;</span><br><span class="line">        &lt;servlet-name&gt;UploadServlet&lt;/servlet-name&gt;</span><br><span class="line">        &lt;servlet-<span class="class"><span class="keyword">class</span>&gt;<span class="title">com</span>.<span class="title">servlet</span>.<span class="title">UploadServlet</span>&lt;/<span class="title">servlet</span>-<span class="title">class</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;/<span class="title">servlet</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;<span class="title">servlet</span>-<span class="title">mapping</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">servlet</span>-<span class="title">name</span>&gt;<span class="title">UploadServlet</span>&lt;/<span class="title">servlet</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">url</span>-<span class="title">pattern</span>&gt;/<span class="title">UploadServlet</span>&lt;/<span class="title">url</span>-<span class="title">pattern</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;/<span class="title">servlet</span>-<span class="title">mapping</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;<span class="title">servlet</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">servlet</span>-<span class="title">name</span>&gt;<span class="title">ListFileServlet</span>&lt;/<span class="title">servlet</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">servlet</span>-<span class="title">class</span>&gt;<span class="title">com</span>.<span class="title">servlet</span>.<span class="title">ListFileServlet</span>&lt;/<span class="title">servlet</span>-<span class="title">class</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;/<span class="title">servlet</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;<span class="title">servlet</span>-<span class="title">mapping</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">servlet</span>-<span class="title">name</span>&gt;<span class="title">ListFileServlet</span>&lt;/<span class="title">servlet</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">url</span>-<span class="title">pattern</span>&gt;/<span class="title">ListFileServlet</span>&lt;/<span class="title">url</span>-<span class="title">pattern</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;/<span class="title">servlet</span>-<span class="title">mapping</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;<span class="title">servlet</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">servlet</span>-<span class="title">name</span>&gt;<span class="title">DownloadServlet</span>&lt;/<span class="title">servlet</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">servlet</span>-<span class="title">class</span>&gt;<span class="title">com</span>.<span class="title">servlet</span>.<span class="title">DownloadServlet</span>&lt;/<span class="title">servlet</span>-<span class="title">class</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;/<span class="title">servlet</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;<span class="title">servlet</span>-<span class="title">mapping</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">servlet</span>-<span class="title">name</span>&gt;<span class="title">DownloadServlet</span>&lt;/<span class="title">servlet</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">url</span>-<span class="title">pattern</span>&gt;/<span class="title">DownloadServlet</span>&lt;/<span class="title">url</span>-<span class="title">pattern</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;/<span class="title">servlet</span>-<span class="title">mapping</span>&gt;</span></span><br><span class="line"><span class="class">&lt;/<span class="title">web</span>-<span class="title">app</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -203,7 +216,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -216,274 +229,53 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/30/jsp基本语法及内置对象的简单介绍/" class="archive-article-date">
-  	<time datetime="2018-11-30T12:11:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-30</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/03/jsp之JSTL/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">jsp之JSTL与EL表达式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/30/jsp基本语法及内置对象的简单介绍/">jsp基本语法及内置对象的简单介绍</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jsp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Javaweb//" class="article-tag-list-link color3">Javaweb</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/29/Javaweb之cookie与session/" class="archive-article-date">
-  	<time datetime="2018-11-29T12:46:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/29/Javaweb之cookie与session/">Javaweb之cookie与session</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">cookie与session</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Javaweb//" class="article-tag-list-link color3">Javaweb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/28/Javaweb之HttpServletResponse对象与HttpServletRequest对象/" class="archive-article-date">
-  	<time datetime="2018-11-28T15:26:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/28/Javaweb之HttpServletResponse对象与HttpServletRequest对象/">Javaweb之HttpServletResponse对象与HttpServletRequest对象</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">servlet</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">request和response</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Javaweb//" class="article-tag-list-link color3">Javaweb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/28/Javaweb之servlet-一-基础知识/" class="archive-article-date">
-  	<time datetime="2018-11-28T11:04:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/28/Javaweb之servlet-一-基础知识/">Javaweb之servlet (一)---基础知识</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">servlet</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Servlet基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Javaweb//" class="article-tag-list-link color3">Javaweb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/28/Javaweb之HTTP协议/" class="archive-article-date">
-  	<time datetime="2018-11-28T08:24:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/28/Javaweb之HTTP协议/">Javaweb之HTTP协议</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HTTP协议</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Javaweb//" class="article-tag-list-link color3">Javaweb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -509,10 +301,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
 		root: "/",
