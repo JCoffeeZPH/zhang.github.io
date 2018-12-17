@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="ForMe">
 <meta property="og:description" content="在Sax的解析过程中，读取到文档开头、结尾，元素的开头和结尾都会触发一些回调方法，你可以在这些回调方法中进行相应事件处理这四个方法是：startDocument() 、 endDocument()、 startElement()、 endElement此外，光读取到节点处是不够的，我们还需要characters()方法来仔细处理元素内包含的内容将这些回调方法集合起来，便形成了一个类，这个类也就是我">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-17T11:20:40.848Z">
+<meta property="og:updated_time" content="2018-12-17T11:23:25.535Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SAX解析XML">
 <meta name="twitter:description" content="在Sax的解析过程中，读取到文档开头、结尾，元素的开头和结尾都会触发一些回调方法，你可以在这些回调方法中进行相应事件处理这四个方法是：startDocument() 、 endDocument()、 startElement()、 endElement此外，光读取到节点处是不够的，我们还需要characters()方法来仔细处理元素内包含的内容将这些回调方法集合起来，便形成了一个类，这个类也就是我">
@@ -179,8 +179,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在Sax的解析过程中，读取到文档开头、结尾，元素的开头和结尾都会触发一些回调方法，你可以在这些回调方法中进行相应事件处理<br>这四个方法是：<strong>startDocument() 、 endDocument()、 startElement()、 endElement</strong><br>此外，光读取到节点处是不够的，我们还需要characters()方法来仔细处理元素内包含的内容<br>将这些回调方法集合起来，便形成了一个类，这个类也就是我们需要的触发器</p>
-<p>一般从Main方法中读取文档，却在触发器中处理文档，这就是所谓的事件驱动解析方法</p>
+        <p>在Sax的解析过程中，读取到文档开头、结尾，元素的开头和结尾都会触发一些回调方法，你可以在这些回调方法中进行相应事件处理<br>这四个方法是：<strong>startDocument() 、 endDocument()、 startElement()、 endElement</strong><br>此外，光读取到节点处是不够的，我们还需要characters()方法来仔细处理元素内包含的内容<br>将这些回调方法集合起来，便形成了一个类，这个类也就是我们需要的触发器<br><a id="more"></a><br>一般从Main方法中读取文档，却在触发器中处理文档，这就是所谓的事件驱动解析方法</p>
 <p>在触发器中，首先开始读取文档，然后开始逐个解析元素，每个元素中的内容会返回到characters()方法</p>
 <p>接着结束元素读取，所有元素读取完后，结束文档解析<br>1、创建XML文档<br>book.xml<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">&lt;bookstore&gt;</span><br><span class="line">    &lt;book id=<span class="string">"1"</span>&gt;</span><br><span class="line">        &lt;name&gt;冰与火之歌&lt;/name&gt;</span><br><span class="line">        &lt;author&gt;乔治马丁&lt;/author&gt;</span><br><span class="line">        &lt;time&gt;2014&lt;/time&gt;</span><br><span class="line">        &lt;price&gt;89&lt;/price&gt;</span><br><span class="line">    &lt;/book&gt;</span><br><span class="line">    &lt;book id=<span class="string">"2"</span>&gt;</span><br><span class="line">        &lt;name&gt;安徒生童话&lt;/name&gt;</span><br><span class="line">        &lt;price&gt;40&lt;/price&gt;</span><br><span class="line">        &lt;time&gt;2004&lt;/time&gt;</span><br><span class="line">        &lt;language&gt;English&lt;/language&gt;</span><br><span class="line">    &lt;/book&gt;</span><br><span class="line">&lt;/bookstore&gt;</span><br></pre></td></tr></table></figure></p>
 <p>触发器如下</p>
@@ -398,6 +397,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SAX解析XML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">servlet和jsp</a>
               </li>
              
@@ -435,10 +438,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SAX解析XML</a>
               </li>
             
             <div class="clearfix"></div>
