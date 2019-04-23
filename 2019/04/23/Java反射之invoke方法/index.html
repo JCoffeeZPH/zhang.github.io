@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="ForMe">
 <meta property="og:description" content="本文原址：浅析invoke过程invoke方法用来在运行时动态地调用某个实例的方法。它的实现如下： 1234567891011121314151617@CallerSensitivepublic Object invoke(Object obj, Object... args)    throws IllegalAccessException, IllegalArgumentException,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-23T12:12:03.395Z">
+<meta property="og:updated_time" content="2019-04-23T12:17:03.145Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java反射之invoke方法">
 <meta name="twitter:description" content="本文原址：浅析invoke过程invoke方法用来在运行时动态地调用某个实例的方法。它的实现如下： 1234567891011121314151617@CallerSensitivepublic Object invoke(Object obj, Object... args)    throws IllegalAccessException, IllegalArgumentException,">
@@ -181,6 +181,7 @@
       
         <p>本文原址：<a href="https://www.sczyh30.com/posts/Java/java-reflection-2/#" target="_blank" rel="noopener">浅析invoke过程</a><br>invoke方法用来在运行时动态地调用某个实例的方法。它的实现如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@CallerSensitive</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object obj, Object... args)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">throws</span> IllegalAccessException, IllegalArgumentException,</span></span><br><span class="line"><span class="function">       InvocationTargetException</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!override) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!Reflection.quickCheckMemberAccess(clazz, modifiers)) &#123;</span><br><span class="line">            Class&lt;?&gt; caller = Reflection.getCallerClass();</span><br><span class="line">            checkAccess(caller, clazz, obj, modifiers);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    MethodAccessor ma = methodAccessor;             <span class="comment">// read volatile</span></span><br><span class="line">    <span class="keyword">if</span> (ma == <span class="keyword">null</span>) &#123;</span><br><span class="line">        ma = acquireMethodAccessor();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ma.invoke(obj, args);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>我们根据invoke方法的实现，将其分为以下几步：</p>
 <font color="red" size="4">1、权限检查</font>
 
@@ -391,7 +392,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">request和response</a>
+                <a href="javascript:void(0)" class="js-tag color5">cookie与session</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -399,7 +400,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">cookie与session</a>
+                <a href="javascript:void(0)" class="js-tag color2">request和response</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -439,14 +440,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">EL表达式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">javabean</a>
               </li>
              
@@ -464,6 +457,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">EL表达式</a>
               </li>
             
             <div class="clearfix"></div>
