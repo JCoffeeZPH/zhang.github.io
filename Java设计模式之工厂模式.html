@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jcoffeezph.top">
-  <title>Tag: 位运算 | Zph、ForMe</title>
+  <title>Java设计模式之工厂模式 | Zph、ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Enjoy Coding">
-<meta name="keywords" content="Java 软件">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Zph、ForMe">
-<meta property="og:url" content="https://jcoffeezph.top/tags/位运算/index.html">
+  <meta name="description" content="综述：简单的说工厂模式就是提供一个工厂方法，传入指定的参数得到我想要的对象。  为什么要使用工厂模式?  1、考虑这样一个问题，对于一个类A，当A被使用的地方很多，则很多地方都会使用new来创建对象，肯定会导致使用A的地方有很多代码重复。2、考虑当A有功能改变时，使用A的地方的所有代码都需要改变，很是麻烦。3、如果一个抽象类有很多子类，当需要更改需求，调用其他子类时，则需要修改业务逻辑的类，这样不">
+<meta name="keywords" content="工厂模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java设计模式之工厂模式">
+<meta property="og:url" content="https://jcoffeezph.top/Java设计模式之工厂模式.html">
 <meta property="og:site_name" content="Zph、ForMe">
-<meta property="og:description" content="Enjoy Coding">
+<meta property="og:description" content="综述：简单的说工厂模式就是提供一个工厂方法，传入指定的参数得到我想要的对象。  为什么要使用工厂模式?  1、考虑这样一个问题，对于一个类A，当A被使用的地方很多，则很多地方都会使用new来创建对象，肯定会导致使用A的地方有很多代码重复。2、考虑当A有功能改变时，使用A的地方的所有代码都需要改变，很是麻烦。3、如果一个抽象类有很多子类，当需要更改需求，调用其他子类时，则需要修改业务逻辑的类，这样不">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-24T15:10:05.161Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zph、ForMe">
-<meta name="twitter:description" content="Enjoy Coding">
+<meta name="twitter:title" content="Java设计模式之工厂模式">
+<meta name="twitter:description" content="综述：简单的说工厂模式就是提供一个工厂方法，传入指定的参数得到我想要的对象。  为什么要使用工厂模式?  1、考虑这样一个问题，对于一个类A，当A被使用的地方很多，则很多地方都会使用new来创建对象，肯定会导致使用A的地方有很多代码重复。2、考虑当A有功能改变时，使用A的地方的所有代码都需要改变，很是麻烦。3、如果一个抽象类有很多子类，当需要更改需求，调用其他子类时，则需要修改业务逻辑的类，这样不">
   
     <link rel="alternative" href="/atom.xml" title="Zph、ForMe" type="application/atom+xml">
   
@@ -158,48 +159,87 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java设计模式之工厂模式" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/位运算及其常用操作.html" class="archive-article-date">
-  	<time datetime="2019-02-09T08:25:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-09</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/位运算及其常用操作.html">位运算及其常用操作</a>
+    <h1 class="article-title" itemprop="name">
+      Java设计模式之工厂模式
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/Java设计模式之工厂模式.html" class="archive-article-date">
+  	<time datetime="2019-04-24T15:08:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <font size="4">综述：简单的说工厂模式就是提供一个工厂方法，传入指定的参数得到我想要的对象。</font>
+
+<font size="4" color="red">为什么要使用工厂模式?</font>
+
+<p>1、考虑这样一个问题，对于一个类A，当A被使用的地方很多，则很多地方都会使用new来创建对象，肯定会导致使用A的地方有很多代码重复。<br>2、考虑当A有功能改变时，使用A的地方的所有代码都需要改变，很是麻烦。<br>3、如果一个抽象类有很多子类，当需要更改需求，调用其他子类时，则需要修改业务逻辑的类，这样不符合一般的设计原则。</p>
+<p>基于以上的问题，工厂模式应运而生。使用工厂模式吧创建对象的操作放在其中，需要使用指定类对象的地方就从工厂中获取，这样既避免了重复代码，在修改功能时，也只需要修改工厂类就可以了，也就是说通过工厂模式创建，则将创建和引用解耦，只需要修改创建部分就可以了。<br><a id="more"></a></p>
+<font size="4" color="red">工厂模式的分类</font>
+
+<p>工厂模式的分类有三种：<br>(1）简单工厂（Simple Factory）模式，又称静态工厂方法模式（Static Factory Method Pattern）<br>(2）工厂方法（Factory Method）模式<br>(3）抽象工厂（Abstract Factory）模式</p>
+<p>在学习工厂模式之前必读文章，工厂模式的作用：<a href="https://blog.csdn.net/lovelion/article/details/7523392" target="_blank" rel="noopener">创建对象与使用对象——谈谈工厂的作用</a></p>
+<font size="4" color="red">一、简单工厂模式</font><br>有一个工厂可以生产产品，A、B两种产品都有produce的功能<br>1、创建接口<br><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Product</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">produce</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>2、接口的实现类<br><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">implements</span> <span class="title">Product</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">produce</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"produce -- A"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">implements</span> <span class="title">Product</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">produce</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"produce -- B"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>3、工厂类<br><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SimpleFactory</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Product <span class="title">produce</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="string">"A"</span>.equals(name))</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> A();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(<span class="string">"B"</span>.equals(name))</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> B();</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>4、测试类<br><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Product product = SimpleFactory.produce(<span class="string">"A"</span>);</span><br><span class="line">        product.produce();</span><br><span class="line"></span><br><span class="line">        Product product1 = SimpleFactory.produce(<span class="string">"B"</span>);</span><br><span class="line">        product1.produce();</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * produce -- A</span></span><br><span class="line"><span class="comment">         * produce -- B</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>从上面可以看到，当我们需要改变功能的时候，就需要改变上面的工厂，这很明显不符合 <strong>开放-封闭原则</strong> 。<br><br><strong>通过反射来改进上面的工厂类</strong><br><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SimpleFactory</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Object <span class="title">produce</span><span class="params">(Class&lt;? extends Product&gt; name)</span></span>&#123; <span class="comment">//继承Product的Class对象</span></span><br><span class="line">        Object o = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            o = Class.forName(name.getName()).newInstance();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InstantiationException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IllegalAccessException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> o;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>测试类<br><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Product product = (Product) SimpleFactory.produce(com.demo.factory.A.class);</span><br><span class="line">        product.produce();</span><br><span class="line"></span><br><span class="line">        Product product1 = (Product) SimpleFactory.produce(com.demo.factory.B.class);</span><br><span class="line">        product1.produce();</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * produce -- A</span></span><br><span class="line"><span class="comment">         * produce -- B</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>经过改进之后，工厂类满足了开闭原则，对于这种方式，可以考虑利用 <strong>反射 + 配置文件</strong>的方式，以减少在使用工厂处使用全类名。<br><br><font size="4" color="red">二、工厂方法模式</font>
+
+<p>工厂方法模式去掉了简单工厂模式中工厂方法的静态属性，使得它可以被子类继承。这样在简单工厂模式里集中在工厂方法上的压力可以由工厂方法模式里不同的工厂子类来分担。<br>那么对于刚才的静态工厂模式我们可以这样改进，首先创建一个工厂接口，如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">FactoryInterface</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Product <span class="title">produces</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后分别创建A类的工厂类和B类的工厂类并都实现FactoryInterface接口，如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A_Factory</span> <span class="keyword">implements</span> <span class="title">FactoryInterface</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Product <span class="title">produces</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> A();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">B_Factory</span> <span class="keyword">implements</span> <span class="title">FactoryInterface</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Product <span class="title">produces</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> B();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>测试类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        A a = (A) <span class="keyword">new</span> A_Factory().produces();</span><br><span class="line">        a.produce();</span><br><span class="line"></span><br><span class="line">        B b = (B) <span class="keyword">new</span> B_Factory().produces();</span><br><span class="line">        b.produce();</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * produce -- A</span></span><br><span class="line"><span class="comment">         * produce -- B</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><font size="4" color="red">三、抽象工厂模式</font><br>看了很多博客，说抽象工厂模式都很抽象，但是结合实例来分析就相对来说比较容易理解了。抽象工厂是生产一整套有产品的（至少要生产两个产品)，这些产品必须相互是有关系或有依赖的；而工厂方法中的工厂是生产单一产品的工厂。以鞋子和鞋带为例进一步理解抽象工厂模式：</p>
+<p>鞋子接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Shoes</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">exercise</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>鞋带接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Shoelaces</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tie</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Anta类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Anta</span> <span class="keyword">implements</span> <span class="title">Shoes</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">exercise</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"安踏鞋子"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>耐克类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Nike</span> <span class="keyword">implements</span> <span class="title">Shoes</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">exercise</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"耐克鞋子"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>安踏鞋带类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AntaShowlaces</span> <span class="keyword">implements</span> <span class="title">Shoelaces</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tie</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"安踏鞋子系鞋带"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>耐克鞋带类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NikeShowlaces</span> <span class="keyword">implements</span> <span class="title">Shoelaces</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tie</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"耐克鞋子系鞋带"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>工厂接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Factory</span> </span>&#123; <span class="comment">//工厂</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Shoes <span class="title">produceShoes</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Shoelaces <span class="title">produceShoelaces</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>安踏工厂</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AntaFactory</span> <span class="keyword">implements</span> <span class="title">Factory</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Shoes <span class="title">produceShoes</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Anta();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Shoelaces <span class="title">produceShoelaces</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> AntaShowlaces();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>耐克工厂</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NikeFactory</span> <span class="keyword">implements</span> <span class="title">Factory</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Shoes <span class="title">produceShoes</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Nike();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Shoelaces <span class="title">produceShoelaces</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> NikeShowlaces();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>测试</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Anta anta = (Anta) <span class="keyword">new</span> AntaFactory().produceShoes();</span><br><span class="line">        anta.exercise();</span><br><span class="line">        AntaShowlaces antaShowlaces = (AntaShowlaces) <span class="keyword">new</span> AntaFactory().produceShoelaces();</span><br><span class="line">        antaShowlaces.tie();</span><br><span class="line"></span><br><span class="line">        Nike nike = (Nike) <span class="keyword">new</span> NikeFactory().produceShoes();</span><br><span class="line">        nike.exercise();</span><br><span class="line">        NikeShowlaces nikeShowlaces = (NikeShowlaces) <span class="keyword">new</span> NikeFactory().produceShoelaces();</span><br><span class="line">        nikeShowlaces.tie();</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 安踏鞋子</span></span><br><span class="line"><span class="comment">         * 安踏鞋子系鞋带</span></span><br><span class="line"><span class="comment">         * 耐克鞋子</span></span><br><span class="line"><span class="comment">         * 耐克鞋子系鞋带</span></span><br><span class="line"><span class="comment">         * </span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>和工厂方法模式区别</strong><br>工厂方法模式：<br>一个抽象产品类，可以派生出多个具体产品类。<br>一个抽象工厂类，可以派生出多个具体工厂类。<br>每个具体工厂类只能创建一个具体产品类的实例。<br>抽象工厂模式：<br>多个抽象产品类，每个抽象产品类可以派生出多个具体产品类。<br>一个抽象工厂类，可以派生出多个具体工厂类。<br>每个具体工厂类可以创建多个具体产品类的实例。<br>区别：<br>工厂方法模式只有一个抽象产品类，而抽象工厂模式有多个(产品族)。<br>工厂方法模式的具体工厂类只能创建一个具体产品类的实例(一对一),而抽象工厂模式可以创建多个具体产品类的实例(一对多)。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">位运算</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">工厂模式</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -212,17 +252,80 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/Java设计模式之单例模式.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java设计模式之单例模式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
   
 
-    
+  
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'true' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "11btHRKRUnSiCwm7nxQ6MqvJ-gzGzoHsz",
+            app_key: "AA0vgaQmApd786vhE4gJcJER",
+            placeholder: "Just go go",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -248,9 +351,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
