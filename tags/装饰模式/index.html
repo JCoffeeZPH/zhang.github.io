@@ -6,23 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jcoffeezph.top">
-  <title>java实现Set接口的HashSet、TreeSet用法简析 | Zph、ForMe</title>
+  <title>Tag: 装饰模式 | Zph、ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="实现了Set接口的HashSet、TreeSet、LinkedHashSet存储元素均是无序的，即存入和取出的顺序不一定相同，且这三者都不允许其中有重复元素1.HashSet：其继承关系如下1234java.lang.Object  |-- java.util.AbstractCollection&amp;lt;E&amp;gt;      |-- java.util.AbstractSet&amp;lt;E&amp;gt;">
-<meta name="keywords" content="集合类之HashSet和TreeSet">
-<meta property="og:type" content="article">
-<meta property="og:title" content="java实现Set接口的HashSet、TreeSet用法简析">
-<meta property="og:url" content="https://jcoffeezph.top/java实现Set接口的HashSet、TreeSet用法简析.html">
+  <meta name="description" content="Enjoy Coding">
+<meta name="keywords" content="Java 软件">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zph、ForMe">
+<meta property="og:url" content="https://jcoffeezph.top/tags/装饰模式/index.html">
 <meta property="og:site_name" content="Zph、ForMe">
-<meta property="og:description" content="实现了Set接口的HashSet、TreeSet、LinkedHashSet存储元素均是无序的，即存入和取出的顺序不一定相同，且这三者都不允许其中有重复元素1.HashSet：其继承关系如下1234java.lang.Object  |-- java.util.AbstractCollection&amp;lt;E&amp;gt;      |-- java.util.AbstractSet&amp;lt;E&amp;gt;">
+<meta property="og:description" content="Enjoy Coding">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://s1.ax1x.com/2018/10/29/i2K7Us.png">
-<meta property="og:image" content="https://s1.ax1x.com/2018/10/29/i2QmlV.png">
-<meta property="og:updated_time" content="2019-04-24T12:19:11.149Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java实现Set接口的HashSet、TreeSet用法简析">
-<meta name="twitter:description" content="实现了Set接口的HashSet、TreeSet、LinkedHashSet存储元素均是无序的，即存入和取出的顺序不一定相同，且这三者都不允许其中有重复元素1.HashSet：其继承关系如下1234java.lang.Object  |-- java.util.AbstractCollection&amp;lt;E&amp;gt;      |-- java.util.AbstractSet&amp;lt;E&amp;gt;">
-<meta name="twitter:image" content="https://s1.ax1x.com/2018/10/29/i2K7Us.png">
+<meta name="twitter:title" content="Zph、ForMe">
+<meta name="twitter:description" content="Enjoy Coding">
   
     <link rel="alternative" href="/atom.xml" title="Zph、ForMe" type="application/atom+xml">
   
@@ -162,66 +158,48 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-java实现Set接口的HashSet、TreeSet用法简析" class="article article-type-post " itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      java实现Set接口的HashSet、TreeSet用法简析
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/Java设计模式之装饰模式.html" class="archive-article-date">
+  	<time datetime="2019-04-25T01:14:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-25</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/Java设计模式之装饰模式.html">Java设计模式之装饰模式</a>
     </h1>
   
 
-        
-        <a href="/java实现Set接口的HashSet、TreeSet用法简析.html" class="archive-article-date">
-  	<time datetime="2018-10-29T13:27:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>实现了Set接口的HashSet、TreeSet、LinkedHashSet存储元素均是无序的，即存入和取出的顺序不一定相同，且这三者都不允许其中有重复元素</strong><br><strong>1.HashSet：</strong>其继承关系如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object</span><br><span class="line">  |-- java.util.AbstractCollection&lt;E&gt;</span><br><span class="line">      |-- java.util.AbstractSet&lt;E&gt;</span><br><span class="line">          |-- java.util.HashSet&lt;E&gt;</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>所有已实现的接口：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Serializable, Cloneable, Iterable&lt;E&gt;, Collection&lt;E&gt;, Set&lt;E&gt;</span><br></pre></td></tr></table></figure></p>
-<p><a href="https://imgchr.com/i/i2K7Us" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2018/10/29/i2K7Us.png" alt="i2K7Us.png"></a><br>注意，此实现不是同步的。如果多个线程同时访问一个哈希 set，而其中至少一个线程修改了该 set，那么它必须 保持外部同步。这通常是通过对自然封装该 set 的对象执行同步操作来完成的。如果不存在这样的对象，则应该使用 Collections.synchronizedSet 方法来“包装” set。最好在创建时完成这一操作，以防止对该 set 进行意外的不同步访问： Set s = Collections.synchronizedSet(new HashSet(…));<br>HashSet依赖的数据结构是哈希表，插入到HashSet中的对象不保证与插入的顺序保持一致。对象的插入是根据它的hashcode，HashSet中允许有NULL值。<br>HashSet不存入重复元素的规则是使用hashcode和equals，如果对象的hashCode值是不同的，那么HashSet会认为对象是不可能相等的。如果哈希值一样，接着会比较equals方法 如果 equls结果为true ，HashSet就视为同一个元素。如果equals 为false就不是同一个元素。哈希值相同equals为false的元素是在同样的哈希值下顺延（可以认为哈希值相同的元素放在一个哈希桶中）。也就是哈希一样的存一列。如下<br><a href="https://imgchr.com/i/i2QmlV" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2018/10/29/i2QmlV.png" alt="i2QmlV.png"></a><br> 往hashSet集合中存入自定义对象示例：要重写hashCode() 方法和equals() 方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.DataStructure;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashSet;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HashSetTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line">		Set&lt;Person&gt; set = <span class="keyword">new</span> HashSet&lt;Person&gt;();</span><br><span class="line">		set.add(<span class="keyword">new</span> Person(<span class="string">"lisi01"</span>,<span class="number">24</span>));</span><br><span class="line">		set.add(<span class="keyword">new</span> Person(<span class="string">"lisi02"</span>,<span class="number">24</span>));</span><br><span class="line">		set.add(<span class="keyword">new</span> Person(<span class="string">"lisi02"</span>,<span class="number">25</span>));</span><br><span class="line">		set.add(<span class="keyword">new</span> Person(<span class="string">"lisi01"</span>,<span class="number">24</span>));</span><br><span class="line">		Iterator&lt;Person&gt; it = set.iterator();</span><br><span class="line">		<span class="keyword">while</span>(it.hasNext()) &#123;</span><br><span class="line">			Person p = (Person)it.next();</span><br><span class="line">			System.out.println(p.getName() + <span class="string">" ::: "</span> + p.getAge());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	Person(String name,<span class="keyword">int</span> age)&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name.hashCode() + age*<span class="number">37</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(obj <span class="keyword">instanceof</span> Person) &#123;</span><br><span class="line">			Person p = (Person)obj;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">this</span>.name.equals(p.name) &amp;&amp; <span class="keyword">this</span>.age == p.age;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>结果：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lisi01 ::: <span class="number">24</span></span><br><span class="line">lisi02 ::: <span class="number">24</span></span><br><span class="line">lisi02 ::: <span class="number">25</span></span><br></pre></td></tr></table></figure></p>
-<p><strong>一段别人总结的话</strong> </p>
-<ol>
-<li>TreeSet 是二叉树实现的,Treeset中的数据是自动排好序的，不允许放入null值。</li>
-<li>HashSet 是哈希表实现的,HashSet中的数据是无序的，可以放入null，但只能放入一个null，两者中的值都不能重复，就如数据库中唯一约束。</li>
-<li>HashSet要求放入的对象必须实现HashCode()方法，放入的对象，是以hashcode码作为标识的，而具有相同内容的 String对象，hashcode是一样，所以放入的内容不能重复。但是同一个类的对象可以放入不同的实例 。<br><strong>2.TreeSet：</strong> 当我们想实现不允许重复和有序都存在时，就要用到TreeSet了，TreeSet底层使用的是TreeMap，TreeMap的底层实现是红黑树。TreeSet集合的继承关系如下<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object</span><br><span class="line">  |-- java.util.AbstractCollection&lt;E&gt;</span><br><span class="line">      |-- java.util.AbstractSet&lt;E&gt;</span><br><span class="line">          |-- java.util.TreeSet&lt;E&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>所有已实现的接口：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Serializable, Cloneable, Iterable&lt;E&gt;, Collection&lt;E&gt;, NavigableSet&lt;E&gt;, Set&lt;E&gt;, SortedSet&lt;E&gt;</span><br></pre></td></tr></table></figure></p>
-<p>TreeSet中自定义对象有比较性的方法有两种，分别是实现Comparator接口和Comparable接口。<br>1.定义比较器实现Comparator接口，重写compare方法，并把比较器传入到TreeSet构造中。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Comparator;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"><span class="keyword">import</span> java.util.TreeSet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TreeSetTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line">		Set&lt;person&gt; set = <span class="keyword">new</span> TreeSet&lt;person&gt;(<span class="keyword">new</span> Comp());</span><br><span class="line">		set.add(<span class="keyword">new</span> person(<span class="string">"lisi01"</span>,<span class="number">25</span>));</span><br><span class="line">		set.add(<span class="keyword">new</span> person(<span class="string">"lisi02"</span>,<span class="number">25</span>));</span><br><span class="line">		set.add(<span class="keyword">new</span> person(<span class="string">"lisi01"</span>,<span class="number">25</span>));</span><br><span class="line">		set.add(<span class="keyword">new</span> person(<span class="string">"lisi03"</span>,<span class="number">24</span>));</span><br><span class="line">		set.add(<span class="keyword">new</span> person(<span class="string">"lisi04"</span>,<span class="number">22</span>));</span><br><span class="line">		set.add(<span class="keyword">new</span> person(<span class="string">"lisi04"</span>,<span class="number">23</span>));</span><br><span class="line">		Iterator&lt;person&gt; it = set.iterator();</span><br><span class="line">		<span class="keyword">while</span>(it.hasNext()) &#123;</span><br><span class="line">			person p = (person)it.next();</span><br><span class="line">			System.out.println(p.getName() + <span class="string">" :: "</span> + p.getAge());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">person</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">person</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.name.hashCode() + <span class="keyword">this</span>.age *<span class="number">39</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(obj <span class="keyword">instanceof</span> person)</span><br><span class="line">		&#123;</span><br><span class="line">			person p = (person)obj;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">this</span>.name.equals(p.getName()) &amp;&amp; <span class="keyword">this</span>.age == p.getAge();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Comp</span> <span class="keyword">implements</span> <span class="title">Comparator</span>&lt;<span class="title">Object</span>&gt; </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Object obj1, Object obj2)</span> </span>&#123;</span><br><span class="line">		person p1 = (person)obj1;</span><br><span class="line">		person p2 = (person)obj2;</span><br><span class="line">		<span class="keyword">if</span>(p1.getAge() &gt; p2.getAge())</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>(p1.getAge() &lt; p2.getAge())</span><br><span class="line">			<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">return</span> p1.getName().compareTo(p2.getName());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lisi04 :: <span class="number">22</span></span><br><span class="line">lisi04 :: <span class="number">23</span></span><br><span class="line">lisi03 :: <span class="number">24</span></span><br><span class="line">lisi01 :: <span class="number">25</span></span><br><span class="line">lisi02 :: <span class="number">25</span></span><br></pre></td></tr></table></figure>
-<p>2实现Comparable接口，并重写compareTo方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Comparator;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"><span class="keyword">import</span> java.util.TreeSet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TreeSetTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line">		Set&lt;Person&gt; set = <span class="keyword">new</span> TreeSet&lt;Person&gt;();</span><br><span class="line">		set.add(<span class="keyword">new</span> Person(<span class="string">"lisi01"</span>,<span class="number">25</span>));</span><br><span class="line">		set.add(<span class="keyword">new</span> Person(<span class="string">"lisi02"</span>,<span class="number">25</span>));</span><br><span class="line">		set.add(<span class="keyword">new</span> Person(<span class="string">"lisi01"</span>,<span class="number">25</span>));</span><br><span class="line">		set.add(<span class="keyword">new</span> Person(<span class="string">"lisi03"</span>,<span class="number">24</span>));</span><br><span class="line">		set.add(<span class="keyword">new</span> Person(<span class="string">"lisi04"</span>,<span class="number">22</span>));</span><br><span class="line">		set.add(<span class="keyword">new</span> Person(<span class="string">"lisi04"</span>,<span class="number">23</span>));</span><br><span class="line">		Iterator&lt;Person&gt; it = set.iterator();</span><br><span class="line">		<span class="keyword">while</span>(it.hasNext()) &#123;</span><br><span class="line">			Person p = (Person)it.next();</span><br><span class="line">			System.out.println(p.getName() + <span class="string">" :: "</span> + p.getAge());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">Object</span>&gt;</span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.name.hashCode() + <span class="keyword">this</span>.age *<span class="number">39</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(obj <span class="keyword">instanceof</span> Person)</span><br><span class="line">		&#123;</span><br><span class="line">			Person p = (Person)obj;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">this</span>.name.equals(p.name) &amp;&amp; <span class="keyword">this</span>.age == p.age;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Object obj)</span></span>&#123;</span><br><span class="line">			Person p = (Person)obj;</span><br><span class="line">			<span class="keyword">if</span>(<span class="keyword">this</span>.age &gt; p.getAge())</span><br><span class="line">				<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">if</span>(<span class="keyword">this</span>.age &lt; p.getAge())</span><br><span class="line">				<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">this</span>.getName().compareTo(p.getName());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果和上述一致<br><strong>总结：</strong><br>看到hash，就要想到hashCode,equals.<br>看到tree，就要想到两个接口。Comparable，Comparator。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">集合类之HashSet和TreeSet</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">装饰模式</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -234,89 +212,17 @@
 	</div>
 
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/java-IO字符流与字节流简单使用示例.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          java IO字符流与字节流简单使用示例
-        
-      </div>
-    </a>
   
   
-    <a href="/java实现链表的简单操作.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">java实现链表的简单操作</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+    </div></section>
   
 
-  
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'true' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "11btHRKRUnSiCwm7nxQ6MqvJ-gzGzoHsz",
-            app_key: "AA0vgaQmApd786vhE4gJcJER",
-            placeholder: "Just go go",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
-
-  
-  
-
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -342,9 +248,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
