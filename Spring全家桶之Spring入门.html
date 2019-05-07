@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190428140458500.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMDYwNzU5,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190506165028386.jpg">
-<meta property="og:updated_time" content="2019-05-06T08:55:31.360Z">
+<meta property="og:updated_time" content="2019-05-07T05:24:18.228Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring全家桶之Spring入门">
 <meta name="twitter:description" content="综述： Spring是为了 解决企业级应用开发的复杂性而创建的，是非侵入性的，不依赖于spring的API，通过AOP实现面向面片编程，通过依赖注入控制反转IOC，对象不需要直接创建。  侵入式与非侵入式简单区别：侵入式就是在使用框架的时候继承或者实现框架的类或接口，侵入式对框架的依赖很高，不利于代码的复用。非侵入式就是不继承或实现类或接口就能实现自己想要的结果，如之前学的Hibernate框架。">
@@ -185,7 +185,7 @@
         <font size="4"><strong>综述：</strong> Spring是为了 解决企业级应用开发的复杂性而创建的，是非侵入性的，不依赖于spring的API，通过AOP实现面向面片编程，通过依赖注入控制反转IOC，对象不需要直接创建。</font>
 
 <p><strong>侵入式与非侵入式简单区别：</strong><br>侵入式就是在使用框架的时候继承或者实现框架的类或接口，侵入式对框架的依赖很高，不利于代码的复用。<br>非侵入式就是不继承或实现类或接口就能实现自己想要的结果，如之前学的Hibernate框架。</p>
-<p><strong>Spring的有点有哪些？</strong><br>1、简化Java的开发<br>2、基于POJO轻量级和最小侵入式开发<br>3、通过依赖注入和面向接口实现松耦合<br>4、基于切面和惯例进行声明式编程<br>5、通过切面和模板减少样板式代码<br>6、方便集成其他框架（如MyBatis、Hibernate）<br>另外，Spring对javaEE开发中非常难用的一些API（JDBC、远程调用等）都进行了封装，是这些API应用难度降低。<br><a id="more"></a></p>
+<p><strong>Spring的优点有哪些？</strong><br>1、简化Java的开发<br>2、基于POJO轻量级和最小侵入式开发<br>3、通过依赖注入和面向接口实现松耦合<br>4、基于切面和惯例进行声明式编程<br>5、通过切面和模板减少样板式代码<br>6、方便集成其他框架（如MyBatis、Hibernate）<br>另外，Spring对javaEE开发中非常难用的一些API（JDBC、远程调用等）都进行了封装，是这些API应用难度降低。<br><a id="more"></a></p>
 <font size="4" color="red">Spring模块</font><br><img src="https://img-blog.csdnimg.cn/20190428140458500.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMDYwNzU5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>可以看到，一共有六个模块<br>1、Spring核心容器<br>是Spring中最重要的部分，管理者bean的创建、配置和管理，除此之外还包括bean工厂和多种Spring应用上下文的实现。<br><br>2、AOP模块<br>对面向编程提供了很好的支持，帮助对象进行解耦。<br><br>3、数据集成与访问<br>对JDBC进行了更好的封装，避免啦编写臃肿的连接、创造等语句。<br><br>4、Web与远程调用<br>它的Web和远程 调用模块自带了一个强大的MVC框架，有助于在Web层提升应用的松 耦合水平。<br><br>5、Test<br>Test模块支持使用JUnit和TestNG对Spring组件进行测试。<br><br><font size="4" color="red">二、Spring IOC与DI</font>
 
 <p>IOC：Inverse of Control（控制反转)，IOC只是一种思想，并不是具体的技术，就是将原本在程序中手动创建对象的控制权，交由Spring框架来管理。更具体来说就是，当需要使用某个对象的时候，不自己去创建，而是通过Spring容器来创建，至于Spring容器是如何创建的则不用理会。</p>
@@ -430,11 +430,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JDBC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Servlet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JDBC</a>
+                <a href="javascript:void(0)" class="js-tag color5">代理模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">单例模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">装饰模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">工厂模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MYSQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -446,31 +466,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">单例模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">工厂模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">代理模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MYSQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">反射</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">装饰模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring事务管理</a>
+                <a href="javascript:void(0)" class="js-tag color2">SpringMVC入门</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -478,11 +474,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spring事务管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Spring入门</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color3">反射</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -490,19 +490,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">集合类之HashSet和TreeSet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SAX解析XML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链表</a>
+                <a href="javascript:void(0)" class="js-tag color5">集合类之HashSet和TreeSet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">I/O</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -514,15 +514,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">I/O</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉树和哈夫曼树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">顺序表</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">散列表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉树和哈夫曼树</a>
               </li>
              
               <li class="article-tag-list-item">
