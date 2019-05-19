@@ -6,19 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jcoffeezph.top">
-  <title>Tag: MYSQL | Zph、ForMe</title>
+  <title>Javaweb安全框架之Shiro基础知识 | Zph、ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Enjoy Coding">
-<meta name="keywords" content="Java 软件">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Zph、ForMe">
-<meta property="og:url" content="https://jcoffeezph.top/tags/MYSQL/index.html">
+  <meta name="description" content="综述：之前做过一些小项目，都是手动进行安全和权限验证，相当的麻烦，而且权限验证又是实际开发时必不可少的步骤，因此我们可以借助一些框架来实现，今天开始学习Shiro权限框架  一、Shiro简介  Apache Shiro 是 Java 的一个安全框架，Shiro 可以帮助我们完成：认证、授权、加密、会话管理、与 Web 集成、缓存等。这不就是我们想要的嘛，而且 Shiro 的 API 也是非常简单">
+<meta name="keywords" content="基础知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javaweb安全框架之Shiro基础知识">
+<meta property="og:url" content="https://jcoffeezph.top/Javaweb安全框架之Shiro基础知识.html">
 <meta property="og:site_name" content="Zph、ForMe">
-<meta property="og:description" content="Enjoy Coding">
+<meta property="og:description" content="综述：之前做过一些小项目，都是手动进行安全和权限验证，相当的麻烦，而且权限验证又是实际开发时必不可少的步骤，因此我们可以借助一些框架来实现，今天开始学习Shiro权限框架  一、Shiro简介  Apache Shiro 是 Java 的一个安全框架，Shiro 可以帮助我们完成：认证、授权、加密、会话管理、与 Web 集成、缓存等。这不就是我们想要的嘛，而且 Shiro 的 API 也是非常简单">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://wiki.jikexueyuan.com/project/shiro/images/1.png">
+<meta property="og:image" content="http://wiki.jikexueyuan.com/project/shiro/images/3.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190519143523533.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMDYwNzU5,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-05-19T06:47:31.428Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zph、ForMe">
-<meta name="twitter:description" content="Enjoy Coding">
+<meta name="twitter:title" content="Javaweb安全框架之Shiro基础知识">
+<meta name="twitter:description" content="综述：之前做过一些小项目，都是手动进行安全和权限验证，相当的麻烦，而且权限验证又是实际开发时必不可少的步骤，因此我们可以借助一些框架来实现，今天开始学习Shiro权限框架  一、Shiro简介  Apache Shiro 是 Java 的一个安全框架，Shiro 可以帮助我们完成：认证、授权、加密、会话管理、与 Web 集成、缓存等。这不就是我们想要的嘛，而且 Shiro 的 API 也是非常简单">
+<meta name="twitter:image" content="http://wiki.jikexueyuan.com/project/shiro/images/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Zph、ForMe" type="application/atom+xml">
   
@@ -158,72 +163,179 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Javaweb安全框架之Shiro基础知识" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/MySQL的常用简单操作.html" class="archive-article-date">
-  	<time datetime="2018-11-01T11:33:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/MySQL的常用简单操作.html">MySQL的常用简单操作</a>
+    <h1 class="article-title" itemprop="name">
+      Javaweb安全框架之Shiro基础知识
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style="display:none" class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/Javaweb安全框架之Shiro基础知识.html" class="archive-article-date">
+  	<time datetime="2019-05-19T06:45:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <font size="4">综述：之前做过一些小项目，都是手动进行安全和权限验证，相当的麻烦，而且权限验证又是实际开发时必不可少的步骤，因此我们可以借助一些框架来实现，今天开始学习Shiro权限框架</font>
+
+<font size="4" color="red">一、Shiro简介</font>
+
+<p>Apache Shiro 是 Java 的一个安全框架，Shiro 可以帮助我们完成：认证、授权、加密、会话管理、与 Web 集成、缓存等。这不就是我们想要的嘛，而且 Shiro 的 API 也是非常简单；其基本功能点如下图所示：<br><img src="http://wiki.jikexueyuan.com/project/shiro/images/1.png" alt="在这里插入图片描述"><br><a id="more"></a><br><strong>Authentication：</strong> 身份认证 / 登录，验证用户是不是拥有相应的身份；</p>
+<p><strong>Authorization：</strong> 授权，即权限验证，验证某个已认证的用户是否拥有某个权限；即判断用户是否能做事情，常见的如：验证某个用户是否拥有某个角色。或者细粒度的验证某个用户对某个资源是否具有某个权限；</p>
+<p><strong>Session Manager：</strong> 会话管理，即用户登录后就是一次会话，在没有退出之前，它的所有信息都在会话中；会话可以是普通 JavaSE 环境的，也可以是如 Web 环境的；</p>
+<p><strong>Cryptography：</strong> 加密，保护数据的安全性，如密码加密存储到数据库，而不是明文存储；</p>
+<p><strong>Web Support：</strong> Web 支持，可以非常容易的集成到 Web 环境；</p>
+<p><strong>Caching：</strong> 缓存，比如用户登录后，其用户信息、拥有的角色 / 权限不必每次去查，这样可以提高效率；</p>
+<p><strong>Concurrency：</strong> shiro 支持多线程应用的并发验证，即如在一个线程中开启另一个线程，能把权限自动传播过去；</p>
+<p><strong>Testing：</strong> 提供测试支持；</p>
+<p><strong>Run As：</strong> 允许一个用户假装为另一个用户（如果他们允许）的身份进行访问；</p>
+<p><strong>Remember Me：</strong> 记住我，这个是非常常见的功能，即一次登录后，下次再来的话不用登录了。</p>
+<p><strong>注意：</strong> Shiro 不会去维护用户、维护权限；这些需要我们自己去设计 / 提供；然后通过相应的接口注入给 Shiro 即可。</p>
+<font size="4" color="red">二、Shiro API</font>
+
+<p>Shiro 的对外 API 核心是 Subject。</p>
+<p>Subject：主体，代表了当前 “用户”，这个用户不一定是一个具体的人，与当前应用交互的任何东西都是 Subject，如网络爬虫，机器人等；即一个抽象概念；所有 Subject 都绑定到 SecurityManager，与 Subject 的所有交互都会委托给 SecurityManager；可以把 Subject 认为是一个门面；SecurityManager 才是实际的执行者；</p>
+<p>SecurityManager：安全管理器；即所有与安全有关的操作都会与 SecurityManager 交互；且它管理着所有 Subject；可以看出它是 Shiro 的核心，它负责与后边介绍的其他组件进行交互，可以把它看成SpringMVC中的 DispatcherServlet 前端控制器；是 Shiro 的心脏；所有具体的交互都通过 SecurityManager 进行控制；它管理着所有 Subject、且负责进行认证和授权、及会话、缓存的管理</p>
+<p>Realm：域，Shiro 从从 Realm 获取安全数据（如用户、角色、权限），就是说 SecurityManager 要验证用户身份，那么它需要从 Realm 获取相应的用户进行比较以确定用户身份是否合法；也需要从 Realm 得到用户相应的角色 / 权限进行验证用户是否能进行操作；可以把 Realm 看成 DataSource，即安全数据源。<br>也就是说对于我们而言，最简单的一个 Shiro 应用：</p>
+<p>应用代码通过 Subject 来进行认证和授权，而 Subject 又委托给 SecurityManager；</p>
+<p>我们需要给 Shiro 的 SecurityManager 注入 Realm，从而让 SecurityManager 能得到合法的用户及其权限进行判断。<br>从以上也可以看出，Shiro 不提供维护用户 / 权限，而是通过 Realm 让开发人员自己注入。</p>
+<p><img src="http://wiki.jikexueyuan.com/project/shiro/images/3.png" alt="在这里插入图片描述"><br>subject：主体，可以是用户也可以是程序，主体要访问系统，系统需要对主体进行认证、授权。<br>securityManager：安全管理器，主体进行认证和授权都 是通过securityManager进行。<br>authenticator：认证器，主体进行认证最终通过authenticator进行的。<br>authorizer：授权器，主体进行授权最终通过authorizer进行的。<br>sessionManager：web应用中一般是用web容器对session进行管理，shiro也提供一套session管理的方式。<br>SessionDao：  通过SessionDao管理session数据，针对个性化的session数据存储需要使用sessionDao。<br>cache Manager：缓存管理器，主要对session和授权数据进行缓存，比如将授权数据通过cacheManager进行缓存管理，和ehcache整合对缓存数据进行管理。<br>realm：域，领域，相当于数据源，通过realm存取认证、授权相关数据。<br>cryptography：密码管理，提供了一套加密/解密的组件，方便开发。比如提供常用的散列、加/解密等功能。</p>
+<p>比如md5散列算法。</p>
+<p>以上内容转载自：<a href="https://blog.csdn.net/q343509740/article/details/80697715" target="_blank" rel="noopener"><strong>Shiro基础知识——简介</strong></a></p>
+<font size="4" color="red">三、Shiro与Spring整合</font>
+
+<p>1、首先在pom.xml中添加依赖</p>
+<p>2、配置web.xml</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE web-app PUBLIC</span><br><span class="line"> <span class="string">"-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"</span></span><br><span class="line"> <span class="string">"http://java.sun.com/dtd/web-app_2_3.dtd"</span> &gt;</span><br><span class="line"></span><br><span class="line">&lt;web-app xmlns=<span class="string">"http://xmlns.jcp.org/xml/ns/javaee"</span> xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">         xsi:schemaLocation=<span class="string">"http://xmlns.jcp.org/xml/ns/javaee</span></span><br><span class="line"><span class="string">                      http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"</span></span><br><span class="line">         version=<span class="string">"3.1"</span> metadata-complete=<span class="string">"true"</span>&gt;</span><br><span class="line"></span><br><span class="line">  &lt;display-name&gt;Archetype Created Web Application&lt;/display-name&gt;</span><br><span class="line">    &lt;context-param&gt;</span><br><span class="line">        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</span><br><span class="line">        &lt;param-value&gt;classpath:spring-mybatis.xml,classpath:spring-mvc.xml,classpath:springshiro.xml&lt;/param-value&gt;</span><br><span class="line">    &lt;/context-param&gt;</span><br><span class="line">    &lt;servlet&gt;</span><br><span class="line">        &lt;servlet-name&gt;dispatcher&lt;/servlet-name&gt;</span><br><span class="line">        &lt;servlet-<span class="class"><span class="keyword">class</span>&gt;<span class="title">org</span>.<span class="title">springframework</span>.<span class="title">web</span>.<span class="title">servlet</span>.<span class="title">DispatcherServlet</span>&lt;/<span class="title">servlet</span>-<span class="title">class</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">init</span>-<span class="title">param</span>&gt;</span></span><br><span class="line"><span class="class">            &lt;<span class="title">param</span>-<span class="title">name</span>&gt;<span class="title">contextConfigLocation</span>&lt;/<span class="title">param</span>-<span class="title">name</span>&gt;</span></span><br><span class="line">            &lt;param-value&gt;classpath:spring-*.xml&lt;/param-value&gt;</span><br><span class="line">        &lt;/init-param&gt;</span><br><span class="line">        &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;</span><br><span class="line">    &lt;/servlet&gt;</span><br><span class="line">    &lt;!-- 设置拦截 !--&gt;</span><br><span class="line">    &lt;servlet-mapping&gt;</span><br><span class="line">        &lt;servlet-name&gt;dispatcher&lt;/servlet-name&gt;</span><br><span class="line">        &lt;url-pattern&gt;/&lt;/url-pattern&gt;</span><br><span class="line">    &lt;/servlet-mapping&gt;</span><br><span class="line"></span><br><span class="line">    &lt;listener&gt;</span><br><span class="line">        &lt;listener-<span class="class"><span class="keyword">class</span>&gt;<span class="title">org</span>.<span class="title">springframework</span>.<span class="title">web</span>.<span class="title">context</span>.<span class="title">ContextLoaderListener</span>&lt;/<span class="title">listener</span>-<span class="title">class</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;/<span class="title">listener</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;<span class="title">context</span>-<span class="title">param</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">param</span>-<span class="title">name</span>&gt;<span class="title">log4jContextName</span>&lt;/<span class="title">param</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">param</span>-<span class="title">value</span>&gt;<span class="title">log4jContext</span>&lt;/<span class="title">param</span>-<span class="title">value</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;/<span class="title">context</span>-<span class="title">param</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;!-- 添加<span class="title">shiro</span>的过滤器代理!--&gt;</span></span><br><span class="line"><span class="class">    &lt;<span class="title">filter</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">filter</span>-<span class="title">name</span>&gt;<span class="title">shiroFilter</span>&lt;/<span class="title">filter</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">filter</span>-<span class="title">class</span>&gt;<span class="title">org</span>.<span class="title">springframework</span>.<span class="title">web</span>.<span class="title">filter</span>.<span class="title">DelegatingFilterProxy</span>&lt;/<span class="title">filter</span>-<span class="title">class</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">async</span>-<span class="title">supported</span>&gt;<span class="title">true</span>&lt;/<span class="title">async</span>-<span class="title">supported</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">init</span>-<span class="title">param</span>&gt;</span></span><br><span class="line"><span class="class">            &lt;<span class="title">param</span>-<span class="title">name</span>&gt;<span class="title">targetFilterLifecycle</span>&lt;/<span class="title">param</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">            &lt;<span class="title">param</span>-<span class="title">value</span>&gt;<span class="title">true</span>&lt;/<span class="title">param</span>-<span class="title">value</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;/<span class="title">init</span>-<span class="title">param</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;/<span class="title">filter</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;<span class="title">filter</span>-<span class="title">mapping</span>&gt;</span></span><br><span class="line">        &lt;filter-name&gt;shiroFilter&lt;/filter-name&gt; &lt;!-- 此处必需写成"/*"，如果只写"/" ,过滤器没有作用--&gt;</span><br><span class="line">        &lt;url-pattern&gt;<span class="comment">/*&lt;/url-pattern&gt; </span></span><br><span class="line"><span class="comment">    &lt;/filter-mapping&gt;</span></span><br><span class="line"><span class="comment">&lt;/web-app&gt;</span></span><br></pre></td></tr></table></figure>
+<p>3、第三步就是编写springshrio.xml文件</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">&lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span></span><br><span class="line">       xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">       xmlns:context=<span class="string">"http://www.springframework.org/schema/context"</span></span><br><span class="line">       xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/beans</span></span><br><span class="line"><span class="string">                        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"</span></span><br><span class="line">       <span class="keyword">default</span>-lazy-init=<span class="string">"true"</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 配置安全管理器securityManager， 缓存技术: 缓存管理 realm:负责获取处理数据 --&gt;</span><br><span class="line">    &lt;bean id=<span class="string">"securityManager"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"org.apache.shiro.web.mgt.DefaultWebSecurityManager"</span>&gt;</span><br><span class="line">        &lt;property name=<span class="string">"realm"</span> ref=<span class="string">"myShiroRealm"</span> /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 加入缓存管理 --&gt;</span><br><span class="line">        &lt;property name=<span class="string">"cacheManager"</span> ref=<span class="string">"cacheManager"</span> /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 加入remember管理 --&gt;</span><br><span class="line">        &lt;property name=<span class="string">"rememberMeManager"</span> ref=<span class="string">"rememberMeManager"</span>/&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 会话管理 --&gt;</span><br><span class="line">        &lt;!--&lt;property name=<span class="string">"sessionManager"</span> ref=<span class="string">"sessionManager"</span>/&gt;--&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!--&lt;property name=<span class="string">"sessionMode"</span> value=<span class="string">"native"</span>/&gt;--&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;!-- 缓存管理器 --&gt;</span><br><span class="line">    &lt;!--&lt;bean id=<span class="string">"cacheManager"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"org.apache.shiro.cache.ehcache.EhCacheManager"</span>&gt;--&gt;</span><br><span class="line">    &lt;!--    &amp;lt;!&amp;ndash; cache配置文件 &amp;ndash;&amp;gt;--&gt;</span><br><span class="line">    &lt;!--    &lt;property name=<span class="string">"cacheManagerConfigFile"</span> value=<span class="string">"classpath:ehcache.xml"</span>/&gt;--&gt;</span><br><span class="line">    &lt;!--&lt;/bean&gt;--&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 会话cookie模板 --&gt;</span><br><span class="line">    &lt;bean id=<span class="string">"rememberMeCookie"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"org.apache.shiro.web.servlet.SimpleCookie"</span>&gt;</span><br><span class="line">        &lt;!-- 写到cookie的name值 --&gt;</span><br><span class="line">        &lt;constructor-arg value=<span class="string">"sid"</span>/&gt;</span><br><span class="line">        &lt;!-- 设置js是否可以访问cookie，<span class="keyword">true</span> 不能访问 --&gt;</span><br><span class="line">        &lt;property name=<span class="string">"httpOnly"</span> value=<span class="string">"true"</span>/&gt;</span><br><span class="line">        &lt;property name=<span class="string">"name"</span> value=<span class="string">"rememberMe"</span>/&gt;</span><br><span class="line">        &lt;!-- 保存时长<span class="number">10</span>分钟，以秒为单位 --&gt;</span><br><span class="line">        &lt;property name=<span class="string">"maxAge"</span> value=<span class="string">"600"</span>/&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;bean id=<span class="string">"rememberMeManager"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"org.apache.shiro.web.mgt.CookieRememberMeManager"</span>&gt;</span><br><span class="line">        &lt;!-- ipherKey是加密rememberMe cookie 的密钥；默认AES算法 --&gt;</span><br><span class="line">        &lt;property name=<span class="string">"cipherKey"</span> value=<span class="string">"#&#123;T(org.apache.shiro.codec.Base64).decode('4AvVhmFLUs0KTA3Kprsdag==')&#125;"</span> /&gt;</span><br><span class="line">        &lt;!-- 引入上面定义的cookie模板 --&gt;</span><br><span class="line">        &lt;property name=<span class="string">"cookie"</span> ref=<span class="string">"rememberMeCookie"</span> /&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;!-- 項目自定义的Realm,从数据库中获取用户的安全数据 --&gt;</span><br><span class="line">    &lt;bean id=<span class="string">"myShiroRealm"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.stitp.shiro.UserRealm"</span>&gt;</span><br><span class="line">        &lt;!-- 配置缓存管理器--&gt;</span><br><span class="line">        &lt;property name=<span class="string">"cacheManager"</span> ref=<span class="string">"cacheManager"</span> /&gt;</span><br><span class="line">        &lt;!-- 配置加密器 --&gt;</span><br><span class="line">        &lt;!--&lt;property name=<span class="string">"credentialsMatcher"</span>&gt;--&gt;</span><br><span class="line">            &lt;!--&lt;bean <span class="class"><span class="keyword">class</span></span>=<span class="string">"org.apache.shiro.authc.credential.HashedCredentialsMatcher"</span>&gt;--&gt;</span><br><span class="line">                &lt;!--&lt;property name=<span class="string">"hashAlgorithmName"</span> value=<span class="string">"MD5"</span>/&gt; &amp;lt;!&amp;ndash; 加密算法的名称 &amp;ndash;&amp;gt;--&gt;</span><br><span class="line">                &lt;!--&lt;property name=<span class="string">"hashIterations"</span> value=<span class="string">"1024"</span>/&gt; &amp;lt;!&amp;ndash; 配置加密的次数 &amp;ndash;&amp;gt;--&gt;</span><br><span class="line">            &lt;!--&lt;/bean&gt;--&gt;</span><br><span class="line">        &lt;!--&lt;/property&gt;--&gt;</span><br><span class="line">        </span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 用户授权信息Cache --&gt;</span><br><span class="line">    &lt;bean id=<span class="string">"cacheManager"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"org.apache.shiro.cache.MemoryConstrainedCacheManager"</span> /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 必须配置lifecycleBeanPostProcessor:管理Shiro中常见的对象 --&gt;</span><br><span class="line">    &lt;!-- 保证实现了Shiro内部lifecycle函数的bean执行,同时也把Shiro的说明周期交给spring管理 --&gt;</span><br><span class="line">    &lt;bean id=<span class="string">"lifecycleBeanPostProcessor"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"org.apache.shiro.spring.LifecycleBeanPostProcessor"</span> /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- shiro的核心配置:  配置shiroFileter id名必须与web.xml中的filtername保持一致 --&gt;</span><br><span class="line">    &lt;bean id=<span class="string">"shiroFilter"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"org.apache.shiro.spring.web.ShiroFilterFactoryBean"</span>&gt;</span><br><span class="line">        &lt;!-- 调用我们配置的权限管理器 --&gt;</span><br><span class="line">        &lt;property name=<span class="string">"securityManager"</span> ref=<span class="string">"securityManager"</span> /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 没有登录重定向到登录页面 --&gt;</span><br><span class="line">        &lt;property name=<span class="string">"loginUrl"</span> value=<span class="string">"/login.jsp"</span> /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!--登录成功界面--&gt;</span><br><span class="line">        &lt;property name=<span class="string">"successUrl"</span> value=<span class="string">"/success.jsp"</span> /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 没有权限跳转的页面 --&gt;</span><br><span class="line">        &lt;property name=<span class="string">"unauthorizedUrl"</span> value=<span class="string">"/index.jsp"</span> /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- shiro过滤器的具体配置 --&gt;</span><br><span class="line">        &lt;!-- anon 匿名访问，authc-必须要认证以后才能访问的 --&gt;</span><br><span class="line">        &lt;!--authc 必须身份认证通过才能访问--&gt;</span><br><span class="line">        &lt;!-- user 身份认证通过或通过记住我认证通过的可以访问，当登入操作时不做检查--&gt;</span><br><span class="line">        &lt;property name=<span class="string">"filterChainDefinitions"</span>&gt;</span><br><span class="line">            &lt;value&gt;</span><br><span class="line">                &lt;!-- 具体配置需要拦截哪些 URL, 以及访问对应的 URL 时使用 Shiro 的什么 Filter 进行拦截.  --&gt;</span><br><span class="line">                /login.jsp = anon</span><br><span class="line">                /register.jsp = anon</span><br><span class="line">                /fail.jsp = authc</span><br><span class="line">                /success.jsp = user</span><br><span class="line">            &lt;/value&gt;</span><br><span class="line">        &lt;/property&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
+<p>各个步骤的用处都已经注释到了上面。</p>
+<p>4、下面实现自定义Realm，继承AuthorizingRealm</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.stitp.shiro;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.stitp.service.UserService;</span><br><span class="line"><span class="keyword">import</span> org.apache.shiro.authc.*;</span><br><span class="line"><span class="keyword">import</span> org.apache.shiro.authz.AuthorizationInfo;</span><br><span class="line"><span class="keyword">import</span> org.apache.shiro.authz.SimpleAuthorizationInfo;</span><br><span class="line"><span class="keyword">import</span> org.apache.shiro.realm.AuthorizingRealm;</span><br><span class="line"><span class="keyword">import</span> org.apache.shiro.subject.PrincipalCollection;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserRealm</span> <span class="keyword">extends</span> <span class="title">AuthorizingRealm</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserService userService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> AuthorizationInfo <span class="title">doGetAuthorizationInfo</span><span class="params">(PrincipalCollection principalCollection)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> SimpleAuthorizationInfo();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> AuthenticationInfo <span class="title">doGetAuthenticationInfo</span><span class="params">(AuthenticationToken authenticationToken)</span> <span class="keyword">throws</span> AuthenticationException </span>&#123;</span><br><span class="line">        String username = (String) authenticationToken.getPrincipal();</span><br><span class="line"><span class="comment">//        System.out.println(username);</span></span><br><span class="line">        String password = userService.findByName(username);</span><br><span class="line">        System.out.println(password);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (password == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> UnknownAccountException(); <span class="comment">//没有找到账号</span></span><br><span class="line">        &#125;</span><br><span class="line">        SimpleAuthenticationInfo authenticationInfo = <span class="keyword">new</span> SimpleAuthenticationInfo(</span><br><span class="line">                username, <span class="comment">//用户名</span></span><br><span class="line">                password, <span class="comment">//密码</span></span><br><span class="line">                getName() <span class="comment">//realm name</span></span><br><span class="line">        );</span><br><span class="line">        <span class="keyword">return</span> authenticationInfo;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>5、实现Controller</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/login"</span>,method = RequestMethod.POST)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">login</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">        User user,</span></span></span><br><span class="line"><span class="function"><span class="params">        @RequestParam(value = <span class="string">"rememberme"</span>,required = <span class="keyword">false</span>)</span> <span class="keyword">boolean</span> remember,</span></span><br><span class="line"><span class="function">        Model model) </span>&#123;</span><br><span class="line">    String username = user.getUsername();</span><br><span class="line">    String password = user.getPassword();</span><br><span class="line">    System.out.println(username);</span><br><span class="line">    System.out.println(remember);</span><br><span class="line">    String error = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">if</span> (username != <span class="keyword">null</span> &amp;&amp; password != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="comment">//初始化</span></span><br><span class="line">        Subject subject = SecurityUtils.getSubject();</span><br><span class="line">        UsernamePasswordToken token = <span class="keyword">new</span> UsernamePasswordToken(username, password);</span><br><span class="line">        System.out.println(token + <span class="string">"----------"</span>);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(remember)</span><br><span class="line">            token.setRememberMe(<span class="keyword">true</span>); <span class="comment">//这两步是记住我功能实现的关键步骤</span></span><br><span class="line">            <span class="comment">//登录，即身份校验，由通过Spring注入的UserRealm会自动校验输入的用户名和密码在数据库中是否有对应的值</span></span><br><span class="line">            subject.login(token);</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"/success.jsp"</span>;</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            error = <span class="string">"未知错误，错误信息："</span> + e.getMessage();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        error = <span class="string">"请输入用户名和密码"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//登录失败，跳转到login页面，这里不做登录成功的处理，由</span></span><br><span class="line">    model.addAttribute(<span class="string">"error"</span>, error);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"/fail.jsp"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20190519143523533.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMDYwNzU5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>由上图可知，记住我功能可以使用<br>至此，利用SSM + Shiro实现基本的权限认证和记住我功能简单实现完成。</p>
+<p>注意：在刚开始的时候可能会注入不到userService，这是要在web.xml设置<br>spring-mvc.xml的加载顺序优先于springshiro.xml，具体操作参见：<br><a href="https://blog.csdn.net/sl1990129/article/details/86097177" target="_blank" rel="noopener"><strong>Shiro解决无法注入Service问题（包括Spring MVC和Spring Boot）</strong></a></p>
+<p>记住我功能实现可参阅：<a href="https://blog.csdn.net/sihai12345/article/details/81170550" target="_blank" rel="noopener"><strong>shiro教程：记住我功能</strong></a><br>另外，推荐阅读：<br><a href="https://blog.csdn.net/u012737182/article/category/6489910" target="_blank" rel="noopener"><strong>Shiro系列相关文章(一)</strong></a><br><a href="https://blog.csdn.net/q343509740/article/list/3?" target="_blank" rel="noopener"><strong>Shiro系列相关文章(二)</strong></a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MYSQL</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/MYSQL//" class="article-tag-list-link color1">MYSQL</a>
+        			<a href="/categories/Shiro//" class="article-tag-list-link color1">Shiro</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/Mybatis入门篇.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Mybatis入门篇</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
   
 
-    
+  
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'true' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "11btHRKRUnSiCwm7nxQ6MqvJ-gzGzoHsz",
+            app_key: "AA0vgaQmApd786vhE4gJcJER",
+            placeholder: "Say Something!",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -259,9 +371,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
