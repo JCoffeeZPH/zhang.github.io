@@ -6,22 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jcoffeezph.top">
-  <title>Tomcat结构及重要配置项 | Zph、ForMe</title>
+  <title>Category: Redis | Zph、ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="说明： 关于Tomcat是什么以及Tomcat有什么用，这里不做解释，如果对以上两个问题仍存在疑问，请百度。理解一个框架的最好办法是看源码，但有时候可能会看不懂，所以，这里不看源码(因为可能没什么用)，只看官方文档。我用的是Tomcat-9.0，想看官方文档的可以点击这个链接Tomcat-9.0文档 一、首先了解下Tomcat的各个目录有什么用">
-<meta name="keywords" content="Tomcat">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Tomcat结构及重要配置项">
-<meta property="og:url" content="https://jcoffeezph.top/Tomcat结构及重要配置项.html">
+  <meta name="description" content="Enjoy Coding">
+<meta name="keywords" content="Java 软件">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zph、ForMe">
+<meta property="og:url" content="https://jcoffeezph.top/categories/Redis/index.html">
 <meta property="og:site_name" content="Zph、ForMe">
-<meta property="og:description" content="说明： 关于Tomcat是什么以及Tomcat有什么用，这里不做解释，如果对以上两个问题仍存在疑问，请百度。理解一个框架的最好办法是看源码，但有时候可能会看不懂，所以，这里不看源码(因为可能没什么用)，只看官方文档。我用的是Tomcat-9.0，想看官方文档的可以点击这个链接Tomcat-9.0文档 一、首先了解下Tomcat的各个目录有什么用">
+<meta property="og:description" content="Enjoy Coding">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190416192813579.png">
-<meta property="og:updated_time" content="2019-04-24T12:08:19.262Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tomcat结构及重要配置项">
-<meta name="twitter:description" content="说明： 关于Tomcat是什么以及Tomcat有什么用，这里不做解释，如果对以上两个问题仍存在疑问，请百度。理解一个框架的最好办法是看源码，但有时候可能会看不懂，所以，这里不看源码(因为可能没什么用)，只看官方文档。我用的是Tomcat-9.0，想看官方文档的可以点击这个链接Tomcat-9.0文档 一、首先了解下Tomcat的各个目录有什么用">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190416192813579.png">
+<meta name="twitter:title" content="Zph、ForMe">
+<meta name="twitter:description" content="Enjoy Coding">
   
     <link rel="alternative" href="/atom.xml" title="Zph、ForMe" type="application/atom+xml">
   
@@ -161,158 +158,72 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Tomcat结构及重要配置项" class="article article-type-post " itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Tomcat结构及重要配置项
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/Redis入门.html" class="archive-article-date">
+  	<time datetime="2019-05-23T14:23:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-23</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/Redis入门.html">Redis入门</a>
     </h1>
   
 
-        
-        
-        <!-- 不蒜子统计 -->
-        <span id="busuanzi_container_page_pv" style="display:none" class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/Tomcat结构及重要配置项.html" class="archive-article-date">
-  	<time datetime="2019-04-17T03:29:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>说明：</strong> 关于Tomcat是什么以及Tomcat有什么用，这里不做解释，如果对以上两个问题仍存在疑问，请百度。<br>理解一个框架的最好办法是看源码，但有时候可能会看不懂，所以，这里不看源码(因为可能没什么用)，只看官方文档。我用的是Tomcat-9.0，想看官方文档的可以点击这个链接<a href="http://tomcat.apache.org/tomcat-9.0-doc/config/server.html" target="_blank" rel="noopener">Tomcat-9.0文档</a></p>
-<p><font size="4" color="red">一、首先了解下Tomcat的各个目录有什么用</font><br><img src="https://img-blog.csdnimg.cn/20190416192813579.png" alt="在这里插入图片描述"><br><a id="more"></a><br>可以看到Tomcat的目录，作如下解释：<br>1、bin目录：保存了Tomcat服务器的各个脚本，如开启和关闭等<br>2、conf目录：保存了Tomcat的配置文件，server.xml啊、web.xml等都在这里<br>3、lib目录：这是我们所熟悉的，是各种jar包的目录<br>4、log目录：也很容易识别，是保存日志用的<br>5、temp目录：是Tomcat运行时产生的文件<br>6、webapps目录：供外界访问的资源的目录<br>7、work目录：Tomcat的工作目录</p>
-<p><strong>插入：</strong> 根据本人最近的学习发现，webapps是Tomcat供外界访问资源的目录所在地，但是每次重启Tomcat这里面ROOT目录下的资源就会重新加载，换句话说就是：当你重启Tomcat之后，之前上传到服务器的文件啊、图片啊都会消失。针对这一现象有两种解决方案：第一种就是上传文件资源和webapps目录下的ROOT目录在同一级，这样就重启之后就不会把之前的资源丢掉了；还有一种方法就是把上传的文件保存在本地磁盘里，利用虚拟目录进行映射，关于IDEA如何设置虚拟目录参考这篇文章：<a href="https://blog.csdn.net/cheney550995353/article/details/70185282" target="_blank" rel="noopener">IDEA设置虚拟目录</a>。</p>
-<p><font size="4" color="red">二、Tomcat重要配置</font><br>如果我们想要改变Tomcat的某些配置怎么办呢？比如说改变访问时的8080端口，加载本地磁盘中的其他文件等等，我们可以去conf/server.xml文件下进行修改。下面对其中的各个标签根据官方文档进行说明。<br>1、&lt; Server &gt;标签，是整个servlet容器，必须是唯一的，而且必须是最外面标签(解释：这里的唯一说的是只在一个JVM中，一般一个JVM只能支持一个Tomcat ，如果同时运行多个JVM当然可以运行多个Tomcat)。看下都有哪些比较常用的属性：<br>|||<br>|–|–|<br>| className | 必须实现org.apache.catalina.Server 接口，没有实现时默认标准 |<br>|address|服务器等待关机命令的TCP / IP地址。如果没有指定地址，则使用localhost|<br>|port|服务器等待关机命令的TCP / IP端口号。设置为-1以禁用关闭端口|<br>|shutdown| 必须通过TCP / IP连接接收到指定端口号的命令字符串，以关闭Tomcat|</p>
-<p>2、&lt; Service &gt;标签，表示一个或多个连接器组件的组合，这些组件共享一个用于处理传入请求的引擎组件，Server下可以有多个Service<br>|  |  |<br>|–|–|<br>| className | 默认必须实现org.apache.catalina.Service，否则采取标准 |<br>|name|顾名思义是Service的名字，如果采用的还Catalina，service的名字将会包含在log中，name必须唯一|</p>
-<p>3、&lt; Executor &gt;，该标签表示可在组件之间共享的线程池，必须嵌套在Service标签内，为了能被连接器失去，必须出现在&lt; Connector &gt;之前。部分重要属性：<br>|  |  |<br>|–|–|<br>|threadPriority  | 线程优先级，默认为5 |<br>|maxThreads|最大活跃线程数，默认为200|<br>|minSpareThreads|最小活跃线程数，默认为25|<br>|maxIdleTime|活跃线程数大于最小活跃线程数时，空闲线程关闭等待最大时间，默认为60000ms(一分钟)|<br>|maxQueueSize|线程池满情况下的请求排队大小，默认为Integer.MAX_VALUE|</p>
-<p>4、&lt; Connector &gt;、Tomcat支持三种协议：HTTP/1.1、HTTP/2和AJP，关于Connector标签可以上官网上查看具体的使用方法，这里给出源文档中的使用，如下</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;Connector port=<span class="string">"8080"</span> protocol=<span class="string">"HTTP/1.1"</span></span><br><span class="line">               connectionTimeout=<span class="string">"20000"</span></span><br><span class="line">               redirectPort=<span class="string">"8443"</span> /&gt;</span><br><span class="line">&lt;Connector port=<span class="string">"8009"</span> protocol=<span class="string">"AJP/1.3"</span> redirectPort=<span class="string">"8443"</span> /&gt;</span><br></pre></td></tr></table></figure>
-<p>5、&lt; Context &gt;、在特定的虚拟机中运行，每个Web应用程序都基于Web应用程序归档 （WAR）文件或包含相应解压缩内容的相应目录。可以根据需要定义任意数量的Context元素，名称必须唯一，上下文路径不需要唯一。并不推荐直接将&lt; Context &gt;直接放在server.xml中，因为这样在不重启Tomcat时不会重新加载配置文件，而且这样是的修改<br>&lt; Context &gt;更具有侵入性，默认的Context元素（见下文）也将 覆盖直接放在server.xml中的任何&lt; Context &gt;元素的配置。为防止这种情况，override 应将server.xml中定义的<br>&lt; Context &gt;元素的属性设置为true。具体属性不展示。</p>
-<p>5、&lt; Engine &gt;、Engine元素表示与特定的Catalina服务相关联的整个请求处理机器。它接收并处理来自一个或多个连接器的所有请求，并将完成的响应返回给连接器，以便最终传输回客户端。</p>
-<p>6、&lt; Host &gt;、表示一个虚拟主机，它是一个服务器的网络(如“<a href="http://www.mycompany.com”）与运行Tomcat的特定服务器的关联。要使客户端能够使用其网络名称连接到Tomcat服务器，必须在管理您所属的Internet域的域名服务（DNS）服务器中注册此名称-" target="_blank" rel="noopener">www.mycompany.com”）与运行Tomcat的特定服务器的关联。要使客户端能够使用其网络名称连接到Tomcat服务器，必须在管理您所属的Internet域的域名服务（DNS）服务器中注册此名称-</a> 有关详细信息，请与网络管理员联系。一个或多个Host元素嵌套在 Engine元素中。在Host元素内，您可以为与此虚拟主机关联的Web应用程序嵌套Context元素。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Tomcat</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">入门</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/JavaWeb//" class="article-tag-list-link color3">JavaWeb</a>
+        			<a href="/categories/Redis//" class="article-tag-list-link color1">Redis</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/Java高级之反射篇.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java高级之反射篇
-        
-      </div>
-    </a>
   
   
-    <a href="/基于Maven-SSM的论坛项目.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">基于Maven+SSM的论坛项目</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+    </div></section>
   
 
-  
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'true' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "11btHRKRUnSiCwm7nxQ6MqvJ-gzGzoHsz",
-            app_key: "AA0vgaQmApd786vhE4gJcJER",
-            placeholder: "Say Something!",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
-
-  
-  
-
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -348,10 +259,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
-		isCategory: false,
+		isCategory: true,
 		open_in_new: true,
 		toc_hide_index: true,
 		root: "/",
