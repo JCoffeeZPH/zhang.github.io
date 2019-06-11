@@ -6,19 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jcoffeezph.top">
-  <title>Tag: Spring基础知识 | Zph、ForMe</title>
+  <title>RabbitMQ入门示例及Channel常用函数参数阐释 | Zph、ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Enjoy Coding">
-<meta name="keywords" content="Java 软件">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Zph、ForMe">
-<meta property="og:url" content="https://jcoffeezph.top/tags/Spring基础知识/index.html">
+  <meta name="description" content="1、Hello RabbitMQ的实现在开始之前先看简单实现打印Hello RabbitMQ的过程：实现过程：生产者将消息发送到队列(队列的名字为hello)中,消费者从队列中获取消息。">
+<meta name="keywords" content="RabbitMQ入门">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RabbitMQ入门示例及Channel常用函数参数阐释">
+<meta property="og:url" content="https://jcoffeezph.top/RabbitMQ入门示例及Channel常用函数参数阐释.html">
 <meta property="og:site_name" content="Zph、ForMe">
-<meta property="og:description" content="Enjoy Coding">
+<meta property="og:description" content="1、Hello RabbitMQ的实现在开始之前先看简单实现打印Hello RabbitMQ的过程：实现过程：生产者将消息发送到队列(队列的名字为hello)中,消费者从队列中获取消息。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/11/VgPIFf.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/11/Vg1K9H.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/11/Vg2CPe.png">
+<meta property="og:updated_time" content="2019-06-11T11:50:55.552Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zph、ForMe">
-<meta name="twitter:description" content="Enjoy Coding">
+<meta name="twitter:title" content="RabbitMQ入门示例及Channel常用函数参数阐释">
+<meta name="twitter:description" content="1、Hello RabbitMQ的实现在开始之前先看简单实现打印Hello RabbitMQ的过程：实现过程：生产者将消息发送到队列(队列的名字为hello)中,消费者从队列中获取消息。">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/06/11/VgPIFf.png">
   
     <link rel="alternative" href="/atom.xml" title="Zph、ForMe" type="application/atom+xml">
   
@@ -158,72 +163,201 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-RabbitMQ入门示例及Channel常用函数参数阐释" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Spring全家桶之Spring基础知识.html" class="archive-article-date">
-  	<time datetime="2019-05-09T06:07:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-09</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Spring全家桶之Spring基础知识.html">Spring全家桶之Spring基础知识</a>
+    <h1 class="article-title" itemprop="name">
+      RabbitMQ入门示例及Channel常用函数参数阐释
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style="display:none" class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/RabbitMQ入门示例及Channel常用函数参数阐释.html" class="archive-article-date">
+  	<time datetime="2019-06-11T11:49:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、Hello-RabbitMQ的实现"><a href="#1、Hello-RabbitMQ的实现" class="headerlink" title="1、Hello RabbitMQ的实现"></a>1、Hello RabbitMQ的实现</h3><p>在开始之前先看简单实现打印Hello RabbitMQ的过程：<br>实现过程：生产者将消息发送到队列(队列的名字为hello)中,消费者从队列中获取消息。<br><a href="https://imgchr.com/i/VgPIFf" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/11/VgPIFf.png" alt="VgPIFf.png"></a><br><a id="more"></a><br>看下具体实现：<br>首先是生产者：helloPro.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">helloPro</span><span class="params">()</span> <span class="keyword">throws</span> IOException, TimeoutException </span>&#123;</span><br><span class="line">    ConnectionFactory connectionFactory = <span class="keyword">new</span> ConnectionFactory();</span><br><span class="line">    connectionFactory.setHost(<span class="string">"localhost"</span>);</span><br><span class="line">    connectionFactory.setUsername(<span class="string">"ForMe"</span>);</span><br><span class="line">    connectionFactory.setPassword(<span class="string">"ForMe=520"</span>);</span><br><span class="line">    connectionFactory.setPort(AMQP.PROTOCOL.PORT);</span><br><span class="line"></span><br><span class="line">    Connection connection = connectionFactory.newConnection();</span><br><span class="line">    Channel channel = connection.createChannel();</span><br><span class="line"></span><br><span class="line">    String QUEUE_NAME = <span class="string">"hello"</span>;</span><br><span class="line">    channel.queueDeclare(QUEUE_NAME,<span class="keyword">false</span>,<span class="keyword">false</span>,<span class="keyword">false</span>,<span class="keyword">null</span>);</span><br><span class="line"></span><br><span class="line">    String message = <span class="string">"Hello RabbitMQ!"</span>;</span><br><span class="line">    channel.basicPublish(<span class="string">""</span>,QUEUE_NAME,<span class="keyword">null</span>,message.getBytes(<span class="string">"UTF-8"</span>));</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">"Producer Send a message:"</span> + message);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 关闭资源</span></span><br><span class="line">    channel.close();</span><br><span class="line">    connection.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后是helloConsumer.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">helloConsumer</span><span class="params">()</span> <span class="keyword">throws</span> IOException, TimeoutException </span>&#123;</span><br><span class="line">    ConnectionFactory connectionFactory = <span class="keyword">new</span> ConnectionFactory();</span><br><span class="line">    connectionFactory.setHost(<span class="string">"localhost"</span>);</span><br><span class="line">    connectionFactory.setUsername(<span class="string">"ForMe"</span>);</span><br><span class="line">    connectionFactory.setPassword(<span class="string">"ForMe=520"</span>);</span><br><span class="line">    connectionFactory.setPort(AMQP.PROTOCOL.PORT);</span><br><span class="line"></span><br><span class="line">    Connection connection = connectionFactory.newConnection();</span><br><span class="line">    Channel channel = connection.createChannel();</span><br><span class="line"></span><br><span class="line">    String QUEUE_NAME = <span class="string">"hello"</span>;</span><br><span class="line">    channel.queueDeclare(QUEUE_NAME,<span class="keyword">false</span>,<span class="keyword">false</span>,<span class="keyword">false</span>,<span class="keyword">null</span>);</span><br><span class="line"></span><br><span class="line">    Consumer consumer = <span class="keyword">new</span> DefaultConsumer(channel)&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleDelivery</span><span class="params">(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, <span class="keyword">byte</span>[] body)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">            String message = <span class="keyword">new</span> String(body, <span class="string">"UTF-8"</span>);</span><br><span class="line">            System.out.println(<span class="string">"Received '"</span> + message + <span class="string">"'"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 订阅消息</span></span><br><span class="line">    channel.basicConsume(QUEUE_NAME, <span class="keyword">true</span>, consumer);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>先运行helloPro，再运行helloConsumer，控制台打印结果如下：<br><a href="https://imgchr.com/i/Vg1K9H" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/11/Vg1K9H.png" alt="Vg1K9H.png"></a></p>
+<p><a href="https://imgchr.com/i/Vg2CPe" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/11/Vg2CPe.png" alt="Vg2CPe.png"></a></p>
+<h3 id="2、常用函数解释"><a href="#2、常用函数解释" class="headerlink" title="2、常用函数解释"></a>2、常用函数解释</h3><ul>
+<li>声明队列：QueueDeclare<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> QueueDeclareOk <span class="title">QueueDeclare</span><span class="params">(String queue, Boolean durable, Boolean exclusive, Boolean autoDelete, IDictionary&lt;String, Object&gt; arguments)</span></span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>1、第一个参数表示队列名称；<br>2、第二个参数为是否持久化（true表示是，队列将在服务器重启时生存）；<br>3、第三个参数为是否是独占队列（创建者可以使用的私有队列，断开后自动删除）；<br>4、第四个参数为当所有消费者客户端连接断开时是否自动删除队列；<br>5、第五个参数为队列的其他参数</p>
+<ul>
+<li>声明队列无需等待：QueueDeclareNoWait</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Void <span class="title">QueueDeclareNoWait</span><span class="params">(String queue, Boolean durable, Boolean exclusive, Boolean autoDelete, IDictionary&lt;String, Object&gt; arguments)</span></span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>设置每次从队列获取消息的数量：basicQos<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">basicQos</span><span class="params">(<span class="keyword">int</span> prefetchSize，<span class="keyword">int</span> prefetchCount，<span class="keyword">boolean</span> global）</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>1、prefetchSize：0</p>
+<p>2、prefetchCount：多个消费者消费能力不同，所以rabbitmq会在消费者消费prefetchCount个消息后，再次发送prefetchCount个消息给消费者</p>
+<p>3、global：true/false，是否将上面的配置应用于channel，若是否，就是应用于消费者consumer</p>
+<ul>
+<li>发布消息<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">basicPublish</span><span class="params">(String exchange，String routingKey，<span class="keyword">boolean</span> mandatory，<span class="keyword">boolean</span> immediate，BasicProperties props，<span class="keyword">byte</span>[] body)</span> <span class="keyword">throws</span> IOException</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>1、exchange：</strong> 交换机的名称</p>
+<p><strong>2、routingKey：</strong> 队列的名称</p>
+<p><strong>3、mandatory：</strong> true，exchange根据自身类型和消息routingKey没有找到合适的队列queue，那么就会调用basic.return将消息返回给生产者，若为false，则broker把消息丢弃</p>
+<p><strong>4、immediate：</strong> true，当消息通过exchange路由到queue的时候，发现这个queue上面没有消费者，那么就不会进入这个queue，如果根据routingKey匹配到的所有的队列都是没有消费者的，那么就会调用basic.return方法返回给生产者</p>
+<p><strong>5、props：</strong> 表示消息的持久化，配合channel和queue的durable使用</p>
+<p><strong>6、body：</strong> 发送的消息</p>
+<p>应用实例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">channel.basicPublish(<span class="string">""</span>,QUEUE_NAME,MessageProperties.PERSISTENT_TEXT_PLAIN,<span class="string">"message"</span>.getBytes());</span><br></pre></td></tr></table></figure>
+<ul>
+<li>声明交换机<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Exchange.<span class="function">DeclareOk <span class="title">exchangeDeclare</span><span class="params">(String exchange，String type，<span class="keyword">boolean</span> durable，<span class="keyword">boolean</span> autoDelete，Map&lt;String，Object&gt; arguments）</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>1、type：</strong> 有四种类型，分别为：fanout，direct，topic，headers</p>
+<p><strong>2、durable：</strong> 表示是否持久化，为true，表示是exchange的持久化，仅设置这一项不代表消息的持久化。</p>
+<p><strong>3、autoDelete：</strong> 当没有消费者消费的时候是否要删除exchange</p>
+<ul>
+<li>exchangeBinging<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Exchange.<span class="function">BindOk <span class="title">exchangeBind</span><span class="params">(String destination，String source，String routingkey)</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>生产者发送消息到source交换机，source根据路由键找到与其绑定的另一个交换机destination，并把消息转发到destination中，存储在destination绑定的队列queue</p>
+<ul>
+<li>basicConsume<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">String <span class="title">basicConsume</span><span class="params">(String queue，<span class="keyword">boolean</span> autoAck，Consumer callback)</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>autoAck：消息的确认模式自动应答，true表示自动应答，false需要使用basicAck、basicNack或者是basicReject进行消息应答</p>
+<p>callback：消费者对象</p>
+<p><strong>注意：</strong> 关于basicConsume的第二个参数autoAck: 应答模式，true：自动应答，即消费者获取到消息，该消息就会从队列中删除掉，false：手动应答，当从队列中取出消息后，需要程序员手动调用方法应答，如果没有应答，该消息还会再放进队列中，就会出现该消息一直没有被消费掉的现象</p>
+<ul>
+<li>手动应答：basicAck<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">basicAck</span><span class="params">(<span class="keyword">long</span> deliveryTag，<span class="keyword">boolean</span> multiple)</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>deliveryTag：消息的index</p>
+<p>multiple：是否批量，若为true，则一次性回执所有小于deliveryTag的消息</p>
+<blockquote>
+<p>系统会为每个队列都隐式的绑定一个默认的交换机，交换机的名称为“(AMQP default)”,类型为直连接direct，当你手动创建一个队列时，后台会自动将这个队列绑定到一个名称为空的Direct类型交换机上，绑定路由名称与队列名称相同，相当于channel.queueBind(queue:”QUEUE_NAME”, exchange:”(AMQP default)”, routingKey:”QUEUE_NAME”); 所以hello world示例虽然没有显示声明交换机，当路由键和队列名称一样时就将消息发送到这个默认的交换机里。有了这个默认的交换机和绑定，我们就可以像其他轻量级的队列，如Redis那样，直接操作队列来处理消息。不过理论上是可以的，但实际上在RabbitMQ里直接操作是不可取的。消息始终都是先发送到交换机，由交换级经过路由传送给队列，消费者再从队列中获取消息的。不过由于这个默认交换机和路由的关系，使我们只关心队列这一层即可，这个比较适合做一些简单的应用，毕竟没有发挥RabbitMQ的最大功能(RabbitMQ可以重量级消息队列)，如果都用这种方式去使用的话就真是杀鸡用宰牛刀了。</p>
+</blockquote>
+<p>推荐阅读：<br><a href="https://blog.csdn.net/vbirdbest/article/details/78583480" target="_blank" rel="noopener"><strong>RabbitMQ入门教程(三)：Hello World</strong></a><br><a href="https://www.cnblogs.com/huyj99/p/10649482.html" target="_blank" rel="noopener"><strong>rabbitmq channel方法参数详解</strong></a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Spring基础知识</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">RabbitMQ入门</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Spring全家桶//" class="article-tag-list-link color5">Spring全家桶</a>
+        			<a href="/categories/消息队列//" class="article-tag-list-link color5">消息队列</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/NIO之Selector.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">NIO之Selector</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
   
 
-    
+  
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'true' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "11btHRKRUnSiCwm7nxQ6MqvJ-gzGzoHsz",
+            app_key: "AA0vgaQmApd786vhE4gJcJER",
+            placeholder: "Say Something!",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -259,9 +393,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,

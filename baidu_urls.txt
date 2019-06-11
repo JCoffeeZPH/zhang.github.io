@@ -1,3 +1,4 @@
+https://jcoffeezph.top/RabbitMQ入门示例及Channel常用函数参数阐释.html
 https://jcoffeezph.top/NIO之Selector.html
 https://jcoffeezph.top/NIO之Buffer.html
 https://jcoffeezph.top/NIO总览.html
