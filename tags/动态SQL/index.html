@@ -6,23 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jcoffeezph.top">
-  <title>ArrayList和LinkedList用法简析 | Zph、ForMe</title>
+  <title>Tag: 动态SQL | Zph、ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.ArrayList 相当于动态一维数组，其在内存中是连续的，其继承关系和实现的接口如下123456java.lang.Object  |-- java.util.AbstractCollection&amp;lt;E&amp;gt;      |-- java.util.AbstractList&amp;lt;E&amp;gt;          |-- java.util.ArrayList&amp;lt;E&amp;gt; 所有已实现的">
-<meta name="keywords" content="集合类之ArrayList和LinkedList">
-<meta property="og:type" content="article">
-<meta property="og:title" content="ArrayList和LinkedList用法简析">
-<meta property="og:url" content="https://jcoffeezph.top/ArrayList和LinkedList用法简析.html">
+  <meta name="description" content="Enjoy Coding">
+<meta name="keywords" content="Java 软件">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zph、ForMe">
+<meta property="og:url" content="https://jcoffeezph.top/tags/动态SQL/index.html">
 <meta property="og:site_name" content="Zph、ForMe">
-<meta property="og:description" content="1.ArrayList 相当于动态一维数组，其在内存中是连续的，其继承关系和实现的接口如下123456java.lang.Object  |-- java.util.AbstractCollection&amp;lt;E&amp;gt;      |-- java.util.AbstractList&amp;lt;E&amp;gt;          |-- java.util.ArrayList&amp;lt;E&amp;gt; 所有已实现的">
+<meta property="og:description" content="Enjoy Coding">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://s1.ax1x.com/2018/10/28/igPydS.jpg">
-<meta property="og:image" content="https://s1.ax1x.com/2018/10/28/ige68U.jpg">
-<meta property="og:updated_time" content="2019-04-24T12:20:17.948Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ArrayList和LinkedList用法简析">
-<meta name="twitter:description" content="1.ArrayList 相当于动态一维数组，其在内存中是连续的，其继承关系和实现的接口如下123456java.lang.Object  |-- java.util.AbstractCollection&amp;lt;E&amp;gt;      |-- java.util.AbstractList&amp;lt;E&amp;gt;          |-- java.util.ArrayList&amp;lt;E&amp;gt; 所有已实现的">
-<meta name="twitter:image" content="https://s1.ax1x.com/2018/10/28/igPydS.jpg">
+<meta name="twitter:title" content="Zph、ForMe">
+<meta name="twitter:description" content="Enjoy Coding">
   
     <link rel="alternative" href="/atom.xml" title="Zph、ForMe" type="application/atom+xml">
   
@@ -162,168 +158,72 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ArrayList和LinkedList用法简析" class="article article-type-post " itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      ArrayList和LinkedList用法简析
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/Mybatis之动态SQL.html" class="archive-article-date">
+  	<time datetime="2019-08-07T03:58:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-07</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/Mybatis之动态SQL.html">Mybatis之动态SQL</a>
     </h1>
   
 
-        
-        
-        <!-- 不蒜子统计 -->
-        <span id="busuanzi_container_page_pv" style="display:none" class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/ArrayList和LinkedList用法简析.html" class="archive-article-date">
-  	<time datetime="2018-10-27T10:43:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>1.ArrayList</strong> 相当于动态一维数组，其在内存中是连续的，其继承关系和实现的接口如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object</span><br><span class="line">  |-- java.util.AbstractCollection&lt;E&gt;</span><br><span class="line">      |-- java.util.AbstractList&lt;E&gt;</span><br><span class="line">          |-- java.util.ArrayList&lt;E&gt;</span><br><span class="line"> 所有已实现的接口： </span><br><span class="line">Serializable, Cloneable, Iterable&lt;E&gt;, Collection&lt;E&gt;, List&lt;E&gt;, RandomAccess</span><br></pre></td></tr></table></figure></p>
-<p>ArrayList 继承及依赖关系<br><a href="https://imgchr.com/i/igPydS" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2018/10/28/igPydS.jpg" alt="igPydS.jpg"></a><br><strong>a.</strong> 其子类用到的相对较少不做陈述。此外ArrayList 线程非同步，线程不安全，而vector是线程安全的，vector 和ArrayList 基本相似不再赘述，ArrayList 各个方法实例较为简单不再重复。ArrayList 实现了RandmoAccess接口，即提供了随机访问功能<br><strong>b.</strong> RandmoAccess是java中用来被List实现，为List提供快速访问功能的。在ArrayList中，我们即可以通过元素的序号快速获取元素对象；也就是快速随机访问。<br><a id="more"></a><br>下面比较下三种对ArrayList访问的效率。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayListTest02</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line">		ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++)</span><br><span class="line">			list.add(i);</span><br><span class="line">		forEach(list);</span><br><span class="line">		Iter(list);</span><br><span class="line">		RanAcc(list);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//普通foreach循环</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">forEach</span><span class="params">(ArrayList&lt;Integer&gt; al)</span> </span>&#123;</span><br><span class="line">		<span class="meta">@SuppressWarnings</span>(<span class="string">"unused"</span>)</span><br><span class="line">		Integer a = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">long</span> before = System.currentTimeMillis(); </span><br><span class="line">		<span class="keyword">for</span>(Integer l : al)</span><br><span class="line">			a = l;</span><br><span class="line">		<span class="keyword">long</span> after = System.currentTimeMillis();</span><br><span class="line">		<span class="keyword">long</span> time = after - before;</span><br><span class="line">		System.out.println(<span class="string">"foreach :"</span> + time + <span class="string">"ms"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//迭代</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Iter</span><span class="params">(ArrayList&lt;Integer&gt; al)</span> </span>&#123;</span><br><span class="line">		<span class="meta">@SuppressWarnings</span>(<span class="string">"unused"</span>)</span><br><span class="line">		Integer a = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">long</span> before = System.currentTimeMillis(); </span><br><span class="line">		Iterator&lt;Integer&gt; it = al.iterator();</span><br><span class="line">		<span class="keyword">while</span>(it.hasNext())</span><br><span class="line">			a = it.next();</span><br><span class="line">		<span class="keyword">long</span> after = System.currentTimeMillis();</span><br><span class="line">		<span class="keyword">long</span> time = after - before;</span><br><span class="line">		System.out.println(<span class="string">"Iterator :"</span> + time + <span class="string">"ms"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//RandomAccess 随机访问，通过索引值去遍历</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">RanAcc</span><span class="params">(ArrayList&lt;Integer&gt; al)</span> </span>&#123;</span><br><span class="line">		<span class="meta">@SuppressWarnings</span>(<span class="string">"unused"</span>)</span><br><span class="line">		Integer a = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">long</span> before = System.currentTimeMillis(); </span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; al.size(); i++)</span><br><span class="line">			a = al.get(i);</span><br><span class="line">		<span class="keyword">long</span> after = System.currentTimeMillis();</span><br><span class="line">		<span class="keyword">long</span> time = after - before;</span><br><span class="line">		System.out.println(<span class="string">"RandomAccess :"</span> + time + <span class="string">"ms"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>所得结果如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">foreach :<span class="number">9</span>ms</span><br><span class="line">Iterator :<span class="number">6</span>ms</span><br><span class="line">RandomAccess :<span class="number">4</span>ms</span><br></pre></td></tr></table></figure></p>
-<p>可多次运行得到，遍历ArrayList时，使用随机访问(即，通过索引序号访问)效率最高。   </p>
-<p><strong>c.</strong> 但是，当要向ArrayList中插入或者删除元素的时候，可能会有插入或者删除位置以后的所有元素整体都需要移动的情况，比较麻烦费时。所以对于ArrayList擅长查询而不擅长插入与删除。<br><strong>说明：</strong> 对于ArrayList的线程不安全可以简单如此了解：以添加元素为例，添加元素的过程分为赋值和长度增加两个过程，假设有两个线程同时对一个list进行处理，当一个线程对list添加时，A线程赋值，然后B线程赋值，注意A B两个线程赋值的是同一个位置，接着回到A线程增加长度，接着B线程增加长度，此时长度增加 2 ，与实际不符，所以是线程不安全的，若要线程安全，可以在 synchronized 代码块中执行ArrayList操作，或者<br>List list=Collections.synchronizedList(new ArrayList());<br><strong>d.</strong>  关于ArrayList长度自增问题，源代码中<code>int newCapacity = oldCapacity + (oldCapacity &gt;&gt; 1);</code>说明长度自动变为原来的1.5倍。<br><strong>e.</strong>  vecor和ArrayList基本相似只不过vector是线程安全的，不做陈述<br><strong>2.  LinkedListed：</strong> 底层实现简单说就是一个双向链表，内存不必连续，在空间应用率上很有优势，也是线程不安全的，LinkedList更长于插入和删除操作，当然，顺序查找</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">**a.**  java.lang.Object</span><br><span class="line">  |-- java.util.AbstractCollection&lt;E&gt;</span><br><span class="line">      |-- java.util.AbstractList&lt;E&gt;</span><br><span class="line">          |-- java.util.AbstractSequentialList&lt;E&gt;</span><br><span class="line">              |-- java.util.LinkedList&lt;E&gt;</span><br></pre></td></tr></table></figure>
-<p>所有已实现的接口：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Serializable, Cloneable, Iterable&lt;E&gt;, Collection&lt;E&gt;, Deque&lt;E&gt;, List&lt;E&gt;, Queue&lt;E&gt;</span><br></pre></td></tr></table></figure></p>
-<p>LinkedList继承及依赖关系<br><a href="https://imgchr.com/i/ige68U" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2018/10/28/ige68U.jpg" alt="ige68U.jpg"></a><br><strong>b.</strong>  先看具体方法的简单示例<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.LinkedList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LinkedListTest01</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line">		LinkedList&lt;Integer&gt; list = <span class="keyword">new</span> LinkedList&lt;Integer&gt;();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">			list.add(i);</span><br><span class="line">		</span><br><span class="line">		System.out.println(list.element());<span class="comment">//返回此列表的头，并不删除</span></span><br><span class="line">		System.out.println(list.getFirst());<span class="comment">//返回第一个元素</span></span><br><span class="line">		Iterator&lt;Integer&gt; it = list.iterator();<span class="comment">//正序</span></span><br><span class="line">		<span class="keyword">while</span>(it.hasNext())</span><br><span class="line">			System.out.print((Integer)(it.next()) + <span class="string">" "</span>);</span><br><span class="line">		System.out.println();</span><br><span class="line">		</span><br><span class="line">		Iterator&lt;Integer&gt; itt = list.descendingIterator();<span class="comment">//倒序，反向迭代器</span></span><br><span class="line">		<span class="keyword">while</span>(itt.hasNext())</span><br><span class="line">			System.out.print((Integer)(itt.next()) + <span class="string">" "</span>);</span><br><span class="line">		System.out.println();</span><br><span class="line">		</span><br><span class="line">		Iterator&lt;Integer&gt; ittt = list.listIterator(<span class="number">5</span>);<span class="comment">//从指定位置开始创建迭代器</span></span><br><span class="line">		<span class="keyword">while</span>(ittt.hasNext())</span><br><span class="line">			System.out.print((Integer)(ittt.next()) + <span class="string">" "</span>);</span><br><span class="line">		System.out.println();</span><br><span class="line">		</span><br><span class="line">		System.out.println(list.peek());<span class="comment">//获取但不移除此列表的头（第一个元素）。</span></span><br><span class="line">		System.out.println(list.element());</span><br><span class="line">		</span><br><span class="line">		System.out.println(list.poll());<span class="comment">//获取并移除此列表的头（第一个元素）</span></span><br><span class="line">		System.out.println(list.element());</span><br><span class="line">		</span><br><span class="line">		list.push(<span class="number">10</span>);</span><br><span class="line">		System.out.println(list.getLast());</span><br><span class="line">		System.out.println(list.pop());</span><br><span class="line">		</span><br><span class="line">		Integer[] a  = (Integer[])list.toArray(<span class="keyword">new</span> Integer[<span class="number">11</span>]);<span class="comment">//转化为数组</span></span><br><span class="line">		<span class="keyword">for</span>(Integer aa : a)</span><br><span class="line">			<span class="comment">//int b = aa;</span></span><br><span class="line">			System.out.print(aa + <span class="string">" "</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>结果如下</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> </span><br><span class="line"><span class="number">9</span> <span class="number">8</span> <span class="number">7</span> <span class="number">6</span> <span class="number">5</span> <span class="number">4</span> <span class="number">3</span> <span class="number">2</span> <span class="number">1</span> <span class="number">0</span> </span><br><span class="line"><span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> </span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">9</span></span><br><span class="line"><span class="number">10</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> <span class="keyword">null</span> <span class="keyword">null</span></span><br></pre></td></tr></table></figure>
-<p><strong>c.</strong>  push、poll、pop方法示例</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.LinkedList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LinkedListTest02</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line">		LinkedList&lt;Integer&gt; link = <span class="keyword">new</span> LinkedList&lt;Integer&gt;();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">			link.push(i);<span class="comment">//push类似推进栈，现今后出FILO</span></span><br><span class="line">		System.out.println(link);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">		System.out.print(link.pop() + <span class="string">" "</span>);</span><br><span class="line">		System.out.println();</span><br><span class="line">		System.out.println(link.poll());</span><br><span class="line">		System.out.println(link.pop());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">0</span>]</span><br><span class="line"><span class="number">4</span> <span class="number">3</span> <span class="number">2</span> <span class="number">1</span> <span class="number">0</span> </span><br><span class="line"><span class="keyword">null</span></span><br><span class="line">Exception in thread <span class="string">"main"</span> java.util.NoSuchElementException</span><br><span class="line">	at java.util.LinkedList.removeFirst(Unknown Source)</span><br><span class="line">	at java.util.LinkedList.pop(Unknown Source)</span><br><span class="line">	at com.List.LinkedListTest02.main(LinkedListTest02.java:<span class="number">18</span>)</span><br></pre></td></tr></table></figure></p>
-<p>总结：由此可见LinkedList 方法的push和pop方法和堆栈相似实现先今后出(FILO)，而poll方法和pop方法大致相同，但是当在link为空时，poll取出的是null，而pop会抛出异常，如上结果所示。<br><strong>d.</strong>  LinkedList实现java.io.Serializable。当写入到输出流时，先写入“容量”，再依次写入“每一个节点保护的值”；当读出输入流时，先读取“容量”，再依次读取“每一个元素”<br><strong>e.</strong>  LinkedList可以作为FIFO(先进先出)的队列，作为FIFO的队列时，下表的方法等价：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">队列方法          等效方法</span><br><span class="line">add(e)      &lt;====&gt;    addLast(e)</span><br><span class="line">offer(e)    &lt;====&gt;    offerLast(e)</span><br><span class="line">remove()    &lt;====&gt;   removeFirst()</span><br><span class="line">poll()      &lt;====&gt;   pollFirst()</span><br><span class="line">element()   &lt;====&gt;   getFirst()</span><br><span class="line">peek()     &lt;====&gt;    peekFirst()</span><br></pre></td></tr></table></figure></p>
-<p><strong>f.</strong>  LinkedList可以作为LIFO(后进先出)的栈，作为LIFO的栈时，下表的方法等价：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">栈方法             等效方法</span><br><span class="line">push(e)  &lt;====&gt;   addFirst(e)</span><br><span class="line">pop()    &lt;====&gt;    removeFirst()</span><br><span class="line">peek()   &lt;====&gt;    peekFirst()</span><br></pre></td></tr></table></figure>
-<p>注意：遍历LinkedList时，其方法有多种（随机访问遍历、普通foreach、迭代器、pollfirst、polllast、removeLast、removeFirst共七个方法）使用removeFist()或removeLast()效率最高。但用它们遍历时，会删除原始数据；若单纯只读取，而不删除，千万不能用随机访问，即千万不能用get方法去遍历，<br>以下为测试这七种遍历方法的用例</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.LinkedList;</span><br><span class="line"><span class="keyword">import</span> java.util.NoSuchElementException;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LinkedListTest03</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Iter(getLink());</span><br><span class="line">		RanAcc(getLink());</span><br><span class="line">		forEach(getLink());</span><br><span class="line">		PollFirst(getLink());</span><br><span class="line">		PollLast(getLink());</span><br><span class="line">		RemoveFirst(getLink());</span><br><span class="line">		RemoveLast(getLink());</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> LinkedList&lt;Integer&gt; <span class="title">getLink</span><span class="params">()</span></span>&#123;</span><br><span class="line">		LinkedList&lt;Integer&gt; link = <span class="keyword">new</span> LinkedList&lt;Integer&gt;();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">150000</span>; i++)</span><br><span class="line">			link.addLast(i);</span><br><span class="line">		<span class="keyword">return</span> link;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//迭代法</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Iter</span><span class="params">(LinkedList&lt;Integer&gt; link)</span> </span>&#123;</span><br><span class="line">		    <span class="keyword">if</span> (link == <span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">		Iterator&lt;Integer&gt; it = link.iterator();</span><br><span class="line">		<span class="comment">//Integer a = null;</span></span><br><span class="line">		<span class="keyword">long</span> b = System.currentTimeMillis();</span><br><span class="line">		<span class="keyword">while</span>(it.hasNext())</span><br><span class="line">		it.next();</span><br><span class="line">		<span class="keyword">long</span> e = System.currentTimeMillis();</span><br><span class="line">		<span class="keyword">long</span> time = e - b;</span><br><span class="line">		System.out.println(<span class="string">"Iterator: "</span> + time + <span class="string">"ms"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">RanAcc</span><span class="params">(LinkedList&lt;Integer&gt; link)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//Integer a = null;</span></span><br><span class="line">		<span class="keyword">long</span> b = System.currentTimeMillis();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; link.size(); i++)</span><br><span class="line">			link.get(i);</span><br><span class="line">		<span class="keyword">long</span> e = System.currentTimeMillis();</span><br><span class="line">		<span class="keyword">long</span> time = e - b;</span><br><span class="line">		System.out.println(<span class="string">"RandomAccess: "</span> + time + <span class="string">"ms"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//for循环</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">forEach</span><span class="params">(LinkedList&lt;Integer&gt; link)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">long</span> b = System.currentTimeMillis();</span><br><span class="line">		<span class="keyword">for</span>(Integer s : link);</span><br><span class="line">		<span class="keyword">long</span> e = System.currentTimeMillis();</span><br><span class="line">		<span class="keyword">long</span> time = e - b;</span><br><span class="line">		System.out.println(<span class="string">"forEach: "</span> + time + <span class="string">"ms"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">PollFirst</span><span class="params">(LinkedList&lt;Integer&gt; link)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">long</span> b = System.currentTimeMillis();</span><br><span class="line">		<span class="keyword">while</span>(link.pollFirst() != <span class="keyword">null</span>);</span><br><span class="line">		<span class="keyword">long</span> e = System.currentTimeMillis();</span><br><span class="line">		<span class="keyword">long</span> time = e - b;</span><br><span class="line">		System.out.println(<span class="string">"PollFirst: "</span> + time + <span class="string">"ms"</span>);</span><br><span class="line">				</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">PollLast</span><span class="params">(LinkedList&lt;Integer&gt; link)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">long</span> b = System.currentTimeMillis();</span><br><span class="line">		<span class="keyword">while</span>(link.pollLast() != <span class="keyword">null</span>);</span><br><span class="line">		<span class="keyword">long</span> e = System.currentTimeMillis();</span><br><span class="line">		<span class="keyword">long</span> time = e - b;</span><br><span class="line">		System.out.println(<span class="string">"PollLast: "</span> + time + <span class="string">"ms"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">RemoveFirst</span><span class="params">(LinkedList&lt;Integer&gt; link)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">long</span> b = System.currentTimeMillis();</span><br><span class="line">		<span class="keyword">try</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">while</span>(link.removeFirst() != <span class="keyword">null</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span> (NoSuchElementException e)</span><br><span class="line">		&#123;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">long</span> en = System.currentTimeMillis();</span><br><span class="line">			<span class="keyword">long</span> time = en - b;</span><br><span class="line">			System.out.println(<span class="string">"RemoveFirst: "</span> + time + <span class="string">"ms"</span>);</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">RemoveLast</span><span class="params">(LinkedList&lt;Integer&gt; link)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">long</span> b = System.currentTimeMillis();</span><br><span class="line">		<span class="keyword">try</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">while</span>(link.removeLast() != <span class="keyword">null</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span> (NoSuchElementException e)</span><br><span class="line">		&#123;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">long</span> en = System.currentTimeMillis();</span><br><span class="line">		<span class="keyword">long</span> time = en - b;</span><br><span class="line">		System.out.println(<span class="string">"RemoveFirst: "</span> + time + <span class="string">"ms"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果如下</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Iterator: <span class="number">6</span>ms</span><br><span class="line">RandomAccess: <span class="number">12903</span>ms</span><br><span class="line">forEach: <span class="number">5</span>ms</span><br><span class="line">PollFirst: <span class="number">5</span>ms</span><br><span class="line">PollLast: <span class="number">4</span>ms</span><br><span class="line">RemoveFirst: <span class="number">3</span>ms</span><br><span class="line">RemoveFirst: <span class="number">3</span>ms</span><br></pre></td></tr></table></figure>
-<p><strong>总结：</strong>总的来说，二者都允许重复元素出现，而且是有序的（即存入顺序和取出顺序是一致的）在实际过程中我们要按照实际需求选择用哪个，要考虑清楚二者的区别，尽量减少资源的浪费，做到 “物尽其用”。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">集合类之ArrayList和LinkedList</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">动态SQL</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Java基础//" class="article-tag-list-link color2">Java基础</a>
+        			<a href="/categories/Mybatis//" class="article-tag-list-link color3">Mybatis</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/java实现顺序表.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          java实现顺序表
-        
-      </div>
-    </a>
   
   
-    <a href="/二叉树和哈夫曼树的简单实现.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">二叉树和哈夫曼树的简单实现</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+    </div></section>
   
 
-  
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'true' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "11btHRKRUnSiCwm7nxQ6MqvJ-gzGzoHsz",
-            app_key: "AA0vgaQmApd786vhE4gJcJER",
-            placeholder: "Say Something!",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
-
-  
-  
-
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -359,9 +259,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
