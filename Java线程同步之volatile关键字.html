@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jcoffeezph.top">
-  <title>Tag: 代理模式 | Zph、ForMe</title>
+  <title>Java线程同步之volatile关键字 | Zph、ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Enjoy Coding">
-<meta name="keywords" content="Java 软件">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Zph、ForMe">
-<meta property="og:url" content="https://jcoffeezph.top/tags/代理模式/index.html">
+  <meta name="description" content="综述之前的synchronized关键字虽然可以实现同步，但却是重量级锁，相对于synchronized来说，volatile更为轻量级，volatile的使用不会引起线程的调度和切换，但是volatile的同步性较差，而且其使用也更容易出错。">
+<meta name="keywords" content="volatile">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java线程同步之volatile关键字">
+<meta property="og:url" content="https://jcoffeezph.top/Java线程同步之volatile关键字.html">
 <meta property="og:site_name" content="Zph、ForMe">
-<meta property="og:description" content="Enjoy Coding">
+<meta property="og:description" content="综述之前的synchronized关键字虽然可以实现同步，但却是重量级锁，相对于synchronized来说，volatile更为轻量级，volatile的使用不会引起线程的调度和切换，但是volatile的同步性较差，而且其使用也更容易出错。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190910185850328.png">
+<meta property="og:updated_time" content="2019-09-10T11:02:19.230Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zph、ForMe">
-<meta name="twitter:description" content="Enjoy Coding">
+<meta name="twitter:title" content="Java线程同步之volatile关键字">
+<meta name="twitter:description" content="综述之前的synchronized关键字虽然可以实现同步，但却是重量级锁，相对于synchronized来说，volatile更为轻量级，volatile的使用不会引起线程的调度和切换，但是volatile的同步性较差，而且其使用也更容易出错。">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190910185850328.png">
   
     <link rel="alternative" href="/atom.xml" title="Zph、ForMe" type="application/atom+xml">
   
@@ -158,72 +161,161 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java线程同步之volatile关键字" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/Java三种代理模式.html" class="archive-article-date">
-  	<time datetime="2019-04-23T14:46:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-23</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Java三种代理模式.html">Java三种代理模式</a>
+    <h1 class="article-title" itemprop="name">
+      Java线程同步之volatile关键字
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style="display:none" class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/Java线程同步之volatile关键字.html" class="archive-article-date">
+  	<time datetime="2019-09-10T11:01:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h3><p>之前的synchronized关键字虽然可以实现同步，但却是重量级锁，相对于synchronized来说，volatile更为轻量级，volatile的使用不会引起线程的调度和切换，但是volatile的同步性较差，而且其使用也更容易出错。<br><a id="more"></a></p>
+<h3 id="并发编程的基本概念"><a href="#并发编程的基本概念" class="headerlink" title="并发编程的基本概念"></a>并发编程的基本概念</h3><h4 id="1、原子性"><a href="#1、原子性" class="headerlink" title="1、原子性"></a>1、原子性</h4><p>原子性即是指一个或多个操作要么会全部执行且不会被任何因素打断，要么全部不执行。<br>Java中的原子性包括：<br>①、基本类型的读取和赋值操作，且赋值只能是是数字赋值给变量，变量之间的赋值不是原子操作；<br>②、所有引用reference的赋值操作；<br>③、java.concurrent.Atomic.* 包中所有类的一切操作。</p>
+<h4 id="2、可见性"><a href="#2、可见性" class="headerlink" title="2、可见性"></a>2、可见性</h4><p>当多个线程访问同一个变量时，一个线程更改了此变量的值，其他线程可以立即看到修改后的值。</p>
+<p>在多线程的环境下，一个线程对共享变量的操作对于其他线程来说是不可见的。Java提供了volatile关键字来保证可见性，当一个变量被volatile关键字修饰后，表示本地内存无效，当一个线程修改共享变量后他会理解更新到主存中，其他线程读取共享变量时直接从主存读取。</p>
+<p>当然，synchronized和Lock都能保证可见性，synchronized和Lock都能保证同一时刻只能有一个线程获取锁然后执行同步代码，并且在释放锁之前将变量的改变刷新到主存中，以此来保证可见性。</p>
+<h4 id="3、有序性"><a href="#3、有序性" class="headerlink" title="3、有序性"></a>3、有序性</h4><p>很好理解，也就是程序的执行按照代码顺序执行。<br>看一个例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;    <span class="comment">//语句1</span></span><br><span class="line"><span class="keyword">int</span> r = <span class="number">2</span>;    <span class="comment">//语句2</span></span><br><span class="line">a = a + <span class="number">3</span>;    <span class="comment">//语句3</span></span><br><span class="line">r = a*a;     <span class="comment">//语句4</span></span><br></pre></td></tr></table></figure>
+<p>对于JVM来说，执行的时候并不一定会是按照1234的顺序执行，而是进行重排序，可能语句2和语句1顺序颠倒，但是对于单线程来说，语句3一定是在语句1后执行的，处理器在进行重排序时是会考虑指令之间的数据依赖性，如果一个指令Instruction 2必须用到Instruction 1的结果，那么处理器会保证Instruction 1会在Instruction 2之前执行。</p>
+<p>但是对于多线程来说就未必了，看下面的例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//线程1:</span></span><br><span class="line">context = loadContext();   <span class="comment">//语句1</span></span><br><span class="line">inited = <span class="keyword">true</span>;             <span class="comment">//语句2</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">//线程2:</span></span><br><span class="line"><span class="keyword">while</span>(!inited )&#123;</span><br><span class="line">  sleep()</span><br><span class="line">&#125;</span><br><span class="line">doSomethingwithconfig(context);</span><br></pre></td></tr></table></figure>
+<p>在上面的代码中，语句1和语句2没有数据依赖，可能会发生重排序，当语句2先执行的时候，线程2就会跳出while循环，去执行doSomethingwithconfig(context)方法，而此时context并没有被初始化，就会导致程序出错。</p>
+<p>因此，指令重排序不会影响单线程执行，但是会影响多线程执行。</p>
+<p>Java提供volatile来保证有序性。另外，可以通过synchronized和Lock来保证有序性，synchronized和Lock保证每个时刻是有一个线程执行同步代码，相当于是让线程顺序执行同步代码，自然就保证了有序性。</p>
+<p><strong>注意：</strong> 可以被写入 volatile 变量的这些有效值独立于任何程序的状态，包括变量的当前状态。事实上就是保证操作是原子性操作，才能保证使用volatile关键字的程序在并发时能够正确执行。</p>
+<h3 id="volatile的作用"><a href="#volatile的作用" class="headerlink" title="volatile的作用"></a>volatile的作用</h3><h4 id="防止重排序"><a href="#防止重排序" class="headerlink" title="防止重排序"></a>防止重排序</h4><p>经典的双重检查锁单例模式，当不加volatile时：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Singleton instance;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (instance == <span class="keyword">null</span>)              <span class="comment">//1</span></span><br><span class="line">  &#123;                                  <span class="comment">//2</span></span><br><span class="line">    <span class="keyword">synchronized</span>(Singleton.class) &#123;  <span class="comment">//3</span></span><br><span class="line">      <span class="keyword">if</span> (instance == <span class="keyword">null</span>)          <span class="comment">//4</span></span><br><span class="line">        instance = <span class="keyword">new</span> Singleton();  <span class="comment">//5</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> instance;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于上述代码，正常情况下是这样的顺序：<br>①、分配内存<br>②、初始化对象<br>③、将内存地址赋值给对应的引用</p>
+<p>但是对于步骤5可能会重排序出现执行顺序为①③②的情况，这是并没有真正创建对象，此时如果其他线程读取到的instance不为null，则就会直接返回instance，但是这个instance并不是真正的对象，这时系统可能会崩溃。</p>
+<p>但是当<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">volatile</span> <span class="keyword">static</span> Singleton instance;</span><br></pre></td></tr></table></figure></p>
+<p>volatile可以禁止编译器对初始化instance对象的重排序，从而保证了创建对象的流程以及可见性。</p>
+<h4 id="volatile原理"><a href="#volatile原理" class="headerlink" title="volatile原理"></a>volatile原理</h4><p>volatile可以保证线程可见性且提供了一定的有序性，但是无法保证原子性。在JVM底层volatile是采用“内存屏障”来实现的。</p>
+<p>在加入volatile关键字后，线程1只要修改data变量的值，就会在修改工作内存data变量值的同时，强制将修改刷新到主内存中。与此同时，线程2需要读取data变量时，先强制将主内存的值刷新到工作内存中，从而保证线程2每次读取都是最新的值。如下图：<br><img src="https://img-blog.csdnimg.cn/20190910185850328.png" alt="在这里插入图片描述"><br>推荐阅读：</p>
+<p><a href="https://blog.csdn.net/u012723673/article/details/80682208" target="_blank" rel="noopener">Java中volatile关键字的最全总结</a><br><a href="https://nicky-chen.github.io/2018/05/04/volatile-feature/" target="_blank" rel="noopener">volatile关键字原理实现及应用</a><br><a href="https://www.cnblogs.com/bluemilk/p/11269505.html" target="_blank" rel="noopener">Java volatile关键字实现原理</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">代理模式</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">volatile</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Java基础//" class="article-tag-list-link color2">Java基础</a>
+        			<a href="/categories/多线程//" class="article-tag-list-link color4">多线程</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/Java多线程之synchronized关键字.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java多线程之synchronized关键字</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
   
 
-    
+  
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'true' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "11btHRKRUnSiCwm7nxQ6MqvJ-gzGzoHsz",
+            app_key: "AA0vgaQmApd786vhE4gJcJER",
+            placeholder: "Say Something!",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -259,9 +351,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
