@@ -6,25 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jcoffeezph.top">
-  <title>Springboot整合Redis的一些常用操作 | Zph、ForMe</title>
+  <title>Category: 并发 | Zph、ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="RedisTemplate位于spring-data-redis包下。RedisTemplate提供了redis各种操作、异常处理及序列化，支持发布订阅。 一、Redis的五种类型常用操作：使用RedisTemeplate  在maven中添加依赖(下面只是主要的部分依赖) 1234&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.springframework.b">
-<meta name="keywords" content="RedisTemplate常用操作">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Springboot整合Redis的一些常用操作">
-<meta property="og:url" content="https://jcoffeezph.top/Springboot整合Redis的一些常用操作.html">
+  <meta name="description" content="Enjoy Coding">
+<meta name="keywords" content="Java 软件">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zph、ForMe">
+<meta property="og:url" content="https://jcoffeezph.top/categories/并发/index.html">
 <meta property="og:site_name" content="Zph、ForMe">
-<meta property="og:description" content="RedisTemplate位于spring-data-redis包下。RedisTemplate提供了redis各种操作、异常处理及序列化，支持发布订阅。 一、Redis的五种类型常用操作：使用RedisTemeplate  在maven中添加依赖(下面只是主要的部分依赖) 1234&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.springframework.b">
+<meta property="og:description" content="Enjoy Coding">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190602153226271.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190602154459623.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190602154535536.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190602154643723.png">
-<meta property="og:updated_time" content="2019-06-02T07:58:46.768Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Springboot整合Redis的一些常用操作">
-<meta name="twitter:description" content="RedisTemplate位于spring-data-redis包下。RedisTemplate提供了redis各种操作、异常处理及序列化，支持发布订阅。 一、Redis的五种类型常用操作：使用RedisTemeplate  在maven中添加依赖(下面只是主要的部分依赖) 1234&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.springframework.b">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190602153226271.png">
+<meta name="twitter:title" content="Zph、ForMe">
+<meta name="twitter:description" content="Enjoy Coding">
   
     <link rel="alternative" href="/atom.xml" title="Zph、ForMe" type="application/atom+xml">
   
@@ -164,186 +158,222 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Springboot整合Redis的一些常用操作" class="article article-type-post " itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Springboot整合Redis的一些常用操作
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/Java并发之AQS结构及原理分析.html" class="archive-article-date">
+  	<time datetime="2019-09-15T08:20:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-15</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/Java并发之AQS结构及原理分析.html">Java并发之AQS结构及原理分析</a>
     </h1>
   
 
-        
-        
-        <!-- 不蒜子统计 -->
-        <span id="busuanzi_container_page_pv" style="display:none" class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/Springboot整合Redis的一些常用操作.html" class="archive-article-date">
-  	<time datetime="2019-06-02T07:57:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>RedisTemplate位于spring-data-redis包下。RedisTemplate提供了redis各种操作、异常处理及序列化，支持发布订阅。</p>
-<font size="4" color="red">一、Redis的五种类型常用操作：使用RedisTemeplate</font>
-
-<p>在maven中添加依赖(下面只是主要的部分依赖)</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-<p>spring-data-redis针对jedis提供了如下功能：</p>
-<p>1.连接池自动管理，提供了一个高度封装的“RedisTemplate”类<br>2.针对jedis客户端中大量api进行了归类封装,将同一类型操作封装为operation接口<br><a id="more"></a><br>ValueOperations：简单K-V操作<br>SetOperations：set类型数据操作<br>ZSetOperations：zset类型数据操作<br>HashOperations：针对map类型的数据操作<br>ListOperations：针对list类型的数据操作</p>
-<p>RedisTemplate对五种类型的操作方式如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">redisTemplate.opsForValue();<span class="comment">//操作字符串</span></span><br><span class="line">redisTemplate.opsForHash();<span class="comment">//操作hash</span></span><br><span class="line">redisTemplate.opsForList();<span class="comment">//操作list</span></span><br><span class="line">redisTemplate.opsForSet();<span class="comment">//操作set</span></span><br><span class="line">redisTemplate.opsForZSet();<span class="comment">//操作有序set</span></span><br></pre></td></tr></table></figure>
-<p>或者使用下面的方式</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">redistempalate.boundValueOps</span><br><span class="line">redistempalate.boundSetOps</span><br><span class="line">redistempalate.boundListOps</span><br><span class="line">redistempalate.boundHashOps</span><br><span class="line">redistempalate.boundZSetOps</span><br></pre></td></tr></table></figure>
-<p><strong>opsForXXX和boundXXXOps的区别？</strong></p>
-<p>前者获取一个operator，但是没有指定操作的对象（key），可以在一个连接（事务）内操作多个key以及对应的value；后者获取了一个指定操作对象（key）的operator，在一个连接（事务）内只能操作这个key对应的value。</p>
-<p>1、Value(值)类型</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedisTest</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> RedisTemplate redisTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testValue</span><span class="params">()</span></span>&#123;</span><br><span class="line">        redisTemplate.boundValueOps(<span class="string">"testValue1"</span>).set(<span class="string">"value1"</span>,<span class="number">60</span>,TimeUnit.SECONDS); <span class="comment">//设置过期时间为60秒，60秒后自动删除</span></span><br><span class="line">        redisTemplate.boundValueOps(<span class="string">"testValue2"</span>).set(<span class="string">"value2"</span>);</span><br><span class="line"><span class="comment">//        redisTemplate.boundValueOps("testValue2").set("22222",3); //把testValue2的前三位置换为22222</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getValue</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Object o1 = redisTemplate.boundValueOps(<span class="string">"testValue1"</span>).get();</span><br><span class="line">        Object o2 = redisTemplate.boundValueOps(<span class="string">"testValue2"</span>).get();</span><br><span class="line">        System.out.println(o1 + <span class="string">" "</span>  + o2);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果打印：value1、value2</p>
-<p>可以使用<code>redisTemplate.delete(&quot;testValue2&quot;);</code>进行删除操作</p>
-<p>2、list类型</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">listTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">        redisTemplate.boundListOps(<span class="string">"list"</span>).leftPush(<span class="string">"aaa"</span>);</span><br><span class="line">        redisTemplate.boundListOps(<span class="string">"list"</span>).leftPush(<span class="string">"aaa"</span>);</span><br><span class="line">        redisTemplate.boundListOps(<span class="string">"list"</span>).leftPush(<span class="string">"aaa"</span>);</span><br><span class="line">        redisTemplate.boundListOps(<span class="string">"list"</span>).leftPush(<span class="string">"bbb"</span>);</span><br><span class="line">        redisTemplate.boundListOps(<span class="string">"list"</span>).rightPush(<span class="string">"ccc"</span>);</span><br><span class="line">        redisTemplate.boundListOps(<span class="string">"list"</span>).rightPush(<span class="string">"ddd"</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getList</span><span class="params">()</span></span>&#123;</span><br><span class="line">        List list = redisTemplate.boundListOps(<span class="string">"list"</span>).range(<span class="number">0</span>,<span class="number">10</span>); <span class="comment">//查询，range(0,10)会查询出0-10的元素</span></span><br><span class="line">        System.out.println(list);</span><br><span class="line">        System.out.println(redisTemplate.boundValueOps(<span class="string">"list"</span>).getKey()); <span class="comment">//获取key值</span></span><br><span class="line">        redisTemplate.boundListOps(<span class="string">"list"</span>).remove(<span class="number">2</span>,<span class="string">"aaa"</span>); <span class="comment">//删除两个个aaa</span></span><br><span class="line"></span><br><span class="line">        List list1 = redisTemplate.boundListOps(<span class="string">"list"</span>).range(<span class="number">0</span>,<span class="number">10</span>); <span class="comment">//查询，range(0,10)会查询出0-10的元素</span></span><br><span class="line">        System.out.println(list1);</span><br><span class="line">        redisTemplate.boundListOps(<span class="string">"list"</span>).expire(<span class="number">60</span>,TimeUnit.SECONDS); <span class="comment">//设置60秒后过期</span></span><br><span class="line"></span><br><span class="line">        System.out.println(redisTemplate.boundListOps(<span class="string">"list"</span>).index(<span class="number">1</span>)); <span class="comment">//根据索引获取值</span></span><br><span class="line">        System.out.println(redisTemplate.boundListOps(<span class="string">"list"</span>).leftPop()); <span class="comment">//bbb,打印左边起第一个元素值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>3、set类型：无序、不可重复</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">    redisTemplate.boundSetOps(<span class="string">"set"</span>).add(<span class="string">"aaa"</span>);</span><br><span class="line">    redisTemplate.boundSetOps(<span class="string">"set"</span>).add(<span class="string">"bbb"</span>);</span><br><span class="line">    redisTemplate.boundSetOps(<span class="string">"set"</span>).add(<span class="string">"ccc"</span>);</span><br><span class="line">    redisTemplate.boundSetOps(<span class="string">"set"</span>).add(<span class="string">"ddd"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Set set = redisTemplate.boundSetOps(<span class="string">"set"</span>).members();</span><br><span class="line">    System.out.println(set); <span class="comment">//[bbb, ccc, aaa, ddd]</span></span><br><span class="line">    redisTemplate.boundSetOps(<span class="string">"set"</span>).remove(<span class="string">"aaa"</span>);<span class="comment">//删除aaa这个元素</span></span><br><span class="line">    redisTemplate.delete(<span class="string">"set"</span>); <span class="comment">//删除整个集合</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>4、ZSet</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">zsetTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">    redisTemplate.boundZSetOps(<span class="string">"zset"</span>).add(<span class="string">"aaa"</span>,<span class="number">1</span>);</span><br><span class="line">    redisTemplate.boundZSetOps(<span class="string">"zset"</span>).add(<span class="string">"bbb"</span>,<span class="number">2</span>);</span><br><span class="line">    redisTemplate.boundZSetOps(<span class="string">"zset"</span>).add(<span class="string">"ccc"</span>,<span class="number">3</span>);</span><br><span class="line">    redisTemplate.boundZSetOps(<span class="string">"zset"</span>).add(<span class="string">"ddd"</span>,<span class="number">4</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Set zset = redisTemplate.boundZSetOps(<span class="string">"zset"</span>).range(<span class="number">0</span>,<span class="number">10</span>);</span><br><span class="line">    System.out.println(zset); <span class="comment">//[aaa, bbb, ccc, ddd]</span></span><br><span class="line"></span><br><span class="line">    redisTemplate.boundZSetOps(<span class="string">"zset"</span>).removeRange(<span class="number">0</span>,<span class="number">2</span>); <span class="comment">//删除0-2的元素，共三个</span></span><br><span class="line"></span><br><span class="line">    Set zset1 = redisTemplate.boundZSetOps(<span class="string">"zset"</span>).range(<span class="number">0</span>,<span class="number">10</span>);</span><br><span class="line">    System.out.println(zset1); <span class="comment">//[ddd]</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>5、hash类型</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hashTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">    redisTemplate.boundHashOps(<span class="string">"hash"</span>).put(<span class="string">"1"</span>, <span class="string">"a"</span>);</span><br><span class="line">    redisTemplate.boundHashOps(<span class="string">"hash"</span>).put(<span class="string">"2"</span>, <span class="string">"b"</span>);</span><br><span class="line">    redisTemplate.boundHashOps(<span class="string">"hash"</span>).put(<span class="string">"3"</span>, <span class="string">"c"</span>);</span><br><span class="line">    redisTemplate.boundHashOps(<span class="string">"hash"</span>).put(<span class="string">"4"</span>, <span class="string">"d"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getHashTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">    List hash = redisTemplate.boundHashOps(<span class="string">"hash"</span>).values();</span><br><span class="line">    System.out.println(hash);</span><br><span class="line"></span><br><span class="line">    Set set = redisTemplate.boundHashOps(<span class="string">"hash"</span>).keys();</span><br><span class="line">    System.out.println(set);</span><br><span class="line"></span><br><span class="line">    Object o = redisTemplate.boundHashOps(<span class="string">"hash"</span>).get(<span class="string">"1"</span>);</span><br><span class="line">    System.out.println(o);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * [a, b, c, d]</span></span><br><span class="line"><span class="comment">     * [1, 2, 3, 4]</span></span><br><span class="line"><span class="comment">     * a</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>推荐阅读：<a href="https://blog.csdn.net/striveb/article/details/83745680" target="_blank" rel="noopener"><strong>使用RedisTemplate操作Redis数据库</strong></a></p>
-<p>注意：上面五种类型都可以使用redisTemeplate的expire(long l,TimeUnit timeUnit)函数设置过期时间。<br>TimeUnit有时分秒天等，如下图所示<br><img src="https://img-blog.csdnimg.cn/20190602153226271.png" alt="在这里插入图片描述"></p>
-<font size="4" color="red">二、RedisTemplate和StringRedisTemplate的区别</font>
-
-<p>1、StringRedisTemplate继承RedisTemplate；</p>
-<p>2、两者的数据是不共通的；也就是说StringRedisTemplate只能管理StringRedisTemplate里面的数据，RedisTemplate只能管理RedisTemplate中的数据</p>
-<p>3、序列化方式不同<br>StringRedisTemplate默认采用的是String的序列化策略，保存的key和value都是采用此策略序列化保存的；<br>RedisTemplate默认采用的是JDK的序列化策略，保存的key和value都是采用此策略序列化保存的。</p>
-<p>RedisTemplate使用的序列类在在操作数据的时候，比如说存入数据会将数据先序列化成字节数组然后在存入Redis数据库，这个时候打开Redis查看的时候，你会看到你的数据不是以可读的形式展现的，而是以字节数组显示，类似下面<br><img src="https://img-blog.csdnimg.cn/20190602154459623.png" alt="在这里插入图片描述"><br>当然从Redis获取数据的时候也会默认将数据当做字节数组转化，这样就会导致一个问题，当需要获取的数据不是以字节数组存在redis当中而是正常的可读的字符串的时候，比如说下面这种形式的数据</p>
-<p><img src="https://img-blog.csdnimg.cn/20190602154535536.png" alt="在这里插入图片描述"><br>RedisTemplate就无法获取导数据，这个时候获取到的值就是NULL。这个时候StringRedisTempate就派上了用场。</p>
-<p>当Redis当中的数据值是以可读的形式显示出来的时候，只能使用StringRedisTemplate才能获取到里面的数据。</p>
-<p>所以当你使用RedisTemplate获取不到数据的时候请检查一下是不是Redis里面的数据是可读形式而非字节数组</p>
-<p>对上面的进行测试也可得到答案</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getTest1</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.println(redisTemplate.boundValueOps(<span class="string">"test"</span>).get());</span><br><span class="line">    System.out.println(stringRedisTemplate.boundValueOps(<span class="string">"test"</span>).get());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果：<br><img src="https://img-blog.csdnimg.cn/20190602154643723.png" alt="在这里插入图片描述"><br>参考文章：<a href="https://blog.csdn.net/yifanSJ/article/details/79513179" target="_blank" rel="noopener"><strong>RedisTemplate和StringRedisTemplate的区别</strong></a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">RedisTemplate常用操作</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">AQS</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Redis//" class="article-tag-list-link color1">Redis</a>
+        			<a href="/categories/并发//" class="article-tag-list-link color3">并发</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
-  
-    <a href="/AMQP协议的理解.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          AMQP协议的理解
-        
-      </div>
-    </a>
-  
-  
-    <a href="/Redis相关知识.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Redis相关知识</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/Java线程同步之volatile关键字.html" class="archive-article-date">
+  	<time datetime="2019-09-10T11:01:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
+</a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/Java线程同步之volatile关键字.html">Java线程同步之volatile关键字</a>
+    </h1>
   
 
-  
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'true' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "11btHRKRUnSiCwm7nxQ6MqvJ-gzGzoHsz",
-            app_key: "AA0vgaQmApd786vhE4gJcJER",
-            placeholder: "Say Something!",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">volatile</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
+          
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/并发//" class="article-tag-list-link color3">并发</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
   
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/Java多线程之synchronized关键字.html" class="archive-article-date">
+  	<time datetime="2019-09-09T14:45:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-09</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/Java多线程之synchronized关键字.html">Java多线程之synchronized关键字</a>
+    </h1>
   
 
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">synchronized</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/并发//" class="article-tag-list-link color3">并发</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/Java多线程基础知识.html" class="archive-article-date">
+  	<time datetime="2019-09-09T11:56:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-09</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/Java多线程基础知识.html">Java多线程基础知识</a>
+    </h1>
   
 
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/并发//" class="article-tag-list-link color3">并发</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
   
 
-  
+    
 
 
           </div>
@@ -379,10 +409,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
-		isCategory: false,
+		isCategory: true,
 		open_in_new: true,
 		toc_hide_index: true,
 		root: "/",
