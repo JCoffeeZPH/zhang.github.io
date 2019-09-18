@@ -160,6 +160,111 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java并发编程之同步工具类" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/Java并发编程之同步工具类.html">Java并发编程之同步工具类</a>
+    </h1>
+  
+
+        
+        
+<a href="/Java并发编程之同步工具类.html" class="archive-article-date">
+  	<time datetime="2019-09-18T09:06:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="三种同步工具类"><a href="#三种同步工具类" class="headerlink" title="三种同步工具类"></a>三种同步工具类</h3><p>Java为我们提供了三种同步工具类，以便更好的控制线程间的通信，如下：<br>①、闭锁<br>②、信号量<br>③、栅栏</p>
+<h4 id="一、闭锁"><a href="#一、闭锁" class="headerlink" title="一、闭锁"></a>一、闭锁</h4><p>闭锁可以延迟线程的进度直到其达到终止状态。可以用来确保某些活动在其他活动都完成之后再新执行，例如：<br>①、确保计算机所需要的资源都被初始化之后在继续执行。<br>②、确保某个服务再起所依赖的服务都完成之后再执行。<br>③、等待某个操作的所有参与者都参与进来之后在执行下一步的操作(王者荣耀游戏的所有玩家都准备就绪才开始游戏)。</p>
+<h5 id="CountDownLatch实现闭锁"><a href="#CountDownLatch实现闭锁" class="headerlink" title="CountDownLatch实现闭锁"></a>CountDownLatch实现闭锁</h5><p>CountDownLatch是一种灵活的闭锁实现，它能够使一个或多个线程等待一组事件的发生。CountDownLatch初始化参数为一个整数，表示需要等待的事件的数量，countDown()方法其实就是一个递减计数器，await()方法表示的是等待计数器的值为0，当等待计数器的值为0的时候，表示的是所有需要等待的事件都已经完成了；如果计数器的值非0，则await()方法会一直阻塞到等待计数器值为0。下面是一个简单的实例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestCountDownLatch</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">final</span> CountDownLatch countDownLatch = <span class="keyword">new</span> CountDownLatch(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    countDownLatch.await();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">                System.out.println(<span class="string">"老师们都走了，我可以走了"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).start();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                    System.out.println(<span class="string">"老师xxx走了"</span>);</span><br><span class="line">                    countDownLatch.countDown();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;).start();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">老师xxx走了</span><br><span class="line">老师xxx走了</span><br><span class="line">老师xxx走了</span><br><span class="line">老师xxx走了</span><br><span class="line">老师xxx走了</span><br><span class="line">老师们都走了，我可以走了</span><br></pre></td></tr></table></figure>
+<p>总结：CountDownLatch首先会初始化来设置需要等待的线程数，然后在需要被等待的线程执行完成之后调用countDown()方法来让等待计数器的值减一，在需要等待其他线程的线程中调用await()方法，让此线程阻塞到等待计数器的值为0。</p>
+<h3 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h3><p>信号量其实就是控制可以同时访问的线程的个数，它维护着一组虚拟的 <strong>“permit”</strong>，只有拥有permit的线程才能够执行，否则不能执行。</p>
+<h4 id="Semaphore实现信号量"><a href="#Semaphore实现信号量" class="headerlink" title="Semaphore实现信号量"></a>Semaphore实现信号量</h4><p>使用Semaphore的大致流程如下：<br>①、当调用acquire()方法时会获取到一个“permit”，permit的个数对应减一；<br>②、当调用release方法时会归还一个“permit”，permit加一。<br>示例如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestSamephore</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">final</span> Semaphore semaphore = <span class="keyword">new</span> Semaphore(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">50</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">final</span> <span class="keyword">int</span> nowI = i;</span><br><span class="line">            <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        semaphore.acquire();</span><br><span class="line">                        System.out.println(<span class="string">"编号为："</span> +nowI + <span class="string">" 的顾客在挑选商品......"</span>);</span><br><span class="line">                        Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">                        System.out.println(<span class="string">"编号为："</span> +nowI + <span class="string">" 的顾客挑选完成!!!!!!"</span>);</span><br><span class="line">                        semaphore.release();</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;).start();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>运行结果：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line">编号为：<span class="number">1</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">43</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">2</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">47</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">50</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">48</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">44</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">42</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">45</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">3</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">1</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">4</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">43</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">16</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">2</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">7</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">47</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">13</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">50</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">12</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">3</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">45</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">17</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">42</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">11</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">44</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">15</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">48</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">21</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">5</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">4</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">10</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">7</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">16</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">14</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">38</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">13</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">6</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">5</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">11</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">17</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">12</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">18</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">40</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">20</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">15</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">21</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">25</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">37</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">35</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">10</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">31</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">14</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">36</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">38</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">34</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">6</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">19</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">20</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">18</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">40</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">33</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">22</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">27</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">25</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">37</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">30</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">35</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">23</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">26</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">31</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">32</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">36</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">29</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">19</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">34</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">24</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">28</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">22</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">33</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">39</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">41</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">27</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">49</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">23</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">30</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">26</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">9</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">8</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">46</span> 的顾客在挑选商品......</span><br><span class="line">编号为：<span class="number">32</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">29</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">28</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">24</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">39</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">41</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">49</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">46</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">8</span> 的顾客挑选完成!!!!!!</span><br><span class="line">编号为：<span class="number">9</span> 的顾客挑选完成!!!!!!</span><br></pre></td></tr></table></figure>
+<p>每次最多店铺里有是个人在挑选商品。</p>
+<h3 id="三、栅栏"><a href="#三、栅栏" class="headerlink" title="三、栅栏"></a>三、栅栏</h3><p>栅栏允许一组线程互相等待，直到到达某个公共屏障点，栅栏可以被重用，而CountDownLatch不能。</p>
+<p><strong>CountDownLatch注重的是等待其他线程完成，栅栏注重的是：当线程到达某个状态后，暂停下来等待其他线程，所有线程均到达以后，继续执行。</strong> </p>
+<p>简单的例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestCyclicBarrier</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">final</span> CyclicBarrier cyclicBarrier = <span class="keyword">new</span> CyclicBarrier(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">final</span> <span class="keyword">int</span> nowI = i;</span><br><span class="line">            <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                    System.out.println(nowI + <span class="string">" 到达饭店"</span>);</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        cyclicBarrier.await();</span><br><span class="line">                        System.out.println(nowI + <span class="string">" 和四个朋友在吃饭"</span>);</span><br><span class="line"></span><br><span class="line">                        cyclicBarrier.await();</span><br><span class="line">                        System.out.println(<span class="string">"五个人一起聊天"</span>);</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (BrokenBarrierException e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;).start();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> 到达饭店</span><br><span class="line"><span class="number">2</span> 到达饭店</span><br><span class="line"><span class="number">3</span> 到达饭店</span><br><span class="line"><span class="number">4</span> 到达饭店</span><br><span class="line"><span class="number">5</span> 到达饭店</span><br><span class="line"><span class="number">5</span> 和四个朋友在吃饭</span><br><span class="line"><span class="number">4</span> 和四个朋友在吃饭</span><br><span class="line"><span class="number">1</span> 和四个朋友在吃饭</span><br><span class="line"><span class="number">3</span> 和四个朋友在吃饭</span><br><span class="line"><span class="number">2</span> 和四个朋友在吃饭</span><br><span class="line">五个人一起聊天</span><br><span class="line">五个人一起聊天</span><br><span class="line">五个人一起聊天</span><br><span class="line">五个人一起聊天</span><br><span class="line">五个人一起聊天</span><br></pre></td></tr></table></figure>
+<p>从运行结果看出：当有人到了之后就回等待，直到五个人全部到了之后才开始吃饭，也就是先到的等待未到的全部到达之后在进行下一步。</p>
+<p>参考：<strong>&lt;&lt; Java 并发编程实战 &gt;&gt;</strong></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">同步工具类</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/并发//" class="article-tag-list-link color3">并发</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/Java并发编程之同步工具类.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java并发之AQS结构及原理分析" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -941,95 +1046,6 @@
 
 
   
-    <article id="post-NIO总览" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/NIO总览.html">NIO总览</a>
-    </h1>
-  
-
-        
-        
-<a href="/NIO总览.html" class="archive-article-date">
-  	<time datetime="2019-06-04T08:06:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Java NIO 是 java 1.4 之后新出的一套IO接口，这里的新是相对于原有标准的Java IO和Java Networking接口。NIO提供了一种完全不同的操作方式。NIO中的N可以理解为<strong>Non-blocking</strong>，即非阻塞，不单是New。name为什么要使用 NIO? NIO 的创建目的是为了让 Java 程序员可以实现高速 I/O 而无需编写自定义的本机代码。NIO 将最耗时的 I/O 操作(即填充和提取缓冲区)转移回操作系统，因而可以极大地提高速度。</p>
-<font size="4" color="red">一、IO与NIO的区别</font>
-
-<p><strong>Channels and Buffers（通道和缓冲区）：</strong> 标准的IO基于字节流和字符流进行操作的，而NIO是基于通道（Channel）和缓冲区（Buffer）进行操作，数据总是从通道读取到缓冲区中，或者从缓冲区写入到通道中。（ <code>NIO中的所有I/O操作都是通过一个通道开始的</code>）Java IO面向流意味着每次从流中读一个或多个字节，直至读取所有字节，它们没有被缓存在任何地方；<br>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">NIO总览</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/NIO//" class="article-tag-list-link color4">NIO</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/NIO总览.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1144,15 +1160,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">集合类之ArrayList和LinkedList</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JVM运行时数据区</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JSP</a>
+                <a href="javascript:void(0)" class="js-tag color5">集合类之ArrayList和LinkedList</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HTTP协议</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1160,7 +1176,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">cookie与session</a>
+                <a href="javascript:void(0)" class="js-tag color3">Servlet</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1168,11 +1184,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Servlet</a>
+                <a href="javascript:void(0)" class="js-tag color4">JSP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">代理模式</a>
+                <a href="javascript:void(0)" class="js-tag color5">cookie与session</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1188,7 +1204,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">单例模式</a>
+                <a href="javascript:void(0)" class="js-tag color1">同步工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1196,11 +1212,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">装饰模式</a>
+                <a href="javascript:void(0)" class="js-tag color5">单例模式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HTTP协议</a>
+                <a href="javascript:void(0)" class="js-tag color5">装饰模式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1208,19 +1224,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">代理模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">involve方法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">入门</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">NIO之Buffer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">NIO之Selector</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1228,11 +1236,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">NIO总览</a>
+                <a href="javascript:void(0)" class="js-tag color1">动态SQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">动态SQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">NIO之Buffer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">NIO总览</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1240,7 +1252,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SAX解析XML</a>
+                <a href="javascript:void(0)" class="js-tag color3">NIO之Selector</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Spring入门</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1260,10 +1276,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Spring入门</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Spring基础知识</a>
               </li>
              
@@ -1272,15 +1284,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color3">入门</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">RedisTemplate常用操作</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color4">SAX解析XML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1288,19 +1296,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">集合类之HashSet和TreeSet</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链表</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">project</a>
+                <a href="javascript:void(0)" class="js-tag color3">RedisTemplate常用操作</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">顺序表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">project</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1312,7 +1324,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">散列表</a>
+                <a href="javascript:void(0)" class="js-tag color5">集合类之HashSet和TreeSet</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">synchromized关键字</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1320,7 +1340,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">synchromized关键字</a>
+                <a href="javascript:void(0)" class="js-tag color4">散列表</a>
               </li>
             
             <div class="clearfix"></div>
