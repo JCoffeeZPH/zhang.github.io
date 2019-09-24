@@ -6,22 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jcoffeezph.top">
-  <title>Tomcat结构及重要配置项 | Zph、ForMe</title>
+  <title>Java并发之ThreadLocal简析 | Zph、ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="说明： 关于Tomcat是什么以及Tomcat有什么用，这里不做解释，如果对以上两个问题仍存在疑问，请百度。理解一个框架的最好办法是看源码，但有时候可能会看不懂，所以，这里不看源码(因为可能没什么用)，只看官方文档。我用的是Tomcat-9.0，想看官方文档的可以点击这个链接Tomcat-9.0文档 一、首先了解下Tomcat的各个目录有什么用">
-<meta name="keywords" content="Tomcat">
+  <meta name="description" content="综述从ThreadLocal的源码开始的注释上可以了解到如下内容： These variables differ fromtheir normal counterparts in that each thread that accesses one (via its{@code get} or {@code set} method) has its own, independently initi">
+<meta name="keywords" content="ThreadLocal">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tomcat结构及重要配置项">
-<meta property="og:url" content="https://jcoffeezph.top/Tomcat结构及重要配置项.html">
+<meta property="og:title" content="Java并发之ThreadLocal简析">
+<meta property="og:url" content="https://jcoffeezph.top/Java并发之ThreadLocal简析.html">
 <meta property="og:site_name" content="Zph、ForMe">
-<meta property="og:description" content="说明： 关于Tomcat是什么以及Tomcat有什么用，这里不做解释，如果对以上两个问题仍存在疑问，请百度。理解一个框架的最好办法是看源码，但有时候可能会看不懂，所以，这里不看源码(因为可能没什么用)，只看官方文档。我用的是Tomcat-9.0，想看官方文档的可以点击这个链接Tomcat-9.0文档 一、首先了解下Tomcat的各个目录有什么用">
+<meta property="og:description" content="综述从ThreadLocal的源码开始的注释上可以了解到如下内容： These variables differ fromtheir normal counterparts in that each thread that accesses one (via its{@code get} or {@code set} method) has its own, independently initi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190416192813579.png">
-<meta property="og:updated_time" content="2019-04-24T12:08:19.262Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190924225941512.png">
+<meta property="og:updated_time" content="2019-09-24T15:04:58.487Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tomcat结构及重要配置项">
-<meta name="twitter:description" content="说明： 关于Tomcat是什么以及Tomcat有什么用，这里不做解释，如果对以上两个问题仍存在疑问，请百度。理解一个框架的最好办法是看源码，但有时候可能会看不懂，所以，这里不看源码(因为可能没什么用)，只看官方文档。我用的是Tomcat-9.0，想看官方文档的可以点击这个链接Tomcat-9.0文档 一、首先了解下Tomcat的各个目录有什么用">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190416192813579.png">
+<meta name="twitter:title" content="Java并发之ThreadLocal简析">
+<meta name="twitter:description" content="综述从ThreadLocal的源码开始的注释上可以了解到如下内容： These variables differ fromtheir normal counterparts in that each thread that accesses one (via its{@code get} or {@code set} method) has its own, independently initi">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190924225941512.png">
   
     <link rel="alternative" href="/atom.xml" title="Zph、ForMe" type="application/atom+xml">
   
@@ -161,14 +161,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Tomcat结构及重要配置项" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-Java并发之ThreadLocal简析" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Tomcat结构及重要配置项
+      Java并发之ThreadLocal简析
     </h1>
   
 
@@ -179,25 +179,43 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/Tomcat结构及重要配置项.html" class="archive-article-date">
-  	<time datetime="2019-04-17T03:29:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
+<a href="/Java并发之ThreadLocal简析.html" class="archive-article-date">
+  	<time datetime="2019-09-24T15:04:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>说明：</strong> 关于Tomcat是什么以及Tomcat有什么用，这里不做解释，如果对以上两个问题仍存在疑问，请百度。<br>理解一个框架的最好办法是看源码，但有时候可能会看不懂，所以，这里不看源码(因为可能没什么用)，只看官方文档。我用的是Tomcat-9.0，想看官方文档的可以点击这个链接<a href="http://tomcat.apache.org/tomcat-9.0-doc/config/server.html" target="_blank" rel="noopener">Tomcat-9.0文档</a></p>
-<p><font size="4" color="red">一、首先了解下Tomcat的各个目录有什么用</font><br><img src="https://img-blog.csdnimg.cn/20190416192813579.png" alt="在这里插入图片描述"><br><a id="more"></a><br>可以看到Tomcat的目录，作如下解释：<br>1、bin目录：保存了Tomcat服务器的各个脚本，如开启和关闭等<br>2、conf目录：保存了Tomcat的配置文件，server.xml啊、web.xml等都在这里<br>3、lib目录：这是我们所熟悉的，是各种jar包的目录<br>4、log目录：也很容易识别，是保存日志用的<br>5、temp目录：是Tomcat运行时产生的文件<br>6、webapps目录：供外界访问的资源的目录<br>7、work目录：Tomcat的工作目录</p>
-<p><strong>插入：</strong> 根据本人最近的学习发现，webapps是Tomcat供外界访问资源的目录所在地，但是每次重启Tomcat这里面ROOT目录下的资源就会重新加载，换句话说就是：当你重启Tomcat之后，之前上传到服务器的文件啊、图片啊都会消失。针对这一现象有两种解决方案：第一种就是上传文件资源和webapps目录下的ROOT目录在同一级，这样就重启之后就不会把之前的资源丢掉了；还有一种方法就是把上传的文件保存在本地磁盘里，利用虚拟目录进行映射，关于IDEA如何设置虚拟目录参考这篇文章：<a href="https://blog.csdn.net/cheney550995353/article/details/70185282" target="_blank" rel="noopener">IDEA设置虚拟目录</a>。</p>
-<p><font size="4" color="red">二、Tomcat重要配置</font><br>如果我们想要改变Tomcat的某些配置怎么办呢？比如说改变访问时的8080端口，加载本地磁盘中的其他文件等等，我们可以去conf/server.xml文件下进行修改。下面对其中的各个标签根据官方文档进行说明。<br>1、&lt; Server &gt;标签，是整个servlet容器，必须是唯一的，而且必须是最外面标签(解释：这里的唯一说的是只在一个JVM中，一般一个JVM只能支持一个Tomcat ，如果同时运行多个JVM当然可以运行多个Tomcat)。看下都有哪些比较常用的属性：<br>|||<br>|–|–|<br>| className | 必须实现org.apache.catalina.Server 接口，没有实现时默认标准 |<br>|address|服务器等待关机命令的TCP / IP地址。如果没有指定地址，则使用localhost|<br>|port|服务器等待关机命令的TCP / IP端口号。设置为-1以禁用关闭端口|<br>|shutdown| 必须通过TCP / IP连接接收到指定端口号的命令字符串，以关闭Tomcat|</p>
-<p>2、&lt; Service &gt;标签，表示一个或多个连接器组件的组合，这些组件共享一个用于处理传入请求的引擎组件，Server下可以有多个Service<br>|  |  |<br>|–|–|<br>| className | 默认必须实现org.apache.catalina.Service，否则采取标准 |<br>|name|顾名思义是Service的名字，如果采用的还Catalina，service的名字将会包含在log中，name必须唯一|</p>
-<p>3、&lt; Executor &gt;，该标签表示可在组件之间共享的线程池，必须嵌套在Service标签内，为了能被连接器失去，必须出现在&lt; Connector &gt;之前。部分重要属性：<br>|  |  |<br>|–|–|<br>|threadPriority  | 线程优先级，默认为5 |<br>|maxThreads|最大活跃线程数，默认为200|<br>|minSpareThreads|最小活跃线程数，默认为25|<br>|maxIdleTime|活跃线程数大于最小活跃线程数时，空闲线程关闭等待最大时间，默认为60000ms(一分钟)|<br>|maxQueueSize|线程池满情况下的请求排队大小，默认为Integer.MAX_VALUE|</p>
-<p>4、&lt; Connector &gt;、Tomcat支持三种协议：HTTP/1.1、HTTP/2和AJP，关于Connector标签可以上官网上查看具体的使用方法，这里给出源文档中的使用，如下</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;Connector port=<span class="string">"8080"</span> protocol=<span class="string">"HTTP/1.1"</span></span><br><span class="line">               connectionTimeout=<span class="string">"20000"</span></span><br><span class="line">               redirectPort=<span class="string">"8443"</span> /&gt;</span><br><span class="line">&lt;Connector port=<span class="string">"8009"</span> protocol=<span class="string">"AJP/1.3"</span> redirectPort=<span class="string">"8443"</span> /&gt;</span><br></pre></td></tr></table></figure>
-<p>5、&lt; Context &gt;、在特定的虚拟机中运行，每个Web应用程序都基于Web应用程序归档 （WAR）文件或包含相应解压缩内容的相应目录。可以根据需要定义任意数量的Context元素，名称必须唯一，上下文路径不需要唯一。并不推荐直接将&lt; Context &gt;直接放在server.xml中，因为这样在不重启Tomcat时不会重新加载配置文件，而且这样是的修改<br>&lt; Context &gt;更具有侵入性，默认的Context元素（见下文）也将 覆盖直接放在server.xml中的任何&lt; Context &gt;元素的配置。为防止这种情况，override 应将server.xml中定义的<br>&lt; Context &gt;元素的属性设置为true。具体属性不展示。</p>
-<p>5、&lt; Engine &gt;、Engine元素表示与特定的Catalina服务相关联的整个请求处理机器。它接收并处理来自一个或多个连接器的所有请求，并将完成的响应返回给连接器，以便最终传输回客户端。</p>
-<p>6、&lt; Host &gt;、表示一个虚拟主机，它是一个服务器的网络(如“<a href="http://www.mycompany.com”）与运行Tomcat的特定服务器的关联。要使客户端能够使用其网络名称连接到Tomcat服务器，必须在管理您所属的Internet域的域名服务（DNS）服务器中注册此名称-" target="_blank" rel="noopener">www.mycompany.com”）与运行Tomcat的特定服务器的关联。要使客户端能够使用其网络名称连接到Tomcat服务器，必须在管理您所属的Internet域的域名服务（DNS）服务器中注册此名称-</a> 有关详细信息，请与网络管理员联系。一个或多个Host元素嵌套在 Engine元素中。在Host元素内，您可以为与此虚拟主机关联的Web应用程序嵌套Context元素。</p>
+        <h3 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h3><p>从ThreadLocal的源码开始的注释上可以了解到如下内容：</p>
+<p><strong>These variables differ fromtheir normal counterparts in that each thread that accesses one (via its{@code get} or {@code set} method) has its own, independently initialized<br>copy of the variable.  {@code ThreadLocal} instances are typically private static fields in classes that wish to associate state with a thread (e.g.,a user ID or Transaction ID).</strong><br>也即是每个线程都有自己的共享变量，他是用来提供线程内部的共享变量。在多线程的环境下以保证不同线程变量间的相互独立和互不影响。通俗点说就是ThreadLocal能够保证当前线程使用的变量(不管在哪里只要是此线程在执行)是同一个(对这句话进行下面这个测试)：<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadLocalTestUtil</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> ThreadLocal threadLocal = <span class="keyword">new</span> ThreadLocal();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.run();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)&#123;</span><br><span class="line">            threadLocal.set(i);</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">" "</span> + threadLocal.get());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadLocalTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> ThreadLocalTestUtil().start();</span><br><span class="line">        <span class="keyword">new</span> ThreadLocalTestUtil().start();</span><br><span class="line">        <span class="keyword">new</span> ThreadLocalTestUtil().start();</span><br><span class="line">        <span class="keyword">new</span> ThreadLocalTestUtil().start();</span><br><span class="line">        <span class="keyword">new</span> ThreadLocalTestUtil().start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结果如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Thread-<span class="number">1</span> <span class="number">0</span></span><br><span class="line">Thread-<span class="number">1</span> <span class="number">1</span></span><br><span class="line">Thread-<span class="number">1</span> <span class="number">2</span></span><br><span class="line">Thread-<span class="number">0</span> <span class="number">0</span></span><br><span class="line">Thread-<span class="number">0</span> <span class="number">1</span></span><br><span class="line">Thread-<span class="number">4</span> <span class="number">0</span></span><br><span class="line">Thread-<span class="number">4</span> <span class="number">1</span></span><br><span class="line">Thread-<span class="number">3</span> <span class="number">0</span></span><br><span class="line">Thread-<span class="number">4</span> <span class="number">2</span></span><br><span class="line">Thread-<span class="number">2</span> <span class="number">0</span></span><br><span class="line">Thread-<span class="number">2</span> <span class="number">1</span></span><br><span class="line">Thread-<span class="number">2</span> <span class="number">2</span></span><br><span class="line">Thread-<span class="number">0</span> <span class="number">2</span></span><br><span class="line">Thread-<span class="number">3</span> <span class="number">1</span></span><br><span class="line">Thread-<span class="number">3</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>可以看到，因为ThreadLocalTestUtil的run方法没有使用同步，多个线程执行时会存在一些问题，但是因为每个线程执行时都会创建属于自己的ThreadLocal实例，所以，运行结果不会出现混乱，结果正常打印。</p>
+<h4 id="1、ThreadLocal的实现原理-jdk-10"><a href="#1、ThreadLocal的实现原理-jdk-10" class="headerlink" title="1、ThreadLocal的实现原理(jdk-10)"></a>1、ThreadLocal的实现原理(jdk-10)</h4><ul>
+<li>ThreadLocal的get()方法<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> T <span class="title">get</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Thread t = Thread.currentThread();</span><br><span class="line">        ThreadLocalMap map = getMap(t);</span><br><span class="line">        <span class="keyword">if</span> (map != <span class="keyword">null</span>) &#123;</span><br><span class="line">            ThreadLocalMap.Entry e = map.getEntry(<span class="keyword">this</span>);</span><br><span class="line">            <span class="keyword">if</span> (e != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</span><br><span class="line">                T result = (T)e.value;</span><br><span class="line">                <span class="keyword">return</span> result;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> setInitialValue();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>get()方法会返回此线程局部变量的当前线程副本中的值，如果与此线程关联的ThreadLocal未被设置过值，则会调用 <strong>initialValue()</strong> 方法，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> T <span class="title">initialValue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>所以，当可以重载initIalValue()函数来设置初始值，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> ThreadLocal&lt;Integer&gt; threadLocal = <span class="keyword">new</span> ThreadLocal&lt;Integer&gt;() &#123;</span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">protected</span> Integer <span class="title">initialValue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			<span class="keyword">return</span> Integer.valueOf(<span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br></pre></td></tr></table></figure>
+<p>根据ThreadLocal的get()方法看下其实现方式</p>
+<ul>
+<li>①、获取当前线程</li>
+<li>②、获取当前线程的ThreadLocalMap<br>getMap(t)方法如下：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ThreadLocalMap <span class="title">getMap</span><span class="params">(Thread t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> t.threadLocals;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//对threadLocals的解释如下</span></span><br><span class="line"><span class="comment">//ThreadLocal.ThreadLocalMap threadLocals = null;</span></span><br><span class="line"><span class="comment">//与此线程有关的ThreadLocal值。 该映射由ThreadLocal类维护</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>③、如果map不为null，则获取其value并返回，否则执行返回执行setInitialValue()方法的值，对线程的ThreadLocalMap对象进行初始化操作，ThreadLocalMap对象的key为ThreadLocal对象，value为initialValue()方法的返回值。<h4 id="ThreadLocalMap类"><a href="#ThreadLocalMap类" class="headerlink" title="ThreadLocalMap类"></a>ThreadLocalMap类</h4>ThreadLocalMap类是ThreadLocal的静态内部类。每个Thread维护一个ThreadLocalMap映射表，这个映射表的key是ThreadLocal实例本身，value是真正需要存储的Object。这样的设计主要有以下几点优势：</li>
+<li>这样设计之后每个Map的Entry数量变小了：之前是Thread的数量，现在是ThreadLocal的数量，能提高性能；</li>
+<li>当Thread销毁之后对应的ThreadLocalMap也就随之销毁了，能减少内存使用量。</li>
+</ul>
+<p>Thead为每个线程维护了一个ThreadLocalMap，而ThreadLocalMap的key是Thread本身，value是要存储的对象，ThreadLocal的set()方法其实就是向ThreadLocalMap里设置值，get()则是从中取值。</p>
+<p>Entry类是ThreadLocalMap类的内部类，继承自WeakReference类，我们得到下面这个对象间的引用结构图(实线为强引用，虚线为弱引用)<br><img src="https://img-blog.csdnimg.cn/20190924225941512.png" alt="在这里插入图片描述"><br>考虑以下问题：<br>ThreadLocalMap使用ThreadLocal的弱引用作为key，如果一个ThreadLocal没有外部关联的强引用，那么在虚拟机进行垃圾回收时，这个ThreadLocal会被回收，这样，ThreadLocalMap中就会出现key为null的Entry，这些key对应的value也就再无妨访问，但是value却存在一条从Current Thread过来的强引用链。因此只有当Current Thread销毁时，value才能得到释放。</p>
+<p>该强引用链如下：</p>
+<p>CurrentThread Ref -&gt; Thread -&gt; ThreadLocalMap -&gt; Entry -&gt; value</p>
+<p>因此，只要这个线程对象被gc回收，那些key为null对应的value也会被回收，这样也没什么问题，但在线程对象不被回收的情况下，比如使用线程池的时候，核心线程是一直在运行的，线程对象不会回收，若是在这样的线程中存在上述现象，就可能出现内存泄露的问题。关于内存泄漏问题参阅：<a href="https://blog.csdn.net/qq_38293564/article/details/80459827" target="_blank" rel="noopener"><br><strong>Java并发编程之ThreadLocal详解</strong></a></p>
 
       
 
@@ -211,7 +229,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Tomcat</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ThreadLocal</a>
         		</li>
       		
 		</ul>
@@ -223,7 +241,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/JavaWeb//" class="article-tag-list-link color3">JavaWeb</a>
+        			<a href="/categories/并发//" class="article-tag-list-link color3">并发</a>
         		</li>
       		
 		</ul>
@@ -241,18 +259,9 @@
   
 <nav id="article-nav">
   
-    <a href="/Java高级之反射篇.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java高级之反射篇
-        
-      </div>
-    </a>
   
-  
-    <a href="/基于Maven-SSM的论坛项目.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">基于Maven+SSM的论坛项目</div>
+    <a href="/Java并发编程之同步工具类.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java并发编程之同步工具类</div>
       <i class="icon-circle-right"></i>
     </a>
   
