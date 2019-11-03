@@ -1,4 +1,4 @@
-https://jcoffeezph.top/Java并发编程之同步工具类.html
+https://jcoffeezph.top/Java并发编程之工具类.html
 https://jcoffeezph.top/mysql基础知识之索引.html
 https://jcoffeezph.top/mysql基础知识之join关键字.html
 https://jcoffeezph.top/Java并发之ThreadLocal简析.html
