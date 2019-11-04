@@ -6,23 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jcoffeezph.top">
-  <title>NIO总览 | Zph、ForMe</title>
+  <title>Category: 面试题 | Zph、ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Java NIO 是 java 1.4 之后新出的一套IO接口，这里的新是相对于原有标准的Java IO和Java Networking接口。NIO提供了一种完全不同的操作方式。NIO中的N可以理解为Non-blocking，即非阻塞，不单是New。name为什么要使用 NIO? NIO 的创建目的是为了让 Java 程序员可以实现高速 I/O 而无需编写自定义的本机代码。NIO 将最耗时的 I/">
-<meta name="keywords" content="NIO总览">
-<meta property="og:type" content="article">
-<meta property="og:title" content="NIO总览">
-<meta property="og:url" content="https://jcoffeezph.top/NIO总览.html">
+  <meta name="description" content="Enjoy Coding">
+<meta name="keywords" content="Java 软件">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zph、ForMe">
+<meta property="og:url" content="https://jcoffeezph.top/categories/面试题/index.html">
 <meta property="og:site_name" content="Zph、ForMe">
-<meta property="og:description" content="Java NIO 是 java 1.4 之后新出的一套IO接口，这里的新是相对于原有标准的Java IO和Java Networking接口。NIO提供了一种完全不同的操作方式。NIO中的N可以理解为Non-blocking，即非阻塞，不单是New。name为什么要使用 NIO? NIO 的创建目的是为了让 Java 程序员可以实现高速 I/O 而无需编写自定义的本机代码。NIO 将最耗时的 I/">
+<meta property="og:description" content="Enjoy Coding">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190604150022798.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190604150737471.png">
-<meta property="og:updated_time" content="2019-06-04T08:09:55.045Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NIO总览">
-<meta name="twitter:description" content="Java NIO 是 java 1.4 之后新出的一套IO接口，这里的新是相对于原有标准的Java IO和Java Networking接口。NIO提供了一种完全不同的操作方式。NIO中的N可以理解为Non-blocking，即非阻塞，不单是New。name为什么要使用 NIO? NIO 的创建目的是为了让 Java 程序员可以实现高速 I/O 而无需编写自定义的本机代码。NIO 将最耗时的 I/">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190604150022798.png">
+<meta name="twitter:title" content="Zph、ForMe">
+<meta name="twitter:description" content="Enjoy Coding">
   
     <link rel="alternative" href="/atom.xml" title="Zph、ForMe" type="application/atom+xml">
   
@@ -162,162 +158,72 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-NIO总览" class="article article-type-post " itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      NIO总览
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/Java面试题之String常见问题.html" class="archive-article-date">
+  	<time datetime="2019-11-04T06:05:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-04</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/Java面试题之String常见问题.html">Java面试题之String常见问题</a>
     </h1>
   
 
-        
-        
-        <!-- 不蒜子统计 -->
-        <span id="busuanzi_container_page_pv" style="display:none" class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/NIO总览.html" class="archive-article-date">
-  	<time datetime="2019-06-04T08:06:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Java NIO 是 java 1.4 之后新出的一套IO接口，这里的新是相对于原有标准的Java IO和Java Networking接口。NIO提供了一种完全不同的操作方式。NIO中的N可以理解为<strong>Non-blocking</strong>，即非阻塞，不单是New。name为什么要使用 NIO? NIO 的创建目的是为了让 Java 程序员可以实现高速 I/O 而无需编写自定义的本机代码。NIO 将最耗时的 I/O 操作(即填充和提取缓冲区)转移回操作系统，因而可以极大地提高速度。</p>
-<font size="4" color="red">一、IO与NIO的区别</font>
-
-<p><strong>Channels and Buffers（通道和缓冲区）：</strong> 标准的IO基于字节流和字符流进行操作的，而NIO是基于通道（Channel）和缓冲区（Buffer）进行操作，数据总是从通道读取到缓冲区中，或者从缓冲区写入到通道中。（ <code>NIO中的所有I/O操作都是通过一个通道开始的</code>）Java IO面向流意味着每次从流中读一个或多个字节，直至读取所有字节，它们没有被缓存在任何地方；<br><a id="more"></a><br><strong>Asynchronous IO（异步IO）：</strong> Java NIO可以让你异步的使用IO，例如：当线程从通道读取数据到缓冲区时，线程还是可以进行其他事情。当数据被写入到缓冲区时，线程可以继续处理它。从缓冲区写入通道也类似。而Java IO的各种流是阻塞的，这意味着，当一个线程调用read() 或 write()时，该线程被阻塞，直到有一些数据被读取，或数据完全写入。该线程在此期间不能再干任何事情了。NIO可以只使用一个（或几个）单线程管理多个通道（网络连接或文件）</p>
-<p><strong>Selectors（选择器）：</strong> Java NIO引入了选择器的概念，选择器用于监听多个通道的事件（比如：连接打开，数据到达）。Java NIO的选择器允许一个单独的线程来监视多个输入通道，你可以注册多个通道使用一个选择器，然后使用一个单独的线程来“选择”通道：这些通道里已经有可以处理的输入，或者选择已准备写入的通道。这种选择机制，使得一个单独的线程很容易来管理多个通道。线程之间的切换对于操作系统来说是昂贵的，因此，为了提高系统效率选择器是有用的。</p>
-<font size="4" color="red">二、NIO的核心组件</font>
-
-<p>1、Channels<br>2、Buffers<br>3、Selectors</p>
-<p><strong>1、Channels和Buffers</strong></p>
-<p>NIO中所有的IO请求都是通过Channels开始的，数据可以从channel中读到buffer中，也可以从buffer中写入channel，如下所示：<br><img src="https://img-blog.csdnimg.cn/20190604150022798.png" alt="在这里插入图片描述"><br>在Java NIO中，主要使用的通道如下（涵盖了UDP 和 TCP 网络IO，以及文件IO）：</p>
-<p>DatagramChannel<br>SocketChannel<br>FileChannel<br>ServerSocketChannel</p>
-<p>在Java NIO中使用的核心缓冲区如下（覆盖了通过I/O发送的基本数据类型：byte, char、short, int, long, float, double ，long）：</p>
-<p>ByteBuffer<br>CharBuffer<br>ShortBuffer<br>IntBuffer<br>FloatBuffer<br>DoubleBuffer<br>LongBuffer</p>
-<p><strong>2、Selectors</strong></p>
-<p>选择器允许单个线程处理多个channel，如果应用程序有多个通道(连接)打开，但每个连接的流量都很低，则可考虑使用它。 例如：在聊天服务器中。<br>下面是一个单线程中Slector维护3个Channel的示意图：<br><img src="https://img-blog.csdnimg.cn/20190604150737471.png" alt="在这里插入图片描述"><br>要使用Selector的话，我们必须把Channel注册到Selector上，然后就可以调用Selector的select()方法。这个方法会进入阻塞，直到有一个channel的状态符合条件。当方法返回后，线程可以处理这些事件。<br>参考文章：<a href="http://ifeve.com/overview/" target="_blank" rel="noopener"><strong>Java NIO系列教程（一） Java NIO 概述</strong></a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">NIO总览</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">String篇</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/NIO//" class="article-tag-list-link color4">NIO</a>
+        			<a href="/categories/面试题//" class="article-tag-list-link color4">面试题</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/NIO之Buffer.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          NIO之Buffer
-        
-      </div>
-    </a>
   
   
-    <a href="/AMQP协议的理解.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">AMQP协议的理解</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+    </div></section>
   
 
-  
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'true' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "11btHRKRUnSiCwm7nxQ6MqvJ-gzGzoHsz",
-            app_key: "AA0vgaQmApd786vhE4gJcJER",
-            placeholder: "Say Something!",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
-
-  
-  
-
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -353,10 +259,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
-		isCategory: false,
+		isCategory: true,
 		open_in_new: true,
 		toc_hide_index: true,
 		root: "/",
