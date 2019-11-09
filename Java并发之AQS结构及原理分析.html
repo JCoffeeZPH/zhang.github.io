@@ -8,21 +8,22 @@
   <link rel="dns-prefetch" href="https://jcoffeezph.top">
   <title>Java并发之AQS结构及原理分析 | Zph、ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Java中的CASCAS：全称为Compare And Swap，比较并交换，CAS 是现代操作系统，解决并发问题的一个重要手段。一个CAS涉及到了下面的操作：假设内存中的原数据V，旧的预期值A，需要修改的新值B1、比较 A 与 V 是否相等（比较）2、如果比较相等，将 B 写入 V（交换）3、返回操作是否成功当多个线程对资源进行CAS操作时，只有一个线程能够成功，但是不会阻塞其他线程，其他线程收">
+  <meta name="description" content="CAS1、什么是CASCAS，也即是compare and swap，比较并交换。一个CAS涉及到了下面的操作：假设内存中原数据为V，原数据预期值为A，需要修改的新值为B  如果内存位置V的值与预期原值A相匹配，那么处理器会自动将该位置值更新为新值B,返回true。否则处理器不做任何操作，返回false。  实现CAS最重要的一点就是比较和交换操作的一致性，如果当前线程比较成功后，准备更新共享变量">
 <meta name="keywords" content="AQS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java并发之AQS结构及原理分析">
 <meta property="og:url" content="https://jcoffeezph.top/Java并发之AQS结构及原理分析.html">
 <meta property="og:site_name" content="Zph、ForMe">
-<meta property="og:description" content="Java中的CASCAS：全称为Compare And Swap，比较并交换，CAS 是现代操作系统，解决并发问题的一个重要手段。一个CAS涉及到了下面的操作：假设内存中的原数据V，旧的预期值A，需要修改的新值B1、比较 A 与 V 是否相等（比较）2、如果比较相等，将 B 写入 V（交换）3、返回操作是否成功当多个线程对资源进行CAS操作时，只有一个线程能够成功，但是不会阻塞其他线程，其他线程收">
+<meta property="og:description" content="CAS1、什么是CASCAS，也即是compare and swap，比较并交换。一个CAS涉及到了下面的操作：假设内存中原数据为V，原数据预期值为A，需要修改的新值为B  如果内存位置V的值与预期原值A相匹配，那么处理器会自动将该位置值更新为新值B,返回true。否则处理器不做任何操作，返回false。  实现CAS最重要的一点就是比较和交换操作的一致性，如果当前线程比较成功后，准备更新共享变量">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191109134859459.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190915132633962.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190915144847315.png">
-<meta property="og:updated_time" content="2019-09-15T08:22:00.385Z">
+<meta property="og:updated_time" content="2019-11-09T07:11:11.294Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java并发之AQS结构及原理分析">
-<meta name="twitter:description" content="Java中的CASCAS：全称为Compare And Swap，比较并交换，CAS 是现代操作系统，解决并发问题的一个重要手段。一个CAS涉及到了下面的操作：假设内存中的原数据V，旧的预期值A，需要修改的新值B1、比较 A 与 V 是否相等（比较）2、如果比较相等，将 B 写入 V（交换）3、返回操作是否成功当多个线程对资源进行CAS操作时，只有一个线程能够成功，但是不会阻塞其他线程，其他线程收">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190915132633962.png">
+<meta name="twitter:description" content="CAS1、什么是CASCAS，也即是compare and swap，比较并交换。一个CAS涉及到了下面的操作：假设内存中原数据为V，原数据预期值为A，需要修改的新值为B  如果内存位置V的值与预期原值A相匹配，那么处理器会自动将该位置值更新为新值B,返回true。否则处理器不做任何操作，返回false。  实现CAS最重要的一点就是比较和交换操作的一致性，如果当前线程比较成功后，准备更新共享变量">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20191109134859459.png">
   
     <link rel="alternative" href="/atom.xml" title="Zph、ForMe" type="application/atom+xml">
   
@@ -181,15 +182,29 @@
         </span>
 
 <a href="/Java并发之AQS结构及原理分析.html" class="archive-article-date">
-  	<time datetime="2019-09-15T08:20:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-15</time>
+  	<time datetime="2019-11-09T08:20:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Java中的CAS"><a href="#Java中的CAS" class="headerlink" title="Java中的CAS"></a>Java中的CAS</h3><p>CAS：全称为Compare And Swap，比较并交换，CAS 是现代操作系统，解决并发问题的一个重要手段。一个CAS涉及到了下面的操作：<br>假设内存中的原数据V，旧的预期值A，需要修改的新值B<br>1、比较 A 与 V 是否相等（比较）<br>2、如果比较相等，将 B 写入 V（交换）<br>3、返回操作是否成功<br>当多个线程对资源进行CAS操作时，只有一个线程能够成功，但是不会阻塞其他线程，其他线程收到的是操作失败信号。</p>
-<p>以AtomicInteger为例，打开其源码可以发现，Java的CAS操作是通过sun包下Unsafe类实现的，Unsafe类中的方法都是native方法，由JVM本地实现。<br><a id="more"></a></p>
+        <h3 id="CAS"><a href="#CAS" class="headerlink" title="CAS"></a>CAS</h3><h5 id="1、什么是CAS"><a href="#1、什么是CAS" class="headerlink" title="1、什么是CAS"></a>1、什么是CAS</h5><p>CAS，也即是compare and swap，比较并交换。一个CAS涉及到了下面的操作：<br>假设内存中原数据为V，原数据预期值为A，需要修改的新值为B</p>
+<blockquote>
+<p>如果内存位置V的值与预期原值A相匹配，那么处理器会自动将该位置值更新为新值B,返回true。否则处理器不做任何操作，返回false。</p>
+</blockquote>
+<p>实现CAS最重要的一点就是比较和交换操作的一致性，如果当前线程比较成功后，准备更新共享变量值的时候，这个时候共享变量值被其他线程更改了，那么CAS函数就必须返回false。为了实现这个要求，Java设计了<strong>Unsafe类</strong>，它提供了三个方法，分别用于int，long，和object，具体方法如下：<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">native</span> <span class="keyword">boolean</span> <span class="title">compareAndSetObject</span><span class="params">(Object o, <span class="keyword">long</span> offset,</span></span></span><br><span class="line"><span class="function"><span class="params">                                                    Object expected,</span></span></span><br><span class="line"><span class="function"><span class="params">                                                    Object x)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">native</span> <span class="keyword">boolean</span> <span class="title">compareAndSetInt</span><span class="params">(Object o, <span class="keyword">long</span> offset,</span></span></span><br><span class="line"><span class="function"><span class="params">                                                 <span class="keyword">int</span> expected,</span></span></span><br><span class="line"><span class="function"><span class="params">                                                 <span class="keyword">int</span> x)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">native</span> <span class="keyword">boolean</span> <span class="title">compareAndSetLong</span><span class="params">(Object o, <span class="keyword">long</span> offset,</span></span></span><br><span class="line"><span class="function"><span class="params">                                                  <span class="keyword">long</span> expected,</span></span></span><br><span class="line"><span class="function"><span class="params">                                                  <span class="keyword">long</span> x)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p>参数含义：</p>
+<blockquote>
+<p>1、 o和offset：表示这个共享变量的内存地址。这个共享变量是o对象的一个成员属性，offset表示这个属性的在o类的内存偏移量，所以通过这两个参数就可以直接在内存中修改和读取共享变量值。<br>2、expected：表示预期原来的值<br>3、x：表示期待更新的值</p>
+</blockquote>
+<h5 id="2、以juc并发框架下的AtomicInteger类来学习CAS在atomic包下的应用。"><a href="#2、以juc并发框架下的AtomicInteger类来学习CAS在atomic包下的应用。" class="headerlink" title="2、以juc并发框架下的AtomicInteger类来学习CAS在atomic包下的应用。"></a>2、以juc并发框架下的AtomicInteger类来学习CAS在atomic包下的应用。</h5><p>①、AtomicInteger类的重要成员变量：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> jdk.internal.misc.Unsafe U = jdk.internal.misc.Unsafe.getUnsafe();</span><br><span class="line"><span class="comment">//VALUE是通过Unsafe类，获取名称为value的变量在AtomicInteger对象上内存偏移量</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> VALUE = U.objectFieldOffset(AtomicInteger.class, <span class="string">"value"</span>);</span><br><span class="line"><span class="comment">//value变量使用volatile修饰，解决了可见性和有序性问题</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">int</span> value;</span><br></pre></td></tr></table></figure>
+<p>看下Unsafe类中关于objectFieldOffset方法的注释：<br><img src="https://img-blog.csdnimg.cn/20191109134859459.png" alt="在这里插入图片描述"><br>说明是获取指定参数在其所属类中的偏移量。</p>
+<p>②、AtomicInteger类的compareAndSet方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//如果当前值等于expectedValue，就把newValue值赋给value变量，并返回true；</span></span><br><span class="line"><span class="comment">//否则就什么都不做，返回false，通过调用Unsafe的compareAndSetInt()方法实现，这个就是CAS操作，通过调用Unsafe类的方法实现原子性</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">boolean</span> <span class="title">compareAndSet</span><span class="params">(<span class="keyword">int</span> expectedValue, <span class="keyword">int</span> newValue)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> U.compareAndSetInt(<span class="keyword">this</span>, VALUE, expectedValue, newValue);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>③、Unsafe类的getAndAddInt()方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">getAndAddInt</span><span class="params">(Object o, <span class="keyword">long</span> offset, <span class="keyword">int</span> delta)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> v;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            v = getIntVolatile(o, offset); <span class="comment">//获取value的最新值</span></span><br><span class="line">        &#125; <span class="keyword">while</span> (!weakCompareAndSetInt(o, offset, v, v + delta)); <span class="comment">//v + delta为表示需要更新的值，如果compareAndSetInt返回false，说明value值被其他线程更改了。那么就循环重试，再次获取value最新值v，然后再计算需要更新的值v + delta。直到更新成功</span></span><br><span class="line">        <span class="keyword">return</span> v;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">boolean</span> <span class="title">weakCompareAndSetInt</span><span class="params">(Object o, <span class="keyword">long</span> offset,</span></span></span><br><span class="line"><span class="function"><span class="params">                                              <span class="keyword">int</span> expected,</span></span></span><br><span class="line"><span class="function"><span class="params">                                              <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> compareAndSetInt(o, offset, expected, x);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="AQS实现原理及源码分析"><a href="#AQS实现原理及源码分析" class="headerlink" title="AQS实现原理及源码分析"></a>AQS实现原理及源码分析</h3><h4 id="1、概括"><a href="#1、概括" class="headerlink" title="1、概括"></a>1、概括</h4><p>AQS，也即是AbstractQueuedSynchronizer，队列同步器，AbstractQueuedSynchronizer类是一个juc包下的抽象类，以继承的方式使用，为实现依赖于先进先出 (FIFO) 等待队列的阻塞锁和相关同步器（信号量、事件，等等）提供一个框架。此类的设计目标是成为依靠单个原子 int 值来表示状态的大多数同步器的一个有用基础。</p>
 <p>根据源码中对AbstractQueuedSynchronizer类的介绍，我们可以了解到以下信息：<br>①、AQS其实就是一个可以给我们实现锁的框架<br>②、内部实现的关键是：先进先出的队列、state状态<br>③、定义了内部类ConditionObject<br>④、拥有两种线程模式：独占模式和共享模式<br>⑤、在LOCK包中的相关锁(常用的有ReentrantLock、 ReadWriteLock)都是基于AQS来构建<br>⑥、一般称AQS为同步器</p>
 <p>查看AbstractQueuedSynchronizor类的源码，发现AQS最主要的变量有以下三个：</p>
@@ -273,18 +288,9 @@
   
 <nav id="article-nav">
   
-    <a href="/Java并发之ThreadLocal简析.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java并发之ThreadLocal简析
-        
-      </div>
-    </a>
   
-  
-    <a href="/Java线程同步之volatile关键字.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java线程同步之volatile关键字</div>
+    <a href="/Java面试题之线程池.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java面试题之线程池</div>
       <i class="icon-circle-right"></i>
     </a>
   
