@@ -6,8 +6,8 @@ https://jcoffeezph.top/Java面试题之线程池.html
 https://jcoffeezph.top/Java面试题之ThreadLocal.html
 https://jcoffeezph.top/Java面试题之String常见问题.html
 https://jcoffeezph.top/Java并发编程之工具类.html
-https://jcoffeezph.top/MySQL基础知识之索引.html
-https://jcoffeezph.top/MySQL基础知识之join关键字.html
+https://jcoffeezph.top/mysql基础知识之索引.html
+https://jcoffeezph.top/mysql基础知识之join关键字.html
 https://jcoffeezph.top/Java并发之ThreadLocal简析.html
 https://jcoffeezph.top/Java线程同步之volatile关键字.html
 https://jcoffeezph.top/Java多线程之synchronized关键字.html
