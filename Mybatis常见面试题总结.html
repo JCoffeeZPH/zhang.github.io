@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jcoffeezph.top">
-  <title>Tag: synchromized关键字 | Zph、ForMe</title>
+  <title>Mybatis常见面试题总结 | Zph、ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Enjoy Coding">
-<meta name="keywords" content="Java 软件">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Zph、ForMe">
-<meta property="og:url" content="https://jcoffeezph.top/tags/synchromized关键字/index.html">
+  <meta name="description" content="1、什么是ORM框架ORM，也即是Object-Relational Mapping，它的作用是关系型数据库和对象的映射，这样，我们在操作数据库的时候就不用和复杂的SQL语句直接打交道了，只需要和平时操作对象一样操作它就可以了。">
+<meta name="keywords" content="Mybatis一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mybatis常见面试题总结">
+<meta property="og:url" content="https://jcoffeezph.top/Mybatis常见面试题总结.html">
 <meta property="og:site_name" content="Zph、ForMe">
-<meta property="og:description" content="Enjoy Coding">
+<meta property="og:description" content="1、什么是ORM框架ORM，也即是Object-Relational Mapping，它的作用是关系型数据库和对象的映射，这样，我们在操作数据库的时候就不用和复杂的SQL语句直接打交道了，只需要和平时操作对象一样操作它就可以了。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-11-19T09:43:31.204Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zph、ForMe">
-<meta name="twitter:description" content="Enjoy Coding">
+<meta name="twitter:title" content="Mybatis常见面试题总结">
+<meta name="twitter:description" content="1、什么是ORM框架ORM，也即是Object-Relational Mapping，它的作用是关系型数据库和对象的映射，这样，我们在操作数据库的时候就不用和复杂的SQL语句直接打交道了，只需要和平时操作对象一样操作它就可以了。">
   
     <link rel="alternative" href="/atom.xml" title="Zph、ForMe" type="application/atom+xml">
   
@@ -158,72 +159,188 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Mybatis常见面试题总结" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/简单理解synchronized用法.html" class="archive-article-date">
-  	<time datetime="2018-10-25T11:38:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-25</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/简单理解synchronized用法.html">简单理解synchronized用法</a>
+    <h1 class="article-title" itemprop="name">
+      Mybatis常见面试题总结
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style="display:none" class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/Mybatis常见面试题总结.html" class="archive-article-date">
+  	<time datetime="2019-11-19T09:42:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1、什么是ORM框架"><a href="#1、什么是ORM框架" class="headerlink" title="1、什么是ORM框架"></a>1、什么是ORM框架</h4><p>ORM，也即是Object-Relational Mapping，它的作用是关系型数据库和对象的映射，这样，我们在操作数据库的时候就不用和复杂的SQL语句直接打交道了，只需要和平时操作对象一样操作它就可以了。<br><a id="more"></a></p>
+<h4 id="2、为什么要做持久化操作和ORM设计"><a href="#2、为什么要做持久化操作和ORM设计" class="headerlink" title="2、为什么要做持久化操作和ORM设计"></a>2、为什么要做持久化操作和ORM设计</h4><p>在目前的企业应用系统设计中，MVC，即 Model（模型）- View（视图）- Control（控制）为主要的系统架构模式。MVC 中的 Model 包含了复杂的业务逻辑和数据逻辑，以及数据存取机制（如 JDBC的连接、SQL生成和Statement创建、还有ResultSet结果集的读取等）等。将这些复杂的业务逻辑和数据逻辑分离，以将系统的紧耦合关系转化为松耦合关系（即解耦合），是降低系统耦合度迫切要做的，也是持久化要做的工作。</p>
+<p>MVC 模式实现了架构上将表现层（即View）和数据处理层（即Model）分离的解耦合，而持久化的设计则实现了数据处理层内部的业务逻辑和数据逻辑分离的解耦合。 而 ORM 作为持久化设计中的最重要也最复杂的技术，也是目前业界热点技术。</p>
+<p>简单来说，按通常的系统设计，使用 JDBC 操作数据库，业务处理逻辑和数据存取逻辑是混杂在一起的。<br>一般基本都是如下几个步骤：<br>1、建立数据库连接，获得 Connection 对象。<br>2、根据用户的输入组装查询 SQL 语句。<br>3、根据 SQL 语句建立 Statement 对象 或者 PreparedStatement 对象。<br>4、用 Connection 对象执行 SQL语句，获得结果集 ResultSet 对象。<br>5、然后一条一条读取结果集 ResultSet 对象中的数据。<br>6、根据读取到的数据，按特定的业务逻辑进行计算。<br>7、根据计算得到的结果再组装更新 SQL 语句。<br>8、再使用 Connection 对象执行更新 SQL 语句，以更新数据库中的数据。<br>7、最后依次关闭各个 Statement 对象和 Connection 对象。</p>
+<p>由上可看出代码逻辑非常复杂，这还不包括某条语句执行失败的处理逻辑。其中的业务处理逻辑和数据存取逻辑完全混杂在一块。而一个完整的系统要包含成 千上万个这样重复的而又混杂的处理过程，假如要对其中某些业务逻辑或者一些相关联的业务流程做修改，要改动的代码量将不可想象。另一方面，假如要换数据库 产品或者运行环境也可能是个不可能完成的任务。而用户的运行环境和要求却千差万别，我们不可能为每一个用户每一种运行环境设计一套一样的系统。<br>所 以就要将一样的处理代码即业务逻辑和可能不一样的处理即数据存取逻辑分离开来，另一方面，关系型数据库中的数据基本都是以一行行的数据进行存取的，而程序 运行却是一个个对象进行处理，而目前大部分数据库驱动技术（如ADO.NET、JDBC、ODBC等等）均是以行集的结果集一条条进行处理的。所以为解决 这一困难，就出现 ORM 这一个对象和数据之间映射技术。</p>
+<p>参考：<a href="https://blog.csdn.net/songyuxinit/article/details/81331339" target="_blank" rel="noopener"><strong>什么是ORM?为啥要是用ORM？</strong></a></p>
+<h4 id="3、什么是Mybatis"><a href="#3、什么是Mybatis" class="headerlink" title="3、什么是Mybatis"></a>3、什么是Mybatis</h4><p>Mybatis是一个版ORM框架，其内部封装了JDBC连接，开发时只需要关注SQL语句本身，不需要花费精力去处理加载驱动、创建连接、创建statement等繁杂的过程。通过直接编写原生态sql，可以严格控制sql执行性能，灵活度高。</p>
+<p>MyBatis 可以使用 XML 或注解来配置和映射原生信息，将 POJO映射成数据库中的记录，避免了几乎所有的 JDBC 代码和手动设置参数以及获取结果集。</p>
+<p>通过xml 文件或注解的方式将要执行的各种 statement 配置起来，并通过java对象和 statement中sql的动态参数进行映射生成最终执行的sql语句，最后由mybatis框架执行sql并将结果映射为java对象并返回。</p>
+<h4 id="4、Mybatis优缺点"><a href="#4、Mybatis优缺点" class="headerlink" title="4、Mybatis优缺点"></a>4、Mybatis优缺点</h4><h6 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h6><p>（1）基于SQL语句编程，相当灵活，不会对应用程序或者数据库的现有设计造成任何影响，SQL写在XML里，解除sql与程序代码的耦合，便于统一管理；提供XML标签，支持编写动态SQL语句，并可重用。</p>
+<p>（2）与JDBC相比，减少了50%以上的代码量，消除了JDBC大量冗余的代码，不需要手动开关连接；</p>
+<p>（3）很好的与各种数据库兼容（因为MyBatis使用JDBC来连接数据库，所以只要JDBC支持的数据库MyBatis都支持）。</p>
+<p>（4）能够与Spring很好的集成；</p>
+<p>（5）提供映射标签，支持对象与数据库的ORM字段关系映射；提供对象关系映射标签，支持对象关系组件维护。</p>
+<h6 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h6><p>（1）SQL语句的编写工作量较大，尤其当字段多、关联表多时，对开发人员编写SQL语句的功底有一定要求。</p>
+<p>（2）SQL语句依赖于数据库，导致数据库移植性差，不能随意更换数据库。</p>
+<h4 id="5、-和-的区别是什么？"><a href="#5、-和-的区别是什么？" class="headerlink" title="5、#{}和${}的区别是什么？"></a>5、#{}和${}的区别是什么？</h4><p>#{}是预编译处理，${}是字符串替换。</p>
+<p>Mybatis在处理#{}时，会将sql中的#{}替换为?号，调用PreparedStatement的set方法来赋值；</p>
+<p>Mybatis在处理 $ { }时，就是把${}替换成变量的值。</p>
+<p>使用#{}可以有效的防止SQL注入，提高系统安全性。</p>
+<h4 id="6、当实体类中的属性名和表中的字段名不一样-，怎么办-？"><a href="#6、当实体类中的属性名和表中的字段名不一样-，怎么办-？" class="headerlink" title="6、当实体类中的属性名和表中的字段名不一样 ，怎么办 ？"></a>6、当实体类中的属性名和表中的字段名不一样 ，怎么办 ？</h4><p> <strong>方法一：</strong> 通过在查询的sql语句中定义字段名的别名，让字段名的别名和实体类的属性名一致。如：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=”selectorder” parametertype=”int” resultetype=”me.gacl.domain.order”&gt;</span><br><span class="line">   <span class="keyword">select</span> order_id <span class="keyword">id</span>, order_no orderno ,order_price price <span class="keyword">form</span> orders <span class="keyword">where</span> order_id=<span class="comment">#&#123;id&#125;;</span></span><br><span class="line">&lt;/<span class="keyword">select</span>&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>方法二：</strong> 使用resultMap标签</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id="getOrder" parameterType="int" resultMap="orderresultmap"&gt;</span><br><span class="line">       <span class="keyword">select</span> * <span class="keyword">from</span> orders <span class="keyword">where</span> order_id=<span class="comment">#&#123;id&#125;</span></span><br><span class="line">   &lt;/<span class="keyword">select</span>&gt;</span><br><span class="line"></span><br><span class="line">  &lt;resultMap <span class="keyword">type</span>=”me.gacl.domain.order” <span class="keyword">id</span>=”orderresultmap”&gt;</span><br><span class="line">       &lt;!–用<span class="keyword">id</span>属性来映射主键字段–&gt;</span><br><span class="line">       &lt;<span class="keyword">id</span> property=”<span class="keyword">id</span>” <span class="keyword">column</span>=”order_id”&gt;</span><br><span class="line"></span><br><span class="line">       &lt;!–用<span class="keyword">result</span>属性来映射非主键字段，property为实体类属性名，<span class="keyword">column</span>为数据表中的属性–&gt;</span><br><span class="line">       &lt;<span class="keyword">result</span> property = “orderno” <span class="keyword">column</span> =”order_no”/&gt;</span><br><span class="line">       &lt;<span class="keyword">result</span> property=”price” <span class="keyword">column</span>=”order_price” /&gt;</span><br><span class="line">   &lt;/reslutMap&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="7、模糊查询like语句该怎么写"><a href="#7、模糊查询like语句该怎么写" class="headerlink" title="7、模糊查询like语句该怎么写?"></a>7、模糊查询like语句该怎么写?</h4><p><strong>方法一：</strong> 在Java代码中添加SQL通配符，如：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String wildcardname = “%smi%”;</span><br><span class="line">List&lt;name&gt; names = mapper.selectlike(wildcardname);</span><br><span class="line"> </span><br><span class="line">&lt;select id=”selectlike”&gt;</span><br><span class="line"> select * from foo where bar like #&#123;value&#125;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>方法二：</strong> 在SQL语句中拼接通配符，会引起SQL注入，如：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String wildcardname = “smi”;</span><br><span class="line">List&lt;name&gt; names = mapper.selectlike(wildcardname);</span><br><span class="line"> </span><br><span class="line">&lt;select id=”selectlike”&gt;</span><br><span class="line">     select * from foo where bar like "%"#&#123;value&#125;"%"</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="8、通常一个Xml映射文件，都会写一个Dao接口与之对应，请问，这个Dao接口的工作原理是什么？Dao接口里的方法，参数不同时，方法能重载吗？"><a href="#8、通常一个Xml映射文件，都会写一个Dao接口与之对应，请问，这个Dao接口的工作原理是什么？Dao接口里的方法，参数不同时，方法能重载吗？" class="headerlink" title="8、通常一个Xml映射文件，都会写一个Dao接口与之对应，请问，这个Dao接口的工作原理是什么？Dao接口里的方法，参数不同时，方法能重载吗？"></a>8、通常一个Xml映射文件，都会写一个Dao接口与之对应，请问，这个Dao接口的工作原理是什么？Dao接口里的方法，参数不同时，方法能重载吗？</h4><p>Dao接口即Mapper接口。接口的全限名，就是映射文件中的namespace的值；接口的方法名，就是映射文件中Mapper的Statement的id值；接口方法内的参数，就是传递给sql的参数。</p>
+<p>Mapper接口是没有实现类的，当调用接口方法时，接口全限名+方法名拼接字符串作为key值，可唯一定位一个MapperStatement。在Mybatis中，每一个&lt; select&gt;、&lt; insert&gt;、&lt; update&gt;、&lt; delete&gt;标签，都会被解析为一个MapperStatement对象。</p>
+<blockquote>
+<p>举例：com.mybatis3.mappers.StudentDao.findStudentById，可以唯一找到namespace为com.mybatis3.mappers.StudentDao下面 id 为 findStudentById 的 MapperStatement。</p>
+</blockquote>
+<p>Mapper接口里的方法，是不能重载的，因为是使用 全限名+方法名 的保存和寻找策略。Mapper 接口的工作原理是JDK动态代理，Mybatis运行时会使用JDK动态代理为Mapper接口生成代理对象proxy，代理对象会拦截接口方法，转而执行MapperStatement所代表的sql，然后将sql执行结果返回。</p>
+<h4 id="9、Mybatis是如何将sql执行结果封装为目标对象并返回的？都有哪些映射形式？"><a href="#9、Mybatis是如何将sql执行结果封装为目标对象并返回的？都有哪些映射形式？" class="headerlink" title="9、Mybatis是如何将sql执行结果封装为目标对象并返回的？都有哪些映射形式？"></a>9、Mybatis是如何将sql执行结果封装为目标对象并返回的？都有哪些映射形式？</h4><p>第一种是使用&lt; resultMap&gt;标签，逐一定义数据库列名和对象属性名之间的映射关系。</p>
+<p>第二种是使用sql列的别名功能，将列的别名书写为对象属性名。</p>
+<p>有了列名与属性名的映射关系后，Mybatis通过反射创建对象，同时使用反射给对象的属性逐一赋值并返回，那些找不到映射关系的属性，是无法完成赋值的。</p>
+<h4 id="10、Mybatis的Xml映射文件中，不同的Xml映射文件，id是否可以重复？"><a href="#10、Mybatis的Xml映射文件中，不同的Xml映射文件，id是否可以重复？" class="headerlink" title="10、Mybatis的Xml映射文件中，不同的Xml映射文件，id是否可以重复？"></a>10、Mybatis的Xml映射文件中，不同的Xml映射文件，id是否可以重复？</h4><p>不同的Xml映射文件，如果配置了namespace，那么id可以重复；如果没有配置namespace，那么id不能重复；</p>
+<p>原因就是namespace+id是作为Map&lt;String, MapperStatement&gt;的key使用的，如果没有namespace，就剩下id，那么，id重复会导致数据互相覆盖。有了namespace，自然id就可以重复，namespace不同，namespace+id自然也就不同。</p>
+<h4 id="11、为什么说Mybatis是半自动ORM映射工具？它与全自动的区别在哪里？"><a href="#11、为什么说Mybatis是半自动ORM映射工具？它与全自动的区别在哪里？" class="headerlink" title="11、为什么说Mybatis是半自动ORM映射工具？它与全自动的区别在哪里？"></a>11、为什么说Mybatis是半自动ORM映射工具？它与全自动的区别在哪里？</h4><p>Hibernate属于全自动ORM映射工具，使用Hibernate查询关联对象或者关联集合对象时，可以根据对象关系模型直接获取，所以它是全自动的。而Mybatis在查询关联对象或关联集合对象时，需要手动编写sql来完成，所以，称之为半自动ORM映射工具。</p>
+<h4 id="12、MyBatis实现一对一有几种方式-具体怎么操作的？"><a href="#12、MyBatis实现一对一有几种方式-具体怎么操作的？" class="headerlink" title="12、MyBatis实现一对一有几种方式?具体怎么操作的？"></a>12、MyBatis实现一对一有几种方式?具体怎么操作的？</h4><p>有联合查询和嵌套查询,联合查询是几个表联合查询,只查询一次, 通过在resultMap里面配置association节点配置一对一的类就可以完成；</p>
+<p>嵌套查询是先查一个表，根据这个表里面的结果的 外键id，去再另外一个表里面查询数据,也是通过association配置，但另外一个表的查询通过select属性配置。</p>
+<h4 id="13、MyBatis实现一对多有几种方式-怎么操作的？"><a href="#13、MyBatis实现一对多有几种方式-怎么操作的？" class="headerlink" title="13、MyBatis实现一对多有几种方式,怎么操作的？"></a>13、MyBatis实现一对多有几种方式,怎么操作的？</h4><p>有联合查询和嵌套查询。联合查询是几个表联合查询,只查询一次,通过在resultMap里面的collection节点配置一对多的类就可以完成；嵌套查询是先查一个表,根据这个表里面的 结果的外键id,去再另外一个表里面查询数据,也是通过配置collection,但另外一个表的查询通过select节点配置。</p>
+<h4 id="14、Mybatis是否支持延迟加载？如果支持，它的实现原理是什么？"><a href="#14、Mybatis是否支持延迟加载？如果支持，它的实现原理是什么？" class="headerlink" title="14、Mybatis是否支持延迟加载？如果支持，它的实现原理是什么？"></a>14、Mybatis是否支持延迟加载？如果支持，它的实现原理是什么？</h4><p>Mybatis仅支持association关联对象和collection关联集合对象的延迟加载，association指的就是一对一，collection指的就是一对多查询。在Mybatis配置文件中，可以配置是否启用延迟加载lazyLoadingEnabled=true|false。</p>
+<p>它的原理是，使用CGLIB创建目标对象的代理对象，当调用目标方法时，进入拦截器方法，比如调用a.getB().getName()，拦截器invoke()方法发现a.getB()是null值，那么就会单独发送事先保存好的查询关联B对象的sql，把B查询上来，然后调用a.setB(b)，于是a的对象b属性就有值了，接着完成a.getB().getName()方法的调用。这就是延迟加载的基本原理。</p>
+<p>当然了，不光是Mybatis，几乎所有的包括Hibernate，支持延迟加载的原理都是一样的。</p>
+<h4 id="15、什么是MyBatis的接口绑定？有哪些实现方式？"><a href="#15、什么是MyBatis的接口绑定？有哪些实现方式？" class="headerlink" title="15、什么是MyBatis的接口绑定？有哪些实现方式？"></a>15、什么是MyBatis的接口绑定？有哪些实现方式？</h4><p>接口绑定，就是在MyBatis中任意定义接口,然后把接口里面的方法和SQL语句绑定, 我们直接调用接口方法就可以,这样比起原来了SqlSession提供的方法我们可以有更加灵活的选择和设置。</p>
+<p>接口绑定有两种实现方式,一种是通过注解绑定，就是在接口的方法上面加上 @Select、@Update等注解，里面包含Sql语句来绑定；另外一种就是通过xml里面写SQL来绑定, 在这种情况下,要指定xml映射文件里面的namespace必须为接口的全路径名。当Sql语句比较简单时候,用注解绑定, 当SQL语句比较复杂时候,用xml绑定,一般用xml绑定的比较多。</p>
+<h4 id="16、使用MyBatis的mapper接口调用时有哪些要求？"><a href="#16、使用MyBatis的mapper接口调用时有哪些要求？" class="headerlink" title="16、使用MyBatis的mapper接口调用时有哪些要求？"></a>16、使用MyBatis的mapper接口调用时有哪些要求？</h4><p>①  Mapper接口方法名和mapper.xml中定义的每个sql的id相同；<br>②  Mapper接口方法的输入参数类型和mapper.xml中定义的每个sql 的parameterType的类型相同；<br>③  Mapper接口方法的输出参数类型和mapper.xml中定义的每个sql的resultType的类型相同；<br>④  Mapper.xml文件中的namespace即是mapper接口的类路径。</p>
+<p>摘自：<a href="https://blog.csdn.net/a745233700/article/details/80977133" target="_blank" rel="noopener"><strong>Mybatis常见面试题总结</strong></a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">synchromized关键字</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Mybatis一</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Java基础//" class="article-tag-list-link color2">Java基础</a>
+        			<a href="/categories/面试题//" class="article-tag-list-link color4">面试题</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/MySQL面试题总结一.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MySQL面试题总结一</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
   
 
-    
+  
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'true' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "11btHRKRUnSiCwm7nxQ6MqvJ-gzGzoHsz",
+            app_key: "AA0vgaQmApd786vhE4gJcJER",
+            placeholder: "Say Something!",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -259,9 +376,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
