@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://jcoffeezph.top">
   <title>MySQL面试题总结一 | Zph、ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、索引概念简单来说索引是一个帮助我们快速查找数据的数据结构。对于MySQL数据库来说，索引是一个排序的列表，在这个列表中存储着索引的值和包含这个值的数据所在行的物理地址，在数据十分庞大的时候，索引可以大大加快查询的速度，这是因为使用索引后可以不用扫描全表来定位某行的数据，而是先通过索引表找到该行数据对应的物理地址然后访问相应的数据。 2、索引具体采用哪种数据结构索引采用的数据结构和数据库采用的存">
+  <meta name="description" content="1、索引概念简单来说索引是一个帮助我们快速查找数据的数据结构。对于MySQL数据库来说，索引是一个排序的列表，在这个列表中存储着索引的值和包含这个值的数据所在行的物理地址，在数据十分庞大的时候，索引可以大大加快查询的速度，这是因为使用索引后可以不用扫描全表来定位某行的数据，而是先通过索引表找到该行数据对应的物理地址然后访问相应的数据。">
 <meta name="keywords" content="MySQL一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL面试题总结一">
 <meta property="og:url" content="https://jcoffeezph.top/MySQL面试题总结一.html">
 <meta property="og:site_name" content="Zph、ForMe">
-<meta property="og:description" content="1、索引概念简单来说索引是一个帮助我们快速查找数据的数据结构。对于MySQL数据库来说，索引是一个排序的列表，在这个列表中存储着索引的值和包含这个值的数据所在行的物理地址，在数据十分庞大的时候，索引可以大大加快查询的速度，这是因为使用索引后可以不用扫描全表来定位某行的数据，而是先通过索引表找到该行数据对应的物理地址然后访问相应的数据。 2、索引具体采用哪种数据结构索引采用的数据结构和数据库采用的存">
+<meta property="og:description" content="1、索引概念简单来说索引是一个帮助我们快速查找数据的数据结构。对于MySQL数据库来说，索引是一个排序的列表，在这个列表中存储着索引的值和包含这个值的数据所在行的物理地址，在数据十分庞大的时候，索引可以大大加快查询的速度，这是因为使用索引后可以不用扫描全表来定位某行的数据，而是先通过索引表找到该行数据对应的物理地址然后访问相应的数据。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-19T04:34:06.149Z">
+<meta property="og:updated_time" content="2019-11-19T04:35:49.015Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL面试题总结一">
-<meta name="twitter:description" content="1、索引概念简单来说索引是一个帮助我们快速查找数据的数据结构。对于MySQL数据库来说，索引是一个排序的列表，在这个列表中存储着索引的值和包含这个值的数据所在行的物理地址，在数据十分庞大的时候，索引可以大大加快查询的速度，这是因为使用索引后可以不用扫描全表来定位某行的数据，而是先通过索引表找到该行数据对应的物理地址然后访问相应的数据。 2、索引具体采用哪种数据结构索引采用的数据结构和数据库采用的存">
+<meta name="twitter:description" content="1、索引概念简单来说索引是一个帮助我们快速查找数据的数据结构。对于MySQL数据库来说，索引是一个排序的列表，在这个列表中存储着索引的值和包含这个值的数据所在行的物理地址，在数据十分庞大的时候，索引可以大大加快查询的速度，这是因为使用索引后可以不用扫描全表来定位某行的数据，而是先通过索引表找到该行数据对应的物理地址然后访问相应的数据。">
   
     <link rel="alternative" href="/atom.xml" title="Zph、ForMe" type="application/atom+xml">
   
@@ -185,7 +185,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1、索引概念"><a href="#1、索引概念" class="headerlink" title="1、索引概念"></a>1、索引概念</h4><p>简单来说索引是一个帮助我们快速查找数据的数据结构。对于MySQL数据库来说，索引是一个排序的列表，在这个列表中存储着索引的值和包含这个值的数据所在行的物理地址，在数据十分庞大的时候，索引可以大大加快查询的速度，这是因为使用索引后可以不用扫描全表来定位某行的数据，而是先通过索引表找到该行数据对应的物理地址然后访问相应的数据。</p>
+        <h4 id="1、索引概念"><a href="#1、索引概念" class="headerlink" title="1、索引概念"></a>1、索引概念</h4><p>简单来说索引是一个帮助我们快速查找数据的数据结构。对于MySQL数据库来说，索引是一个排序的列表，在这个列表中存储着索引的值和包含这个值的数据所在行的物理地址，在数据十分庞大的时候，索引可以大大加快查询的速度，这是因为使用索引后可以不用扫描全表来定位某行的数据，而是先通过索引表找到该行数据对应的物理地址然后访问相应的数据。<br><a id="more"></a></p>
 <h4 id="2、索引具体采用哪种数据结构"><a href="#2、索引具体采用哪种数据结构" class="headerlink" title="2、索引具体采用哪种数据结构"></a>2、索引具体采用哪种数据结构</h4><p>索引采用的数据结构和数据库采用的存储引擎有关，在MySQL中用的最多的是Hash索引和B+树索引，MySQL默认存储引擎是InnoDB，采用的就是B+树索引。</p>
 <h4 id="3、Hash索引与B-树索引有什么区别和各自优劣"><a href="#3、Hash索引与B-树索引有什么区别和各自优劣" class="headerlink" title="3、Hash索引与B+树索引有什么区别和各自优劣"></a>3、Hash索引与B+树索引有什么区别和各自优劣</h4><p>Hash索引底层是hash表，通过调用hash函数就可以获取到相应的键值，之后进行回表查询获得实际数据。<br>B+树底层实现是多路平衡查找树，每一次查询都是从根节点出发，查询到叶子节点才能获取到相应的键值，然后根据查询判断是否需要回表操作。</p>
 <p>因为Hash索引底层实现是哈希表，哈希表是以key-value存储数据的结构，多个数据在存储顺序上是没有任何关系的，因此当进行范围查找的时候就需要进行全表扫描了而不能直接通过索引查询。所以哈希索引只适合等值查询。B+树索引的底层实现是多叉平衡查找树，它的节点是天然有序的，所以对于范围查询的时候不需要扫描全表。</p>

@@ -181,53 +181,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1、索引概念"><a href="#1、索引概念" class="headerlink" title="1、索引概念"></a>1、索引概念</h4><p>简单来说索引是一个帮助我们快速查找数据的数据结构。对于MySQL数据库来说，索引是一个排序的列表，在这个列表中存储着索引的值和包含这个值的数据所在行的物理地址，在数据十分庞大的时候，索引可以大大加快查询的速度，这是因为使用索引后可以不用扫描全表来定位某行的数据，而是先通过索引表找到该行数据对应的物理地址然后访问相应的数据。</p>
-<h4 id="2、索引具体采用哪种数据结构"><a href="#2、索引具体采用哪种数据结构" class="headerlink" title="2、索引具体采用哪种数据结构"></a>2、索引具体采用哪种数据结构</h4><p>索引采用的数据结构和数据库采用的存储引擎有关，在MySQL中用的最多的是Hash索引和B+树索引，MySQL默认存储引擎是InnoDB，采用的就是B+树索引。</p>
-<h4 id="3、Hash索引与B-树索引有什么区别和各自优劣"><a href="#3、Hash索引与B-树索引有什么区别和各自优劣" class="headerlink" title="3、Hash索引与B+树索引有什么区别和各自优劣"></a>3、Hash索引与B+树索引有什么区别和各自优劣</h4><p>Hash索引底层是hash表，通过调用hash函数就可以获取到相应的键值，之后进行回表查询获得实际数据。<br>B+树底层实现是多路平衡查找树，每一次查询都是从根节点出发，查询到叶子节点才能获取到相应的键值，然后根据查询判断是否需要回表操作。</p>
-<p>因为Hash索引底层实现是哈希表，哈希表是以key-value存储数据的结构，多个数据在存储顺序上是没有任何关系的，因此当进行范围查找的时候就需要进行全表扫描了而不能直接通过索引查询。所以哈希索引只适合等值查询。B+树索引的底层实现是多叉平衡查找树，它的节点是天然有序的，所以对于范围查询的时候不需要扫描全表。</p>
-<p>另外Hash索引不支持多列联合索引的最左匹配原则，当有大量重复键值的情况下由于存在哈希碰撞会导致hash索引的效率会很低，而B+树的查询效率比较稳定,对于所有的查询都是从根节点到叶子节点,且树的高度较低。除此之外Hash索引不支持按照Hash索引排序。</p>
-<p>hash索引任何时候都避免不了回表查询数据,而B+树在符合某些条件(聚簇索引,覆盖索引等)的时候可以只通过索引完成查询。</p>
-<h4 id="4、聚簇索引与覆盖索引"><a href="#4、聚簇索引与覆盖索引" class="headerlink" title="4、聚簇索引与覆盖索引"></a>4、聚簇索引与覆盖索引</h4><p>在B+树中叶子节点可能存储了当前key的键值，也可能存储了当前key值和其对应的一整行数据，这就是非聚簇索引和聚簇索引。</p>
-<p>在 InnoDB 里，索引B+ Tree的叶子节点存储了整行数据的是主键索引，也被称之为聚簇索引。而索引B+ Tree的叶子节点存储了主键的值的是非主键索引，也被称之为非聚簇索引。<br>聚簇索引与非聚簇索引的区别简而言之如下：</p>
-<p><strong>聚簇索引：</strong> 将数据存储与索引放到了一块，索引结构的叶子节点保存了行数据；</p>
-<p><strong>非聚簇索引：</strong> 将数据与索引分开存储，索引结构的叶子节点指向了数据对应的位置。</p>
-<p>关于聚簇与非聚簇索引的详细内容阅读：<br><a href="https://jcoffeezph.top/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B4%A2%E5%BC%95%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86.html"><strong>MySQL数据库索引底层原理</strong></a></p>
-<h6 id="聚簇索引与非聚簇索引那个查询更快及原因"><a href="#聚簇索引与非聚簇索引那个查询更快及原因" class="headerlink" title="聚簇索引与非聚簇索引那个查询更快及原因"></a>聚簇索引与非聚簇索引那个查询更快及原因</h6><p>聚簇索引查询更快，因为聚簇索引叶子节点存储的是键值对应的数据本身，而非聚簇索引叶子节点存储的是主键值，查询到主键值之后还要在通过主键值查询行数据。</p>
-<h6 id="非聚簇索引一定会回表查询从而查询多次吗"><a href="#非聚簇索引一定会回表查询从而查询多次吗" class="headerlink" title="非聚簇索引一定会回表查询从而查询多次吗"></a>非聚簇索引一定会回表查询从而查询多次吗</h6><p>不一定，<strong>覆盖索引（covering index）</strong> 指一个查询语句的执行只用从索引中就能够取得，不必从数据表中读取。也可以称之为实现了索引覆盖。 当一条查询语句符合覆盖索引条件时，MySQL只需要通过索引就可以返回查询所需要的数据，这样避免了查到索引后再返回表操作，减少I/O提高效率。</p>
-<p><strong>索引覆盖</strong> 是一种避免回表查询的优化策略。具体的做法就是将要查询的数据作为索引列建立普通索引（可以是单列索引，也可以一个索引语句定义所有要查询的列，即联合索引），这样的话就可以直接返回索引中的的数据，不需要再通过聚集索引去定位行记录，避免了回表的情况发生。要注意的是，<strong>不是所有类型的索引都可以成为覆盖索引的</strong>。因为覆盖索引必须要存储索引的列值，而哈希索引、空间索引和全文索引等都不存储索引列值，所以MySQL只能使用B-Tree索引做覆盖索引。</p>
-<p>关于聚簇索引与非聚簇索引的详细信息阅读：<br><a href="https://my.oschina.net/xiaoyoung/blog/3046779" target="_blank" rel="noopener"><strong>浅谈聚簇索引和非聚簇索引的区别</strong></a></p>
-<h4 id="5、联合索引及最左匹配原则"><a href="#5、联合索引及最左匹配原则" class="headerlink" title="5、联合索引及最左匹配原则"></a>5、联合索引及最左匹配原则</h4><p>假设有s1表，包含有name、age、score三个字段以及其他字段<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> s1 <span class="keyword">add</span> <span class="keyword">index</span> (<span class="keyword">name</span>,age,score); //创建联合索引</span><br></pre></td></tr></table></figure></p>
-<p>对于包含了(a,b,c)三个字段的联合索引，相当于a、ab、abc三个索引，一个联合索引可以当作多个单索引使用，大大减少了写操作的开销和磁盘空间的开销。对于联合索引(abc)，当查询语句如下：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> s1 <span class="keyword">where</span> a=<span class="string">'a'</span> <span class="keyword">and</span> c = <span class="string">'c'</span>;</span><br></pre></td></tr></table></figure></p>
-<p>的时候也会使用索引，但是只使用了(a)，c并没使用</p>
-<p><strong>联合索引的最左前缀匹配原则：</strong><br>顾名思义是最左优先，以最左边的为起点任何连续的索引都能匹配上，<br>注：如果第一个字段是范围查询需要单独建一个索引<br>注：在创建联合索引时，要根据业务需求，where子句中<strong>使用最频繁的一列放在最左边</strong>。</p>
-<h4 id="6、MySQL事务"><a href="#6、MySQL事务" class="headerlink" title="6、MySQL事务"></a>6、MySQL事务</h4><p><strong>事务：</strong> 在MySQL中只有使用了InnoDB引擎的数据库或表支持事务，数据库可以用来维护数据库的完整性，保证成批的数据库要不全部执行要不全部不执行。</p>
-<h4 id="7、事务的四个特性ACID"><a href="#7、事务的四个特性ACID" class="headerlink" title="7、事务的四个特性ACID"></a>7、事务的四个特性ACID</h4><p><strong>①、原子性：</strong> Atomicity，一个事务中的操作要么全部执行，要么全部不执行，不会结束在某个中间的环节。事务在执行的过程中发生错误，会被回滚到事务开始前的状态，就好像从来没有执行这个事务。</p>
-<p><strong>②、一致性：</strong> Consistency，事务开始和结束之后数据库的完整性不会被破坏。</p>
-<p><strong>③、隔离性：</strong> Isolation，数据库允许多个并发事务同时对其数据进行读写和修改，隔离性可以防止多个事务并发执行时由于交叉执行而导致数据的不一致。事务隔离分为不同级别，包括读未提交（Read uncommitted）、读提交（read committed）、可重复读（repeatable read）和串行化（Serializable）。</p>
-<p><strong>④、持久性：</strong> Durability，事务处理结束后，对数据的修改就是永久的，即便系统故障也不会丢失。</p>
-<h4 id="8、同时有多个事务在进行会怎么样呢"><a href="#8、同时有多个事务在进行会怎么样呢" class="headerlink" title="8、同时有多个事务在进行会怎么样呢?"></a>8、同时有多个事务在进行会怎么样呢?</h4><p>多事务的并发进行一般会造成以下几个问题:</p>
-<ul>
-<li><p>脏读: A事务读取到了B事务未提交的内容,而B事务后面进行了回滚.</p>
-</li>
-<li><p>不可重复读: 当设置A事务只能读取B事务已经提交的部分,会造成在A事务内的两次查询,结果竟然不一样,因为在此期间B事务进行了提交操作.</p>
-</li>
-<li><p>幻读: A事务读取了一个范围的内容,而同时B事务在此期间插入了一条数据.造成”幻觉”.</p>
-</li>
-</ul>
-<h4 id="9、怎么解决8的这些问题呢-MySQL的事务隔离级别了解吗"><a href="#9、怎么解决8的这些问题呢-MySQL的事务隔离级别了解吗" class="headerlink" title="9、怎么解决8的这些问题呢?MySQL的事务隔离级别了解吗?"></a>9、怎么解决8的这些问题呢?MySQL的事务隔离级别了解吗?</h4><p>MySQL的四种隔离级别如下:</p>
-<p><strong>未提交读(READ UNCOMMITTED)</strong><br>这个隔离级别下,其他事务可以看到本事务没有提交的部分修改。因此会造成脏读的问题(读取到了其他事务未提交的部分,而之后该事务进行了回滚)。</p>
-<p>这个级别的性能没有足够大的优势,但是又有很多的问题,因此很少使用.</p>
-<p><strong>已提交读(READ COMMITTED)</strong><br>其他事务只能读取到本事务已经提交的部分。这个隔离级别有不可重复读的问题，在同一个事务内的两次读取，拿到的结果竟然不一样，因为另外一个事务对数据进行了修改。</p>
-<p><strong>REPEATABLE READ(可重复读)</strong><br>可重复读隔离级别解决了上面不可重复读的问题(看名字也知道)，但是仍然有一个新问题，就是幻读，当你读取id &gt; 10 的数据行时,对涉及到的所有行加上了读锁，此时另外一个事务新插入了一条id=11的数据，因为是新插入的，所以不会触发上面的锁的排斥,那么进行本事务进行下一次的查询时会发现有一条id=11的数据，而上次的查询操作并没有获取到，再进行插入就会有主键冲突的问题。</p>
-<p><strong>SERIALIZABLE(可串行化)</strong></p>
-<p>这是最高的隔离级别,可以解决上面提到的所有问题，因为他强制将所有的操作串行执行，这会导致并发性能极速下降，因此也不是很常用。</p>
-<h4 id="10、Innodb使用的是哪种隔离级别呢"><a href="#10、Innodb使用的是哪种隔离级别呢" class="headerlink" title="10、Innodb使用的是哪种隔离级别呢?"></a>10、Innodb使用的是哪种隔离级别呢?</h4><p>InnoDB默认使用的是可重复读隔离级别。</p>
-<h4 id="11、MySQL中的锁"><a href="#11、MySQL中的锁" class="headerlink" title="11、MySQL中的锁"></a>11、MySQL中的锁</h4><p>阅读：<a href="https://blog.csdn.net/soonfly/article/details/70238902" target="_blank" rel="noopener"><strong>MySQL中的锁（表锁、行锁，共享锁，排它锁，间隙锁）</strong></a></p>
-
+        <h4 id="1、索引概念"><a href="#1、索引概念" class="headerlink" title="1、索引概念"></a>1、索引概念</h4><p>简单来说索引是一个帮助我们快速查找数据的数据结构。对于MySQL数据库来说，索引是一个排序的列表，在这个列表中存储着索引的值和包含这个值的数据所在行的物理地址，在数据十分庞大的时候，索引可以大大加快查询的速度，这是因为使用索引后可以不用扫描全表来定位某行的数据，而是先通过索引表找到该行数据对应的物理地址然后访问相应的数据。<br>
+        
       
 
       
-    </div>
+    </p></div>
     <div class="article-info article-info-index">
       
       
