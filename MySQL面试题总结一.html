@@ -6,34 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jcoffeezph.top">
-  <title>Java面试题之线程池 | Zph、ForMe</title>
+  <title>MySQL面试题总结一 | Zph、ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、什么是线程池？线程池，也即是存储多个线程的集合，是一种多线程处理形式。如果每个请求都新创建一个线程来处理，那么当很多请求一块来时服务器资源将会很快耗尽，所以出现线程池这一技术，避免频繁的线程创建和销毁。">
-<meta name="keywords" content="线程池">
+  <meta name="description" content="1、索引概念简单来说索引是一个帮助我们快速查找数据的数据结构。对于MySQL数据库来说，索引是一个排序的列表，在这个列表中存储着索引的值和包含这个值的数据所在行的物理地址，在数据十分庞大的时候，索引可以大大加快查询的速度，这是因为使用索引后可以不用扫描全表来定位某行的数据，而是先通过索引表找到该行数据对应的物理地址然后访问相应的数据。 2、索引具体采用哪种数据结构索引采用的数据结构和数据库采用的存">
+<meta name="keywords" content="MySQL一">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java面试题之线程池">
-<meta property="og:url" content="https://jcoffeezph.top/Java面试题之线程池.html">
+<meta property="og:title" content="MySQL面试题总结一">
+<meta property="og:url" content="https://jcoffeezph.top/MySQL面试题总结一.html">
 <meta property="og:site_name" content="Zph、ForMe">
-<meta property="og:description" content="1、什么是线程池？线程池，也即是存储多个线程的集合，是一种多线程处理形式。如果每个请求都新创建一个线程来处理，那么当很多请求一块来时服务器资源将会很快耗尽，所以出现线程池这一技术，避免频繁的线程创建和销毁。">
+<meta property="og:description" content="1、索引概念简单来说索引是一个帮助我们快速查找数据的数据结构。对于MySQL数据库来说，索引是一个排序的列表，在这个列表中存储着索引的值和包含这个值的数据所在行的物理地址，在数据十分庞大的时候，索引可以大大加快查询的速度，这是因为使用索引后可以不用扫描全表来定位某行的数据，而是先通过索引表找到该行数据对应的物理地址然后访问相应的数据。 2、索引具体采用哪种数据结构索引采用的数据结构和数据库采用的存">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191106195808740.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191106200232324.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191106200715724.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191106200854841.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191106205133984.png">
-<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xNjAxNTUwMC0zNTcyOTRkMDc4MzcxYzk0LnBuZw?x-oss-process=image/format,png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191107122646664.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191106210336299.png">
-<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xNjAxNTUwMC1kOWUwMDZkZjJiNzg5ZDJhLnBuZw?x-oss-process=image/format,png">
-<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xNjAxNTUwMC0zYmJjOWUwY2M3MWQyOGFmLnBuZw?x-oss-process=image/format,png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191107130828705.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191107130923383.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191107131220346.png">
-<meta property="og:updated_time" content="2019-11-07T05:18:24.206Z">
+<meta property="og:updated_time" content="2019-11-19T04:34:06.149Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java面试题之线程池">
-<meta name="twitter:description" content="1、什么是线程池？线程池，也即是存储多个线程的集合，是一种多线程处理形式。如果每个请求都新创建一个线程来处理，那么当很多请求一块来时服务器资源将会很快耗尽，所以出现线程池这一技术，避免频繁的线程创建和销毁。">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20191106195808740.png">
+<meta name="twitter:title" content="MySQL面试题总结一">
+<meta name="twitter:description" content="1、索引概念简单来说索引是一个帮助我们快速查找数据的数据结构。对于MySQL数据库来说，索引是一个排序的列表，在这个列表中存储着索引的值和包含这个值的数据所在行的物理地址，在数据十分庞大的时候，索引可以大大加快查询的速度，这是因为使用索引后可以不用扫描全表来定位某行的数据，而是先通过索引表找到该行数据对应的物理地址然后访问相应的数据。 2、索引具体采用哪种数据结构索引采用的数据结构和数据库采用的存">
   
     <link rel="alternative" href="/atom.xml" title="Zph、ForMe" type="application/atom+xml">
   
@@ -173,14 +159,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java面试题之线程池" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-MySQL面试题总结一" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java面试题之线程池
+      MySQL面试题总结一
     </h1>
   
 
@@ -191,92 +177,56 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/Java面试题之线程池.html" class="archive-article-date">
-  	<time datetime="2019-11-07T05:17:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-07</time>
+<a href="/MySQL面试题总结一.html" class="archive-article-date">
+  	<time datetime="2019-11-19T04:32:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1、什么是线程池？"><a href="#1、什么是线程池？" class="headerlink" title="1、什么是线程池？"></a>1、什么是线程池？</h4><p>线程池，也即是存储多个线程的集合，是一种多线程处理形式。如果每个请求都新创建一个线程来处理，那么当很多请求一块来时服务器资源将会很快耗尽，所以出现线程池这一技术，避免频繁的线程创建和销毁。<br><a id="more"></a></p>
-<h4 id="2、为什么使用线程池？"><a href="#2、为什么使用线程池？" class="headerlink" title="2、为什么使用线程池？"></a>2、为什么使用线程池？</h4><p>线程的创建和销毁是很耗费资源的，这些时间可能会比处理业务的时间还要长，因此，频繁的创建和销毁线程再加上业务逻辑处理时间可能会导致系统资源不足，所以可以考虑剔除频繁创建与销毁线程。</p>
-<h4 id="3、使用线程池的好处"><a href="#3、使用线程池的好处" class="headerlink" title="3、使用线程池的好处"></a>3、使用线程池的好处</h4><p>①、提前创建好一定数量的线程放在线程池中，当需要的时候就从池中取出，这比需要时临时创建快很多。</p>
-<p>②、方便管理。可以编写管理线程池的代码统一管理，假如启动时该程序创建100个线程，当有请求时就从线程池中取出一个线程进行分配其工作，如果请求数大于100，那多出的部分去等待，而不是像不使用线程池那样一直无休止的创建线程导致系统崩溃。</p>
-<h4 id="4、常见线程池及使用场景"><a href="#4、常见线程池及使用场景" class="headerlink" title="4、常见线程池及使用场景"></a>4、常见线程池及使用场景</h4><h5 id="①、newCacheThreadPool"><a href="#①、newCacheThreadPool" class="headerlink" title="①、newCacheThreadPool"></a>①、newCacheThreadPool</h5><p>创建一个可缓存线程池，如果线程池长度超过处理需要，可灵活回收空闲线程，若无可回收，则新建线程。</p>
-<p>示例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CacheThreadPoolTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ExecutorService executorService = Executors.newCachedThreadPool();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">final</span> <span class="keyword">int</span> nowI = i;</span><br><span class="line">            executorService.execute(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        Thread.sleep(<span class="number">1000</span>*nowI);</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    System.out.println(Thread.currentThread().getName() + <span class="string">" "</span> + nowI);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">pool-1-thread-1 1</span></span><br><span class="line"><span class="comment">pool-1-thread-2 2</span></span><br><span class="line"><span class="comment">pool-1-thread-3 3</span></span><br><span class="line"><span class="comment">pool-1-thread-4 4</span></span><br><span class="line"><span class="comment">pool-1-thread-5 5</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<p><strong>说明：</strong><br>①、newCacheThreadPool能创建的最大线程数为：Integer.MAX_VALUE；</p>
-<p>②、如果长时间没有往线程池中提交任务，即如果工作线程空闲了指定的时间(默认为1分钟)，则该工作线程将自动终止。终止后，如果又提交了新的任务，则线程池重新创建一个工作线程。</p>
-<p>③、在使用CachedThreadPool时，一定要注意控制任务的数量，否则，由于大量线程同时运行，很有会造成系统瘫痪。</p>
-<h5 id="②、newFixedThreadPool"><a href="#②、newFixedThreadPool" class="headerlink" title="②、newFixedThreadPool"></a>②、newFixedThreadPool</h5><p>创建一个定长线程池，可控制线程最大并发数，超出的线程会在队列中等待。</p>
-<p>示例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FixedThreadPoolTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ExecutorService executorService = Executors.newFixedThreadPool(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">17</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">final</span> <span class="keyword">int</span> nowI = i;</span><br><span class="line">            executorService.execute(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                    System.out.println(Thread.currentThread().getName() + <span class="string">" "</span> + nowI);</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//结果为每2秒打印四个数字</span></span><br></pre></td></tr></table></figure>
-<p><strong>说明：</strong><br>创建一个指定工作线程数量的线程池。每当提交一个任务就创建一个工作线程，如果工作线程数量达到线程池初始的最大数，则将提交的任务存入到池队列中。</p>
-<p>FixedThreadPool是一个典型且优秀的线程池，它具有线程池提高程序效率和节省创建线程时所耗的开销的优点。但是，在线程池空闲时，即<strong>线程池中没有可运行任务时，它不会释放工作线程，还会占用一定的系统资源</strong>。</p>
-<h5 id="③、newSingleThreadExecutor"><a href="#③、newSingleThreadExecutor" class="headerlink" title="③、newSingleThreadExecutor"></a>③、newSingleThreadExecutor</h5><p>创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行。如果这个线程异常结束，会有另一个取代它，保证顺序执行。单工作线程最大的特点是可保证<strong>顺序地</strong>执行各个任务，并且在任意给定的时间不会有多个线程是活动的。</p>
-<p>示例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingleThreadPoolTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ExecutorService executorService = Executors.newSingleThreadExecutor();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">final</span> <span class="keyword">int</span> nowI = i;</span><br><span class="line">            executorService.execute(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                    System.out.println(Thread.currentThread().getName() + <span class="string">" "</span> + nowI);</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="④、newScheduleThreadPool"><a href="#④、newScheduleThreadPool" class="headerlink" title="④、newScheduleThreadPool"></a>④、newScheduleThreadPool</h5><p>创建一个定长的线程池，而且支持定时的以及周期性的任务执行，支持定时及周期性任务执行。</p>
-<p>例一：延迟三秒执行</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ScheduleThreadPoolTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">        scheduledExecutorService.schedule(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"延迟三秒"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,<span class="number">3</span>, TimeUnit.SECONDS);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>例二：延迟1秒后每三秒执行一次</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ScheduleThreadPoolTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">        scheduledExecutorService.scheduleAtFixedRate(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"延迟20秒后每三秒执行一次"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,<span class="number">20</span>,<span class="number">3</span>, TimeUnit.SECONDS);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="5、线程池原理-ThreadPoolExecutor"><a href="#5、线程池原理-ThreadPoolExecutor" class="headerlink" title="5、线程池原理(ThreadPoolExecutor)"></a>5、线程池原理(ThreadPoolExecutor)</h4><p>这里使用的是JDK10的ThreadPoolExecutor来学习线程池原理：<br><img src="https://img-blog.csdnimg.cn/20191106195808740.png" alt="在这里插入图片描述"><br><strong>①、Executor接口：</strong> 这个接口提供了一种将任务提交与每个任务将如何运行进行了分离，包括线程使用、调度等细节。该接口只定义了一个execute()方法。</p>
-<p>execute()：将任务提交给线程池，由线程池为该任务创建或者分配线程并启动，其源码如下：<br><img src="https://img-blog.csdnimg.cn/20191106200232324.png" alt="在这里插入图片描述"><br>注意这个方法没有返回值，获取不到线程执行结果</p>
-<p>②、<strong>ExecutorService：</strong><br><img src="https://img-blog.csdnimg.cn/20191106200715724.png" alt="在这里插入图片描述"><br>提供用于管理终止的方法如 shutDown()和shutDownNow()用于关闭线程池的方法以及判断线程池是否关闭的方法如，isShutdown()，isTerminated()的方法。</p>
-<p><strong>shutdownNow：</strong> 对正在执行的任务全部发出interrupt()，停止执行，对还未开始执行的任务全部取消，并且返回还没开始的任务列表。</p>
-<p><strong>shutdown：</strong> 当我们调用shutdown后，线程池将不再接受新的任务，但也不会去强制终止已经提交或者正在执行中的任务。</p>
-<p>提供了可以生成用于跟踪一个或多个异步任务进度的方法如，invokeAll()，submit()。这些方法的返回值都是Future类型，可以获取线程的执行结果。<br><img src="https://img-blog.csdnimg.cn/20191106200854841.png" alt="在这里插入图片描述"><br>③、<strong>ThreadPoolExecutor：</strong><br>ThreadPoolExecutor的部分常量与函数如下：<br><img src="https://img-blog.csdnimg.cn/20191106205133984.png" alt="在这里插入图片描述"><br><strong>ctl是对线程池的运行状态和线程池中有效线程的数量进行控制的一个字段</strong>，ctl是一个Integer, 它包含两部分的信息: 高三位表示线程池的运行状态 (runState) 和低29位表示线程池内有效线程的数量 (workerCount)，</p>
-<p>线程池的生命周期，总共有五种状态</p>
-<p><strong>RUNNING ：</strong> 能接受新提交的任务，并且也能处理阻塞队列中的任务；</p>
-<p><strong>SHUTDOWN：</strong> 关闭状态，不再接受新提交的任务，但却可以继续处理阻塞队列中已保存的任务。在线程池处于 RUNNING 状态时，调用 shutdown()方法会使线程池进入到该状态。（finalize() 方法在执行过程中也会调用shutdown()方法进入该状态）；</p>
-<p><strong>STOP：</strong> 不能接受新任务，也不处理队列中的任务，会中断正在处理任务的线程。在线程池处于 RUNNING 或 SHUTDOWN 状态时，调用 shutdownNow() 方法会使线程池进入到该状态；</p>
-<p><strong>TIDYING：</strong> 如果所有的任务都已终止了，workerCount (有效线程数) 为0，线程池进入该状态后会调用 terminated() 方法进入TERMINATED 状态。</p>
-<p><strong>TERMINATED：</strong> 在terminated() 方法执行完后进入该状态，默认terminated()方法中什么也没有做。</p>
-<p>线程池生命周期如下图：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xNjAxNTUwMC0zNTcyOTRkMDc4MzcxYzk0LnBuZw?x-oss-process=image/format,png" alt="在这里插入图片描述"><br>上图中关于ctl的三个方法做如下解释：<br><img src="https://img-blog.csdnimg.cn/20191107122646664.png" alt="在这里插入图片描述"><br>runStateOf：获取运行状态；</p>
-<p>workerCountOf：获取活动线程数；</p>
-<p>ctlOf：获取运行状态和活动线程数的值</p>
-<p><strong>ThreadPoolExecutor的构造函数：</strong><br><img src="https://img-blog.csdnimg.cn/20191106210336299.png" alt="在这里插入图片描述"><br><strong>corePoolSize：</strong> 核心线程数量，当有新任务在execute()方法提交时，会执行以下判断：</p>
-<p>a)：如果运行的线程少于 corePoolSize，则创建新线程来处理任务，即使线程池中的其他线程是空闲的；</p>
-<p>b)：如果线程池中的线程数量大于等于 corePoolSize 且小于 maximumPoolSize，当workQueue未满的时候任务添加到workQueue中，当workQueue满时才创建新的线程去处理任务；</p>
-<p>c)：如果设置的corePoolSize 和 maximumPoolSize相同，则创建的线程池的大小是固定的，这时如果有新任务提交，若workQueue未满，则将请求放入workQueue中，等待有空闲的线程去从workQueue中取任务并处理；</p>
-<p>d)：如果运行的线程数量大于等于maximumPoolSize，这时如果workQueue已经满了，则通过handler所指定的策略来处理任务；</p>
-<p>所以，任务提交时，判断的顺序为 corePoolSize –&gt; workQueue –&gt; maximumPoolSize。</p>
-<p><strong>maximumPoolSize：</strong> 最大线程数量；</p>
-<p><strong>workQueue：</strong> 等待队列，当任务提交时，如果线程池中的线程数量大于等于corePoolSize的时候，把该任务封装成一个Worker对象放入等待队列；</p>
-<p><strong>workQueue：</strong> 保存等待执行的任务的阻塞队列，当提交一个新的任务到线程池以后, 线程池会根据当前线程池中正在运行着的线程的数量来决定对该任务的处理方式，主要有以下几种处理方式:</p>
-<p>直接切换：这种方式常用的队列是SynchronousQueue。它是一个不存储元素的阻塞队列。每个插入操作必须等到另一个线程调用移除操作，否则插入操作一直处于阻塞状态，吞吐量通常要高于LinkedBlockingQueue，<strong>静态工厂方法Executors.newCachedThreadPool使用了这个队列。</strong></p>
-<p><strong>使用无界队列：</strong> 一般使用基于链表的阻塞队列LinkedBlockingQueue。如果使用这种方式，那么线程池中能够创建的最大线程数就是corePoolSize，而maximumPoolSize就不会起作用了。当线程池中所有的核心线程都是RUNNING状态时，这时一个新的任务提交就会放入等待队列中。它是一个基于链表结构的阻塞队列，此队列按FIFO （先进先出） 排序元素，吞吐量通常要高于ArrayBlockingQueue。静态工厂方法<strong>Executors.newFixedThreadPool()使用了这个队列</strong>。</p>
-<p><strong>使用有界队列：</strong> 一般使用ArrayBlockingQueue。使用该方式可以将线程池的最大线程数量限制为maximumPoolSize，这样能够降低资源的消耗，但同时这种方式也使得线程池对线程的调度变得更困难，因为线程池和队列的容量都是有限的值，所以要想使线程池处理任务的吞吐率达到一个相对合理的范围，又想使线程调度相对简单，并且还要尽可能的降低线程池对资源的消耗，就需要合理的设置这两个数量。</p>
-<p>如果要想降低系统资源的消耗（包括CPU的使用率，操作系统资源的消耗，上下文环境切换的开销等）, <strong>可以设置较大的队列容量和较小的线程池容量</strong>, 但这样也会降低线程处理任务的吞吐量。</p>
-<p>如果提交的任务经常发生阻塞，那么可以考虑通过调用 setMaximumPoolSize() 方法来重新设定线程池的容量。</p>
-<p>如果队列的容量设置的较小，通常需要将线程池的容量设置大一点，这样CPU的使用率会相对的高一些。但如果线程池的容量设置的过大，则在提交的任务数量太多的情况下，并发量会增加，那么线程之间的调度就是一个要考虑的问题，因为这样反而有可能降低处理任务的吞吐量。</p>
-<p><strong>keepAliveTime：</strong> 线程池维护线程所允许的空闲时间。当线程池中的线程数量大于corePoolSize的时候，如果这时没有新的任务提交，核心线程外的线程不会立即销毁，而是会等待，直到等待的时间超过了keepAliveTime；</p>
-<p><strong>threadFactory：</strong> 它是ThreadFactory类型的变量，用来创建新线程。默认使用Executors.defaultThreadFactory() 来创建线程。使用默认的ThreadFactory来创建线程时，会使新创建的线程具有相同的NORM_PRIORITY优先级并且是非守护线程，同时也设置了线程的名称。</p>
-<p><strong>handler：</strong> 它是RejectedExecutionHandler类型的变量，表示线程池的饱和策略。如果阻塞队列满了并且没有空闲的线程，这时如果继续提交任务，就需要采取一种策略处理该任务。线程池提供了4种策略：</p>
-<p><strong>AbortPolicy：</strong> 直接抛出异常，这是默认策略；</p>
-<p><strong>CallerRunsPolicy：</strong> 用调用者所在的线程来执行任务；</p>
-<p><strong>DiscardOldestPolicy：</strong> 丢弃阻塞队列中靠最前的任务，并执行当前任务；</p>
-<p><strong>DiscardPolicy：</strong> 直接丢弃任务；</p>
-<p>线程池的流程：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xNjAxNTUwMC1kOWUwMDZkZjJiNzg5ZDJhLnBuZw?x-oss-process=image/format,png" alt="在这里插入图片描述"></p>
-<blockquote>
-<p>线程池中的核心线程和非核心线程，没有什么区别，都是线程，只不过人为的规则线程池中的一部分线程叫核心线程</p>
-</blockquote>
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xNjAxNTUwMC0zYmJjOWUwY2M3MWQyOGFmLnBuZw?x-oss-process=image/format,png" alt="在这里插入图片描述"><br>ThreadPoolExecutor执行execute方法分下面4种情况。</p>
-<p>1）如果当前运行的线程少于corePoolSize，则创建新线程来执行任务（注意，执行这一步骤需要获取全局锁）。</p>
-<p>2）如果运行的线程等于或多于corePoolSize，则将任务加入BlockingQueue。</p>
-<p>3）如果无法将任务加入BlockingQueue（队列已满），则创建新的线程来处理任务（注意，执行这一步骤需要获取全局锁）。</p>
-<p>4）如果创建新线程将使当前运行的线程超出maximumPoolSize，任务将被拒绝，并调用</p>
-<p>RejectedExecutionHandler.rejectedExecution()方法。</p>
-<p>ThreadPoolExecutor采取上述步骤的总体设计思路，是为了在执行execute()方法时，尽可能地避免获取全局锁（那将会是一个严重的可伸缩瓶颈）。在ThreadPoolExecutor完成预热之后当前运行的线程数大于等于corePoolSize），几乎所有的execute()方法调用都是执行步骤2，而步骤2不需要获取全局锁。</p>
-<h5 id="6、为什么线程池中的线程可以重复利用？"><a href="#6、为什么线程池中的线程可以重复利用？" class="headerlink" title="6、为什么线程池中的线程可以重复利用？"></a>6、为什么线程池中的线程可以重复利用？</h5><p>①、execute()方法中调用了一个addWork()方法，在execute()方法中使用addWorker()方法的地方只有在添加核心线程和非核心线程的时候调用。在execute()方法中并没有实现线程池是如何维护线程不被销毁，从而达到重复利用的。</p>
-<p>②、查看addWork()方法，可以看到，向线程池中添加的Runnable被包装成Worker对象，并调用了start()方法。</p>
-<p>③、看下Worker类：<br><img src="https://img-blog.csdnimg.cn/20191107130828705.png" alt="在这里插入图片描述"><br>Worker类继承Runnable,和AbstractQueuedSynchronizer<br>查看run()方法，调用runWorker，并将自身作为参数：<br><img src="https://img-blog.csdnimg.cn/20191107130923383.png" alt="在这里插入图片描述"><br>④、查看runWorker()，在前面的addWorker()方法在最后是执行了start()方法，也就是Worker的run()方法，进而执行了runWorker()方法。<br>runWorker方法代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">final</span> <span class="keyword">void</span> <span class="title">runWorker</span><span class="params">(Worker w)</span> </span>&#123;</span><br><span class="line">        Thread wt = Thread.currentThread();</span><br><span class="line">        Runnable task = w.firstTask;</span><br><span class="line">        w.firstTask = <span class="keyword">null</span>;</span><br><span class="line">        w.unlock(); <span class="comment">// allow interrupts</span></span><br><span class="line">        <span class="keyword">boolean</span> completedAbruptly = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">while</span> (task != <span class="keyword">null</span> || (task = getTask()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">                w.lock();</span><br><span class="line">                <span class="comment">// If pool is stopping, ensure thread is interrupted;</span></span><br><span class="line">                <span class="comment">// if not, ensure thread is not interrupted.  This</span></span><br><span class="line">                <span class="comment">// requires a recheck in second case to deal with</span></span><br><span class="line">                <span class="comment">// shutdownNow race while clearing interrupt</span></span><br><span class="line">                <span class="keyword">if</span> ((runStateAtLeast(ctl.get(), STOP) ||</span><br><span class="line">                     (Thread.interrupted() &amp;&amp;</span><br><span class="line">                      runStateAtLeast(ctl.get(), STOP))) &amp;&amp;</span><br><span class="line">                    !wt.isInterrupted())</span><br><span class="line">                    wt.interrupt();</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    beforeExecute(wt, task);</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        task.run();</span><br><span class="line">                        afterExecute(task, <span class="keyword">null</span>);</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (Throwable ex) &#123;</span><br><span class="line">                        afterExecute(task, ex);</span><br><span class="line">                        <span class="keyword">throw</span> ex;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">                    task = <span class="keyword">null</span>;</span><br><span class="line">                    w.completedTasks++;</span><br><span class="line">                    w.unlock();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            completedAbruptly = <span class="keyword">false</span>;</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            processWorkerExit(w, completedAbruptly);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>这个<strong>while就是线程池中线程不被销毁的原因所在</strong>，在Worker的run方法中，如果while一直执行下去，那么Worker这个继承了Runnable接口的线程就会一直执行下去，而我们知道线程池中任务的载体是Worker,如果Worker一直执行下去，就表示该载体可以一直存在，换的只是载体上我们通过execute()方法添加的Runnable任务而已。</p>
-<p>看一下while循环的条件：<br><img src="https://img-blog.csdnimg.cn/20191107131220346.png" alt="在这里插入图片描述"><br>⑤、调用getTask()方法确保while循环执行，在第一次执行完while后task设置为null,那么就要保证task=getTask()!=null，查看getTask()，从名字可以看出这是获取一个任务。</p>
-<p>参考文章：<br><a href="https://www.jianshu.com/p/a166944f1e73" target="_blank" rel="noopener">Java线程池原理</a><br><a href="https://blog.csdn.net/qq_29373285/article/details/85238728" target="_blank" rel="noopener">java线程池 面试题（精简）</a><br><a href="https://www.jianshu.com/p/9beab78a3afe" target="_blank" rel="noopener">Java线程池（二）</a><br><a href="https://www.cnblogs.com/williamjie/p/9485723.html" target="_blank" rel="noopener">java常用的几种线程池比较</a></p>
+        <h4 id="1、索引概念"><a href="#1、索引概念" class="headerlink" title="1、索引概念"></a>1、索引概念</h4><p>简单来说索引是一个帮助我们快速查找数据的数据结构。对于MySQL数据库来说，索引是一个排序的列表，在这个列表中存储着索引的值和包含这个值的数据所在行的物理地址，在数据十分庞大的时候，索引可以大大加快查询的速度，这是因为使用索引后可以不用扫描全表来定位某行的数据，而是先通过索引表找到该行数据对应的物理地址然后访问相应的数据。</p>
+<h4 id="2、索引具体采用哪种数据结构"><a href="#2、索引具体采用哪种数据结构" class="headerlink" title="2、索引具体采用哪种数据结构"></a>2、索引具体采用哪种数据结构</h4><p>索引采用的数据结构和数据库采用的存储引擎有关，在MySQL中用的最多的是Hash索引和B+树索引，MySQL默认存储引擎是InnoDB，采用的就是B+树索引。</p>
+<h4 id="3、Hash索引与B-树索引有什么区别和各自优劣"><a href="#3、Hash索引与B-树索引有什么区别和各自优劣" class="headerlink" title="3、Hash索引与B+树索引有什么区别和各自优劣"></a>3、Hash索引与B+树索引有什么区别和各自优劣</h4><p>Hash索引底层是hash表，通过调用hash函数就可以获取到相应的键值，之后进行回表查询获得实际数据。<br>B+树底层实现是多路平衡查找树，每一次查询都是从根节点出发，查询到叶子节点才能获取到相应的键值，然后根据查询判断是否需要回表操作。</p>
+<p>因为Hash索引底层实现是哈希表，哈希表是以key-value存储数据的结构，多个数据在存储顺序上是没有任何关系的，因此当进行范围查找的时候就需要进行全表扫描了而不能直接通过索引查询。所以哈希索引只适合等值查询。B+树索引的底层实现是多叉平衡查找树，它的节点是天然有序的，所以对于范围查询的时候不需要扫描全表。</p>
+<p>另外Hash索引不支持多列联合索引的最左匹配原则，当有大量重复键值的情况下由于存在哈希碰撞会导致hash索引的效率会很低，而B+树的查询效率比较稳定,对于所有的查询都是从根节点到叶子节点,且树的高度较低。除此之外Hash索引不支持按照Hash索引排序。</p>
+<p>hash索引任何时候都避免不了回表查询数据,而B+树在符合某些条件(聚簇索引,覆盖索引等)的时候可以只通过索引完成查询。</p>
+<h4 id="4、聚簇索引与覆盖索引"><a href="#4、聚簇索引与覆盖索引" class="headerlink" title="4、聚簇索引与覆盖索引"></a>4、聚簇索引与覆盖索引</h4><p>在B+树中叶子节点可能存储了当前key的键值，也可能存储了当前key值和其对应的一整行数据，这就是非聚簇索引和聚簇索引。</p>
+<p>在 InnoDB 里，索引B+ Tree的叶子节点存储了整行数据的是主键索引，也被称之为聚簇索引。而索引B+ Tree的叶子节点存储了主键的值的是非主键索引，也被称之为非聚簇索引。<br>聚簇索引与非聚簇索引的区别简而言之如下：</p>
+<p><strong>聚簇索引：</strong> 将数据存储与索引放到了一块，索引结构的叶子节点保存了行数据；</p>
+<p><strong>非聚簇索引：</strong> 将数据与索引分开存储，索引结构的叶子节点指向了数据对应的位置。</p>
+<p>关于聚簇与非聚簇索引的详细内容阅读：<br><a href="https://jcoffeezph.top/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B4%A2%E5%BC%95%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86.html"><strong>MySQL数据库索引底层原理</strong></a></p>
+<h6 id="聚簇索引与非聚簇索引那个查询更快及原因"><a href="#聚簇索引与非聚簇索引那个查询更快及原因" class="headerlink" title="聚簇索引与非聚簇索引那个查询更快及原因"></a>聚簇索引与非聚簇索引那个查询更快及原因</h6><p>聚簇索引查询更快，因为聚簇索引叶子节点存储的是键值对应的数据本身，而非聚簇索引叶子节点存储的是主键值，查询到主键值之后还要在通过主键值查询行数据。</p>
+<h6 id="非聚簇索引一定会回表查询从而查询多次吗"><a href="#非聚簇索引一定会回表查询从而查询多次吗" class="headerlink" title="非聚簇索引一定会回表查询从而查询多次吗"></a>非聚簇索引一定会回表查询从而查询多次吗</h6><p>不一定，<strong>覆盖索引（covering index）</strong> 指一个查询语句的执行只用从索引中就能够取得，不必从数据表中读取。也可以称之为实现了索引覆盖。 当一条查询语句符合覆盖索引条件时，MySQL只需要通过索引就可以返回查询所需要的数据，这样避免了查到索引后再返回表操作，减少I/O提高效率。</p>
+<p><strong>索引覆盖</strong> 是一种避免回表查询的优化策略。具体的做法就是将要查询的数据作为索引列建立普通索引（可以是单列索引，也可以一个索引语句定义所有要查询的列，即联合索引），这样的话就可以直接返回索引中的的数据，不需要再通过聚集索引去定位行记录，避免了回表的情况发生。要注意的是，<strong>不是所有类型的索引都可以成为覆盖索引的</strong>。因为覆盖索引必须要存储索引的列值，而哈希索引、空间索引和全文索引等都不存储索引列值，所以MySQL只能使用B-Tree索引做覆盖索引。</p>
+<p>关于聚簇索引与非聚簇索引的详细信息阅读：<br><a href="https://my.oschina.net/xiaoyoung/blog/3046779" target="_blank" rel="noopener"><strong>浅谈聚簇索引和非聚簇索引的区别</strong></a></p>
+<h4 id="5、联合索引及最左匹配原则"><a href="#5、联合索引及最左匹配原则" class="headerlink" title="5、联合索引及最左匹配原则"></a>5、联合索引及最左匹配原则</h4><p>假设有s1表，包含有name、age、score三个字段以及其他字段<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> s1 <span class="keyword">add</span> <span class="keyword">index</span> (<span class="keyword">name</span>,age,score); //创建联合索引</span><br></pre></td></tr></table></figure></p>
+<p>对于包含了(a,b,c)三个字段的联合索引，相当于a、ab、abc三个索引，一个联合索引可以当作多个单索引使用，大大减少了写操作的开销和磁盘空间的开销。对于联合索引(abc)，当查询语句如下：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> s1 <span class="keyword">where</span> a=<span class="string">'a'</span> <span class="keyword">and</span> c = <span class="string">'c'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>的时候也会使用索引，但是只使用了(a)，c并没使用</p>
+<p><strong>联合索引的最左前缀匹配原则：</strong><br>顾名思义是最左优先，以最左边的为起点任何连续的索引都能匹配上，<br>注：如果第一个字段是范围查询需要单独建一个索引<br>注：在创建联合索引时，要根据业务需求，where子句中<strong>使用最频繁的一列放在最左边</strong>。</p>
+<h4 id="6、MySQL事务"><a href="#6、MySQL事务" class="headerlink" title="6、MySQL事务"></a>6、MySQL事务</h4><p><strong>事务：</strong> 在MySQL中只有使用了InnoDB引擎的数据库或表支持事务，数据库可以用来维护数据库的完整性，保证成批的数据库要不全部执行要不全部不执行。</p>
+<h4 id="7、事务的四个特性ACID"><a href="#7、事务的四个特性ACID" class="headerlink" title="7、事务的四个特性ACID"></a>7、事务的四个特性ACID</h4><p><strong>①、原子性：</strong> Atomicity，一个事务中的操作要么全部执行，要么全部不执行，不会结束在某个中间的环节。事务在执行的过程中发生错误，会被回滚到事务开始前的状态，就好像从来没有执行这个事务。</p>
+<p><strong>②、一致性：</strong> Consistency，事务开始和结束之后数据库的完整性不会被破坏。</p>
+<p><strong>③、隔离性：</strong> Isolation，数据库允许多个并发事务同时对其数据进行读写和修改，隔离性可以防止多个事务并发执行时由于交叉执行而导致数据的不一致。事务隔离分为不同级别，包括读未提交（Read uncommitted）、读提交（read committed）、可重复读（repeatable read）和串行化（Serializable）。</p>
+<p><strong>④、持久性：</strong> Durability，事务处理结束后，对数据的修改就是永久的，即便系统故障也不会丢失。</p>
+<h4 id="8、同时有多个事务在进行会怎么样呢"><a href="#8、同时有多个事务在进行会怎么样呢" class="headerlink" title="8、同时有多个事务在进行会怎么样呢?"></a>8、同时有多个事务在进行会怎么样呢?</h4><p>多事务的并发进行一般会造成以下几个问题:</p>
+<ul>
+<li><p>脏读: A事务读取到了B事务未提交的内容,而B事务后面进行了回滚.</p>
+</li>
+<li><p>不可重复读: 当设置A事务只能读取B事务已经提交的部分,会造成在A事务内的两次查询,结果竟然不一样,因为在此期间B事务进行了提交操作.</p>
+</li>
+<li><p>幻读: A事务读取了一个范围的内容,而同时B事务在此期间插入了一条数据.造成”幻觉”.</p>
+</li>
+</ul>
+<h4 id="9、怎么解决8的这些问题呢-MySQL的事务隔离级别了解吗"><a href="#9、怎么解决8的这些问题呢-MySQL的事务隔离级别了解吗" class="headerlink" title="9、怎么解决8的这些问题呢?MySQL的事务隔离级别了解吗?"></a>9、怎么解决8的这些问题呢?MySQL的事务隔离级别了解吗?</h4><p>MySQL的四种隔离级别如下:</p>
+<p><strong>未提交读(READ UNCOMMITTED)</strong><br>这个隔离级别下,其他事务可以看到本事务没有提交的部分修改。因此会造成脏读的问题(读取到了其他事务未提交的部分,而之后该事务进行了回滚)。</p>
+<p>这个级别的性能没有足够大的优势,但是又有很多的问题,因此很少使用.</p>
+<p><strong>已提交读(READ COMMITTED)</strong><br>其他事务只能读取到本事务已经提交的部分。这个隔离级别有不可重复读的问题，在同一个事务内的两次读取，拿到的结果竟然不一样，因为另外一个事务对数据进行了修改。</p>
+<p><strong>REPEATABLE READ(可重复读)</strong><br>可重复读隔离级别解决了上面不可重复读的问题(看名字也知道)，但是仍然有一个新问题，就是幻读，当你读取id &gt; 10 的数据行时,对涉及到的所有行加上了读锁，此时另外一个事务新插入了一条id=11的数据，因为是新插入的，所以不会触发上面的锁的排斥,那么进行本事务进行下一次的查询时会发现有一条id=11的数据，而上次的查询操作并没有获取到，再进行插入就会有主键冲突的问题。</p>
+<p><strong>SERIALIZABLE(可串行化)</strong></p>
+<p>这是最高的隔离级别,可以解决上面提到的所有问题，因为他强制将所有的操作串行执行，这会导致并发性能极速下降，因此也不是很常用。</p>
+<h4 id="10、Innodb使用的是哪种隔离级别呢"><a href="#10、Innodb使用的是哪种隔离级别呢" class="headerlink" title="10、Innodb使用的是哪种隔离级别呢?"></a>10、Innodb使用的是哪种隔离级别呢?</h4><p>InnoDB默认使用的是可重复读隔离级别。</p>
+<h4 id="11、MySQL中的锁"><a href="#11、MySQL中的锁" class="headerlink" title="11、MySQL中的锁"></a>11、MySQL中的锁</h4><p>阅读：<a href="https://blog.csdn.net/soonfly/article/details/70238902" target="_blank" rel="noopener"><strong>MySQL中的锁（表锁、行锁，共享锁，排它锁，间隙锁）</strong></a></p>
 
       
 
@@ -290,7 +240,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">线程池</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MySQL一</a>
         		</li>
       		
 		</ul>
@@ -320,18 +270,9 @@
   
 <nav id="article-nav">
   
-    <a href="/Java并发之AQS结构及原理分析.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java并发之AQS结构及原理分析
-        
-      </div>
-    </a>
   
-  
-    <a href="/Java面试题之ThreadLocal.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java面试题之ThreadLocal</div>
+    <a href="/MySQL数据库索引底层原理.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MySQL数据库索引底层原理</div>
       <i class="icon-circle-right"></i>
     </a>
   
