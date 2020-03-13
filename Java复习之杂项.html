@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jcoffeezph.top">
-  <title>Archives: 2018/12 | Zph、ForMe</title>
+  <title>Java复习之杂项 | Zph、ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Enjoy Coding">
-<meta name="keywords" content="Java 软件">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Zph、ForMe">
-<meta property="og:url" content="https://jcoffeezph.top/archives/2018/12/index.html">
+  <meta name="description" content="1、泛型在Java中泛型是指把类型明确的工作推迟到创建对象或者调用方法的时候才去明确的特殊类型。使用泛型可以保证一个List、Set中只有一个类型，可以避免类型转换错误，泛型只在编译阶段有效，泛型在逻辑上可以看成是多个类型，但实质上是一个类型，下面的例子就可证实：">
+<meta name="keywords" content="杂项篇">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java复习之杂项">
+<meta property="og:url" content="https://jcoffeezph.top/Java复习之杂项.html">
 <meta property="og:site_name" content="Zph、ForMe">
-<meta property="og:description" content="Enjoy Coding">
+<meta property="og:description" content="1、泛型在Java中泛型是指把类型明确的工作推迟到创建对象或者调用方法的时候才去明确的特殊类型。使用泛型可以保证一个List、Set中只有一个类型，可以避免类型转换错误，泛型只在编译阶段有效，泛型在逻辑上可以看成是多个类型，但实质上是一个类型，下面的例子就可证实：">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-03-13T02:13:53.483Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zph、ForMe">
-<meta name="twitter:description" content="Enjoy Coding">
+<meta name="twitter:title" content="Java复习之杂项">
+<meta name="twitter:description" content="1、泛型在Java中泛型是指把类型明确的工作推迟到创建对象或者调用方法的时候才去明确的特殊类型。使用泛型可以保证一个List、Set中只有一个类型，可以避免类型转换错误，泛型只在编译阶段有效，泛型在逻辑上可以看成是多个类型，但实质上是一个类型，下面的例子就可证实：">
   
     <link rel="alternative" href="/atom.xml" title="Zph、ForMe" type="application/atom+xml">
   
@@ -158,322 +159,160 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java复习之杂项" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java复习之杂项
+    </h1>
+  
+
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style="display:none" class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/Java复习之杂项.html" class="archive-article-date">
+  	<time datetime="2020-03-13T02:13:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-13</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1、泛型"><a href="#1、泛型" class="headerlink" title="1、泛型"></a>1、泛型</h4><p>在Java中泛型是指把类型明确的工作推迟到创建对象或者调用方法的时候才去明确的特殊类型。使用泛型可以保证一个List、Set中只有一个类型，可以避免类型转换错误，泛型只在编译阶段有效，泛型在逻辑上可以看成是多个类型，但实质上是一个类型，下面的例子就可证实：<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; integerList = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        List&lt;String&gt; stringList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">        Class interClass = integerList.getClass();</span><br><span class="line">        Class stringClass = stringList.getClass();</span><br><span class="line"></span><br><span class="line">        System.out.println(interClass.equals(stringClass));</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//结果为 true</span></span><br></pre></td></tr></table></figure></p>
+<p>泛型有三种使用方式：泛型类、泛型方法、泛型接口</p>
+<p>①、泛型类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> &lt;<span class="title">T</span>&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">private</span> T name;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">  .....</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>②、泛型接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Generator</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">next</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>③、泛型方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> &lt;T&gt; <span class="function">T <span class="title">generic</span><span class="params">(T t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> t;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>④、类型通配符(?)</p>
+<ul>
+<li>？可以接受任意类型</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(List&lt;?&gt; elements)</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>用于实现上下界问题<br>能够接收A类或者A类的子类<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(List&lt;? extends A&gt; elements)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>能接受A类或者是A类的父类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(List&lt;? <span class="keyword">super</span> A&gt; list)</span></span>&#123;</span><br><span class="line">    list.add(<span class="keyword">new</span> A());</span><br><span class="line">    list.add(<span class="keyword">new</span> B());</span><br><span class="line">    list.add(<span class="keyword">new</span> C());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：泛型通配符&lt; ? extends T &gt;来接收返回的数据，此写法的泛型集合不能使用 add 方 法， 而&lt; ? super T &gt;不能使用 get 方法，做为接口调用赋值时易出错。</p>
+<h4 id="2、随机数"><a href="#2、随机数" class="headerlink" title="2、随机数"></a>2、随机数</h4><p>①、Mart.random()方法，底层调用的是Random类的nextDouble()方法；<br>②、Random类，可以在构造函数中设置种子，种子就是产生随机数的第一次使用值，机制是通过一个函数，将这个种子的值转化为随机数空间中的某一个点上，并且产生的随机数均匀的散布在空间中，以后产生的随机数都与前一个随机数有关</p>
+<h4 id="3、位运算"><a href="#3、位运算" class="headerlink" title="3、位运算"></a>3、位运算</h4><p>见另一篇文章：<a href="https://jcoffeezph.top/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%8F%8A%E5%85%B6%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C.html">位运算及其常用操作</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/SAX解析XML.html" class="archive-article-date">
-  	<time datetime="2018-12-17T11:20:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/SAX解析XML.html">SAX解析XML</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SAX解析XML</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">杂项篇</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Java基础//" class="article-tag-list-link color2">Java基础</a>
+        			<a href="/categories/面试题//" class="article-tag-list-link color4">面试题</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/jsp之监听器.html" class="archive-article-date">
-  	<time datetime="2018-12-06T13:35:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-06</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/Java集合复习之HashMap-JDK10.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java集合复习之HashMap-JDK10</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/jsp之监听器.html">jsp之监听器</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JSP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JavaWeb//" class="article-tag-list-link color3">JavaWeb</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/javaweb之文件的上传与下载.html" class="archive-article-date">
-  	<time datetime="2018-12-05T08:56:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/javaweb之文件的上传与下载.html">JavaWeb之文件的上传与下载</a>
-    </h1>
+
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Servlet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JavaWeb//" class="article-tag-list-link color3">JavaWeb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/jsp之JSTL.html" class="archive-article-date">
-  	<time datetime="2018-12-03T12:43:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/jsp之JSTL.html">JSP之JSTL与EL表达式</a>
-    </h1>
-  
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'true' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "11btHRKRUnSiCwm7nxQ6MqvJ-gzGzoHsz",
+            app_key: "AA0vgaQmApd786vhE4gJcJER",
+            placeholder: "Say Something!",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JSP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JavaWeb//" class="article-tag-list-link color3">JavaWeb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/jsp之javabean与标签.html" class="archive-article-date">
-  	<time datetime="2018-12-03T08:45:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/jsp之javabean与标签.html">JSP之javabean与自定义标签</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JSP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JavaWeb//" class="article-tag-list-link color3">JavaWeb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/jsp-servlet-mysql实现简单登录的完整项目.html" class="archive-article-date">
-  	<time datetime="2018-12-01T13:29:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/jsp-servlet-mysql实现简单登录的完整项目.html">jsp+servlet+mysql实现简单登录的完整项目</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">project</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JavaWeb//" class="article-tag-list-link color3">JavaWeb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
+
   
 
-    
+  
+
+  
 
 
           </div>
@@ -509,8 +348,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
