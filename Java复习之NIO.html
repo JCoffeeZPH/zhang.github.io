@@ -6,19 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jcoffeezph.top">
-  <title>Tag: 索引基础知识 | Zph、ForMe</title>
+  <title>Java复习之NIO | Zph、ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Enjoy Coding">
-<meta name="keywords" content="Java 软件">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Zph、ForMe">
-<meta property="og:url" content="https://jcoffeezph.top/tags/索引基础知识/index.html">
+  <meta name="description" content="1、IO与NIO区别 NIO，即Non-blocking IO，是基于Channel和Buffer的，IO则是基于字节流和字符流的，也即是IO是面向流的，NIO是面向缓冲区的。对于NIO，数据总是从Channel读入Buffer和从Buffer写入Channel，而IO操作没有被缓存到任何地方； NIO允许异步的使用IO，当向缓冲区写入数据的时候，NIO允许线程做其他的事情，当数据写入到缓冲区后线">
+<meta name="keywords" content="NIO篇">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java复习之NIO">
+<meta property="og:url" content="https://jcoffeezph.top/Java复习之NIO.html">
 <meta property="og:site_name" content="Zph、ForMe">
-<meta property="og:description" content="Enjoy Coding">
+<meta property="og:description" content="1、IO与NIO区别 NIO，即Non-blocking IO，是基于Channel和Buffer的，IO则是基于字节流和字符流的，也即是IO是面向流的，NIO是面向缓冲区的。对于NIO，数据总是从Channel读入Buffer和从Buffer写入Channel，而IO操作没有被缓存到任何地方； NIO允许异步的使用IO，当向缓冲区写入数据的时候，NIO允许线程做其他的事情，当数据写入到缓冲区后线">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200313120933723.jpg">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200313121655253.jpg">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200313122102766.jpg">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200313144621926.png">
+<meta property="og:updated_time" content="2020-03-13T07:57:20.113Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zph、ForMe">
-<meta name="twitter:description" content="Enjoy Coding">
+<meta name="twitter:title" content="Java复习之NIO">
+<meta name="twitter:description" content="1、IO与NIO区别 NIO，即Non-blocking IO，是基于Channel和Buffer的，IO则是基于字节流和字符流的，也即是IO是面向流的，NIO是面向缓冲区的。对于NIO，数据总是从Channel读入Buffer和从Buffer写入Channel，而IO操作没有被缓存到任何地方； NIO允许异步的使用IO，当向缓冲区写入数据的时候，NIO允许线程做其他的事情，当数据写入到缓冲区后线">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200313120933723.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Zph、ForMe" type="application/atom+xml">
   
@@ -158,72 +164,186 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java复习之NIO" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/mysql基础知识之索引.html" class="archive-article-date">
-  	<time datetime="2019-10-17T04:18:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-17</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/mysql基础知识之索引.html">mysql基础知识之索引基础知识之索引</a>
+    <h1 class="article-title" itemprop="name">
+      Java复习之NIO
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style="display:none" class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/Java复习之NIO.html" class="archive-article-date">
+  	<time datetime="2020-03-13T07:56:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1、IO与NIO区别"><a href="#1、IO与NIO区别" class="headerlink" title="1、IO与NIO区别"></a>1、IO与NIO区别</h4><ul>
+<li>NIO，即Non-blocking IO，是基于Channel和Buffer的，IO则是基于字节流和字符流的，也即是IO是面向流的，NIO是面向缓冲区的。对于NIO，数据总是从Channel读入Buffer和从Buffer写入Channel，而IO操作没有被缓存到任何地方；</li>
+<li>NIO允许异步的使用IO，当向缓冲区写入数据的时候，NIO允许线程做其他的事情，当数据写入到缓冲区后线程还可以继续处理数据，从缓冲区写入通道也一样，而IO只能等到线程的read()和write()完成后才能做其他事情；</li>
+<li>NIO采用的是多路复用的IO模型，普通的IO用的是阻塞的IO模型，两个之间的效率肯定是多路复用效率更高</li>
+<li>NIO的通道是可以双向的，但是IO中的流只能是单向的<a id="more"></a>
+<h4 id="2、Buffer三个属性"><a href="#2、Buffer三个属性" class="headerlink" title="2、Buffer三个属性"></a>2、Buffer三个属性</h4></li>
+<li>capacity(容量)</li>
+<li>position(位置)，下一个要操作的数据元素的位置</li>
+<li>limit(限制)，缓冲区数组中不可操作的下一个元素的位置：limit&lt;=capacity<br><img src="https://img-blog.csdnimg.cn/20200313120933723.jpg" alt="在这里插入图片描述"><br>假设ByteBuffer.allocate(11);初始状态如上图，limit和capacity均为11，然后将缓冲区的5个字节写入Channel的通信信道，变化如下<br><img src="https://img-blog.csdnimg.cn/20200313121655253.jpg" alt="在这里插入图片描述"><br>如果需要将这5个字节写到Channel中，则调用flip()方法，变化如下<br><img src="https://img-blog.csdnimg.cn/20200313122102766.jpg" alt="在这里插入图片描述"><br>这是操作系统就可以正确的从缓冲区中读取这5个字节并发送出去，在下一次写操作之前调用clear()方法，缓冲区的索引就又回到了初始位置。</li>
+</ul>
+<p>调用clear()方法Buffer会被清空，position变为0，limit=capacity，其实Buffer并未被清空，知识告诉我们再次写入Buffer时在那个地方开始写入，如果此时Buffer中有未读的数据，这些未读数据将会被遗忘，如果我们还需要这些未读数据，则用compact()方法代替clear()方法，compact()方法将所有未读的数据拷贝到Buffer起始处，然后将position指向最后一个未读数据的正后面。limit属性依然像clear()方法一样，设置成capacity。现在Buffer准备好写数据了，但是不会覆盖未读的数据。</p>
+<ul>
+<li>rewind( )方法<br>Buffer.rewind( )方法将position设置回0，这样你就可以重新读取Buffer中的所有数据了。limit保持不变，因此仍然标记可以从缓冲区读取多少元素（字节，字符等）。</li>
+<li>mark( )和reset( )<br>你可以通过调用Buffer.mark( )方法获取Buffer中position的位置。然后，你可以通过调用Buffer.reset( )方法将position重置回标记位置。<br>下面是一个简单的例子：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">       RandomAccessFile randomAccessFile = <span class="keyword">new</span> RandomAccessFile(<span class="string">"F:\\a.txt"</span>,<span class="string">"rw"</span>);</span><br><span class="line">       FileChannel fileChannel = randomAccessFile.getChannel();</span><br><span class="line">       ByteBuffer byteBuffer = ByteBuffer.allocate(<span class="number">48</span>);</span><br><span class="line">       <span class="keyword">int</span> byteRead = fileChannel.read(byteBuffer);</span><br><span class="line"></span><br><span class="line">       <span class="keyword">while</span>(byteRead != -<span class="number">1</span>)&#123;</span><br><span class="line">           <span class="comment">//flip( )方法调用将Buffer从写入模式切换到读取模式</span></span><br><span class="line">           byteBuffer.flip();</span><br><span class="line">           <span class="keyword">while</span> (byteBuffer.hasRemaining())</span><br><span class="line">               System.out.print((<span class="keyword">char</span>) byteBuffer.get());</span><br><span class="line"></span><br><span class="line">           byteBuffer.compact();</span><br><span class="line"></span><br><span class="line">           byteRead = fileChannel.read(byteBuffer);</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       randomAccessFile.close();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="3、Selector"><a href="#3、Selector" class="headerlink" title="3、Selector"></a>3、Selector</h4><p>使用一个线程处理多个通道，如下图<br><img src="https://img-blog.csdnimg.cn/20200313144621926.png" alt="在这里插入图片描述"><br>有关Selector的相关方法</p>
+<ul>
+<li><p>Selector.open( )，创建Selector</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Selector selector = Selector.open();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用Selector注册Channel，要使用带选择器的通道，必须使用选择器注册通道。这是使用SelectableChannel.register( )方法完成的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通道必须处于非阻塞模式才能与选择器一起使用。这意味着无法将FileChannel与Selector一起使用，因为FileChannel无法切换到非阻塞模式。</span></span><br><span class="line">channel.configureBlocking(<span class="keyword">false</span>);</span><br><span class="line">SelectionKey key = channel.register(selector, SelectionKey.OP_READ);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>register()方法的第二个参数。这是一个“interest集合”，意思是在通过Selector监听Channel时对什么事件感兴趣。可以监听四种不同类型的事件：<br>①、Connect<br>②、Accept<br>③、Read<br>④、Write</p>
+<p>四个SelectionKey代表的准备好的事件<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SelectionKey.OP_CONNECT<span class="comment">//连接就绪</span></span><br><span class="line">SelectionKey.OP_ACCEPT<span class="comment">//接收就绪</span></span><br><span class="line">SelectionKey.OP_READ<span class="comment">//读就绪</span></span><br><span class="line">SelectionKey.OP_WRITE<span class="comment">//写就绪</span></span><br></pre></td></tr></table></figure></p>
+<p>如果对多个事件感兴趣可以使用 ‘|’ 运算，如<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> interestSet = SelectionKey.OP_READ | SelectionKey.OP_WRITE;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>SelectionKey<br>当使用Selector注册channel时，register()方法返回的是一个SelectionKey，该SelectionKey对象包含了我们可能感兴趣的一些集合，如下：</li>
+</ul>
+<blockquote>
+<p>interest集合<br>ready集合<br>Channel<br>Selector<br>附加的对象（可选）</p>
+</blockquote>
+<p>①、interest集合<br>interest集合是你所选择的感兴趣的事件集合。我们可以通过以下方法来判断Selector是否对Channel的某种事件感兴趣<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> interestSet = selectionKey.interestOps();</span><br><span class="line"><span class="keyword">boolean</span> isInterestedInAccept  = (interestSet &amp; SelectionKey.OP_ACCEPT) == SelectionKey.OP_ACCEPT；</span><br><span class="line"><span class="keyword">boolean</span> isInterestedInConnect = interestSet &amp; SelectionKey.OP_CONNECT;</span><br><span class="line"><span class="keyword">boolean</span> isInterestedInRead    = interestSet &amp; SelectionKey.OP_READ;</span><br><span class="line"><span class="keyword">boolean</span> isInterestedInWrite   = interestSet &amp; SelectionKey.OP_WRITE;</span><br></pre></td></tr></table></figure></p>
+<p>上述方法说白了就是使用SelectionKey常量与兴趣集合与运算比较</p>
+<p>②、ready集合<br>ready 集合是通道已经准备就绪的操作的集合。Java中定义以下几个方法用来检查这些操作是否就绪，返回的是布尔值：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">selectionKey.isAcceptable();</span><br><span class="line">selectionKey.isConnectable();</span><br><span class="line">selectionKey.isReadable();</span><br><span class="line">selectionKey.isWritable();</span><br></pre></td></tr></table></figure></p>
+<p>③、Selector+Channel<br>从SelectionKey访问Selector和Channel很简单，如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Channel  channel  = selectionKey.channel();<span class="comment">//SelectionKey.channel( )方法返回的通道应该转换为你需要使用的通道，例如ServerSocketChannel或SocketChannel等</span></span><br><span class="line">Selector selector = selectionKey.selector();</span><br></pre></td></tr></table></figure></p>
+<p>④、附加对象<br>可以将一个对象和更多的信息附加到SelectionKey上，以便更好地识别某个给定的通道，例如，可以附加 与通道一起使用的Buffer，或是包含聚集数据的某个对象。使用方法如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">selectionKey.attach(theObject);</span><br><span class="line">Object attachedObj = selectionKey.attachment();</span><br></pre></td></tr></table></figure></p>
+<p>还可以在用register()方法向Selector注册Channel的时候附加对象，如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SelectionKey key = channel.register(selector, SelectionKey.OP_READ, theObject);</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>通过Selector选择Channel<br>Selector注册Channel之后，可以调用select()几个重载的方法来判断你所感兴趣的准备就绪的通道的数量，<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">select</span><span class="params">()</span> <span class="comment">//阻塞到至少有一个通道在你注册的事件上就绪了</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">select</span><span class="params">(<span class="keyword">long</span> timeout)</span> <span class="comment">//与select()一样，只不过有阻塞时间</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">selectNow</span><span class="params">()</span> <span class="comment">//不会阻塞，不管什么通道就绪都立刻返回</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>一旦调用了select()方法并且根据返回值判断有通道就绪，就可以调用selector中的selectedKeys()方法访问已选择键集的就绪通道。如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;SelectionKey&gt; selectedKeys = selector.selectedKeys();</span><br></pre></td></tr></table></figure></p>
+<p>通过迭代器访问已选择的键的就绪通道如下，</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;SelectionKey&gt; selectedKeys = selector.selectedKeys();</span><br><span class="line"></span><br><span class="line">Iterator&lt;SelectionKey&gt; keyIterator = selectedKeys.iterator();</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(keyIterator.hasNext()) &#123;</span><br><span class="line">    </span><br><span class="line">    SelectionKey key = keyIterator.next();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(key.isAcceptable()) &#123;</span><br><span class="line">        <span class="comment">// ServerSocketChannel接收了连接.</span></span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (key.isConnectable()) &#123;</span><br><span class="line">        <span class="comment">// 与远程服务建立连接.</span></span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (key.isReadable()) &#123;</span><br><span class="line">        <span class="comment">// 通道准备好读取</span></span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (key.isWritable()) &#123;</span><br><span class="line">        <span class="comment">// 通道准备好写入</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    keyIterator.remove();<span class="comment">//Selector不会从所选键集本身中删除SelectionKey实例，处理完通道后，你必须这样做，下一次通道变为“就绪”时，选择器将再次将其添加到所选键组。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4、DatagramChannel和Pipe"><a href="#4、DatagramChannel和Pipe" class="headerlink" title="4、DatagramChannel和Pipe"></a>4、DatagramChannel和Pipe</h4><p>推荐阅读：<br><a href="https://blog.csdn.net/qq_33704186/article/details/87606958" target="_blank" rel="noopener">Java NIO学习教程(六)</a><br><a href="https://blog.csdn.net/forezp/article/details/88414741" target="_blank" rel="noopener">Java NIO？看这一篇就够了！</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">索引基础知识</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">NIO篇</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/MYSQL//" class="article-tag-list-link color1">MYSQL</a>
+        			<a href="/categories/面试题//" class="article-tag-list-link color4">面试题</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/Java复习之杂项.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java复习之杂项</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
   
 
-    
+  
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'true' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "11btHRKRUnSiCwm7nxQ6MqvJ-gzGzoHsz",
+            app_key: "AA0vgaQmApd786vhE4gJcJER",
+            placeholder: "Say Something!",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -259,9 +379,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,

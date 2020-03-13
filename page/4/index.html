@@ -160,6 +160,98 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Springboot整合Redis的一些常用操作" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/Springboot整合Redis的一些常用操作.html">Springboot整合Redis的一些常用操作</a>
+    </h1>
+  
+
+        
+        
+<a href="/Springboot整合Redis的一些常用操作.html" class="archive-article-date">
+  	<time datetime="2019-06-02T07:57:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>RedisTemplate位于spring-data-redis包下。RedisTemplate提供了redis各种操作、异常处理及序列化，支持发布订阅。</p>
+<font size="4" color="red">一、Redis的五种类型常用操作：使用RedisTemeplate</font>
+
+<p>在maven中添加依赖(下面只是主要的部分依赖)</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>spring-data-redis针对jedis提供了如下功能：</p>
+<p>1.连接池自动管理，提供了一个高度封装的“RedisTemplate”类<br>2.针对jedis客户端中大量api进行了归类封装,将同一类型操作封装为operation接口<br>
+        
+      
+
+      
+    </p></div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">RedisTemplate常用操作</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Redis//" class="article-tag-list-link color1">Redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/Springboot整合Redis的一些常用操作.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Redis相关知识" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -969,95 +1061,6 @@
 
 
   
-    <article id="post-Spring全家桶之Spring入门" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/Spring全家桶之Spring入门.html">Spring全家桶之Spring入门</a>
-    </h1>
-  
-
-        
-        
-<a href="/Spring全家桶之Spring入门.html" class="archive-article-date">
-  	<time datetime="2019-05-06T08:54:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <font size="4"><strong>综述：</strong> Spring是为了 解决企业级应用开发的复杂性而创建的，是非侵入性的，不依赖于spring的API，通过AOP实现面向面片编程，通过依赖注入控制反转IOC，对象不需要直接创建。</font>
-
-<p><strong>侵入式与非侵入式简单区别：</strong><br>侵入式就是在使用框架的时候继承或者实现框架的类或接口，侵入式对框架的依赖很高，不利于代码的复用。<br>非侵入式就是不继承或实现类或接口就能实现自己想要的结果，如之前学的Hibernate框架。</p>
-<p><strong>Spring的优点有哪些？</strong><br>1、简化Java的开发<br>2、基于POJO轻量级和最小侵入式开发<br>3、通过依赖注入和面向接口实现松耦合<br>4、基于切面和惯例进行声明式编程<br>5、通过切面和模板减少样板式代码<br>6、方便集成其他框架（如MyBatis、Hibernate）<br>另外，Spring对javaEE开发中非常难用的一些API（JDBC、远程调用等）都进行了封装，是这些API应用难度降低。<br>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Spring入门</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Spring全家桶//" class="article-tag-list-link color5">Spring全家桶</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/Spring全家桶之Spring入门.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -1168,11 +1171,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">AMQP协议</a>
+                <a href="javascript:void(0)" class="js-tag color5">集合类之ArrayList和LinkedList</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">集合类之ArrayList和LinkedList</a>
+                <a href="javascript:void(0)" class="js-tag color2">AMQP协议</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1184,11 +1187,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HTTP协议</a>
+                <a href="javascript:void(0)" class="js-tag color5">JVM运行时数据区</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JVM运行时数据区</a>
+                <a href="javascript:void(0)" class="js-tag color2">HTTP协议</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1200,11 +1203,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+                <a href="javascript:void(0)" class="js-tag color5">代理模式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">代理模式</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1213,6 +1216,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">基础知识篇</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">NIO篇</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1268,11 +1275,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">反射</a>
+                <a href="javascript:void(0)" class="js-tag color4">线程池</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">线程池</a>
+                <a href="javascript:void(0)" class="js-tag color3">反射</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1292,11 +1299,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">入门</a>
+                <a href="javascript:void(0)" class="js-tag color4">Mybatis一</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mybatis一</a>
+                <a href="javascript:void(0)" class="js-tag color3">入门</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1340,15 +1347,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">SpringMVC入门</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SpringMVC常用操作</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Spring事务管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">SpringMVC入门</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1384,11 +1391,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">project</a>
+                <a href="javascript:void(0)" class="js-tag color4">顺序表</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">顺序表</a>
+                <a href="javascript:void(0)" class="js-tag color3">project</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1396,11 +1403,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">索引基础知识</a>
+                <a href="javascript:void(0)" class="js-tag color4">二叉树和哈夫曼树</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉树和哈夫曼树</a>
+                <a href="javascript:void(0)" class="js-tag color2">索引基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
