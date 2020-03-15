@@ -6,22 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jcoffeezph.top">
-  <title>Spring全家桶之SpringMVC常用操作 | Zph、ForMe</title>
+  <title>Tag: 线程与进程篇 | Zph、ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、前后端数据交互  1、前台数据传输到后端 创建一个表单 12345678910111213141516&amp;lt;form action=&quot;/login&quot; method=&quot;post&quot;&amp;gt;    &amp;lt;table&amp;gt;        &amp;lt;tr&amp;gt;            &amp;lt;td&amp;gt;用户名：&amp;lt;/td&amp;gt;            &amp;lt;td&amp;gt;&amp;lt;input t">
-<meta name="keywords" content="SpringMVC常用操作">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Spring全家桶之SpringMVC常用操作">
-<meta property="og:url" content="https://jcoffeezph.top/Spring全家桶之SpringMVC常用操作.html">
+  <meta name="description" content="Enjoy Coding">
+<meta name="keywords" content="Java 软件">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zph、ForMe">
+<meta property="og:url" content="https://jcoffeezph.top/tags/线程与进程篇/index.html">
 <meta property="og:site_name" content="Zph、ForMe">
-<meta property="og:description" content="一、前后端数据交互  1、前台数据传输到后端 创建一个表单 12345678910111213141516&amp;lt;form action=&quot;/login&quot; method=&quot;post&quot;&amp;gt;    &amp;lt;table&amp;gt;        &amp;lt;tr&amp;gt;            &amp;lt;td&amp;gt;用户名：&amp;lt;/td&amp;gt;            &amp;lt;td&amp;gt;&amp;lt;input t">
+<meta property="og:description" content="Enjoy Coding">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190508140318424.png">
-<meta property="og:updated_time" content="2019-05-08T10:57:33.539Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring全家桶之SpringMVC常用操作">
-<meta name="twitter:description" content="一、前后端数据交互  1、前台数据传输到后端 创建一个表单 12345678910111213141516&amp;lt;form action=&quot;/login&quot; method=&quot;post&quot;&amp;gt;    &amp;lt;table&amp;gt;        &amp;lt;tr&amp;gt;            &amp;lt;td&amp;gt;用户名：&amp;lt;/td&amp;gt;            &amp;lt;td&amp;gt;&amp;lt;input t">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190508140318424.png">
+<meta name="twitter:title" content="Zph、ForMe">
+<meta name="twitter:description" content="Enjoy Coding">
   
     <link rel="alternative" href="/atom.xml" title="Zph、ForMe" type="application/atom+xml">
   
@@ -161,183 +158,72 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Spring全家桶之SpringMVC常用操作" class="article article-type-post " itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Spring全家桶之SpringMVC常用操作
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/Java复习之线程与并发一.html" class="archive-article-date">
+  	<time datetime="2020-03-15T03:12:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-15</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/Java复习之线程与并发一.html">Java复习之线程与并发一</a>
     </h1>
   
 
-        
-        
-        <!-- 不蒜子统计 -->
-        <span id="busuanzi_container_page_pv" style="display:none" class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/Spring全家桶之SpringMVC常用操作.html" class="archive-article-date">
-  	<time datetime="2019-05-08T10:56:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <font size="4" color="red">一、前后端数据交互</font>
-
-<p><strong>1、前台数据传输到后端</strong></p>
-<p>创建一个表单</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">"/login"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">    &lt;table&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;用户名：&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;&lt;input type="text" name="username" id="username"&gt;&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line"></span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;密码：&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;&lt;input type="password" name="password" id="password"&gt;&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;&lt;input type="submit" value="提交"&gt;&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/table&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>后台获取前端的值有三种方式：<br>①、直接使用HttpServletRequest 作为参数，然后调用request的getParameter方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/login"</span>,method = RequestMethod.POST)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">login</span><span class="params">(HttpServletRequest request)</span> <span class="keyword">throws</span> UnsupportedEncodingException </span>&#123; </span><br><span class="line">        System.out.println(request.getParameter(<span class="string">"username"</span>) + <span class="string">" "</span> + request.getParameter(<span class="string">"password"</span>));</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>②、使用@RequestParam注解</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/login"</span>,method = RequestMethod.POST)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">login</span><span class="params">(@RequestParam(value = <span class="string">"username"</span>)</span> String name, @<span class="title">RequestParam</span><span class="params">(value = <span class="string">"password"</span>)</span> String pwd) <span class="keyword">throws</span> UnsupportedEncodingException </span>&#123;</span><br><span class="line">        System.out.println(name + <span class="string">" "</span> + pwd);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>③、使用Javabean<br>首先创建一个User类，然后传值，注意User类的属性</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/login"</span>,method = RequestMethod.POST)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">login</span><span class="params">(User user)</span> <span class="keyword">throws</span> UnsupportedEncodingException </span>&#123;</span><br><span class="line">        System.out.println(user.getUsername() + <span class="string">" "</span> +user.getPassword());</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>2、后端数据传递到前台</strong></p>
-<p>后端数据传递到前台可以使用ModelAndView进行操作，然后再Jsp页面中使用EL表达式就可以获取到。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/login"</span>,method = RequestMethod.POST)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">login</span><span class="params">()</span> <span class="keyword">throws</span> UnsupportedEncodingException </span>&#123;</span><br><span class="line">        ModelAndView modelAndView = <span class="keyword">new</span> ModelAndView(<span class="string">"success"</span>);</span><br><span class="line">        modelAndView.addObject(<span class="string">"username"</span>,<span class="string">"张三"</span>);</span><br><span class="line">        <span class="keyword">return</span> modelAndView;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<font size="4" color="red">二、SpringMVC中使用Ajax</font>
-
-<p>其实在SpringMVC中使用Ajax和在其他地方使用Ajax时，Ajax都是大致相同的，不同的是后端处理方式。以一个简单的登录例子进行说明：</p>
-<p>login.jsp</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;jquery+ajax实现登录&lt;/title&gt;</span><br><span class="line">    &lt;script type="text/javascript" src="jquery/jquery-3.2.1.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"></span><br><span class="line">        <span class="function">function <span class="title">check</span><span class="params">(id1,id2)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(document.getElementById(id1).value == <span class="keyword">null</span> || document.getElementById(id1).value.trim(<span class="string">" "</span>) == <span class="string">""</span>)</span><br><span class="line">                document.getElementById(id2).innerHTML = id1 + <span class="string">'不能为空'</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                document.getElementById(id2).innerHTML =<span class="string">''</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        $(function()&#123;</span><br><span class="line">            $(<span class="string">"#loginBtn"</span>).click(function()&#123;</span><br><span class="line">                <span class="keyword">var</span> username = $.trim($(<span class="string">"#username"</span>).val());<span class="comment">//取值</span></span><br><span class="line">                <span class="keyword">var</span> password = $.trim($(<span class="string">"#password"</span>).val());</span><br><span class="line">                <span class="keyword">var</span> param = &#123;<span class="string">"username"</span>:username,<span class="string">"password"</span>:password&#125;;</span><br><span class="line">                <span class="comment">// alert(param);</span></span><br><span class="line">                $.post(<span class="string">"/login"</span>,param,function(result)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(result)&#123;</span><br><span class="line">                        $(<span class="string">"#id"</span>).html(result);</span><br><span class="line">                        <span class="comment">// window.location.href="/success.jsp";</span></span><br><span class="line">                    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                        alert(<span class="string">"用户名或者密码错误!"</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form&gt;</span><br><span class="line">    用户名:&lt;input type="text" id="username" name="username" onblur="check('username','usernamespan')"&gt;&lt;span id="usernamespan"&gt;&lt;/span&gt;&lt;br/&gt;</span><br><span class="line">    密码:&lt;input type="text" id="password" name="password" onblur="check('password','passwordspan')"&gt;&lt;span id="passwordspan"&gt;&lt;/span&gt;&lt;br/&gt;</span><br><span class="line">    &lt;span id="id"&gt;&lt;/span&gt;&lt;br&gt;</span><br><span class="line">    &lt;input type=<span class="string">"button"</span> value=<span class="string">"登录"</span> id=<span class="string">"loginBtn"</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p>后端代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/login"</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">login</span><span class="params">(String username,String password)</span></span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> flag = <span class="string">"admin"</span>.equals(username)&amp;&amp;<span class="string">"123456"</span>.equals(password) ? <span class="keyword">true</span> : <span class="keyword">false</span>;</span><br><span class="line">        System.out.println(flag);</span><br><span class="line">        <span class="keyword">return</span> flag;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上述例子已测试过，可以使用。</p>
-<p>Ajax还可以这样写：下面仅有JS代码，其余不变即可</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"></span><br><span class="line">        <span class="function">function <span class="title">check</span><span class="params">(id1,id2)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(document.getElementById(id1).value == <span class="keyword">null</span> || document.getElementById(id1).value.trim(<span class="string">" "</span>) == <span class="string">""</span>)</span><br><span class="line">                document.getElementById(id2).innerHTML = id1 + <span class="string">'不能为空'</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                document.getElementById(id2).innerHTML =<span class="string">''</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        $(function()&#123;</span><br><span class="line">            $(<span class="string">"#loginBtn"</span>).click(function()&#123;</span><br><span class="line">                <span class="keyword">var</span> username = $(<span class="string">"#username"</span>).val();<span class="comment">//取值</span></span><br><span class="line">                <span class="keyword">var</span> password = $(<span class="string">"#password"</span>).val();</span><br><span class="line">                <span class="keyword">if</span>(!username || !password)&#123;</span><br><span class="line">                    <span class="keyword">return</span> ;</span><br><span class="line">                &#125;</span><br><span class="line">                $.ajax(&#123;</span><br><span class="line">                    type:<span class="string">"POST"</span>,</span><br><span class="line">                    url:<span class="string">"/login"</span>,</span><br><span class="line">                    data:&#123;<span class="string">"username"</span>:username,<span class="string">"password"</span>:password&#125;,</span><br><span class="line">                    dataType:<span class="string">"json"</span>,</span><br><span class="line">                    timeout:<span class="number">1000</span>,</span><br><span class="line">                    error:function()&#123;  <span class="comment">//请求失败的回调方法</span></span><br><span class="line">                        $(<span class="string">"#id"</span>).css(<span class="string">"color"</span>,<span class="string">"red"</span>);</span><br><span class="line">                        $(<span class="string">"#id"</span>).html(<span class="string">"报错"</span>);</span><br><span class="line">                    &#125;,</span><br><span class="line">                    success:function(result)&#123;</span><br><span class="line">                        $(<span class="string">"#id"</span>).css(<span class="string">"color"</span>,<span class="string">"red"</span>);</span><br><span class="line">                        $(<span class="string">"#id"</span>).html(<span class="string">"Ajax使用成功，登录情况："</span> +result);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>结果<br><img src="https://img-blog.csdnimg.cn/20190508140318424.png" alt="在这里插入图片描述"></p>
-<font size="4" color="red">三、SpringMVC文件上传</font>
-
-<p>上传文件有三种方式：<br>1、使用采用multipart提供的file.transfer方法上传文件上传，将文件保存到服务器的webapps下自定义的文件夹中<br>upload.jsp<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;文件上传&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=<span class="string">"/upload"</span> method=<span class="string">"post"</span> enctype=<span class="string">"multipart/form-data"</span>&gt;</span><br><span class="line">    &lt;input type=<span class="string">"file"</span> name=<span class="string">"file"</span>&gt;</span><br><span class="line">    &lt;input type=<span class="string">"submit"</span> value=<span class="string">"upload"</span>/&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
-<p>SpringMVCUpload</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringMVCUpload</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/upload"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">uploadTest</span><span class="params">(HttpServletRequest request, @RequestParam(value = <span class="string">"file"</span>)</span> MultipartFile file) <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(file.isEmpty())</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        String fileName = file.getOriginalFilename();</span><br><span class="line">        System.out.println(fileName);</span><br><span class="line">        File file1 = <span class="keyword">new</span> File(request.getServletContext().getRealPath(<span class="string">"/"</span>));</span><br><span class="line">        String path = file1.getParent() + <span class="string">"/static/upload/"</span>; <span class="comment">//保存在服务器中</span></span><br><span class="line">        System.out.println(path);</span><br><span class="line">        File file2 = <span class="keyword">new</span> File(path,fileName);</span><br><span class="line">        file.transferTo(file2);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"success2"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>2、使用流的方式将文件保存在硬盘的指定地方：</p>
-<p>后台处理方式</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/fileUpload"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String  <span class="title">fileUpload</span><span class="params">(@RequestParam(<span class="string">"file"</span>)</span> CommonsMultipartFile file) <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        </span><br><span class="line">        System.out.println(<span class="string">"fileName："</span>+file.getOriginalFilename());</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//获取输出流</span></span><br><span class="line">            OutputStream os = <span class="keyword">new</span> FileOutputStream(<span class="string">"F:/upload/"</span>+ <span class="keyword">new</span> Date().getTime() + file.getOriginalFilename());</span><br><span class="line">            <span class="comment">//获取输入流 CommonsMultipartFile 中可以直接得到文件的流</span></span><br><span class="line">            InputStream is=file.getInputStream();</span><br><span class="line">            <span class="keyword">int</span> temp;</span><br><span class="line">            <span class="comment">//一个一个字节的读取并写入</span></span><br><span class="line">            <span class="keyword">while</span>((temp=is.read())!=(-<span class="number">1</span>))</span><br><span class="line">            &#123;</span><br><span class="line">                os.write(temp);</span><br><span class="line">            &#125;</span><br><span class="line">            os.flush();</span><br><span class="line">            os.close();</span><br><span class="line">            is.close();</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">long</span>  endTime=System.currentTimeMillis();</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"success2"</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>3、采用spring提供的上传文件的方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/springUpload"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String  <span class="title">springUpload</span><span class="params">(HttpServletRequest request)</span> <span class="keyword">throws</span> IllegalStateException, IOException</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">//将当前上下文初始化给 CommonsMutipartResolver （多部分解析器）</span></span><br><span class="line">        CommonsMultipartResolver multipartResolver = <span class="keyword">new</span> CommonsMultipartResolver(</span><br><span class="line">                request.getSession().getServletContext());</span><br><span class="line">        <span class="comment">//检查form中是否有enctype="multipart/form-data"</span></span><br><span class="line">        <span class="keyword">if</span>(multipartResolver.isMultipart(request))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//将request变成多部分request</span></span><br><span class="line">            MultipartHttpServletRequest multiRequest = (MultipartHttpServletRequest)request;</span><br><span class="line">            <span class="comment">//获取multiRequest 中所有的文件名</span></span><br><span class="line">            Iterator iter = multiRequest.getFileNames();</span><br><span class="line">            <span class="keyword">while</span>(iter.hasNext())</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">//一次遍历所有文件</span></span><br><span class="line">                MultipartFile file = multiRequest.getFile(iter.next().toString());</span><br><span class="line">                <span class="keyword">if</span>(file!=<span class="keyword">null</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    String path = <span class="string">"F:/upload/"</span>+file.getOriginalFilename();</span><br><span class="line">                    <span class="comment">//上传</span></span><br><span class="line">                    file.transferTo(<span class="keyword">new</span> File(path));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"success2"</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SpringMVC常用操作</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">线程与进程篇</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Spring全家桶//" class="article-tag-list-link color5">Spring全家桶</a>
+        			<a href="/categories/面试题//" class="article-tag-list-link color4">面试题</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/Spring全家桶之Spring基础知识.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Spring全家桶之Spring基础知识
-        
-      </div>
-    </a>
   
   
-    <a href="/Spring全家桶之SpringMVC入门.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Spring全家桶之SpringMVC入门</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+    </div></section>
   
 
-  
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'true' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "11btHRKRUnSiCwm7nxQ6MqvJ-gzGzoHsz",
-            app_key: "AA0vgaQmApd786vhE4gJcJER",
-            placeholder: "Say Something!",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
-
-  
-  
-
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -373,9 +259,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
