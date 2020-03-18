@@ -6,22 +6,31 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jcoffeezph.top">
-  <title>Spring面试题总结 | Zph、ForMe</title>
+  <title>Java复习之JVM垃圾回收 | Zph、ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、Spring相关面试题1、Spring是什么Spring是一种轻量级的IOC和AOP框架，是为Java应用程序提供基础性服务的一套框架，目的是为了大大简化企业级应用开发，它使得开发者只需要关心业务需求。常见的配置有三种：基于xml；基于注解；基于Java。">
-<meta name="keywords" content="Spring">
+  <meta name="description" content="1、概述垃圾回收，即释放垃圾占用的空间，防止内存泄漏，有效的使用有效的内存，对堆中已经死亡的和长时间不使用的对象进行清楚和回收。JVM运行时数据区见：JVM运行时数据区">
+<meta name="keywords" content="JVM垃圾回收篇">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring面试题总结">
-<meta property="og:url" content="https://jcoffeezph.top/Spring面试题总结.html">
+<meta property="og:title" content="Java复习之JVM垃圾回收">
+<meta property="og:url" content="https://jcoffeezph.top/Java复习之JVM垃圾回收.html">
 <meta property="og:site_name" content="Zph、ForMe">
-<meta property="og:description" content="一、Spring相关面试题1、Spring是什么Spring是一种轻量级的IOC和AOP框架，是为Java应用程序提供基础性服务的一套框架，目的是为了大大简化企业级应用开发，它使得开发者只需要关心业务需求。常见的配置有三种：基于xml；基于注解；基于Java。">
+<meta property="og:description" content="1、概述垃圾回收，即释放垃圾占用的空间，防止内存泄漏，有效的使用有效的内存，对堆中已经死亡的和长时间不使用的对象进行清楚和回收。JVM运行时数据区见：JVM运行时数据区">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191112210312491.png">
-<meta property="og:updated_time" content="2019-11-13T08:40:57.975Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200318135110547.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200318141645870.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200318142100122.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200318142854467.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200318210958914.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200318211551269.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020031821191950.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200318213115124.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200318213548355.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200318215216264.png">
+<meta property="og:updated_time" content="2020-03-18T13:57:44.383Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring面试题总结">
-<meta name="twitter:description" content="一、Spring相关面试题1、Spring是什么Spring是一种轻量级的IOC和AOP框架，是为Java应用程序提供基础性服务的一套框架，目的是为了大大简化企业级应用开发，它使得开发者只需要关心业务需求。常见的配置有三种：基于xml；基于注解；基于Java。">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20191112210312491.png">
+<meta name="twitter:title" content="Java复习之JVM垃圾回收">
+<meta name="twitter:description" content="1、概述垃圾回收，即释放垃圾占用的空间，防止内存泄漏，有效的使用有效的内存，对堆中已经死亡的和长时间不使用的对象进行清楚和回收。JVM运行时数据区见：JVM运行时数据区">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200318135110547.png">
   
     <link rel="alternative" href="/atom.xml" title="Zph、ForMe" type="application/atom+xml">
   
@@ -161,14 +170,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Spring面试题总结" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-Java复习之JVM垃圾回收" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Spring面试题总结
+      Java复习之JVM垃圾回收
     </h1>
   
 
@@ -179,125 +188,78 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/Spring面试题总结.html" class="archive-article-date">
-  	<time datetime="2019-11-13T08:28:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-13</time>
+<a href="/Java复习之JVM垃圾回收.html" class="archive-article-date">
+  	<time datetime="2020-03-18T13:56:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一、Spring相关面试题"><a href="#一、Spring相关面试题" class="headerlink" title="一、Spring相关面试题"></a>一、Spring相关面试题</h3><h4 id="1、Spring是什么"><a href="#1、Spring是什么" class="headerlink" title="1、Spring是什么"></a>1、Spring是什么</h4><p>Spring是一种轻量级的IOC和AOP框架，是为Java应用程序提供基础性服务的一套框架，目的是为了大大简化企业级应用开发，它使得开发者只需要关心业务需求。常见的配置有三种：基于xml；基于注解；基于Java。<br><a id="more"></a><br>主要由以下几个模块组成：<br>①、Spring Core：核心类库，提供IOC服务；<br>②、Spring Context：提供框架式的Bean访问方式，以及企业及功能（JNDI，定时任务等）；<br>③、Spring AOP：提供AOP服务；<br>④、Spring Dao：对JDBC的抽象，简化了数据访问异常处理；<br>⑤、Spring ORM：对现有ORM框架的集成与支持；<br>⑥、Spring Web：提供了基本的面向Web的特性，例如多方文件上传；<br>⑦、Spring MVC：提供了面向Web的MVC实现。</p>
-<h4 id="2、Spring的有点有哪些"><a href="#2、Spring的有点有哪些" class="headerlink" title="2、Spring的有点有哪些"></a>2、Spring的有点有哪些</h4><p>①、低入侵式，代码污染率极低；<br>侵入式就是在使用框架的时候继承或者实现框架的类或接口，侵入式对框架的依赖很高，不利于代码的复用。<br>非侵入式就是不继承或实现类或接口就能实现自己想要的结果，如之前学的Hibernate框架。<br>②、IOC机制将对相间的关系交由框架处理，减低组件的耦合性；<br>③、Spring AOP提供横向切面操作，可以将日志、事务、权限、安全等集中式管理，极大的提高了代码的复用；<br>④、Spring对目前主流框架提供了很好的支持，如MyBatis、Redis等。</p>
-<h4 id="3、对Spring-AOP的理解"><a href="#3、对Spring-AOP的理解" class="headerlink" title="3、对Spring AOP的理解"></a>3、对Spring AOP的理解</h4><p>Java的OOP面向对象的思想通过继承允许开发者定义 纵向的关系，但却不适合定义横向的关系，这会导致代码大量重复，效率很低。</p>
-<p>AOP，面向切面，是对面向对象的一种补充，用于将那些<strong>与业务无关，但却对多个对象产生影响的行为和逻辑进行封装，以便可以重复使用。</strong></p>
-<p>AOP实现的关键在于<strong>代理模式</strong>，AOP的代理有动态代理和静态代理之分：</p>
-<h6 id="①、静态代理"><a href="#①、静态代理" class="headerlink" title="①、静态代理"></a>①、静态代理</h6><p>AspectJ是静态代理的增强，所谓静态代理就是AOP在编译时就生成代理类，所以也称为编译时增强，它会在编译阶段将AspectJ(切面)织入到Java字节码中，运行的时候就是增强后的AOP对象。</p>
-<h6 id="②、动态代理"><a href="#②、动态代理" class="headerlink" title="②、动态代理"></a>②、动态代理</h6><p>AOP的动态代理不会去改动字节码，而是在每次运行时都在内存中临时为方法生成一个AOP对象，这个AOP对象包含了目标对象的全部方法，并且在特定的切点做了增强处理，并回掉原对象的方法。</p>
-<p>AOP的动态代理包括JDK代理和CGLIB代理：<br><strong>JDK代理：</strong> 只提供接口的代理，不提支持的代理。核心InvocationHandler接口和Proxy类，InvocationHandler接口通过invoke()方法反射来调用目标类中的代码，动态的将横向逻辑与业务编织在一起；然后Proxy利用InvocationHandler接口动态创建一个符合某一接口的实例，生成目标类的代理对象。</p>
-<p><strong>CGLIB代理：</strong> 如果代理类没有实现接口，Spring AOP会选择CGLIB来代理目标类。CGLIB(Code Generation Library)，是一个代码生成的类库，可以在运行时动态的生成一个类的子类对象，并覆盖其中特定代码并添加增强代码，从而实现AOP。CGLIB是通过继承的方式实现的动态代理，如果一个类由final修饰，则不会是使用CGLIB代理。</p>
-<p>关于代理可以阅读：<a href="https://jcoffeezph.top/Java%E4%B8%89%E7%A7%8D%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F.html"><strong>Java三种代理模式</strong></a></p>
-<h4 id="4、理解Spring的IOC"><a href="#4、理解Spring的IOC" class="headerlink" title="4、理解Spring的IOC"></a>4、理解Spring的IOC</h4><p>IOC，Inverse Of Controll，控制反转，是创建对象的控制权的转移，之前使用对象的时候都是自己去创建，但在Spring中创建对象这个事情是由Spring容器完成的，并且由Spring容器根据配置文件创建对象和管理各个实例之间的依赖关系，对象与对象之间的松散耦合，也利于功能的复用。</p>
-<p>DI，Dependency Injection，依赖注入，和IOC是同一个概念的不同角度的表述，即应用程序在运行时依赖IOC容器来动态注入对象需要的外部资源。</p>
-<p>对IOC一种更直观的表达：IOC让对象的创建不用new了，而是通过Spring自动产生，使用Java的反射，根据配置文件在运行时动态的创建对象和管理对象。</p>
-<p>Spring的IOC注入方式有三种：setter注入；构造器注入；注解注入<br>关于Spring的IOC注入方式阅读：<a href="https://jcoffeezph.top/Spring%E5%85%A8%E5%AE%B6%E6%A1%B6%E4%B9%8BSpring%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html"><strong>Spring全家桶之Spring基础知识</strong></a></p>
-<p>关于IOC与AOP：IOC让相互协作的各个组件保持松散耦合；AOP提高了代码的复用率。</p>
-<h4 id="5、BeanFactory与ApplicationContext的区别"><a href="#5、BeanFactory与ApplicationContext的区别" class="headerlink" title="5、BeanFactory与ApplicationContext的区别"></a>5、BeanFactory与ApplicationContext的区别</h4><p>BeanFactory和ApplicationContext是Spring的两大和新街口，都可以作为Spring容器，ApplicationContext是BeanFactory的子接口。<br><img src="https://img-blog.csdnimg.cn/20191112210312491.png" alt="在这里插入图片描述"><br>①、BeanFactorySpring最底层的接口，包含Spring Bean的定义，读取Bean的配置文档，管理Bean的加载、实例化，控制Bean的生命周期，维护Bean之间的依赖关系。ApplicationContext作为BeanFactory的子接口，除了拥有BeanFactory的所有功能，还提供了更完整的框架功能：</p>
+        <h4 id="1、概述"><a href="#1、概述" class="headerlink" title="1、概述"></a>1、概述</h4><p>垃圾回收，即释放垃圾占用的空间，防止内存泄漏，有效的使用有效的内存，对堆中已经死亡的和长时间不使用的对象进行清楚和回收。<br>JVM运行时数据区见：<a href="https://jcoffeezph.top/JVM%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA.html">JVM运行时数据区</a><br><a id="more"></a></p>
+<h4 id="2、垃圾判断算法"><a href="#2、垃圾判断算法" class="headerlink" title="2、垃圾判断算法"></a>2、垃圾判断算法</h4><p>①、引用记数法<br>给每一个对象添加一个计数器，有这个对象的引用时计数器就加一，引用失效时计数器减一，用此对象计数器是否为0来判断对象是否可被回收。<br>此算法优点是实现简单，判断效率高；缺点是无法解决循环引用的问题。<br>看下面的简单实例：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Object a = <span class="keyword">new</span> Object();</span><br><span class="line">Object b = <span class="keyword">new</span> Object();</span><br><span class="line">a=b;</span><br><span class="line">b=a;</span><br><span class="line">a=b=<span class="keyword">null</span>; <span class="comment">//这样就导致gc无法回收他们。</span></span><br></pre></td></tr></table></figure></p>
+<p>上述例子对象最后都不能使用了，但是他们相互引用这彼此，导致他们的引用计数器不为0，通过引用计数算法也就无法被GC收集器回收。</p>
+<p>②、可达性分析算法<br>通过一系列的被称为“GC Roots”的对象作为起始点，从这些节点向下搜索，搜索走过的路径叫做引用链，当一个对象到GC Roots没有任何应用链时，这个对象就是不可用的。<br><img src="https://img-blog.csdnimg.cn/20200318135110547.png" alt="在这里插入图片描述"><br>通过可达性分析成功解决了引用计数算法无法解决的循环依赖的问题，再Java中可以被作为GC Roots的有以下几种情况：</p>
 <ul>
-<li>继承MessageSource，因此支持国际化；</li>
-<li>统一的资源文件访问方式</li>
-<li>提供在监听器中注册bean的事件</li>
-<li>同时加载多个配置文件</li>
-<li>载入多个(有继承关系)的上下文，使得每一个上下文都专注于一个指定的层次</li>
+<li>虚拟机栈(栈帧中局部变量表)引用的对象；</li>
+<li>方法区中静态变量引用的对象；</li>
+<li>方法区中常量引用的变量；</li>
+<li>本地方法栈中JNI引用的对象</li>
 </ul>
-<p>②、<strong>BeanFactory</strong>：使用的是延迟加载的方式注册Bean，即只有当使用到(调用getBean()方法)Bean时才会被加载实例化。这种方式不利于发现Spring的一些配置问题，如果某个Bean的某个属性没有被注入，BeanFactory加载后，只有第一次使用调用getBean()方法的时候才会发生异常。</p>
-<p><strong>ApplicationContext</strong>：在容器启动的时候一次性创建了所有的Bean，这样就可以在Spring容器启动时发现Spring中存在的配置错误，有利于检查依赖的属性是否注入。ApplicationContext在Spring容器启动时预载入所有的单实例Bean，当需要的时候不用等待创建，因为在Spring容器启动的时候已经创建完成了。</p>
-<p><strong>比较：</strong> </p>
+<h4 id="3、引用"><a href="#3、引用" class="headerlink" title="3、引用"></a>3、引用</h4><p>Java中引用有四种：<br>①、强引用：指在代码中普遍存在的，如<code>Object o = new Object()</code>，对于这类引用只要强引用还存在GC回收器就不会回收被引用的对象；</p>
+<p>②、软引用：是指一些还有用但并非必须的对象，直到内存空间不够时(抛出OutOfMemoryError之前)才会被GC，采用SoftReference类来实现软引用；</p>
+<p>③、弱引用：用来描述非必需对象，当垃圾回收器工作时就会回收此类引用的对象，采用WeakReference来实现弱引用；</p>
+<p>④、虚引用：一个对象是否有虚引用的存在，完全不会对其生存时间构成影响， 唯一目的就是能在这个对象被回收时收到一个系统通知， 采用PhantomRenference类实现</p>
+<h4 id="4、对象生存还是死亡"><a href="#4、对象生存还是死亡" class="headerlink" title="4、对象生存还是死亡"></a>4、对象生存还是死亡</h4><p>在可达性分析算法中不可达的对象也并非是“非死不可的”，要真正标记一个对象的死亡需要经历两次标记阶段</p>
 <ul>
-<li>ApplicationContext相当于BeanFactory的不足之处在于占用内存，当Bean较多时，程序启动较慢。</li>
-<li>BeanFactory通常以编程的方式被创建，而ApplicationContext还能以声明的方式创建，如使用ContextLoader。</li>
-<li>二者都支持使用BeanPostProcessor和BeanFactoryPostProcessor，但二者的区别是：BeanFactory需要手动注册，而ApplicationContext是自动注册。</li>
+<li>第一次标记，如果对象经过可达性分析之后，没有可用的引用链到GC Roots，则此对象被第一次标记，并进行一次筛选，筛选的条件就是是否有必要执行finalize()方法，当对象没有覆盖finalize()方法或者虚拟机已经执行了finalize()方法，则虚拟机将这种情况视为 <strong>“没有必要执行”</strong>；</li>
+<li>如果这个对象被判定有必要执行finalize()方法，则次对象会被放入F-Queue的队列中，并在稍后由虚拟机自动创建、低优先级的Finalizer线程去执行，GC对F-Queue中的对象进行第二次标记，如果此对象在finalize()方法中与引用链上的任何一个对象建立了关联，那么第二次标记时会将它移出“即将回收”的集合，如果此时还是没有逃逸，则此对象就会被回收。</li>
 </ul>
-<h4 id="6、Spring-Bean的生命周期"><a href="#6、Spring-Bean的生命周期" class="headerlink" title="6、Spring Bean的生命周期"></a>6、Spring Bean的生命周期</h4><h6 id="①、实例化Bean"><a href="#①、实例化Bean" class="headerlink" title="①、实例化Bean"></a>①、实例化Bean</h6><p>对于BeanFactory容器，当客户向容器请求一个尚未初始化的Bean的时候，或者是初始化的时候需要注入另一个尚未初始化的依赖时，容器就会调用createBean进行实例化。对于ApplicationContext容器，当容器启动结束后，通过获取BeanDefinition对象中的信息，实例化所有的Bean。</p>
-<h6 id="②、设置对象属性-依赖注入"><a href="#②、设置对象属性-依赖注入" class="headerlink" title="②、设置对象属性(依赖注入)"></a>②、设置对象属性(依赖注入)</h6><p>实例化后的对象被封装在BeanWrapper对象中，紧接着，Spring根据BeanDefinition的信息以及通过BeanWrapper提供的设置属性的接口完成依赖注入。</p>
-<h6 id="③、处理Aware接口"><a href="#③、处理Aware接口" class="headerlink" title="③、处理Aware接口"></a>③、处理Aware接口</h6><p>接着Spring会检测该对象是否实现了xxxAware接口，并将相关的xxxAware实例诸如给Bean：</p>
+<h4 id="5、垃圾回收算法"><a href="#5、垃圾回收算法" class="headerlink" title="5、垃圾回收算法"></a>5、垃圾回收算法</h4><p>①、标记-清除算法<br>此算法分为两个阶段，即标记和清除</p>
 <ul>
-<li>如果这个Bean已经实现了BeanNameAware接口，会调用它实现的setBeanName(String beanId)方法，这里的beanId就是Spring配置文件中的Bean 的 id值。</li>
-<li>如果这个Bean实现了BeanFactoryAware接口，会调用它实现的setBeanFactory()方法，传递的是Spring工厂本身。</li>
-<li>如果这个Bean实现了ApplicationContextAware接口，会调用setApplicationContext(ApplicationContext)方法，传入Spring上下文。</li>
+<li>标记，经过问题4所述的两次标记，被标记的对象可以被清除；</li>
+<li>执行两次标记后，还在“即将回收”集合的对象被清除<br><img src="https://img-blog.csdnimg.cn/20200318141645870.png" alt="在这里插入图片描述"><br>此算法存在很大的问题，由上图可知，可能会存在很多小段的内存，形成了很多不一定连续的内存碎片，当创建大对象时难以找到可用的内存。</li>
 </ul>
-<h6 id="④、BeanPostProcessor"><a href="#④、BeanPostProcessor" class="headerlink" title="④、BeanPostProcessor"></a>④、BeanPostProcessor</h6><p>如果相对Bean进行一些自定义的处理，可以实现BeanPostProcessor接口，并调用postProcessBeforeInitialization(Object obj, String s)方法。</p>
-<h6 id="⑤、InitializingBean-与-init-method"><a href="#⑤、InitializingBean-与-init-method" class="headerlink" title="⑤、InitializingBean 与 init-method"></a>⑤、InitializingBean 与 init-method</h6><p>如果在Spring配置文件中配置了init-method方法，会自动调用配置的初始化方法。</p>
-<h6 id="⑥、postProcessAfterInitialization-Object-obj-String-s"><a href="#⑥、postProcessAfterInitialization-Object-obj-String-s" class="headerlink" title="⑥、postProcessAfterInitialization(Object obj, String s)"></a>⑥、postProcessAfterInitialization(Object obj, String s)</h6><p>如果这个Bean实现了BeanPostProcessor接口，将会调用postProcessAfterInitialization(Object obj, String s)方法；由于这个方法是在Bean初始化结束时调用的，所以可以被应用于内存或缓存技术；</p>
-<blockquote>
-<p>以上几个步骤完成后，Bean就已经被正确创建了，之后就可以使用这个Bean了。</p>
-</blockquote>
-<h6 id="⑦、DisposableBean："><a href="#⑦、DisposableBean：" class="headerlink" title="⑦、DisposableBean："></a>⑦、DisposableBean：</h6><p>当Bean不再需要时，会经过清理阶段，如果Bean实现了DisposableBean这个接口，会调用其实现的destroy()方法。</p>
-<h6 id="⑧、destroy-method："><a href="#⑧、destroy-method：" class="headerlink" title="⑧、destroy-method："></a>⑧、destroy-method：</h6><p>最后，如果这个Bean的Spring配置中配置了destroy-method属性，会自动调用其配置的销毁方法。</p>
-<h4 id="7、Spring支持的几种bean的作用域"><a href="#7、Spring支持的几种bean的作用域" class="headerlink" title="7、Spring支持的几种bean的作用域"></a>7、Spring支持的几种bean的作用域</h4><p>Spring容器中bean可划分为5个范围：</p>
+<p>②、复制算法<br>将可用内存分为大小相等的两块，每次只使用其中一块，当这一块用完的时候就将还存活的对象复制到另一块上，然后将之前的一块全部对象清除掉<br><img src="https://img-blog.csdnimg.cn/20200318142100122.png" alt="在这里插入图片描述"><br>复制算法是由标记清除算法演变而来的，解决了产生内存碎片的问题，保证了内存的连续可用，但是也存在着一个问题就是可用内存只有原来的一半，代价太高，效率随着存活对象的增加而降低。</p>
+<p>③、标记-整理算法<br>标记-整理算法与标记-清除算法一样，但后续不同，标记-整理算法将存活的对象向一端移动，然后再清理掉边界以外的内存区域<br><img src="https://img-blog.csdnimg.cn/20200318142854467.png" alt="在这里插入图片描述"><br>标记-整理算法解决了产生内存碎片问题和内存使用一半的问题，标记整理算法对内存变动更频繁，需要整理所有存活对象的引用地址，在效率上比复制算法要差很多。</p>
+<p>④、分代收集算法<br>当前商业虚拟机的垃圾收集都是使用分代收集算法。根据对象生命周期的不同将内存划分为几块，把堆分成新生代和老年代，JVM根据不同的各个年代不同的特点采用相应的回收算法：</p>
 <ul>
-<li>①、singleton，默认，每个容器只有一个bean的实例，单例的模式由BeanFactory自身维护。</li>
-<li>②、prototype，为每一个bean请求提供一个实例。</li>
-<li>③、request，为每一个网络请求创建一个实例，在请求完成以后，bean会失效并会被垃圾回收机制回收。</li>
-<li>④、session，与request类似，确保每个session范围内有一个bean实例，session过期后，bean随之失效。</li>
-<li>⑤、global-session，全局作用域，global-session和Portlet应用相关。当你的应用部署在Portlet容器中工作时，它包含很多portlet。如果你想要声明让所有的portlet共用全局的存储变量的话，那么这全局变量需要存储在global-session中。全局作用域与Servlet中的session作用域效果相同。</li>
+<li>新生代，在新生代中，每次垃圾收集都会有大量的对象死去，只有少量存活，比较适合使用复制算法，只需要付出少量存活对象的复制成本就可完成收集；</li>
+<li>老年代，对象存活率高，没有额外空间对他进行分配担保，就必须使用标记-清理或者标记-整理算法来进行回收。<br>推荐阅读：<a href="https://www.cnblogs.com/fangfuhai/p/7206944.html" target="_blank" rel="noopener">Java虚拟机：JVM内存分代策略</a></li>
 </ul>
-<p>例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=<span class="string">"testManager"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.sw.TestManagerImpl"</span> scope=<span class="string">"singleton"</span> /&gt;</span><br></pre></td></tr></table></figure></p>
-<h4 id="8、Spring框架中单例的Beans是线程安全的吗？"><a href="#8、Spring框架中单例的Beans是线程安全的吗？" class="headerlink" title="8、Spring框架中单例的Beans是线程安全的吗？"></a>8、Spring框架中单例的Beans是线程安全的吗？</h4><p>Spring并没有对单例的bean进行任何多线程的封装处理。关于bean的线程安全问题和并发问题需要开发者自行去搞定。但实际上大部分的Spring Bean并没有可变的状态(比如dao)，所以说在某种程度上Spring的单例Bean是线程安全的。如果Bean有多个状态的话(如View、Model对象)，就需要自行保证线程安全，最简单的解决办法就是将多态bean的作用域由 <strong>“singleton”</strong> 变成 <strong>“prototype”</strong> 。</p>
-<h4 id="9、Spring如何处理线程并发问题"><a href="#9、Spring如何处理线程并发问题" class="headerlink" title="9、Spring如何处理线程并发问题"></a>9、Spring如何处理线程并发问题</h4><p>一般情况下，只有<strong>无状态的Bean</strong>才可以在多线程状态下进行共享，在Spring中大多数Bean的作用域都可以声明为singleton，因为Spring对一些Bean中非线程安全状态采用<strong>ThreadLocal</strong>进行处理，解决线程安全问题。</p>
-<p>ThreadLocal和线程同步机制都是为了解决多线程中相同变量的访问冲突问题。同步机制采用了时间换空间的方式，仅提供一个变量，不同的线程在访问前要获取锁，没获得锁的线程则要排队，ThreadLocal采用空间换时间的方式。</p>
-<p>ThreadLocal会为每一个线程提供一个独立的变量副本，从而隔离多个线程访问对数据的访问冲突，因为每一个线程都拥有自己的变量副本，从而也就没有必要对该变量进行同步了。ThreadLocal提供了线程安全的共享对象，在编写多线程代码时，可以把不安全的变量封装进ThreadLocal。</p>
-<p>有关有状态和无状态Bean可以阅读：<br><a href="https://www.cnblogs.com/smilepup-hhr/p/11484752.html" target="_blank" rel="noopener"><strong>Spring的并发问题——有状态Bean和无状态Bean</strong></a></p>
-<h4 id="10、Spring的自动装配"><a href="#10、Spring的自动装配" class="headerlink" title="10、Spring的自动装配"></a>10、Spring的自动装配</h4><p>在spring中，对象无需自己查找或创建与其关联的其他对象，由容器负责把需要相互协作的对象引用赋予各个对象，使用@Autowired来配置自动装载模式。</p>
-<p>在Spring框架xml配置中共有5种自动装配：</p>
-<p>（1）<strong>no：</strong> 默认的方式是不进行自动装配的，通过手工设置ref属性来进行装配bean。</p>
-<p>（2）<strong>byName：</strong> 通过bean的名称进行自动装配，如果一个bean的 property 与另一bean 的name 相同，就进行自动装配。 </p>
-<p>（3）<strong>byType：</strong> 通过参数的数据类型进行自动装配。</p>
-<p>（4）<strong>constructor：</strong> 利用构造函数进行装配，并且构造函数的参数通过byType进行装配。</p>
-<p>（5）<strong>autodetect：</strong> 自动探测，如果有构造方法，通过 construct的方式自动装配，否则使用 byType的方式自动装配。</p>
-<p><strong>基于注解的方式：</strong></p>
-<p>使用@Autowired注解来自动装配指定的bean。在使用@Autowired注解之前需要在Spring配置文件进行配置，&lt;context:annotation-config /&gt;。在启动Spring IoC时，容器自动装载了一个AutowiredAnnotationBeanPostProcessor后置处理器，当容器扫描到@Autowied、@Resource或@Inject时，就会在IoC容器自动查找需要的bean，并装配给该对象的属性。在使用@Autowired时，首先在容器中查询对应类型的bean：</p>
-<p>如果查询结果刚好为一个，就将该bean装配给@Autowired指定的数据；</p>
-<p>如果查询的结果不止一个，那么@Autowired会根据名称来查找；</p>
-<p>如果上述查找的结果为空，那么会抛出异常。解决方法时，使用required=false。</p>
-<blockquote>
-<p>@Autowired可用于：构造函数、成员变量、Setter方法<br>注：@Autowired和@Resource之间的区别<br>(1) @Autowired默认是按照类型装配注入的，默认情况下它要求依赖对象必须存在（可以设置它required属性为false）。<br>(2) @Resource默认是按照名称来装配注入的，只有当找不到与名称匹配的bean才会按照类型来装配注入。</p>
-</blockquote>
-<h4 id="11、Spring用到了哪些设计模式"><a href="#11、Spring用到了哪些设计模式" class="headerlink" title="11、Spring用到了哪些设计模式"></a>11、Spring用到了哪些设计模式</h4><p>（1）工厂模式：BeanFactory就是简单工厂模式的体现，用来创建对象的实例；</p>
-<p>（2）单例模式：Bean默认为单例模式。</p>
-<p>（3）代理模式：Spring的AOP功能用到了JDK的动态代理和CGLIB字节码生成技术；</p>
-<p>（4）模板方法：用来解决代码重复的问题。比如. RestTemplate, JmsTemplate, JpaTemplate。</p>
-<p>（5）观察者模式：定义对象键一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都会得到通知被制动更新，如Spring中listener的实现–ApplicationListener。</p>
-<h4 id="12、Spring事务实现和实现原理"><a href="#12、Spring事务实现和实现原理" class="headerlink" title="12、Spring事务实现和实现原理"></a>12、Spring事务实现和实现原理</h4><p>Spring事务的本质其实就是数据库对事务的支持，没有数据库的事务支持，spring是无法提供事务功能的。真正的数据库层的事务提交和回滚是通过binlog或者redo log实现的。</p>
-<p><strong>(1）Spring事务的种类：</strong></p>
-<p>spring支持编程式事务管理和声明式事务管理两种方式：</p>
-<p>①编程式事务管理使用TransactionTemplate。</p>
-<p>②声明式事务管理建立在AOP之上的。其本质是通过AOP功能，对方法前后进行拦截，将事务处理的功能编织到拦截的方法中，也就是在目标方法开始之前加入一个事务，在执行完目标方法之后根据执行情况提交或者回滚事务。</p>
-<blockquote>
-<p>声明式事务最大的优点就是不需要在业务逻辑代码中掺杂事务管理的代码，只需在配置文件中做相关的事务规则声明或通过@Transactional注解的方式，便可以将事务规则应用到业务逻辑中。<br>声明式事务管理要优于编程式事务管理，这正是spring倡导的非侵入式的开发方式，使业务代码不受污染，只要加上注解就可以获得完全的事务支持。唯一不足地方是，最细粒度只能作用到方法级别，无法做到像编程式事务那样可以作用到代码块级别。</p>
-</blockquote>
-<p><strong>（2）Spring的事务传播行为：</strong></p>
-<p>Spring事务的传播行为说的是，当多个事务同时存在的时候，Spring如何处理这些事务的行为。</p>
-<p>① PROPAGATION_REQUIRED：如果当前没有事务，就创建一个新事务，如果当前存在事务，就加入该事务，该设置是最常用的设置。</p>
-<p>② PROPAGATION_SUPPORTS：支持当前事务，如果当前存在事务，就加入该事务，如果当前不存在事务，就以非事务执行。‘</p>
-<p>③ PROPAGATION_MANDATORY：支持当前事务，如果当前存在事务，就加入该事务，如果当前不存在事务，就抛出异常。</p>
-<p>④ PROPAGATION_REQUIRES_NEW：创建新事务，无论当前存不存在事务，都创建新事务。</p>
-<p>⑤ PROPAGATION_NOT_SUPPORTED：以非事务方式执行操作，如果当前存在事务，就把当前事务挂起。</p>
-<p>⑥ PROPAGATION_NEVER：以非事务方式执行，如果当前存在事务，则抛出异常。</p>
-<p>⑦ PROPAGATION_NESTED：如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则按REQUIRED属性执行。</p>
-<p><strong>（3）Spring中的隔离级别：</strong><br>① ISOLATION_DEFAULT：这是个 PlatfromTransactionManager 默认的隔离级别，使用数据库默认的事务隔离级别。</p>
-<p>② ISOLATION_READ_UNCOMMITTED：读未提交，允许另外一个事务可以看到这个事务未提交的数据。</p>
-<p>③ ISOLATION_READ_COMMITTED：读已提交，保证一个事务修改的数据提交后才能被另一事务读取，而且能看到该事务对已有记录的更新。</p>
-<p>④ ISOLATION_REPEATABLE_READ：可重复读，保证一个事务修改的数据提交后才能被另一事务读取，但是不能看到该事务对已有记录的更新。</p>
-<p>⑤ ISOLATION_SERIALIZABLE：一个事务在执行的过程中完全看不到其他事务对数据库所做的更新。</p>
-<h4 id="13、Spring框架中有哪些不同类型的事件？"><a href="#13、Spring框架中有哪些不同类型的事件？" class="headerlink" title="13、Spring框架中有哪些不同类型的事件？"></a>13、Spring框架中有哪些不同类型的事件？</h4><p>Spring 提供了以下5种标准的事件：</p>
-<p>（1）上下文更新事件（ContextRefreshedEvent）：在调用ConfigurableApplicationContext 接口中的refresh()方法时被触发。</p>
-<p>（2）上下文开始事件（ContextStartedEvent）：当容器调用ConfigurableApplicationContext的Start()方法开始/重新开始容器时触发该事件。</p>
-<p>（3）上下文停止事件（ContextStoppedEvent）：当容器调用ConfigurableApplicationContext的Stop()方法停止容器时触发该事件。</p>
-<p>（4）上下文关闭事件（ContextClosedEvent）：当ApplicationContext被关闭时触发该事件。容器被关闭时，其管理的所有单例Bean都被销毁。</p>
-<p>（5）请求处理事件（RequestHandledEvent）：在Web应用中，当一个http请求（request）结束触发该事件。</p>
-<p>如果一个bean实现了ApplicationListener接口，当一个ApplicationEvent 被发布以后，bean会自动被通知。</p>
-<h4 id="14、Spring-AOP相关"><a href="#14、Spring-AOP相关" class="headerlink" title="14、Spring AOP相关"></a>14、Spring AOP相关</h4><p>阅读：<a href="https://jcoffeezph.top/Spring%E5%85%A8%E5%AE%B6%E6%A1%B6%E4%B9%8BSpringAOP.html"><strong>Spring全家桶之SpringAOP</strong></a></p>
+<h4 id="6、垃圾回收器"><a href="#6、垃圾回收器" class="headerlink" title="6、垃圾回收器"></a>6、垃圾回收器</h4><p>下图为HotSpot虚拟机包含的垃圾回收器<br><img src="https://img-blog.csdnimg.cn/20200318210958914.png" alt="在这里插入图片描述"><br>①、Serial收集器<br>Serial收集器是单线程的，与其他收集器单线程相比简单高效，它在垃圾收集的时候其他工作线程必须停止，直到垃圾收集完成(Stop The World)，由于不存在线程的交互，自然可以获得最高的单线程垃圾收集效率，运行示例图如下：<br><img src="https://img-blog.csdnimg.cn/20200318211551269.png" alt="在这里插入图片描述"><br>②、ParNew收集器<br>ParNew收集器其实就是Serial收集器的多线程版本，ParNew收集器除了使用多线程之外其他均和Serial一样，同样存在Stop The World问题，ParNew/Serial Old组合收集器运行示意图如下<br><img src="https://img-blog.csdnimg.cn/2020031821191950.png" alt="在这里插入图片描述"><br>③、Parallel Scavenge(并行回收)收集器<br>采用复制算法收集，并行收集，该收集器的目标是达到一个可控的吞吐量，所谓吞吐量就是CPU用于运行用户代码的时间与CPU总消耗时间的比值，即 <code>吞吐量=运行用户代码时间/(运行用户代码时间+垃圾收集时间)</code></p>
+<p><strong>GC自适应调节策略</strong>：Parallel Scavenge收集器可设置<code>-XX:+UseAdptiveSizePolicy</code>参数。当开关打开时不需要手动指定新生代的大小（-Xmn）、Eden与Survivor区的比例（-XX:SurvivorRation）、晋升老年代的对象年龄（-XX:PretenureSizeThreshold）等，虚拟机会根据系统的运行状况收集性能监控信息，动态设置这些参数以提供最优的停顿时间和最高的吞吐量，这种调节方式称为GC的自适应调节策略。</p>
+<p>Parallel Scavenge收集器提供两个参数用于精确控制吞吐量，分别是<code>控制最大垃圾收起停顿时间的-XX:MaxGCPauseMillis</code>参数以及直接<code>设置吞吐量大小的-XX:GCTimeRatio</code>参数</p>
+<p>④、Serial Old收集器<br>Serial Old是Serial收集器的老年代版本，同样是单线程收集器，采用标记-整理算法，Serial Old收集器运行过程与Serial收集器相同。</p>
+<p>⑤、Parallel Old 收集器<br>是Parallel Scavenge收集器的老年代版本，是多线程的，采用标记-整理算法，注重高吞吐量以及CPU资源敏感的场合，都可以优先考虑Parallel Scavenge+Parallel Old 收集器<br>Parallel Scavenge/Parallel Old收集器工作过程图：<br><img src="https://img-blog.csdnimg.cn/20200318213115124.png" alt="在这里插入图片描述"><br>⑥、CMS收集器<br>CMS(Concurrent Mark Sweep)收集器是一种以获取最短回收停顿时间为目标的收集器。目前很大一部分的Java应用集中在互联网站或者B/S系统的服务端上，这类应用尤其重视服务器的响应速度，希望系统停顿时间最短，以给用户带来较好的体验。CMS收集器就非常符合这类应用的需求。</p>
+<p>CMS收集器是基于<code>标记-清除</code>算法实现的。它的运作过程相对前面几种收集器来说更复杂一些，整个过程分为4个步骤：</p>
+<ul>
+<li>初始标记，标记GC Roots能直接到的对象。速度很快但是仍<code>存在Stop The World问题</code>；</li>
+<li>并发标记，进行GC Roots Tracing 的过程，找出存活对象且用户线程可并发执行；</li>
+<li>重新标记，为了修正并发标记期间因用户程序继续运行而导致标记产生变动的那一部分对象的标记记录，<code>仍然存在Stop The World问题</code>；</li>
+<li>并发清除，对标记的对象进行清除回收</li>
+</ul>
+<p>注意：CMS收集器的内存回收过程是与用户线程一起并发执行的。<br>CMS收集器的工作过程图：<br><img src="https://img-blog.csdnimg.cn/20200318213548355.png" alt="在这里插入图片描述"><br>CMS主要的优点是：低停顿，并发收集<br>CMS三个缺点：</p>
+<ul>
+<li>对CPU资源非常敏感；</li>
+<li>无法处理浮动垃圾，可能出现Concurrent Model Failure失败而导致另一次Full GC的产生；</li>
+<li>因为采用标记-清除算法所以会存在空间碎片的问题，导致大对象无法分配空间，不得不提前触发一次Full GC</li>
+</ul>
+<p>⑦、G1收集器<br>G1优势如下：</p>
+<ul>
+<li>并发与并行，能充分利用多核CPU，使用多核CPU缩短Stop-The-World的时间，G1收集器可以在回收垃圾的时候通过并行的方式使Java程序继续执行；</li>
+<li>分代收集，G1收集器可以独自处理整个Java堆，可以采用不同的方式处理新建的对象和已经存活了一段时间并经过几次GC的对象；</li>
+<li>空间整合，G1运作期间不会产生空间碎片，收集后可以提供完整的可用内存；</li>
+<li>可预测的停顿，G1除了追求低停顿外，还能建立可预测的停顿时间模型。能让使用者明确指定在一个长度为M毫秒的时间段内，消耗在垃圾收集上的时间不得超过N毫秒</li>
+</ul>
+<p>几个G1相关问题<br><strong>G1为什么能建立可预测的停顿时间模型？</strong><br>因为它有计划的避免在整个Java堆中进行全区域的垃圾收集。G1跟踪各个Region里面的垃圾堆积的大小，在后台维护一个优先列表，每次根据允许的收集时间，优先回收价值最大的Region。这样就保证了在有限的时间内可以获取尽可能高的收集效率。</p>
+<p><strong>G1与其他收集器的区别：</strong><br>其他收集器的工作范围是整个新生代或者老年代、G1收集器的工作范围是整个Java堆。在使用G1收集器时，它将整个Java堆划分为多个大小相等的独立区域（Region）。虽然也保留了新生代、老年代的概念，但新生代和老年代不再是相互隔离的，他们都是一部分Region（不需要连续）的集合。</p>
+<p><strong>G1收集器存在的问题：</strong><br>Region不可能是孤立的，分配在Region中的对象可以与Java堆中的任意对象发生引用关系。在采用可达性分析算法来判断对象是否存活时，得扫描整个Java堆才能保证准确性。其他收集器也存在这种问题（G1更加突出而已）。会导致Minor GC效率下降。</p>
+<p><strong>G1收集器是如何解决上述问题的？</strong><br>采用Remembered Set来避免整堆扫描。G1中每个Region都有一个与之对应的Remembered Set，虚拟机发现程序在对Reference类型进行写操作时，会产生一个Write Barrier暂时中断写操作，检查Reference引用对象是否处于多个Region中（即检查老年代中是否引用了新生代中的对象），如果是，便通过CardTable把相关引用信息记录到被引用对象所属的Region的Remembered Set中。当进行内存回收时，在GC根节点的枚举范围中加入Remembered Set即可保证不对全堆进行扫描也不会有遗漏。</p>
+<p>如果不计算维护 Remembered Set 的操作，G1收集器大致可分为如下步骤：<br><strong>初始标记：</strong> 仅标记GC Roots能直接到的对象，并且修改TAMS（Next Top at Mark Start）的值，让下一阶段用户程序并发运行时，能在正确可用的Region中创建新对象。（需要线程停顿，但耗时很短。）</p>
+<p><strong>并发标记：</strong> 从GC Roots开始对堆中对象进行可达性分析，找出存活对象。（耗时较长，但可与用户程序并发执行）</p>
+<p><strong>最终标记：</strong> 为了修正在并发标记期间因用户程序执行而导致标记产生变化的那一部分标记记录。且对象的变化记录在线程Remembered Set  Logs里面，把Remembered Set  Logs里面的数据合并到Remembered Set中。（需要线程停顿，但可并行执行。）</p>
+<p><strong>筛选回收：</strong> 对各个Region的回收价值和成本进行排序，根据用户所期望的GC停顿时间来制定回收计划。（可并发执行）<br>G1收集器运行示意图：<br><img src="https://img-blog.csdnimg.cn/20200318215216264.png" alt="在这里插入图片描述"><br>参考文章：<br><a href="https://www.cnblogs.com/chenpt/p/9803298.html" target="_blank" rel="noopener">Jvm垃圾回收器（终结篇）</a><br><a href="https://www.cnblogs.com/chengxuyuanzhilu/p/7088316.html" target="_blank" rel="noopener">JVM(HotSpot) 7种垃圾收集器的特点及使用场景</a><br><a href="https://www.jianshu.com/p/23f8249886c6" target="_blank" rel="noopener">JVM垃圾回收机制</a></p>
 
       
 
@@ -311,7 +273,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JVM垃圾回收篇</a>
         		</li>
       		
 		</ul>
@@ -341,18 +303,9 @@
   
 <nav id="article-nav">
   
-    <a href="/SpringMVC面试题总结.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          SpringMVC面试题总结
-        
-      </div>
-    </a>
   
-  
-    <a href="/Java并发之AQS结构及原理分析.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java并发之AQS结构及原理分析</div>
+    <a href="/Java复习之线程与并发一.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java复习之线程与并发一</div>
       <i class="icon-circle-right"></i>
     </a>
   
