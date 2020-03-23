@@ -6,29 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jcoffeezph.top">
-  <title>mysql基础知识之索引基础知识之索引 | Zph、ForMe</title>
+  <title>MySQL复习之索引 | Zph、ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="索引综述MySQL索引的建立对于MySQL的高效运行是很重要的，索引可以大大提高MySQL的检索速度。 索引其实和字典的目录很相似，字典可以根据拼音和部首偏旁快速查询到指定的字。 对于MySQL数据库来说，索引是一个排序的列表，在这个列表中存储着索引的值和包含这个值的数据所在行的物理地址，在数据十分庞大的时候，索引可以大大加快查询的速度，这是因为使用索引后可以不用扫描全表来定位某行的数据，而是先通">
-<meta name="keywords" content="索引基础知识">
+  <meta name="description" content="1、概述MySQL索引时MySQL高速运行的关键，索引可以大大提高MySQL的检索速度，如果MySQL没有实现索引算法当查询1000w数据时，只能暴力顺序检索，这显然不是我们想要看到的。">
+<meta name="keywords" content="MySQL索引篇">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mysql基础知识之索引基础知识之索引">
-<meta property="og:url" content="https://jcoffeezph.top/mysql基础知识之索引.html">
+<meta property="og:title" content="MySQL复习之索引">
+<meta property="og:url" content="https://jcoffeezph.top/MySQL复习之索引.html">
 <meta property="og:site_name" content="Zph、ForMe">
-<meta property="og:description" content="索引综述MySQL索引的建立对于MySQL的高效运行是很重要的，索引可以大大提高MySQL的检索速度。 索引其实和字典的目录很相似，字典可以根据拼音和部首偏旁快速查询到指定的字。 对于MySQL数据库来说，索引是一个排序的列表，在这个列表中存储着索引的值和包含这个值的数据所在行的物理地址，在数据十分庞大的时候，索引可以大大加快查询的速度，这是因为使用索引后可以不用扫描全表来定位某行的数据，而是先通">
+<meta property="og:description" content="1、概述MySQL索引时MySQL高速运行的关键，索引可以大大提高MySQL的检索速度，如果MySQL没有实现索引算法当查询1000w数据时，只能暴力顺序检索，这显然不是我们想要看到的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2019101617081253.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191016171915437.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191016172134818.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191016172322920.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191016173933272.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191016174157767.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191016174700650.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191016180832185.png">
-<meta property="og:updated_time" content="2019-11-14T04:31:21.297Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200323102743500.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200323103058391.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200323131623575.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200323132412353.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200323132834614.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200323133232628.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200323133444906.png">
+<meta property="og:updated_time" content="2020-03-23T05:40:47.524Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mysql基础知识之索引基础知识之索引">
-<meta name="twitter:description" content="索引综述MySQL索引的建立对于MySQL的高效运行是很重要的，索引可以大大提高MySQL的检索速度。 索引其实和字典的目录很相似，字典可以根据拼音和部首偏旁快速查询到指定的字。 对于MySQL数据库来说，索引是一个排序的列表，在这个列表中存储着索引的值和包含这个值的数据所在行的物理地址，在数据十分庞大的时候，索引可以大大加快查询的速度，这是因为使用索引后可以不用扫描全表来定位某行的数据，而是先通">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/2019101617081253.png">
+<meta name="twitter:title" content="MySQL复习之索引">
+<meta name="twitter:description" content="1、概述MySQL索引时MySQL高速运行的关键，索引可以大大提高MySQL的检索速度，如果MySQL没有实现索引算法当查询1000w数据时，只能暴力顺序检索，这显然不是我们想要看到的。">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200323102743500.png">
   
     <link rel="alternative" href="/atom.xml" title="Zph、ForMe" type="application/atom+xml">
   
@@ -168,14 +167,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-mysql基础知识之索引" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-MySQL复习之索引" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      mysql基础知识之索引基础知识之索引
+      MySQL复习之索引
     </h1>
   
 
@@ -186,33 +185,57 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/mysql基础知识之索引.html" class="archive-article-date">
-  	<time datetime="2019-10-17T04:18:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-17</time>
+<a href="/MySQL复习之索引.html" class="archive-article-date">
+  	<time datetime="2020-03-23T05:39:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="索引综述"><a href="#索引综述" class="headerlink" title="索引综述"></a>索引综述</h2><p>MySQL索引的建立对于MySQL的高效运行是很重要的，索引可以大大提高MySQL的检索速度。</p>
-<p>索引其实和字典的目录很相似，字典可以根据拼音和部首偏旁快速查询到指定的字。</p>
-<p>对于MySQL数据库来说，索引是一个排序的列表，在这个列表中存储着索引的值和包含这个值的数据所在行的物理地址，在数据十分庞大的时候，索引可以大大加快查询的速度，这是因为使用索引后可以不用扫描全表来定位某行的数据，而是先通过索引表找到该行数据对应的物理地址然后访问相应的数据。<br><a id="more"></a></p>
-<h3 id="索引的分类"><a href="#索引的分类" class="headerlink" title="索引的分类"></a>索引的分类</h3><p>索引的种类不止一种，它包括：<strong>主键、唯一索引、普通索引、全文索引、组合索引</strong></p>
-<h5 id="①、主键：根据主键建立索引，不允许重复，不允许空值，一个表可以没有主键，但最多只能有一个主键，主键可以为空字符串"><a href="#①、主键：根据主键建立索引，不允许重复，不允许空值，一个表可以没有主键，但最多只能有一个主键，主键可以为空字符串" class="headerlink" title="①、主键：根据主键建立索引，不允许重复，不允许空值，一个表可以没有主键，但最多只能有一个主键，主键可以为空字符串"></a><strong>①、主键：根据主键建立索引，不允许重复，不允许空值，一个表可以没有主键，但最多只能有一个主键，主键可以为空字符串</strong></h5><p>先创建一个表：indextest2<br><img src="https://img-blog.csdnimg.cn/2019101617081253.png" alt="在这里插入图片描述"><br>创建主键：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> indextest2 <span class="keyword">add</span> primary <span class="keyword">key</span> (<span class="keyword">name</span>);</span><br></pre></td></tr></table></figure>
-<p>查看创建的主键：<br><img src="https://img-blog.csdnimg.cn/20191016171915437.png" alt="在这里插入图片描述"><br>向表里面插入数据，查看查询的时候是否使用了主键：<br><img src="https://img-blog.csdnimg.cn/20191016172134818.png" alt="在这里插入图片描述"><br>可以看到确实是用了主键。</p>
-<p>不允许重复的解释如下图：<br><img src="https://img-blog.csdnimg.cn/20191016172322920.png" alt="在这里插入图片描述"></p>
-<h5 id="②、唯一索引：用来建立索引的列的值必须是唯一的，允许空值"><a href="#②、唯一索引：用来建立索引的列的值必须是唯一的，允许空值" class="headerlink" title="②、唯一索引：用来建立索引的列的值必须是唯一的，允许空值"></a>②、<strong>唯一索引：用来建立索引的列的值必须是唯一的，允许空值</strong></h5><p>首先删除indextest2表的主键：<code>alter table indextest2 drop primary key;</code><br>然后创建唯一索引：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> indextest2 <span class="keyword">add</span> <span class="keyword">unique</span> (<span class="keyword">name</span>);</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20191016173933272.png" alt="在这里插入图片描述"><br>通过上图可以得知唯一索引创建成功。</p>
-<h5 id="③、普通索引：用表中的普通列构建的索引，没有任何限制"><a href="#③、普通索引：用表中的普通列构建的索引，没有任何限制" class="headerlink" title="③、普通索引：用表中的普通列构建的索引，没有任何限制"></a><strong>③、普通索引：用表中的普通列构建的索引，没有任何限制</strong></h5><p><img src="https://img-blog.csdnimg.cn/20191016174157767.png" alt="在这里插入图片描述"></p>
-<h5 id="④、全文索引：用大文本对象的列构建的索引"><a href="#④、全文索引：用大文本对象的列构建的索引" class="headerlink" title="④、全文索引：用大文本对象的列构建的索引"></a><strong>④、全文索引：用大文本对象的列构建的索引</strong></h5><p>创建全文索引：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> indextest2 <span class="keyword">add</span> fulltext <span class="keyword">index</span> (<span class="keyword">name</span>);</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20191016174700650.png" alt="在这里插入图片描述"></p>
-<h5 id="⑤、组合索引：用多个列组合构建的索引，这多个列中的值不允许有空值"><a href="#⑤、组合索引：用多个列组合构建的索引，这多个列中的值不允许有空值" class="headerlink" title="⑤、组合索引：用多个列组合构建的索引，这多个列中的值不允许有空值"></a><strong>⑤、组合索引：用多个列组合构建的索引，这多个列中的值不允许有空值</strong></h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> indextest2 <span class="keyword">add</span> idnex (<span class="keyword">name</span>,age,score);</span><br></pre></td></tr></table></figure>
-<p>组合索引遵循最左原则，先看下图：<br><img src="https://img-blog.csdnimg.cn/20191016180832185.png" alt="在这里插入图片描述"><br>查询操作并未使用索引，做如下解释：<br>所谓最左原则：是把最常用作为检索或排序的列放在最左，依次递减，组合索引相当于建立了col1,col1col2,col1col2col3三个索引，而col2或者col3是不能使用索引的。</p>
-<p>在使用组合索引的时候可能因为列名长度过长而导致索引的key太大，导致效率降低，在允许的情况下，可以只取col1和col2的前几个字符作为索引</p>
-<p>ALTER TABLE ‘table_name’ ADD INDEX index_name(col1(4),col2（3))；<br>表示使用col1的前4个字符和col2的前3个字符作为索引</p>
+        <h4 id="1、概述"><a href="#1、概述" class="headerlink" title="1、概述"></a>1、概述</h4><p>MySQL索引时MySQL高速运行的关键，索引可以大大提高MySQL的检索速度，如果MySQL没有实现索引算法当查询1000w数据时，只能暴力顺序检索，这显然不是我们想要看到的。<br><a id="more"></a></p>
+<h4 id="2、MySQL索引底层数据结构的选择"><a href="#2、MySQL索引底层数据结构的选择" class="headerlink" title="2、MySQL索引底层数据结构的选择"></a>2、MySQL索引底层数据结构的选择</h4><p>①、hash表<br>哈希算法，是做快速检索的有效利器，可以把任意值通过哈希函数变为固定长度的地址<br><img src="https://img-blog.csdnimg.cn/20200323102743500.png" alt="在这里插入图片描述"><br>哈希函数先计算出数据的哈希值，然后根据哈希值映射的地址找到具体的数据，这就是哈希算法快速检索的计算过程。</p>
+<p>对于哈希碰撞问题，选用链地址法，如下<br><img src="https://img-blog.csdnimg.cn/20200323103058391.png" alt="在这里插入图片描述"><br>从算法的时间复杂度来看，哈希算法的查询时间复杂度为O(1)，只需哈希函数计算一次即可找到数据，但数据库底层索引数据结构却没有使用此算法，因为当数据库采用范围查询的时候，使用哈希算法实现的索引无法做范围查询，当然对于此有一种解决思路，就是把所有数据一次性加载到内存中然后筛选出符合要求的数据，这样做显然是不行的。</p>
+<p>因此，虽然哈希算法虽然可以做到快速检索数据，但却没有做到范围查询，因此MySQL底层没有使用哈希算法。</p>
+<p>②、二叉查找树<br>二叉查找树是一种支持快速查找的数据结构，二叉查找树的时间复杂度为O(log n)，相对于直接查询时间减少了很多，从检索效率上来看是可以实现快速检索的，另外，二叉查找树的节点都是有大小顺序的，对于叶子节点是从左到右依次增大的，若果需要查询大于某值的数据时，直接找到该值然后取出其右子树即可，因此可以实现范围查找。</p>
+<p>但是二叉查找树有一个缺点就是可能会蜕变成为一个链表，当存储的数据是有序的时候这种情况就会发生，时间复杂度就变成了O(n)。然而在数据库中，数据的自增是一种很常见的方式，所以，二叉查找树也不适合做索引的底层数据结构。</p>
+<p>③、AVL树和红黑树<br>由于二叉查找树存在不平衡的问题，所以出现了平衡二叉树，AVL树是一个绝对平衡的二叉树，再调整二叉树的形态上可能会花费更多的资源；</p>
+<p>红黑树，会自动调整形态，当处于不平衡状态的时候会自动左旋和后者右旋并调整相关节点颜色完成平衡处理，时间复杂度为O(log n)，虽然红黑树时间复杂度低且可以实现范围查找，但是如果书勋插入的话会出现“右倾”的趋势，所以红黑树并没有解决二叉查找树的右倾问题，红黑树右倾如下图：<br><img src="https://img-blog.csdnimg.cn/20200323131623575.png" alt="在这里插入图片描述"><br>比较AVL树和红黑树来说，AVL树比较适合做MySQL底层数据结构，AVL树既不会出现右倾，也保证了时间复杂度为O(log n)，而且可以进行范围查询，但MySQL底层却没有使用此数据结构，究其原因就是磁盘IO问题。</p>
+<p>对于AVL树来说，一个节点只能存放一个数据，一次磁盘IO只能取出一个数据，磁盘IO有个特点就是一次取出1B和1KB的数据时间基本一致，因此利用这一特点可以将节点扩充，也就有了B树和B+树。</p>
+<p>④、B树和B+树<br>B树的一个节点可以存储多个值，其它特点和AVL树一样，对于1-16来说如下所示<br><img src="https://img-blog.csdnimg.cn/20200323132412353.png" alt="在这里插入图片描述"><br>性能明显优于AVL树，因此B树作为数据库索引有如下优点：</p>
+<ul>
+<li>优秀检索速度，时间复杂度：B 树的查找性能等于 O（h*logn），其中 h 为树高，n 为每个节点关键词的个数；</li>
+<li>尽可能少的磁盘 IO，加快了检索速度；</li>
+<li>可以支持范围查找。</li>
+</ul>
+<p><strong>B树和B+树的区别</strong></p>
+<ul>
+<li>B树里面存的是数据，而B+树里面存的是索引的地址，因此一个B树节点存储了多个数据，而一个B+树节点存储了多个索引地址，B+树叶子节点存储了所有的数据。</li>
+<li>B+树的叶子节点间用了链表连接起来，便于范围查找，如下<br><img src="https://img-blog.csdnimg.cn/20200323132834614.png" alt="在这里插入图片描述"><br>通过 B 树和 B+树的对比我们看出，B+树节点存储的是索引，在单个节点存储容量有限的情况下，单节点也能存储大量索引，使得整个 B+树高度降低，减少了磁盘 IO。其次，B+树的叶子节点是真正数据存储的地方，叶子节点用了链表连接起来，这个链表本身就是有序的，在数据范围查找时，更具备效率。因此 Mysql 的索引用的就是 B+树，B+树在查找效率、范围查找中都有着非常不错的性能。</li>
+</ul>
+<h4 id="3、InnoDB引擎和MyISAM引擎"><a href="#3、InnoDB引擎和MyISAM引擎" class="headerlink" title="3、InnoDB引擎和MyISAM引擎"></a>3、InnoDB引擎和MyISAM引擎</h4><p>MyISAM 虽然数据查找性能极佳，但是不支持事务处理。Innodb 最大的特色就是支持了 ACID 兼容的事务功能，而且他支持行级锁。MySQL建表的时候就可指定引擎。</p>
+<p>①、Innodb 创建表后生成的文件有：</p>
+<ul>
+<li>frm:创建表的语句</li>
+<li>idb:表里面的数据+索引文件</li>
+</ul>
+<p>②、Myisam 创建表后生成的文件有</p>
+<ul>
+<li>frm:创建表的语句</li>
+<li>MYD:表里面的数据文件（myisam data）</li>
+<li>MYI:表里面的索引文件（myisam index）</li>
+</ul>
+<p>从生成的文件看来，这两个引擎底层数据和索引的组织方式并不一样，MyISAM 引擎把数据和索引分开了，一人一个文件，这叫做非聚集索引方式；Innodb 引擎把数据和索引放在同一个文件里了，这叫做聚集索引方式。</p>
+<ul>
+<li>MyISAM 引擎的底层实现（非聚集索引方式）<br>MyISAM 用的是非聚集索引方式，即数据和索引落在不同的两个文件上。MyISAM 在建表时以主键作为 KEY 来建立主索引 B+树，树的叶子节点存的是对应数据的物理地址。我们拿到这个物理地址后，就可以到 MyISAM 数据文件中直接定位到具体的数据记录了。<br><img src="https://img-blog.csdnimg.cn/20200323133232628.png" alt="在这里插入图片描述"></li>
+<li><p>Innodb 引擎的底层实现（聚集索引方式）<br>InnoDB 是聚集索引方式，因此数据和索引都存储在同一个文件里。首先 InnoDB 会根据主键 ID 作为 KEY 建立索引 B+树，而 B+树的叶子节点存储的是主键 ID 对应的数据。，比如在执行 select * from user_info where id=15 这个语句时，InnoDB 就会查询这颗主键 ID 索引 B+树，找到对应的 user_name=’Bob’。</p>
+<p>  这是建表的时候 InnoDB 就会自动建立好主键 ID 索引树，这也是为什么 Mysql 在建表时要求必须指定主键的原因。当我们为表里某个字段加索引时 InnoDB 会怎么建立索引树呢？比如我们要给 user_name 这个字段加索引，那么 InnoDB 就会建立 user_name 索引 B+树，节点里存的是 user_name 这个 KEY，叶子节点存储的数据的是主键 KEY。注意，叶子存储的是主键 KEY！拿到主键 KEY 后，InnoDB 才会去主键索引树里根据刚在 user_name 索引树找到的主键 KEY 查找到对应的数据。<br>  <img src="https://img-blog.csdnimg.cn/20200323133444906.png" alt="在这里插入图片描述"></p>
+</li>
+</ul>
+<p>问题来了，为什么 InnoDB 只在主键索引树的叶子节点存储了具体数据，但是其他索引树却不存具体数据呢，而要多此一举先找到主键，再在主键索引树找到对应的数据呢?</p>
+<p>其实很简单，因为 InnoDB 需要节省存储空间。一个表里可能有很多个索引，InnoDB 都会给每个加了索引的字段生成索引树，如果每个字段的索引树都存储了具体数据，那么这个表的索引数据文件就变得非常巨大（数据极度冗余了）。从节约磁盘空间的角度来说，真的没有必要每个字段索引树都存具体数据，通过这种看似“多此一举”的步骤，在牺牲较少查询的性能下节省了巨大的磁盘空间，这是非常有值得的。</p>
+<p>MyISAM 查询性能更好，从上面索引文件数据文件的设计来看也可以看出原因：MyISAM 直接找到物理地址后就可以直接定位到数据记录，但是 InnoDB 查询到叶子节点后，还需要再查询一次主键索引树，才可以定位到具体数据。等于 MyISAM 一步就查到了数据，但是 InnoDB 要两步，那当然 MyISAM 查询性能更高。</p>
+<p>整理自：<a href="https://zhuanlan.zhihu.com/p/113917726" target="_blank" rel="noopener">深入理解 Mysql 索引底层原理</a></p>
 
       
 
@@ -226,7 +249,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">索引基础知识</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">MySQL索引篇</a>
         		</li>
       		
 		</ul>
@@ -238,7 +261,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/MYSQL//" class="article-tag-list-link color1">MYSQL</a>
+        			<a href="/categories/面试题//" class="article-tag-list-link color4">面试题</a>
         		</li>
       		
 		</ul>
@@ -256,18 +279,9 @@
   
 <nav id="article-nav">
   
-    <a href="/Java并发编程之工具类.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java并发编程之工具类
-        
-      </div>
-    </a>
   
-  
-    <a href="/mysql基础知识之join关键字.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">mysql基础知识之join关键字</div>
+    <a href="/Java复习之类加载.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java复习之类加载</div>
       <i class="icon-circle-right"></i>
     </a>
   
