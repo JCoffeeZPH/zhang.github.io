@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://jcoffeezph.top">
-  <title>categories | Zph、ForMe</title>
+  <title>SpringMVC工作原理及常见问题 | Zph、ForMe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Enjoy Coding">
-<meta name="keywords" content="Java 软件">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="https://jcoffeezph.top/categories/index.html">
+  <meta name="description" content="1、SpringMVC工作原理图">
+<meta name="keywords" content="SpringMVC篇">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringMVC工作原理及常见问题">
+<meta property="og:url" content="https://jcoffeezph.top/SpringMVC工作原理及常见问题.html">
 <meta property="og:site_name" content="Zph、ForMe">
-<meta property="og:description" content="Enjoy Coding">
+<meta property="og:description" content="1、SpringMVC工作原理图">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-28T02:35:59.966Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200408104357130.png">
+<meta property="og:updated_time" content="2020-04-08T03:59:41.427Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
-<meta name="twitter:description" content="Enjoy Coding">
+<meta name="twitter:title" content="SpringMVC工作原理及常见问题">
+<meta name="twitter:description" content="1、SpringMVC工作原理图">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200408104357130.png">
   
     <link rel="alternative" href="/atom.xml" title="Zph、ForMe" type="application/atom+xml">
   
@@ -159,14 +161,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope="" itemprop="blogPost">
+            <article id="post-SpringMVC工作原理及常见问题" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      categories
+      SpringMVC工作原理及常见问题
     </h1>
   
 
@@ -177,15 +179,56 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/categories/index.html" class="archive-article-date">
-  	<time datetime="2018-10-28T02:27:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-28</time>
+<a href="/SpringMVC工作原理及常见问题.html" class="archive-article-date">
+  	<time datetime="2020-04-08T03:58:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h4 id="1、SpringMVC工作原理图"><a href="#1、SpringMVC工作原理图" class="headerlink" title="1、SpringMVC工作原理图"></a>1、SpringMVC工作原理图</h4><p><img src="https://img-blog.csdnimg.cn/20200408104357130.png" alt="在这里插入图片描述"><br><a id="more"></a></p>
+<ul>
+<li>1、用户发起请求；</li>
+<li>2、DispactcherServlet接收到请求，并调用HandlerMapping查找处理器；</li>
+<li>3、HandlerMapping根据请求的URL找到处理器(可通过xml，注解进行查找)，并返回给前端处理器DispatcherServlet；</li>
+<li>4、DispatcherServlet调用HandlerAdapter执行Handler；</li>
+<li>5、HandlerAdapter根据Handler的规则执行不同不同类型的Handler；</li>
+<li>6、Handler进行业务和数据的处理，将ModelAndView对象返回给HandlerAdapter；</li>
+<li>7、HandlerAdapter将ModelAndView返回给前端控制器DispatcherServlet；</li>
+<li>8、Dispatcher调用ViewResolver解析逻辑视图ModelAndView；</li>
+<li>9、ViewResolver根据逻辑视图的名称查找对应的视图对象，并返回给前端控制器；</li>
+<li>10、前端控制器调用View渲染试图到前端；</li>
+<li>11、响应处理的结果</li>
+</ul>
+<p><strong>关键组件</strong></p>
+<ul>
+<li>DispatcherServlet：接受请求并响应到前端，并且负责各个组件职责的分配；</li>
+<li>Handler(处理器)：处理数据与业务请求，Handler需要符合处理器的规则；</li>
+<li>HandlerMapping：根据每个请求的URL找到对应的Handler；</li>
+<li>HandlerAdapter：根据类型适配每个处理器Handler并执行；</li>
+<li>视图解析器(ViewResolver)：根据逻辑视图的名称将逻辑视图解析为视图对象；</li>
+<li>视图(View):在SpringMVC中,View是一个接口,通过不同的实现类支持不同的类型</li>
+</ul>
+<h4 id="2、SpringMVC的控制器是不是单例模式-如果是-有什么问题-怎么解决"><a href="#2、SpringMVC的控制器是不是单例模式-如果是-有什么问题-怎么解决" class="headerlink" title="2、SpringMVC的控制器是不是单例模式,如果是,有什么问题,怎么解决?"></a>2、SpringMVC的控制器是不是单例模式,如果是,有什么问题,怎么解决?</h4><p>默认情况下是单例模式，在多线程访问的时候会有线程安全问题，但是不建议使用线程同步，因为会影响性能，解决方案是不在控制器里写成员变量。</p>
+<p><strong>为什么设计成单例模式</strong></p>
+<ul>
+<li>性能，不用每次请求都创建对象；</li>
+<li>不需要多例，不要在控制器里使用成员变量</li>
+</ul>
+<h4 id="3、SpringMVC中-Controller的作用"><a href="#3、SpringMVC中-Controller的作用" class="headerlink" title="3、SpringMVC中@Controller的作用"></a>3、SpringMVC中@Controller的作用</h4><p>在Spring MVC 中，控制器Controller 负责处理由DispatcherServlet 分发的请求，它把用户请求的数据经过业务处理层处理之后封装成一个Model ，然后再把该Model 返回给对应的View 进行展示。在Spring MVC 中提供了一个非常简便的定义Controller 的方法，你无需继承特定的类或实现特定的接口，只需使用@Controller 标记一个类是Controller ，然后使用@RequestMapping 和@RequestParam 等一些注解用以定义URL 请求和Controller 方法之间的映射，这样的Controller 就能被外界访问到。此外Controller 不会直接依赖于HttpServletRequest 和HttpServletResponse 等HttpServlet 对象，它们可以通过Controller 的方法参数灵活的获取到。</p>
+<p>@Controller 用于标记在一个类上，使用它标记的类就是一个Spring MVC Controller 对象。分发处理器将会扫描使用了该注解的类的方法，并检测该方法是否使用了@RequestMapping 注解。@Controller 只是定义了一个控制器类，而使用@RequestMapping 注解的方法才是真正处理请求的处理器。</p>
+<h4 id="4、如何解决POST请求中文乱码问题，GET的又如何处理呢？"><a href="#4、如何解决POST请求中文乱码问题，GET的又如何处理呢？" class="headerlink" title="4、如何解决POST请求中文乱码问题，GET的又如何处理呢？"></a>4、如何解决POST请求中文乱码问题，GET的又如何处理呢？</h4><p>①、解决POST请求乱码问题：<br>在web.xml中配置一个CharacterEncodingFilter过滤器，设置成utf-8：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;filter&gt;</span><br><span class="line">    &lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt;</span><br><span class="line">    &lt;filter-<span class="class"><span class="keyword">class</span>&gt;<span class="title">org</span>.<span class="title">springframework</span>.<span class="title">web</span>.<span class="title">filter</span>.<span class="title">CharacterEncodingFilter</span>&lt;/<span class="title">filter</span>-<span class="title">class</span>&gt;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">    &lt;<span class="title">init</span>-<span class="title">param</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">param</span>-<span class="title">name</span>&gt;<span class="title">encoding</span>&lt;/<span class="title">param</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">param</span>-<span class="title">value</span>&gt;<span class="title">utf</span>-8&lt;/<span class="title">param</span>-<span class="title">value</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;/<span class="title">init</span>-<span class="title">param</span>&gt;</span></span><br><span class="line"><span class="class">&lt;/<span class="title">filter</span>&gt;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">&lt;<span class="title">filter</span>-<span class="title">mapping</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;<span class="title">filter</span>-<span class="title">name</span>&gt;<span class="title">CharacterEncodingFilter</span>&lt;/<span class="title">filter</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;<span class="title">url</span>-<span class="title">pattern</span>&gt;/ &lt;/<span class="title">url</span>-<span class="title">pattern</span>&gt;</span></span><br><span class="line"><span class="class">&lt;/ <span class="title">filter</span>-<span class="title">mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>②、get请求中文参数出现乱码解决方法有两个：</p>
+<pre><code>* ①修改tomcat配置文件添加编码与工程编码一致，如下：
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;ConnectorURIEncoding=<span class="string">"utf-8"</span> connectionTimeout=<span class="string">"20000"</span> port=<span class="string">"8080"</span> protocol=<span class="string">"HTTP/1.1"</span> redirectPort=<span class="string">"8443"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>另外一种方法对参数进行重新编码：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String userName = <span class="keyword">new</span> String(request.getParamter(“userName”).getBytes(“ISO8859-<span class="number">1</span>”),“utf-<span class="number">8</span>”)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>ISO8859-1是tomcat默认编码，需要将tomcat编码后的内容按utf-8编码。</p>
+
       
 
       
@@ -193,7 +236,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringMVC篇</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/面试题//" class="article-tag-list-link color4">面试题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -204,6 +269,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/基于Redisson的分布式锁.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基于Redisson的分布式锁</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -294,7 +369,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
